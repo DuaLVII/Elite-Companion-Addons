@@ -53,33 +53,73 @@ on("CarrierJump", arrived);
 
 // ---- EDSM: the nearest ones ----
 
+// EDSM's big "systems within N ly" answers can make it give up (503 Service Unavailable), so the search goes out in
+// shells: 0–15 ly, 15–25, 25–35… Each answer is small, results show as they come, and it stops once it has plenty.
+// A shell that fails is tried again after a pause, then split in two; if EDSM is still busy, what's found so far stays.
+const ENOUGH = 12;
+let job = null;       // { from, shells: [[min, max]], found: [], checked, tries, retryAt }
+
 function search() {
     const from = here.system || game.StarSystem;
     if (!from || from === "—") { status = tr("js.where_unknown", "Your location isn't known yet: jump or log in first."); show(); return; }
     if (busy) return;
+    const shells = [];
+    for (let r = 0; r < opts.radius; ) { const next = Math.min(opts.radius, r === 0 ? 15 : r + 10); shells.push([r, next]); r = next; }
+    job = { from, shells, found: [], checked: 0, tries: 0, retryAt: 0 };
+    results = { from, at: Date.now(), radius: opts.radius, checked: 0, systems: [] };
     busy = true;
-    status = tr("js.asking", "Asking EDSM for systems within {0} ly of {1}…", opts.radius, from);
+    nextShell();
+}
+
+function nextShell() {
+    if (!job) return;
+    if (job.shells.length === 0 || job.found.length >= ENOUGH) { finish(""); return; }
+    const [min, max] = job.shells[0];
+    status = tr("js.asking_shell", "Asking EDSM: {0}–{1} ly from {2}…", min, max, job.from);
     show();
-    web.edsm("api-v1/sphere-systems", { systemName: from, radius: opts.radius, showInformation: 1, showCoordinates: 1 }, (data, error) => {
+    const mine = job;
+    web.edsm("api-v1/sphere-systems", { systemName: job.from, minRadius: min, radius: max, showInformation: 1 }, (data, error) => {
+        if (mine !== job) return;   // a newer search started
         if (error || !Array.isArray(data)) {
-            busy = false;
-            status = error ? tr("js.edsm_error", "Couldn't reach EDSM: {0}", error) : tr("js.edsm_unknown", "EDSM doesn't know {0} yet.", from);
-            show(); return;
+            if (!error && job.checked === 0 && min === 0) { finish(tr("js.edsm_unknown", "EDSM doesn't know {0} yet.", job.from)); return; }
+            job.tries++;
+            if (job.tries === 1) { job.retryAt = Date.now() + 6000; status = tr("js.edsm_busy_retry", "EDSM is busy ({0}); trying again in a moment…", error || "?"); show(); return; }
+            if (job.tries === 2 && max - min > 5) {
+                const mid = Math.round((min + max) / 2);
+                job.shells.splice(0, 1, [min, mid], [mid, max]);
+                job.retryAt = Date.now() + 6000; show(); return;
+            }
+            finish(tr("js.edsm_busy", "EDSM is busy or down ({0}). Showing what was found so far; try again in a minute.", error || "?"));
+            return;
         }
-        const found = data
-            .map(s => ({ name: s.name, ly: typeof s.distance === "number" ? s.distance : null,
-                         state: (s.information || {}).factionState || "", controller: (s.information || {}).faction || "" }))
-            .filter(s => WAR(s.state))   // all three kinds; the Elections button just shows or hides them
-            .sort((a, b) => (a.ly ?? 1e9) - (b.ly ?? 1e9))
-            .slice(0, 25);
-        results = { from, at: Date.now(), radius: opts.radius, checked: data.length, systems: found.map(s => ({ ...s, kind: WAR(s.state), sides: [], updated: 0 })) };
-        status = "";
-        busy = false;
+        job.tries = 0;
+        job.shells.shift();
+        job.checked += data.length;
+        for (const s of data) {
+            const kind = WAR((s.information || {}).factionState || "");
+            if (kind) job.found.push({ name: s.name, ly: typeof s.distance === "number" ? s.distance : null, kind,
+                                       controller: (s.information || {}).faction || "", sides: [], updated: 0 });
+        }
+        job.found.sort((a, b) => (a.ly ?? 1e9) - (b.ly ?? 1e9));
+        results = { from: job.from, at: Date.now(), radius: max, checked: job.checked, systems: job.found.slice(0, 25) };
         save();
         show();
-        details(results, 0);
+        nextShell();
     });
 }
+
+function finish(message) {
+    busy = false;
+    status = message;
+    if (job) results = { from: job.from, at: Date.now(), radius: results ? results.radius : opts.radius, checked: job.checked, systems: job.found.slice(0, 25) };
+    job = null;
+    save();
+    show();
+    if (results && results.systems.length) details(results, 0);
+}
+
+// retries wait a few seconds (scripts have no timers, so the tick checks)
+on("tick", () => { if (job && job.retryAt && Date.now() >= job.retryAt) { job.retryAt = 0; nextShell(); } });
 
 // Who's fighting: the factions in that state, for the nearest 8 (one request each, the app spaces them out)
 function details(res, i) {

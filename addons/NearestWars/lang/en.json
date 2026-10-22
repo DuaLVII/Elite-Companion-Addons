@@ -38,6 +38,9 @@
     "js.searched": "Around {0}, {1} · EDSM knows what players have uploaded, so states can be a few days old.",
     "js.active": "active",
     "js.pending": "pending",
-    "js.stake": "{0} stakes {1}"
+    "js.stake": "{0} stakes {1}",
+    "js.asking_shell": "Asking EDSM: {0}–{1} ly from {2}…",
+    "js.edsm_busy_retry": "EDSM is busy ({0}); trying again in a moment…",
+    "js.edsm_busy": "EDSM is busy or down ({0}). Showing what was found so far; try again in a minute."
   }
 }

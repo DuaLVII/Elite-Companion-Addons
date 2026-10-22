@@ -38,6 +38,9 @@
     "js.searched": "Kolem {0}, {1} · EDSM ví jen to, co hráči nahráli, stavy mohou být pár dní staré.",
     "js.active": "probíhá",
     "js.pending": "čeká",
-    "js.stake": "{0} sází {1}"
+    "js.stake": "{0} sází {1}",
+    "js.asking_shell": "Ptám se EDSM: {0}–{1} ly od {2}…",
+    "js.edsm_busy_retry": "EDSM je přetížený ({0}); za chvíli to zkusím znovu…",
+    "js.edsm_busy": "EDSM je přetížený nebo nedostupný ({0}). Zobrazuji, co se zatím našlo; zkuste to za minutu."
   }
 }

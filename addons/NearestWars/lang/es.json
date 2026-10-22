@@ -38,6 +38,9 @@
     "js.searched": "Alrededor de {0}, {1} · EDSM solo sabe lo que suben los jugadores, así que los estados pueden tener unos días.",
     "js.active": "activa",
     "js.pending": "pendiente",
-    "js.stake": "{0} se juega {1}"
+    "js.stake": "{0} se juega {1}",
+    "js.asking_shell": "Preguntando a EDSM: {0}–{1} al desde {2}…",
+    "js.edsm_busy_retry": "EDSM está ocupado ({0}); reintentando en un momento…",
+    "js.edsm_busy": "EDSM está ocupado o caído ({0}). Se muestra lo encontrado; vuelve a intentarlo en un minuto."
   }
 }

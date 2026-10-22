@@ -38,6 +38,9 @@
     "js.searched": "Autour de {0}, {1} · EDSM ne sait que ce que les joueurs ont envoyé, les états peuvent dater de quelques jours.",
     "js.active": "en cours",
     "js.pending": "à venir",
-    "js.stake": "{0} met en jeu {1}"
+    "js.stake": "{0} met en jeu {1}",
+    "js.asking_shell": "Demande à EDSM : {0}–{1} al de {2}…",
+    "js.edsm_busy_retry": "EDSM est surchargé ({0}) ; nouvel essai dans un instant…",
+    "js.edsm_busy": "EDSM est surchargé ou hors ligne ({0}). Voici ce qui a été trouvé ; réessayez dans une minute."
   }
 }

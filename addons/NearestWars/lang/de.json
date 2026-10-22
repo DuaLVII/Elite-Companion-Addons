@@ -38,6 +38,9 @@
     "js.searched": "Um {0}, {1} · EDSM kennt nur, was Spieler hochgeladen haben, Zustände können also ein paar Tage alt sein.",
     "js.active": "aktiv",
     "js.pending": "anstehend",
-    "js.stake": "{0} setzt {1} ein"
+    "js.stake": "{0} setzt {1} ein",
+    "js.asking_shell": "Frage EDSM: {0}–{1} Lj um {2}…",
+    "js.edsm_busy_retry": "EDSM ist ausgelastet ({0}); gleich neuer Versuch…",
+    "js.edsm_busy": "EDSM ist ausgelastet oder offline ({0}). Bisherige Funde werden gezeigt; versuch es in einer Minute erneut."
   }
 }
