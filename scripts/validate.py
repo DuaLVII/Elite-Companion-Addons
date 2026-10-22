@@ -1,16 +1,5 @@
 #!/usr/bin/env python3
-"""
-Checks every addon in addons/ before it can be merged (run by GitHub Actions on each pull request, and by hand:
-`python scripts/validate.py`). Exit code 1 if anything is wrong, with a list of what and where.
 
-What it checks:
-  * the folder layout and file types, and sizes
-  * addon.json: valid, the required fields, a sensible version, only the web sites the app allows
-  * module.xml: well-formed, and SAFE. XAML can do more than draw things (create arbitrary .NET objects, call methods,
-    load files or web pages), so only the WPF presentation namespace, x: and the app's own controls are allowed, and
-    the elements and attributes that can run code or reach outside are refused.
-  * lang/*.json: valid, string values only
-"""
 import json, os, re, sys
 import xml.etree.ElementTree as ET
 
@@ -95,8 +84,10 @@ def check_xaml(path, problems, rel):
                 problems.append(f"{rel}: x:{alocal}=\"…\" isn't allowed in addons")
             if alocal in EVENTS or (alocal.endswith("Changed") and ans == ""):
                 problems.append(f"{rel}: event handler {alocal}=\"…\" isn't allowed (use Tag=\"name\" and on(\"click:name\") in script.js)")
+            if local == "ResourceDictionary" and alocal == "Source":
+                problems.append(f"{rel}: ResourceDictionary Source isn't allowed (it would load XAML that isn't checked)")
             v = value.strip().lower()
-            if v.startswith(("http:", "https:", "file:", "pack:", "ftp:", "\\\\")) or re.match(r"^[a-z]:[\\/]", v):
+            if v.startswith(("http:", "https:", "file:", "pack:", "ftp:", "\\\\")) or re.match(r"^[a-z]:[\\/]", v) or "../" in v or "..\\" in v:
                 problems.append(f"{rel}: {alocal}=\"{value}\": addons can't load files or web addresses")
 
 
