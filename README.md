@@ -24,7 +24,8 @@ Found a problem with an addon? [Open an issue](../../issues/new/choose).
 
 ## Making your own
 
-See **[CONTRIBUTING.md](CONTRIBUTING.md)**. In short: copy [`template/`](template), make it yours, try it in the app,
+The **[addon guide](docs/README.md)** covers everything: a first addon in ten minutes, the look, the script, journal
+events, charts, languages, recipes and the safety rules. To publish yours, see **[CONTRIBUTING.md](CONTRIBUTING.md)**. In short: copy [`template/`](template), make it yours, try it in the app,
 then send a pull request adding it as `addons/<YourAddonId>/`. The full guide to what addons can do is the
 `Addons\README.md` that comes with the app.
 
@@ -38,6 +39,7 @@ addons/<Id>/          one folder per addon (the folder name is its id)
   lang/en.json …      its texts in each language (optional)
   preview.png         a screenshot for the gallery (optional, ~600 × 340)
 template/             a starting point to copy
+docs/                 the addon guide
 (index.json)          the list the app reads: built after every merge and published on the "gallery" release
 scripts/validate.py   the safety and format checks (runs on every pull request)
 scripts/build_index.py  builds index.json (runs after every merge)

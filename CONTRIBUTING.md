@@ -8,7 +8,7 @@ Thanks for making something! Here's how to get it in.
    folder name becomes your addon's **id**: letters, digits, `-` and `_`, starting with a letter (e.g. `MiningLog`).
    Pick something that's unlikely to clash with someone else's.
 2. Edit `addon.json`, `module.xml` and `script.js`. Save while the app is running and the module reloads straight away;
-   mistakes show in orange inside it. The app's `Addons\README.md` explains everything addons can do, and the addons
+   mistakes show in orange inside it. The **[addon guide](docs/README.md)** explains everything addons can do, and the addons
    that come with the app are good examples to copy from.
 3. Use it for a while in real play.
 
