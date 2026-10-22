@@ -1,0 +1,29 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Pasajeros",
+    "addon.description": "Tu manifiesto de cabinas: cada grupo de pasajeros a bordo con VIP y pasajeros buscados marcados, su destino, el tiempo que queda y lo que pagan, además de tus cabinas.",
+    "ui.aboard": "A BORDO",
+    "ui.vips": "VIP",
+    "ui.wanted": "BUSCADOS",
+    "ui.manifest": "MANIFIESTO DE CABINAS",
+    "ui.vip": "VIP",
+    "ui.wanted_chip": "BUSCADO",
+    "js.overdue": "vencido",
+    "js.d_h": "{0} d {1} h",
+    "js.h_m": "{0} h {1} min",
+    "js.m": "{0} min",
+    "js.passengers": "Pasajeros",
+    "js.wanted_aboard": "⚠ PASAJEROS BUSCADOS A BORDO · evita los escaneos de seguridad",
+    "js.destination_unknown": "destino no está en los diarios recientes",
+    "js.empty": "No hay pasajeros a bordo. Las misiones de pasajeros están en el tablón de misiones de la estación, en la sala de pasajeros.",
+    "js.cabins": "Cabinas: {0}",
+    "js.cabin_economy": "Económica",
+    "js.cabin_business": "Business",
+    "js.cabin_first": "Primera",
+    "js.cabin_luxury": "Lujo",
+    "js.wanted_note": "Pasajeros buscados a bordo: un escaneo de la seguridad de la estación o del sistema puede costarte una multa.",
+    "js.vip_note": "VIP a bordo: puede que no les guste el daño al casco, las interdicciones o ir a lugares peligrosos."
+  }
+}

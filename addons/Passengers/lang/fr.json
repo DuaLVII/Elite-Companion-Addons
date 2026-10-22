@@ -1,0 +1,29 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Passagers",
+    "addon.description": "Votre manifeste de cabines : chaque groupe de passagers à bord, avec les VIP et passagers recherchés signalés, leur destination, le temps restant et ce qu'ils paient, plus vos cabines.",
+    "ui.aboard": "À BORD",
+    "ui.vips": "VIP",
+    "ui.wanted": "RECHERCHÉS",
+    "ui.manifest": "MANIFESTE DES CABINES",
+    "ui.vip": "VIP",
+    "ui.wanted_chip": "RECHERCHÉ",
+    "js.overdue": "en retard",
+    "js.d_h": "{0} j {1} h",
+    "js.h_m": "{0} h {1} min",
+    "js.m": "{0} min",
+    "js.passengers": "Passagers",
+    "js.wanted_aboard": "⚠ PASSAGERS RECHERCHÉS À BORD · évitez les scans de sécurité",
+    "js.destination_unknown": "destination absente des journaux récents",
+    "js.empty": "Aucun passager à bord. Les missions de passagers sont sur le tableau des missions de la station, dans le salon des passagers.",
+    "js.cabins": "Cabines : {0}",
+    "js.cabin_economy": "Économique",
+    "js.cabin_business": "Affaires",
+    "js.cabin_first": "Première",
+    "js.cabin_luxury": "Luxe",
+    "js.wanted_note": "Passagers recherchés à bord : un scan de la sécurité de la station ou du système peut vous valoir une amende.",
+    "js.vip_note": "VIP à bord : ils risquent de ne pas apprécier les dégâts à la coque, les interdictions ou les destinations dangereuses."
+  }
+}
