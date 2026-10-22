@@ -1,0 +1,37 @@
+name: Publish gallery index
+on:
+  push:
+    branches: [main]
+    paths:
+      - "addons/**"
+      - "scripts/**"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: index
+  cancel-in-progress: false
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check addons
+        run: python scripts/validate.py
+      - name: Build index.json
+        run: python scripts/build_index.py
+        env:
+          GALLERY_REPO: ${{ github.repository }}
+          GALLERY_COMMIT: ${{ github.sha }}
+      - name: Publish to the "gallery" release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view gallery >/dev/null 2>&1 || \
+            gh release create gallery --title "Gallery index" --notes "The list of addons the app's gallery reads. Updated automatically after every merge." --latest=false
+          gh release upload gallery index.json --clobber
