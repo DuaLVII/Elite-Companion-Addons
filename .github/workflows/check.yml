@@ -1,0 +1,19 @@
+# Runs on every pull request (and push): checks every addon is well-formed and safe.
+# A pull request can't be merged while this is red (set "Require status checks" in the branch rules).
+name: Check addons
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check addons
+        run: python scripts/validate.py
