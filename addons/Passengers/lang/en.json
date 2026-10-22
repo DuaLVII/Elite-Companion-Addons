@@ -1,0 +1,29 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Passengers",
+    "addon.description": "Your cabin manifest: every group of passengers aboard with VIPs and wanted passengers flagged, where they're going, how long you've got and what they pay, plus your cabins.",
+    "ui.aboard": "ABOARD",
+    "ui.vips": "VIPS",
+    "ui.wanted": "WANTED",
+    "ui.manifest": "CABIN MANIFEST",
+    "ui.vip": "VIP",
+    "ui.wanted_chip": "WANTED",
+    "js.overdue": "overdue",
+    "js.d_h": "{0}d {1}h",
+    "js.h_m": "{0}h {1}m",
+    "js.m": "{0}m",
+    "js.passengers": "Passengers",
+    "js.wanted_aboard": "⚠ WANTED PASSENGERS ABOARD · keep clear of security scans",
+    "js.destination_unknown": "destination not in recent journals",
+    "js.empty": "No passengers aboard. Passenger missions are on the station's mission board, under Passenger Lounge.",
+    "js.cabins": "Cabins: {0}",
+    "js.cabin_economy": "Economy",
+    "js.cabin_business": "Business",
+    "js.cabin_first": "First",
+    "js.cabin_luxury": "Luxury",
+    "js.wanted_note": "Wanted passengers aboard: being scanned by station or system security can get you fined.",
+    "js.vip_note": "VIPs aboard: they may not like hull damage, interdictions or going somewhere dangerous."
+  }
+}

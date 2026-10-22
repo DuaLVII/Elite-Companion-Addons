@@ -1,0 +1,29 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Cestující",
+    "addon.description": "Váš seznam cestujících: každá skupina na palubě s označenými VIP a hledanými cestujícími, kam letí, kolik zbývá času a kolik platí, plus vaše kabiny.",
+    "ui.aboard": "NA PALUBĚ",
+    "ui.vips": "VIP",
+    "ui.wanted": "HLEDANÍ",
+    "ui.manifest": "SEZNAM CESTUJÍCÍCH",
+    "ui.vip": "VIP",
+    "ui.wanted_chip": "HLEDANÝ",
+    "js.overdue": "po termínu",
+    "js.d_h": "{0} d {1} h",
+    "js.h_m": "{0} h {1} min",
+    "js.m": "{0} min",
+    "js.passengers": "Cestující",
+    "js.wanted_aboard": "⚠ HLEDANÍ CESTUJÍCÍ NA PALUBĚ · vyhněte se bezpečnostním skenům",
+    "js.destination_unknown": "cíl není v nedávných denících",
+    "js.empty": "Žádní cestující na palubě. Mise pro cestující najdete na nástěnce misí stanice v salonku pro cestující.",
+    "js.cabins": "Kabiny: {0}",
+    "js.cabin_economy": "Ekonomická",
+    "js.cabin_business": "Business",
+    "js.cabin_first": "První",
+    "js.cabin_luxury": "Luxusní",
+    "js.wanted_note": "Hledaní cestující na palubě: sken stanice nebo systémové bezpečnosti vám může vynést pokutu.",
+    "js.vip_note": "VIP na palubě: nemusí se jim líbit poškození trupu, interdikce ani cesta na nebezpečná místa."
+  }
+}

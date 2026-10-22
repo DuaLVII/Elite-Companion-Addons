@@ -1,0 +1,87 @@
+<!--
+  Passengers: the cabin manifest. Values come from script.js (set("rows", …) etc.); texts from lang\<language>.json.
+-->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Totals -->
+    <UniformGrid Columns="3" Margin="0,0,0,4">
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.aboard}"/>
+            <TextBlock Style="{StaticResource Value}" FontSize="22" Text="{Binding V[total]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.vips}"/>
+            <TextBlock FontSize="22" Foreground="{StaticResource Purple}" Text="{Binding V[vips]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.wanted}"/>
+            <TextBlock x:Name="WantedCount" FontSize="22" Text="{Binding V[wanted]}">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding V[hasWanted]}" Value="True">
+                                <Setter Property="Foreground" Value="{StaticResource Danger}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </StackPanel>
+    </UniformGrid>
+
+    <TextBlock Style="{StaticResource Label}" Text="{Binding V[cabins]}" TextWrapping="Wrap" Margin="0,0,0,4"/>
+
+    <!-- Heads-ups -->
+    <TextBlock Text="{Binding V[wantedNote]}" TextWrapping="Wrap" FontSize="11.5" FontWeight="SemiBold" Foreground="{StaticResource Danger}" Margin="0,0,0,2"/>
+    <TextBlock Text="{Binding V[vipNote]}" TextWrapping="Wrap" FontSize="11.5" Foreground="{StaticResource Purple}" Margin="0,0,0,4"/>
+
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.manifest}" Margin="0,4,0,2"/>
+    <TextBlock Text="{Binding V[empty]}" FontStyle="Italic" FontSize="12" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+
+    <!-- One row per group of passengers, soonest deadline first -->
+    <ItemsControl ItemsSource="{Binding V[rows]}" MaxHeight="320">
+        <ItemsControl.Template>
+            <ControlTemplate TargetType="ItemsControl">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><ItemsPresenter/></ScrollViewer>
+            </ControlTemplate>
+        </ItemsControl.Template>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Border BorderBrush="{StaticResource PanelBorder}" BorderThickness="0,0,0,1" Padding="0,5,0,5">
+                    <StackPanel>
+                        <DockPanel>
+                            <TextBlock x:Name="Due" DockPanel.Dock="Right" Text="{Binding due}" FontSize="12" Foreground="{StaticResource HudDim}" Margin="8,0,0,0"/>
+                            <Border x:Name="VipChip" DockPanel.Dock="Left" Visibility="Collapsed" BorderBrush="{StaticResource Purple}" BorderThickness="1"
+                                    CornerRadius="2" Padding="5,0,5,1" Margin="0,0,6,0" VerticalAlignment="Center">
+                                <TextBlock Text="{T ui.vip}" FontSize="9.5" FontWeight="Bold" Foreground="{StaticResource Purple}"/>
+                            </Border>
+                            <Border x:Name="WantedChip" DockPanel.Dock="Left" Visibility="Collapsed" BorderBrush="{StaticResource Danger}" BorderThickness="1"
+                                    CornerRadius="2" Padding="5,0,5,1" Margin="0,0,6,0" VerticalAlignment="Center">
+                                <TextBlock Text="{T ui.wanted_chip}" FontSize="9.5" FontWeight="Bold" Foreground="{StaticResource Danger}"/>
+                            </Border>
+                            <TextBlock Text="{Binding who}" FontSize="12.5" FontWeight="SemiBold" Foreground="{StaticResource HudText}" TextTrimming="CharacterEllipsis"/>
+                        </DockPanel>
+                        <DockPanel Margin="0,2,0,0">
+                            <TextBlock DockPanel.Dock="Right" Text="{Binding reward}" FontSize="11.5" Foreground="{StaticResource Good}" Margin="8,0,0,0"/>
+                            <TextBlock Text="{Binding dest}" FontSize="11.5" Foreground="{StaticResource HudDim}" TextTrimming="CharacterEllipsis"/>
+                        </DockPanel>
+                    </StackPanel>
+                </Border>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding vip}" Value="True">
+                        <Setter TargetName="VipChip" Property="Visibility" Value="Visible"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding wanted}" Value="True">
+                        <Setter TargetName="WantedChip" Property="Visibility" Value="Visible"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding soon}" Value="True">
+                        <Setter TargetName="Due" Property="Foreground" Value="{StaticResource Warn}"/>
+                        <Setter TargetName="Due" Property="FontWeight" Value="Bold"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</StackPanel>

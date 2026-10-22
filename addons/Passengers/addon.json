@@ -1,0 +1,10 @@
+{
+  "title": "Passengers",
+  "author": "CMDR DuaLVII",
+  "version": "1.0",
+  "description": "Your cabin manifest: every group of passengers aboard with VIPs and wanted passengers flagged, where they're going, how long you've got and what they pay, plus your cabins.",
+  "category": "Trade, Mining & Missions",
+  "tags": ["passengers", "missions", "cabins"],
+  "web": [],
+  "minAppVersion": "1.0"
+}
