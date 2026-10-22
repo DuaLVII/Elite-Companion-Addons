@@ -1,0 +1,10 @@
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+    <!-- Straight from the game state: -->
+    <TextBlock Style="{StaticResource Value}" FontSize="18" Text="{Binding Game.StarSystem}"/>
+    <!-- From the script: set("jumps", …). {T key} is a text from lang/<language>.json -->
+    <TextBlock Style="{StaticResource Label}">
+        <Run Text="{T ui.jumps_since_start}"/><Run Text="{Binding V[jumps], Mode=OneWay}" Foreground="{StaticResource Hud}"/>
+    </TextBlock>
+</StackPanel>

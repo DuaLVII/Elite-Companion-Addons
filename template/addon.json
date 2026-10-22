@@ -1,0 +1,10 @@
+{
+  // Rename this folder to your addon's id (letters, digits, - and _), then fill these in.
+  "title": "My Module",
+  "author": "CMDR You",
+  "version": "1.0",
+  "description": "What it shows.",
+  "category": "Other",
+  "tags": [],
+  "web": []
+}

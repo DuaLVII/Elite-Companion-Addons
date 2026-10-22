@@ -1,0 +1,10 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Mein Addon",
+    "addon.description": "Was es zeigt, in ein oder zwei Sätzen.",
+    "ui.jumps_since_start": "Sprünge seit App-Start: ",
+    "js.jumps_milestone": "{0} Sprünge!"
+  }
+}

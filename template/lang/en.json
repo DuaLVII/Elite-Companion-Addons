@@ -1,0 +1,10 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "My Addon",
+    "addon.description": "What it shows, in a sentence or two.",
+    "ui.jumps_since_start": "Jumps since the app started: ",
+    "js.jumps_milestone": "{0} jumps!"
+  }
+}
