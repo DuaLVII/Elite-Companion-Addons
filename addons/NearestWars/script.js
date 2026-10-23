@@ -1,11 +1,8 @@
 // Nearest Wars: where the fighting is.
 //
 // Two sources:
-//   EDSM (through the app):  api-v1/sphere-systems with showInformation lists the systems around you with their
-//       controlling faction's state; the ones at war / in civil war (/ elections) are kept, nearest first. Then, for
-//       the nearest few, api-system-v1/factions says which factions are in the conflict and how fresh that is.
-//       It only knows what players have uploaded, and only the controlling faction's state from the first call,
-//       so a war between two smaller factions may only show up in your journals.
+//   Spansh (through the app):  a system search for any faction at war / in civil war / in an election, nearest first,
+//       with the factions involved. It only knows what players have uploaded, so states can be a day or two old.
 //   Your journals:  FSDJump / Location list every conflict in the system you arrive in, exactly: war type, the two
 //       sides, what's at stake and days won. Kept for 7 days as "seen by you".
 
@@ -14,10 +11,10 @@ wantHistory();
 const RADII = [20, 40, 60, 100];
 let opts = store.get("opts", { radius: 40, elections: false, auto: false });
 let seen = store.get("seen", {});            // system → { at, pos, conflicts: [...] }
-let results = store.get("results", null);    // the last EDSM search: { from, at, radius, systems: [...] }
+let results = store.get("results2", null);   // the last Spansh search: { from, at, radius, systems: [...] }
 let here = { system: "", pos: null, conflicts: [] };
 let busy = false, status = "";
-const save = () => { store.set("opts", opts); store.set("seen", seen); store.set("results", results); };
+const save = () => { store.set("opts", opts); store.set("seen", seen); store.set("results2", results); };
 
 const WAR = s => /civil\s*war/i.test(s) ? "civil" : /war/i.test(s) ? "war" : /election/i.test(s) ? "election" : "";
 const wanted = kind => kind === "war" || kind === "civil" || (kind === "election" && opts.elections);
@@ -51,93 +48,61 @@ on("FSDJump", arrived);
 on("Location", arrived);
 on("CarrierJump", arrived);
 
-// ---- EDSM: the nearest ones ----
-
-// EDSM's big "systems within N ly" answers can make it give up (503 Service Unavailable), so the search goes out in
-// shells: 0–15 ly, 15–25, 25–35… Each answer is small, results show as they come, and it stops once it has plenty.
-// A shell that fails is tried again after a pause, then split in two; if EDSM is still busy, what's found so far stays.
-const ENOUGH = 12;
-let job = null;       // { from, shells: [[min, max]], found: [], checked, tries, retryAt }
+// ---- Spansh: the nearest ones ----
+//
+// Spansh's system search can filter on the state of *any* faction in a system (not just the controlling one), sorted
+// by distance from you, and its answer already says who's in what state. It needs a POST, which addons can make with
+// web.spanshSearch (Elite Companion 1.1 and newer).
 
 function search() {
     const from = here.system || game.StarSystem;
     if (!from || from === "—") { status = tr("js.where_unknown", "Your location isn't known yet: jump or log in first."); show(); return; }
+    if (typeof web.spanshSearch !== "function") { status = tr("js.needs_app", "This needs a newer Elite Companion (one with Spansh searches). Update the app, then try again."); show(); return; }
     if (busy) return;
-    const shells = [];
-    for (let r = 0; r < opts.radius; ) { const next = Math.min(opts.radius, r === 0 ? 15 : r + 10); shells.push([r, next]); r = next; }
-    job = { from, shells, found: [], checked: 0, tries: 0, retryAt: 0 };
-    results = { from, at: Date.now(), radius: opts.radius, checked: 0, systems: [] };
     busy = true;
-    nextShell();
-}
-
-function nextShell() {
-    if (!job) return;
-    if (job.shells.length === 0 || job.found.length >= ENOUGH) { finish(""); return; }
-    const [min, max] = job.shells[0];
-    status = tr("js.asking_shell", "Asking EDSM: {0}–{1} ly from {2}…", min, max, job.from);
+    status = tr("js.asking_spansh", "Asking Spansh for wars within {0} ly of {1}…", opts.radius, from);
     show();
-    const mine = job;
-    web.edsm("api-v1/sphere-systems", { systemName: job.from, minRadius: min, radius: max, showInformation: 1 }, (data, error) => {
-        if (mine !== job) return;   // a newer search started
-        if (error || !Array.isArray(data)) {
-            if (!error && job.checked === 0 && min === 0) { finish(tr("js.edsm_unknown", "EDSM doesn't know {0} yet.", job.from)); return; }
-            job.tries++;
-            if (job.tries === 1) { job.retryAt = Date.now() + 6000; status = tr("js.edsm_busy_retry", "EDSM is busy ({0}); trying again in a moment…", error || "?"); show(); return; }
-            if (job.tries === 2 && max - min > 5) {
-                const mid = Math.round((min + max) / 2);
-                job.shells.splice(0, 1, [min, mid], [mid, max]);
-                job.retryAt = Date.now() + 6000; show(); return;
+    const radius = opts.radius;
+    web.spanshSearch("systems", {
+        filters: {
+            minor_faction_presences: [{ state: { value: ["War", "Civil War", "Election"] } }],
+            distance: { min: "0", max: String(radius) },
+        },
+        sort: [{ distance: { direction: "asc" } }],
+        size: 50,
+        page: 0,
+        reference_system: from,
+    }, (data, error) => {
+        busy = false;
+        if (error || !data || !Array.isArray(data.results)) {
+            status = error ? tr("js.spansh_error", "Couldn't search Spansh: {0}", error) : tr("js.spansh_odd", "Spansh's answer wasn't what was expected; try again in a minute.");
+            show(); return;
+        }
+        const systems = [];
+        for (const r of data.results) {
+            const sides = { war: [], civil: [], election: [] };
+            for (const f of r.minor_faction_presences || []) {
+                const states = [f.state].concat((f.active_states || []).map(x => typeof x === "string" ? x : (x && (x.name || x.state)) || ""));
+                const kinds = new Set(states.map(st => WAR(st || "")).filter(Boolean));
+                let inf = Number(f.influence) || 0;
+                if (inf <= 1) inf *= 100;
+                for (const k of kinds) sides[k].push({ name: f.name || "?", inf: Math.round(inf * 10) / 10 });
             }
-            finish(tr("js.edsm_busy", "EDSM is busy or down ({0}). Showing what was found so far; try again in a minute.", error || "?"));
-            return;
+            const kind = sides.war.length ? "war" : sides.civil.length ? "civil" : sides.election.length ? "election" : "";
+            if (!kind) continue;
+            const updated = Date.parse(r.updated_at || "") || 0;
+            systems.push({
+                name: r.name, kind,
+                ly: typeof r.distance === "number" ? r.distance : null,
+                controller: typeof r.controlling_minor_faction === "string" ? r.controlling_minor_faction : "",
+                sides: sides[kind].sort((x, y) => y.inf - x.inf), updated,
+            });
         }
-        job.tries = 0;
-        job.shells.shift();
-        job.checked += data.length;
-        for (const s of data) {
-            const kind = WAR((s.information || {}).factionState || "");
-            if (kind) job.found.push({ name: s.name, ly: typeof s.distance === "number" ? s.distance : null, kind,
-                                       controller: (s.information || {}).faction || "", sides: [], updated: 0 });
-        }
-        job.found.sort((a, b) => (a.ly ?? 1e9) - (b.ly ?? 1e9));
-        results = { from: job.from, at: Date.now(), radius: max, checked: job.checked, systems: job.found.slice(0, 25) };
+        systems.sort((x, y) => (x.ly ?? 1e9) - (y.ly ?? 1e9));
+        results = { from, at: Date.now(), radius, checked: data.count || data.results.length, systems: systems.slice(0, 25) };
+        status = "";
         save();
         show();
-        nextShell();
-    });
-}
-
-function finish(message) {
-    busy = false;
-    status = message;
-    if (job) results = { from: job.from, at: Date.now(), radius: results ? results.radius : opts.radius, checked: job.checked, systems: job.found.slice(0, 25) };
-    job = null;
-    save();
-    show();
-    if (results && results.systems.length) details(results, 0);
-}
-
-// retries wait a few seconds (scripts have no timers, so the tick checks)
-on("tick", () => { if (job && job.retryAt && Date.now() >= job.retryAt) { job.retryAt = 0; nextShell(); } });
-
-// Who's fighting: the factions in that state, for the nearest 8 (one request each, the app spaces them out)
-function details(res, i) {
-    if (res !== results || i >= Math.min(8, res.systems.length)) return;
-    const sys = res.systems[i];
-    web.edsm("api-system-v1/factions", { systemName: sys.name }, (data, error) => {
-        if (res !== results) return;
-        if (!error && data && Array.isArray(data.factions)) {
-            const states = f => [f.state || ""].concat((f.activeStates || []).map(x => x.state || ""), (f.pendingStates || []).map(x => x.state || ""));
-            sys.sides = data.factions
-                .filter(f => states(f).some(st => wanted(WAR(st)) && WAR(st) === sys.kind))
-                .sort((a, b) => (b.influence || 0) - (a.influence || 0))
-                .map(f => ({ name: f.name, inf: Math.round((f.influence || 0) * 1000) / 10 }));
-            sys.updated = Math.max(0, ...data.factions.map(f => (f.lastUpdate || 0) * 1000));
-            save();
-            show();
-        }
-        details(res, i + 1);
     });
 }
 
@@ -168,7 +133,7 @@ function show() {
     set("hereRows", here.conflicts.filter(c => wanted(c.kind)).map(c => row(c)));
     set("hereNone", here.system && !here.conflicts.some(c => wanted(c.kind)) ? tr("js.here_none", "No conflicts in {0}.", here.system) : "");
 
-    // Nearest (EDSM)
+    // Nearest (Spansh)
     const list = results ? results.systems.filter(s => wanted(s.kind)) : [];
     set("nearRows", list.map(s => ({
         system: s.name,
@@ -177,11 +142,11 @@ function show() {
         sides: s.sides.length >= 2 ? `${s.sides[0].name} (${s.sides[0].inf}%)  vs  ${s.sides[1].name} (${s.sides[1].inf}%)`
              : s.sides.length === 1 ? `${s.sides[0].name} (${s.sides[0].inf}%)`
              : s.controller ? tr("js.controller", "{0} (controlling faction)", s.controller) : "",
-        updated: s.updated ? tr("js.edsm_updated", "EDSM: updated {0}", ago(s.updated)) : "",
+        updated: s.updated ? tr("js.spansh_updated", "Spansh: updated {0}", ago(s.updated)) : "",
     })));
     set("nearNote", !results ? tr("js.press_search", "Press Search to find the nearest wars around you.")
-        : list.length === 0 ? tr("js.none_found", "No wars found within {0} ly of {1} (EDSM checked {2} systems). Try a bigger radius.", results.radius, results.from, fmt(results.checked || 0))
-        : tr("js.searched", "Around {0}, {1} · EDSM knows what players have uploaded, so states can be a few days old.", results.from, ago(results.at)));
+        : list.length === 0 ? tr("js.none_found2", "No wars found within {0} ly of {1}. Try a bigger radius.", results.radius, results.from)
+        : tr("js.searched2", "Around {0}, {1} · from Spansh, which knows what players have uploaded, so states can be a day or two old.", results.from, ago(results.at)));
 
     // Seen by you (exact, last 7 days), nearest first when positions are known
     const seenRows = Object.keys(seen).filter(s => s !== here.system).flatMap(s => {
