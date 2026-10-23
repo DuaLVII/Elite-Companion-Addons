@@ -27,6 +27,31 @@ web.spansh("api/search", { q: "Borann" }, (data, error) => { … });
 - The answer arrives a moment later: `data` (parsed JSON, or text) and `error` = `null`, or `data` = `null` and
   `error` = what went wrong. If the script was reloaded meanwhile, the callback is skipped.
 
+## Spansh searches
+
+Spansh's search pages (systems, stations, bodies) take a POST with a JSON body, so they have their own call
+(Elite Companion 1.1 and newer; check `typeof web.spanshSearch === "function"` to support older apps):
+
+```js
+web.spanshSearch("systems", {
+    filters: {
+        minor_faction_presences: [{ state: { value: ["War", "Civil War"] } }],   // any faction in that state
+        distance: { min: "0", max: "40" },
+    },
+    sort: [{ distance: { direction: "asc" } }],
+    size: 25, page: 0,
+    reference_system: "Sol",
+}, (data, error) => {
+    if (error) return;
+    for (const s of data.results) { /* s.name, s.distance, s.minor_faction_presences, s.updated_at … */ }
+});
+```
+
+- Kinds: `"systems"`, `"stations"`, `"bodies"`. The body is at most 20 KB.
+- Spansh **ignores filter names it doesn't know** and returns everything, so check the results really match.
+- Faction filters match each faction's `state` (not `active_states`), and names are case-sensitive.
+- The gallery's **Nearest Wars** addon is a complete example.
+
 ## Be polite
 
 The app already queues requests (one at a time per site, at most one a second) and answers the same request within

@@ -21,6 +21,7 @@ that runs longer than 2 seconds is stopped. Each copy of a module runs its own s
 | [`wantHistory()`](05-journal-events.md#history) | also receive the last ~5 weeks of key events at startup |
 | `include("_shared/file.js")` | run one of the app's shared helper scripts first |
 | [`web.edsm(…)` / `web.spansh(…)`](09-online.md) | ask the app to fetch from EDSM / Spansh |
+| [`web.spanshSearch(kind, body, cb)`](09-online.md#spansh-searches) | Spansh's system / station / body search (Elite Companion 1.1+) |
 | [`size()`](07-charts-and-sizes.md#in-the-script) | `"tiny"`, `"compact"`, `"normal"` or `"wide"` |
 | [`tr(key, english, …)` / `lang()`](08-languages.md) | a translated text / the current language |
 
