@@ -1,0 +1,19 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Cykly Powerplay",
+    "addon.description": "Tvé zásluhy týden po týdnu (každý cyklus Powerplay trvá od čtvrtka do čtvrtka, 07:00 UTC): tento cyklus oproti tvému průměru a rekordu, tvé tempo a posledních 12 cyklů jako sloupce. Uchovává se mezi relacemi.",
+    "ui.this_cycle": "TENTO CYKLUS",
+    "ui.average": "PRŮMĚR",
+    "ui.best": "REKORD",
+    "ui.last_12_cycles": "POSLEDNÍCH 12 CYKLŮ",
+    "js.week_of": "týden od ",
+    "js.on_pace_for_about_this_cycle": "Tempem na zhruba {0} v tomto cyklu",
+    "js.above_your_average_already": "▲ už {0} nad tvým průměrem",
+    "js.to_go_to_reach_your_average": "k dosažení průměru chybí {0}",
+    "js.tick_in": "Přepnutí za ",
+    "js.rank": "hodnost ",
+    "js.not_pledged": "Bez přísahy"
+  }
+}

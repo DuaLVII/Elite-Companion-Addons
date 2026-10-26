@@ -1,0 +1,19 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Powerplay-Zyklen",
+    "addon.description": "Deine Verdienste Woche für Woche (jeder Powerplay-Zyklus läuft von Donnerstag bis Donnerstag, 07:00 UTC): dieser Zyklus im Vergleich zu deinem Durchschnitt und Bestwert, dein Tempo und die letzten 12 Zyklen als Balken. Bleibt zwischen Sitzungen erhalten.",
+    "ui.this_cycle": "DIESER ZYKLUS",
+    "ui.average": "DURCHSCHNITT",
+    "ui.best": "BESTWERT",
+    "ui.last_12_cycles": "LETZTE 12 ZYKLEN",
+    "js.week_of": "Woche vom ",
+    "js.on_pace_for_about_this_cycle": "Auf Kurs für etwa {0} in diesem Zyklus",
+    "js.above_your_average_already": "▲ schon {0} über deinem Durchschnitt",
+    "js.to_go_to_reach_your_average": "noch {0} bis zu deinem Durchschnitt",
+    "js.tick_in": "Wechsel in ",
+    "js.rank": "Rang ",
+    "js.not_pledged": "Keine Treue geschworen"
+  }
+}

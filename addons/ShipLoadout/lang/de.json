@@ -1,0 +1,26 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Schiffsausrüstung",
+    "addon.description": "Schiff, Treibstoff, Hülle und Pips wie im eingebauten Schiffsmodul, dazu Schiffswert, Rückkaufkosten (rot, wenn du sie dir nicht leisten kannst) und jedes eingebaute Modul mit Größe, Klasse und Engineering.",
+    "ui.fuel": "TREIBSTOFF",
+    "ui.hull": "HÜLLE",
+    "ui.shields": "SCHILDE  ",
+    "ui.sys": "SYS",
+    "ui.eng": "ANT",
+    "ui.wep": "WAF",
+    "ui.jump": "SPRUNG",
+    "ui.cargo": "FRACHT",
+    "ui.value": "WERT",
+    "ui.rebuy": "RÜCKKAUF",
+    "js.waiting_for_your_loadout_it_s": "Warte auf deine Ausrüstung (sie wird geschrieben, wenn du das Spiel lädst, startest oder Schiffe oder Module wechselst).",
+    "js.insufficient_rebuy_need_0_you_have": "⚠ RÜCKKAUF NICHT GEDECKT · nötig {0}, du hast {1}",
+    "js.no_modules_listed_in_the_last": "In der letzten Ausrüstung sind keine Module aufgeführt.",
+    "js.you_can_t_cover_the_rebuy": "⚠ Du kannst den Rückkauf nicht bezahlen: es fehlen {0}",
+    "js.section_hardpoints": "WAFFENAUFHÄNGUNGEN",
+    "js.section_utility": "WERKZEUGE",
+    "js.section_core": "KERNMODULE",
+    "js.section_optional": "OPTIONALE MODULE"
+  }
+}

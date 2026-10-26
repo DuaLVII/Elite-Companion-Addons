@@ -1,0 +1,21 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Powerplay-Treueschwur",
+    "addon.description": "Deine Macht auf einen Blick: wem du die Treue geschworen hast, Rang, Gesamtverdienste, Verdienste in diesem Zyklus, Dauer des Treueschwurs und ein Countdown zum wöchentlichen Zykluswechsel (Donnerstag 07:00 UTC).",
+    "ui.pledged": "Treue seit ",
+    "ui.rank": "RANG",
+    "ui.this_cycle": "DIESER ZYKLUS",
+    "ui.total_merits": "GESAMTVERDIENSTE",
+    "ui.cycle_tick_in_thu_07_00": "ZYKLUSWECHSEL IN (Do 07:00 UTC)",
+    "js.powerplay_rank_0_1": "★ POWERPLAY-RANG {0} · {1}",
+    "js.not_pledged": "KEINE TREUE GESCHWOREN",
+    "js.pledge_to_a_power_in_the": "Schwöre einer Macht im Spiel die Treue (Powerplay-Bildschirm). Rang und Verdienste erscheinen hier beim nächsten Einloggen oder wenn du die ersten Verdienste erhältst.",
+    "js.last_merits": "Zuletzt: +{0} Verdienste {1}",
+    "js.rank_reached": "Rang {0} erreicht {1}",
+    "js.last_salary": "Letzter Sold {0}",
+    "js.one_day": "1 Tag",
+    "js.days": "{0} Tage"
+  }
+}

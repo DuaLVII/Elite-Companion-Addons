@@ -1,0 +1,12 @@
+{
+  // Example of an addon that uses the internet through the app (see "web" below and web.edsm in script.js)
+  "title": "System Traffic",
+  "category": "Navigation & Travel",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "How busy the system you're in is, from EDSM: commanders passing through today, this week and ever, the ships they flew, and deaths here. Type a system name to look up another.",
+  "view": "module.xml",
+  "script": "script.js",
+  // The sites this addon asks the app to fetch from: "edsm" and/or "spansh"
+  "web": ["edsm"]
+}

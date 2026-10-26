@@ -1,0 +1,26 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Registro de Powerplay",
+    "addon.description": "Todo sobre Powerplay, lo más reciente primero: méritos ganados (y por qué), ascensos de rango, lealtad / abandono / deserción, recogidas y entregas, salario, vales y aceleraciones, más los cambios de ciclo semanales. Se conserva entre sesiones.",
+    "js.new_cycle_week_of": "Nuevo ciclo (semana del {0})",
+    "js.logged_in_rank_merits": "Conectado: {0} · rango {1} · {2} méritos",
+    "js.merits": "{0} méritos · {1}{2} → {3}",
+    "js.rank_with": "Rango {0} con {1}",
+    "js.pledged_to": "Lealtad a {0}",
+    "js.left": "Abandonó {0}",
+    "js.defected_from_to": "Desertó de {0} a {1}",
+    "js.collected": "Recogido {0} × {1}",
+    "js.delivered": "Entregado {0} × {1}{2}",
+    "js.salary": "Salario {0}",
+    "js.vouchers_redeemed": "Vales canjeados{0}",
+    "js.fast_tracked_for": "Acelerado por {0}",
+    "js.nothing_yet_powerplay_events_from_the": "Aún nada. Los eventos de Powerplay de las últimas semanas de diarios aparecen aquí, y los nuevos según ocurren.",
+    "js.events": "{0} eventos",
+    "js.in": " en {0}",
+    "js.for": " para {0}",
+    "js.one_vote": "1 voto",
+    "js.votes": "{0} votos"
+  }
+}

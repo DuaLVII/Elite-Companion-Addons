@@ -1,0 +1,54 @@
+<!--
+  System Traffic: an example of an addon using EDSM through the app (web.edsm in script.js).
+-->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+
+    <!-- Empty = follow the system you're in; type a name to look up another -->
+    <TextBox Style="{StaticResource SearchBox}" Text="{Binding V[query], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+             ToolTip="{T ui.type_a_system_name_leave_empty}" Margin="0,0,0,6"/>
+
+    <TextBlock Style="{StaticResource Value}" FontSize="15" Text="{Binding V[system]}"/>
+    <TextBlock Style="{StaticResource Label}" Text="{Binding V[status]}" TextWrapping="Wrap" Margin="0,0,0,6"/>
+
+    <UniformGrid Columns="3" Margin="0,0,0,6">
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.today}"/>
+            <TextBlock FontSize="22" Foreground="{StaticResource Hud}" Text="{Binding V[day]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.this_week}"/>
+            <TextBlock FontSize="22" Foreground="{StaticResource HudText}" Text="{Binding V[week]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.all_time}"/>
+            <TextBlock FontSize="22" Foreground="{StaticResource HudDim}" Text="{Binding V[total]}"/>
+        </StackPanel>
+    </UniformGrid>
+
+    <TextBlock FontSize="11.5" Foreground="{StaticResource Danger}" Text="{Binding V[deaths]}" Margin="0,0,0,6"/>
+
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.ships_seen_today}"/>
+    <ItemsControl ItemsSource="{Binding V[ships]}" Margin="0,2,0,6">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <DockPanel Margin="0,1,0,1">
+                    <TextBlock DockPanel.Dock="Right" Text="{Binding count}" Foreground="{StaticResource HudText}" FontSize="12" Margin="8,0,0,0"/>
+                    <Grid controls:Responsive.HideBelow="Compact" DockPanel.Dock="Right" Width="70" Height="4" VerticalAlignment="Center" Background="{StaticResource PanelBorder}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding fill}"/>
+                            <ColumnDefinition Width="{Binding rest}"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Background="{StaticResource Hud}"/>
+                    </Grid>
+                    <TextBlock Text="{Binding name}" Foreground="{StaticResource HudText}" FontSize="12" TextTrimming="CharacterEllipsis"/>
+                </DockPanel>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+    <TextBlock Style="{StaticResource Label}" FontSize="10" TextWrapping="Wrap" Text="{Binding V[discovered]}"/>
+    <TextBlock Style="{StaticResource Label}" FontSize="10" TextWrapping="Wrap" Margin="0,4,0,0"
+               Text="{T ui.traffic_from_edsm_edsm_net_commanders}"/>
+</StackPanel>

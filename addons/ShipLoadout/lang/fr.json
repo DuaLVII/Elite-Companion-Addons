@@ -1,0 +1,26 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Équipement du vaisseau",
+    "addon.description": "Vaisseau, carburant, coque et pips comme le module Vaisseau intégré, plus la valeur du vaisseau, le coût de rachat (en rouge si vous ne pouvez pas le payer) et chaque module installé avec sa taille, sa classe et ses modifications.",
+    "ui.fuel": "CARBURANT",
+    "ui.hull": "COQUE",
+    "ui.shields": "BOUCLIERS  ",
+    "ui.sys": "SYS",
+    "ui.eng": "MOT",
+    "ui.wep": "ARM",
+    "ui.jump": "SAUT",
+    "ui.cargo": "CARGAISON",
+    "ui.value": "VALEUR",
+    "ui.rebuy": "RACHAT",
+    "js.waiting_for_your_loadout_it_s": "En attente de votre équipement (il est écrit quand vous chargez le jeu, décollez, ou changez de vaisseau ou de modules).",
+    "js.insufficient_rebuy_need_0_you_have": "⚠ RACHAT INSUFFISANT · il faut {0}, vous avez {1}",
+    "js.no_modules_listed_in_the_last": "Aucun module dans le dernier équipement.",
+    "js.you_can_t_cover_the_rebuy": "⚠ Vous ne pouvez pas couvrir le rachat : il manque {0}",
+    "js.section_hardpoints": "POINTS D'EMPORT",
+    "js.section_utility": "UTILITAIRES",
+    "js.section_core": "MODULES PRINCIPAUX",
+    "js.section_optional": "MODULES OPTIONNELS"
+  }
+}

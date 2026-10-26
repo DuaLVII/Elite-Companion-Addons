@@ -1,0 +1,26 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Powerplay Log",
+    "addon.description": "Everything Powerplay, newest first: merits earned (and what for), rank-ups, pledging / leaving / defecting, collections and deliveries, salary, vouchers and fast-tracks, plus the weekly cycle ticks. Kept between sessions.",
+    "js.new_cycle_week_of": "New cycle (week of {0})",
+    "js.logged_in_rank_merits": "Logged in: {0} · rank {1} · {2} merits",
+    "js.merits": "{0} merits · {1}{2} → {3}",
+    "js.rank_with": "Rank {0} with {1}",
+    "js.pledged_to": "Pledged to {0}",
+    "js.left": "Left {0}",
+    "js.defected_from_to": "Defected from {0} to {1}",
+    "js.collected": "Collected {0} × {1}",
+    "js.delivered": "Delivered {0} × {1}{2}",
+    "js.salary": "Salary {0}",
+    "js.vouchers_redeemed": "Vouchers redeemed{0}",
+    "js.fast_tracked_for": "Fast-tracked for {0}",
+    "js.nothing_yet_powerplay_events_from_the": "Nothing yet. Powerplay events from the last few weeks of journals appear here, and new ones as they happen.",
+    "js.events": "{0} events",
+    "js.in": " in {0}",
+    "js.for": " for {0}",
+    "js.one_vote": "1 vote",
+    "js.votes": "{0} votes"
+  }
+}

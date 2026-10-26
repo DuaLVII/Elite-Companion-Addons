@@ -1,0 +1,26 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Powerplay System",
+    "addon.description": "The Powerplay picture in the system you're in: who controls it and how strongly (Exploited / Fortified / Stronghold), control progress, reinforcement against undermining this cycle, powers fighting over it, and what that means for your power. Plus the last systems you visited.",
+    "ui.control_progress": "CONTROL PROGRESS",
+    "ui.undermining": "undermining ",
+    "ui.reinforcement": "reinforcement ",
+    "ui.recent_systems": "RECENT SYSTEMS",
+    "js.waiting_for_your_location": "Waiting for your location…",
+    "js.no_powerplay_activity_here": "No Powerplay activity here.",
+    "js.pledge_to_a_power_to_see": "Pledge to a power to see what this system means for you.",
+    "js.your_power_s_system_and_it": "Your power's system, and it's being undermined harder than it's reinforced: reinforce it.",
+    "js.your_power_s_system_reinforce_it": "Your power's system: reinforce it to strengthen the hold.",
+    "js.held_by_undermine_it_to_weaken": "Held by {0}: undermine it to weaken their hold.",
+    "js.contested_and_your_power_leads_keep": "Contested, and your power leads: keep acquiring.",
+    "js.contested_leads_your_power_acquire_to": "Contested: {0} leads your power. Acquire to catch up.",
+    "js.being_fought_over_by": "Being fought over by {0}.",
+    "js.your_power_has_a_presence_here": "Your power has a presence here.",
+    "js.pledged": "Pledged: ",
+    "js.not_pledged": "Not pledged",
+    "js.no_controlling_power": "NO CONTROLLING POWER",
+    "js.also_present": "Also present: "
+  }
+}

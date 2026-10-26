@@ -1,0 +1,21 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Allégeance Powerplay",
+    "addon.description": "Votre puissance d'un coup d'œil : à qui vous avez prêté allégeance, rang, mérites totaux, mérites de ce cycle, durée d'allégeance et un compte à rebours jusqu'au changement de cycle hebdomadaire (jeudi 07:00 UTC).",
+    "ui.pledged": "Allégeance depuis ",
+    "ui.rank": "RANG",
+    "ui.this_cycle": "CE CYCLE",
+    "ui.total_merits": "MÉRITES TOTAUX",
+    "ui.cycle_tick_in_thu_07_00": "CHANGEMENT DE CYCLE DANS (jeu 07:00 UTC)",
+    "js.powerplay_rank_0_1": "★ RANG POWERPLAY {0} · {1}",
+    "js.not_pledged": "SANS ALLÉGEANCE",
+    "js.pledge_to_a_power_in_the": "Prêtez allégeance à une puissance en jeu (écran Powerplay). Votre rang et vos mérites apparaîtront ici à votre prochaine connexion, ou dès vos premiers mérites.",
+    "js.last_merits": "Dernier gain : +{0} mérites {1}",
+    "js.rank_reached": "Rang {0} atteint {1}",
+    "js.last_salary": "Dernier salaire {0}",
+    "js.one_day": "1 jour",
+    "js.days": "{0} jours"
+  }
+}

@@ -1,0 +1,41 @@
+<!-- Powerplay Log: one line per Powerplay event, newest first. -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <TextBlock Style="{StaticResource Label}" Text="{Binding V[count]}" HorizontalAlignment="Right"/>
+    <TextBlock Text="{Binding V[empty]}" FontStyle="Italic" FontSize="12" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+
+    <ItemsControl ItemsSource="{Binding V[lines]}" MaxHeight="320">
+        <ItemsControl.Template>
+            <ControlTemplate TargetType="ItemsControl">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><ItemsPresenter/></ScrollViewer>
+            </ControlTemplate>
+        </ItemsControl.Template>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <DockPanel Margin="0,1">
+                    <TextBlock DockPanel.Dock="Left" Text="{Binding when}" FontSize="11" Foreground="{StaticResource HudDim}" Width="82"/>
+                    <TextBlock x:Name="Icon" DockPanel.Dock="Left" Text="{Binding icon}" FontSize="12" Foreground="{StaticResource Purple}" Width="18"/>
+                    <TextBlock x:Name="Text" Text="{Binding text}" FontSize="12" Foreground="{StaticResource HudText}" TextWrapping="Wrap"/>
+                </DockPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding kind}" Value="good"><Setter TargetName="Icon" Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
+                    <DataTrigger Binding="{Binding kind}" Value="warn"><Setter TargetName="Icon" Property="Foreground" Value="{StaticResource Warn}"/></DataTrigger>
+                    <DataTrigger Binding="{Binding kind}" Value="bad">
+                        <Setter TargetName="Icon" Property="Foreground" Value="{StaticResource Danger}"/>
+                        <Setter TargetName="Text" Property="Foreground" Value="{StaticResource Danger}"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding kind}" Value="rank">
+                        <Setter TargetName="Icon" Property="Foreground" Value="{StaticResource Hud}"/>
+                        <Setter TargetName="Text" Property="FontWeight" Value="SemiBold"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding kind}" Value="tick">
+                        <Setter TargetName="Icon" Property="Foreground" Value="{StaticResource Ok}"/>
+                        <Setter TargetName="Text" Property="Foreground" Value="{StaticResource Ok}"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding kind}" Value="dim"><Setter TargetName="Text" Property="Foreground" Value="{StaticResource HudDim}"/></DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</StackPanel>

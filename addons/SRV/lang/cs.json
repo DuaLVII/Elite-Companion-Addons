@@ -1,0 +1,29 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "SRV",
+    "addon.description": "Tvá jízda v SRV: Scarab nebo Scorpion, palivo, náklad, rychlost, ruční brzda / asistent řízení / věž / dálková světla, ujetá vzdálenost, čas venku a každý sebraný materiál s počtem.",
+    "ui.speed": "RYCHLOST",
+    "ui.fuel": "PALIVO",
+    "ui.cargo": "NÁKLAD",
+    "ui.time_out": "ČAS VENKU",
+    "ui.driven": "UJETO",
+    "ui.top_speed": "MAX. RYCHLOST",
+    "js.no_srv_trips_yet": "Zatím žádné jízdy v SRV",
+    "js.srv_destroyed": "⚠ SRV ZNIČENO",
+    "js.0_km_h": "{0} km/h",
+    "js.srv_deployed_you_re_not_in": "SRV vysazeno · nejsi v něm",
+    "js.not_in_the_srv": "Nejsi v SRV",
+    "js.handbrake": "RUČNÍ BRZDA",
+    "js.drive_assist": "ASISTENT ŘÍZENÍ",
+    "js.turret": "VĚŽ",
+    "js.under_ship": "POD LODÍ",
+    "js.high_beam": "DÁLKOVÁ SVĚTLA",
+    "js.shields": "ŠTÍTY",
+    "js.destroyed": " · zničeno",
+    "js.back_aboard": " · zpět na palubě",
+    "js.materials_collected_kinds": "MATERIÁLY · sebráno {0} · {1} druhů",
+    "js.materials_none_yet": "MATERIÁLY · zatím žádné"
+  }
+}

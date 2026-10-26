@@ -1,0 +1,29 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "VRS",
+    "addon.description": "Votre sortie en VRS : Scarab ou Scorpion, carburant, cargaison, vitesse, frein à main / aide à la conduite / tourelle / pleins phares, distance parcourue, temps dehors et chaque matériau collecté avec sa quantité.",
+    "ui.speed": "VITESSE",
+    "ui.fuel": "CARBURANT",
+    "ui.cargo": "CARGAISON",
+    "ui.time_out": "TEMPS DEHORS",
+    "ui.driven": "PARCOURU",
+    "ui.top_speed": "VITESSE MAX.",
+    "js.no_srv_trips_yet": "Aucune sortie en VRS pour l'instant",
+    "js.srv_destroyed": "⚠ VRS DÉTRUIT",
+    "js.0_km_h": "{0} km/h",
+    "js.srv_deployed_you_re_not_in": "VRS déployé · vous n'êtes pas à bord",
+    "js.not_in_the_srv": "Pas dans le VRS",
+    "js.handbrake": "FREIN À MAIN",
+    "js.drive_assist": "AIDE À LA CONDUITE",
+    "js.turret": "TOURELLE",
+    "js.under_ship": "SOUS LE VAISSEAU",
+    "js.high_beam": "PLEINS PHARES",
+    "js.shields": "BOUCLIERS",
+    "js.destroyed": " · détruit",
+    "js.back_aboard": " · de retour à bord",
+    "js.materials_collected_kinds": "MATÉRIAUX · {0} collectés · {1} types",
+    "js.materials_none_yet": "MATÉRIAUX · aucun pour l'instant"
+  }
+}

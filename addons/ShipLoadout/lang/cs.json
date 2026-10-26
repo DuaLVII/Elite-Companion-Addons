@@ -1,0 +1,26 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Výbava lodi",
+    "addon.description": "Loď, palivo, trup a pipy jako vestavěný modul Loď, navíc hodnota lodi, zpětný odkup (červeně, pokud na něj nemáš) a každý namontovaný modul s velikostí, třídou a inženýrskými úpravami.",
+    "ui.fuel": "PALIVO",
+    "ui.hull": "TRUP",
+    "ui.shields": "ŠTÍTY  ",
+    "ui.sys": "SYS",
+    "ui.eng": "MOT",
+    "ui.wep": "ZBR",
+    "ui.jump": "SKOK",
+    "ui.cargo": "NÁKLAD",
+    "ui.value": "HODNOTA",
+    "ui.rebuy": "ZPĚTNÝ ODKUP",
+    "js.waiting_for_your_loadout_it_s": "Čekání na tvou výbavu (zapisuje se při načtení hry, startu nebo změně lodi či modulů).",
+    "js.insufficient_rebuy_need_0_you_have": "⚠ NEDOSTATEK NA ZPĚTNÝ ODKUP · potřebuješ {0}, máš {1}",
+    "js.no_modules_listed_in_the_last": "Poslední výbava neobsahuje žádné moduly.",
+    "js.you_can_t_cover_the_rebuy": "⚠ Na zpětný odkup nemáš: chybí {0}",
+    "js.section_hardpoints": "ZBRANĚ",
+    "js.section_utility": "POMOCNÉ",
+    "js.section_core": "ZÁKLADNÍ",
+    "js.section_optional": "VOLITELNÉ"
+  }
+}

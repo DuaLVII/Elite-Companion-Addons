@@ -1,0 +1,26 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Journal Powerplay",
+    "addon.description": "Tout ce qui concerne Powerplay, le plus récent d'abord : mérites gagnés (et pourquoi), montées de rang, allégeance / départ / défection, collectes et livraisons, salaire, bons et accélérations, plus les changements de cycle hebdomadaires. Conservé entre les sessions.",
+    "js.new_cycle_week_of": "Nouveau cycle (semaine du {0})",
+    "js.logged_in_rank_merits": "Connecté : {0} · rang {1} · {2} mérites",
+    "js.merits": "{0} mérites · {1}{2} → {3}",
+    "js.rank_with": "Rang {0} avec {1}",
+    "js.pledged_to": "Allégeance à {0}",
+    "js.left": "A quitté {0}",
+    "js.defected_from_to": "Défection de {0} vers {1}",
+    "js.collected": "Collecté {0} × {1}",
+    "js.delivered": "Livré {0} × {1}{2}",
+    "js.salary": "Salaire {0}",
+    "js.vouchers_redeemed": "Bons encaissés{0}",
+    "js.fast_tracked_for": "Accéléré pour {0}",
+    "js.nothing_yet_powerplay_events_from_the": "Rien pour l'instant. Les événements Powerplay des dernières semaines apparaissent ici, et les nouveaux au fur et à mesure.",
+    "js.events": "{0} événements",
+    "js.in": " à {0}",
+    "js.for": " pour {0}",
+    "js.one_vote": "1 vote",
+    "js.votes": "{0} votes"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Powerplay-Logbuch",
+    "addon.description": "Alles zu Powerplay, das Neueste zuerst: verdiente Verdienste (und wofür), Rangaufstiege, Treueschwur / Austritt / Überlaufen, Abholungen und Lieferungen, Sold, Gutscheine und Schnellverfahren, dazu die wöchentlichen Zykluswechsel. Bleibt zwischen Sitzungen erhalten.",
+    "js.new_cycle_week_of": "Neuer Zyklus (Woche vom {0})",
+    "js.logged_in_rank_merits": "Eingeloggt: {0} · Rang {1} · {2} Verdienste",
+    "js.merits": "{0} Verdienste · {1}{2} → {3}",
+    "js.rank_with": "Rang {0} bei {1}",
+    "js.pledged_to": "Treue geschworen: {0}",
+    "js.left": "{0} verlassen",
+    "js.defected_from_to": "Übergelaufen von {0} zu {1}",
+    "js.collected": "Abgeholt {0} × {1}",
+    "js.delivered": "Geliefert {0} × {1}{2}",
+    "js.salary": "Sold {0}",
+    "js.vouchers_redeemed": "Gutscheine eingelöst{0}",
+    "js.fast_tracked_for": "Schnellverfahren für {0}",
+    "js.nothing_yet_powerplay_events_from_the": "Noch nichts. Powerplay-Ereignisse aus den Journalen der letzten Wochen erscheinen hier, neue sobald sie passieren.",
+    "js.events": "{0} Ereignisse",
+    "js.in": " in {0}",
+    "js.for": " für {0}",
+    "js.one_vote": "1 Stimme",
+    "js.votes": "{0} Stimmen"
+  }
+}

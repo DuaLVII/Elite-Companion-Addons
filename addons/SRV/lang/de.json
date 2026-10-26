@@ -1,0 +1,29 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "SRV",
+    "addon.description": "Deine SRV-Fahrt: Scarab oder Scorpion, Treibstoff, Fracht, Geschwindigkeit, Handbremse / Fahrhilfe / Geschütz / Fernlicht, gefahrene Strecke, Zeit draußen und jedes gesammelte Material mit Anzahl.",
+    "ui.speed": "GESCHWINDIGKEIT",
+    "ui.fuel": "TREIBSTOFF",
+    "ui.cargo": "FRACHT",
+    "ui.time_out": "ZEIT DRAUSSEN",
+    "ui.driven": "GEFAHREN",
+    "ui.top_speed": "HÖCHSTGESCHW.",
+    "js.no_srv_trips_yet": "Noch keine SRV-Fahrten",
+    "js.srv_destroyed": "⚠ SRV ZERSTÖRT",
+    "js.0_km_h": "{0} km/h",
+    "js.srv_deployed_you_re_not_in": "SRV ausgesetzt · du sitzt nicht drin",
+    "js.not_in_the_srv": "Nicht im SRV",
+    "js.handbrake": "HANDBREMSE",
+    "js.drive_assist": "FAHRHILFE",
+    "js.turret": "GESCHÜTZ",
+    "js.under_ship": "UNTER DEM SCHIFF",
+    "js.high_beam": "FERNLICHT",
+    "js.shields": "SCHILDE",
+    "js.destroyed": " · zerstört",
+    "js.back_aboard": " · wieder an Bord",
+    "js.materials_collected_kinds": "MATERIALIEN · {0} gesammelt · {1} Sorten",
+    "js.materials_none_yet": "MATERIALIEN · noch keine"
+  }
+}

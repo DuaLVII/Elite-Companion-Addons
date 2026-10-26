@@ -1,0 +1,26 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Powerplay-System",
+    "addon.description": "Das Powerplay-Bild im System, in dem du bist: wer es kontrolliert und wie stark (Ausgebeutet / Befestigt / Hochburg), Kontrollfortschritt, Verstärkung gegen Untergrabung in diesem Zyklus, Mächte, die darum kämpfen, und was das für deine Macht bedeutet. Dazu die zuletzt besuchten Systeme.",
+    "ui.control_progress": "KONTROLLFORTSCHRITT",
+    "ui.undermining": "Untergrabung ",
+    "ui.reinforcement": "Verstärkung ",
+    "ui.recent_systems": "LETZTE SYSTEME",
+    "js.waiting_for_your_location": "Warte auf deinen Standort…",
+    "js.no_powerplay_activity_here": "Hier keine Powerplay-Aktivität.",
+    "js.pledge_to_a_power_to_see": "Schwöre einer Macht die Treue, um zu sehen, was dieses System für dich bedeutet.",
+    "js.your_power_s_system_and_it": "System deiner Macht, und es wird stärker untergraben als verstärkt: verstärke es.",
+    "js.your_power_s_system_reinforce_it": "System deiner Macht: verstärke es, um die Kontrolle zu festigen.",
+    "js.held_by_undermine_it_to_weaken": "Gehalten von {0}: untergrabe es, um ihre Kontrolle zu schwächen.",
+    "js.contested_and_your_power_leads_keep": "Umkämpft, und deine Macht führt: weiter erobern.",
+    "js.contested_leads_your_power_acquire_to": "Umkämpft: {0} liegt vor deiner Macht. Erobere, um aufzuholen.",
+    "js.being_fought_over_by": "Umkämpft von {0}.",
+    "js.your_power_has_a_presence_here": "Deine Macht ist hier präsent.",
+    "js.pledged": "Treue: ",
+    "js.not_pledged": "Keine Treue geschworen",
+    "js.no_controlling_power": "KEINE KONTROLLIERENDE MACHT",
+    "js.also_present": "Ebenfalls präsent: "
+  }
+}

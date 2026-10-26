@@ -1,0 +1,26 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Deník Powerplay",
+    "addon.description": "Vše o Powerplay, nejnovější první: získané zásluhy (a za co), povýšení, přísaha / odchod / přeběhnutí, vyzvednutí a dodávky, plat, poukázky a urychlení a k tomu týdenní přepnutí cyklu. Uchovává se mezi relacemi.",
+    "js.new_cycle_week_of": "Nový cyklus (týden od {0})",
+    "js.logged_in_rank_merits": "Přihlášen: {0} · hodnost {1} · {2} zásluh",
+    "js.merits": "{0} zásluh · {1}{2} → {3}",
+    "js.rank_with": "Hodnost {0} u {1}",
+    "js.pledged_to": "Přísaha věrnosti: {0}",
+    "js.left": "Opuštěno: {0}",
+    "js.defected_from_to": "Přeběhnutí od {0} k {1}",
+    "js.collected": "Vyzvednuto {0} × {1}",
+    "js.delivered": "Doručeno {0} × {1}{2}",
+    "js.salary": "Plat {0}",
+    "js.vouchers_redeemed": "Poukázky uplatněny{0}",
+    "js.fast_tracked_for": "Urychleno za {0}",
+    "js.nothing_yet_powerplay_events_from_the": "Zatím nic. Události Powerplay z deníků posledních týdnů se objeví zde a nové hned, jak nastanou.",
+    "js.events": "{0} událostí",
+    "js.in": " v {0}",
+    "js.for": " pro {0}",
+    "js.one_vote": "1 hlas",
+    "js.votes": "{0} hlasů"
+  }
+}

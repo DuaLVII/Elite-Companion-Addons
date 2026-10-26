@@ -1,0 +1,22 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Provoz v systému",
+    "addon.description": "Jak rušno je v systému, kde jsi, podle EDSM: velitelé, kteří prolétli dnes, tento týden a celkem, jejich lodě a úmrtí zde. Napiš název systému a vyhledáš jiný.",
+    "ui.type_a_system_name_leave_empty": "Napiš název systému (nech prázdné, aby se sledoval systém, ve kterém jsi)",
+    "ui.today": "DNES",
+    "ui.this_week": "TENTO TÝDEN",
+    "ui.all_time": "CELKEM",
+    "ui.ships_seen_today": "DNES VIDĚNÉ LODĚ",
+    "ui.traffic_from_edsm_edsm_net_commanders": "Provoz z EDSM (edsm.net): velitelé, kteří sdílejí svůj deník s EDSM.",
+    "js.asking_edsm": "Dotazování EDSM…",
+    "js.couldn_t_reach_edsm": "Nelze se spojit s EDSM: ",
+    "js.edsm_doesn_t_know": "EDSM zatím nezná ",
+    "js.yet": ".",
+    "js.from_edsm": "Z EDSM · ",
+    "js.first_reported_to_edsm_by_cmdr": "Do EDSM poprvé nahlásil CMDR ",
+    "js.today_this_week_ever": "☠ {0} dnes · {1} tento týden · {2} celkem",
+    "js.no_deaths_reported_here": "Žádná nahlášená úmrtí"
+  }
+}

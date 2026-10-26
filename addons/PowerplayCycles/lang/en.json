@@ -1,0 +1,19 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Powerplay Cycles",
+    "addon.description": "Your merits week by week (each Powerplay cycle runs Thursday to Thursday, 07:00 UTC): this cycle against your average and best, the pace you're on, and the last 12 cycles as bars. Kept between sessions.",
+    "ui.this_cycle": "THIS CYCLE",
+    "ui.average": "AVERAGE",
+    "ui.best": "BEST",
+    "ui.last_12_cycles": "LAST 12 CYCLES",
+    "js.week_of": "week of ",
+    "js.on_pace_for_about_this_cycle": "On pace for about {0} this cycle",
+    "js.above_your_average_already": "▲ {0} above your average already",
+    "js.to_go_to_reach_your_average": "{0} to go to reach your average",
+    "js.tick_in": "Tick in ",
+    "js.rank": "rank ",
+    "js.not_pledged": "Not pledged"
+  }
+}

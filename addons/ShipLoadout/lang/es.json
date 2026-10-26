@@ -1,0 +1,26 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Equipamiento de la nave",
+    "addon.description": "Nave, combustible, casco y pips como el módulo Nave integrado, más el valor de la nave, la recompra (en rojo si no te la puedes permitir) y cada módulo instalado con su tamaño, clase e ingeniería.",
+    "ui.fuel": "COMBUSTIBLE",
+    "ui.hull": "CASCO",
+    "ui.shields": "ESCUDOS  ",
+    "ui.sys": "SIS",
+    "ui.eng": "MOT",
+    "ui.wep": "ARM",
+    "ui.jump": "SALTO",
+    "ui.cargo": "CARGA",
+    "ui.value": "VALOR",
+    "ui.rebuy": "RECOMPRA",
+    "js.waiting_for_your_loadout_it_s": "Esperando tu equipamiento (se escribe al cargar el juego, despegar o cambiar de nave o de módulos).",
+    "js.insufficient_rebuy_need_0_you_have": "⚠ RECOMPRA INSUFICIENTE · necesitas {0}, tienes {1}",
+    "js.no_modules_listed_in_the_last": "El último equipamiento no incluye módulos.",
+    "js.you_can_t_cover_the_rebuy": "⚠ No puedes cubrir la recompra: te faltan {0}",
+    "js.section_hardpoints": "ANCLAJES",
+    "js.section_utility": "UTILIDADES",
+    "js.section_core": "PRINCIPALES",
+    "js.section_optional": "OPCIONALES"
+  }
+}

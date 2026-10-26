@@ -1,0 +1,21 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Powerplay Pledge",
+    "addon.description": "Your power at a glance: who you're pledged to, rank, total merits, merits this cycle, time pledged, and a countdown to the weekly cycle tick (Thursday 07:00 UTC).",
+    "ui.pledged": "Pledged ",
+    "ui.rank": "RANK",
+    "ui.this_cycle": "THIS CYCLE",
+    "ui.total_merits": "TOTAL MERITS",
+    "ui.cycle_tick_in_thu_07_00": "CYCLE TICK IN (Thu 07:00 UTC)",
+    "js.powerplay_rank_0_1": "★ POWERPLAY RANK {0} · {1}",
+    "js.not_pledged": "NOT PLEDGED",
+    "js.pledge_to_a_power_in_the": "Pledge to a power in the game (Powerplay screen). Your rank and merits show up here at your next login, or when you first earn merits.",
+    "js.last_merits": "Last: +{0} merits {1}",
+    "js.rank_reached": "Rank {0} reached {1}",
+    "js.last_salary": "Last salary {0}",
+    "js.one_day": "1 day",
+    "js.days": "{0} days"
+  }
+}

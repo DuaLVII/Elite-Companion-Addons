@@ -1,0 +1,22 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "System Traffic",
+    "addon.description": "How busy the system you're in is, from EDSM: commanders passing through today, this week and ever, the ships they flew, and deaths here. Type a system name to look up another.",
+    "ui.type_a_system_name_leave_empty": "Type a system name (leave empty to follow the system you're in)",
+    "ui.today": "TODAY",
+    "ui.this_week": "THIS WEEK",
+    "ui.all_time": "ALL TIME",
+    "ui.ships_seen_today": "SHIPS SEEN TODAY",
+    "ui.traffic_from_edsm_edsm_net_commanders": "Traffic from EDSM (edsm.net): commanders who share their journal with EDSM.",
+    "js.asking_edsm": "Asking EDSM…",
+    "js.couldn_t_reach_edsm": "Couldn't reach EDSM: ",
+    "js.edsm_doesn_t_know": "EDSM doesn't know ",
+    "js.yet": " yet.",
+    "js.from_edsm": "From EDSM · ",
+    "js.first_reported_to_edsm_by_cmdr": "First reported to EDSM by CMDR ",
+    "js.today_this_week_ever": "☠ {0} today · {1} this week · {2} ever",
+    "js.no_deaths_reported_here": "No deaths reported here"
+  }
+}

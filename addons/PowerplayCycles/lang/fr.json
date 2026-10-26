@@ -1,0 +1,19 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Cycles Powerplay",
+    "addon.description": "Vos mérites semaine après semaine (chaque cycle Powerplay va du jeudi au jeudi, 07:00 UTC) : ce cycle comparé à votre moyenne et votre record, votre rythme, et les 12 derniers cycles en barres. Conservé entre les sessions.",
+    "ui.this_cycle": "CE CYCLE",
+    "ui.average": "MOYENNE",
+    "ui.best": "RECORD",
+    "ui.last_12_cycles": "12 DERNIERS CYCLES",
+    "js.week_of": "semaine du ",
+    "js.on_pace_for_about_this_cycle": "En route pour environ {0} ce cycle",
+    "js.above_your_average_already": "▲ déjà {0} au-dessus de votre moyenne",
+    "js.to_go_to_reach_your_average": "encore {0} pour atteindre votre moyenne",
+    "js.tick_in": "Changement dans ",
+    "js.rank": "rang ",
+    "js.not_pledged": "Sans allégeance"
+  }
+}

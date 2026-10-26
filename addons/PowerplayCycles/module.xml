@@ -1,0 +1,56 @@
+<!-- Powerplay Cycles: merits per weekly cycle. -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Right" Style="{StaticResource Label}" Text="{Binding V[tick]}" VerticalAlignment="Center"/>
+        <TextBlock Text="{Binding V[power]}" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource Purple}" TextTrimming="CharacterEllipsis"/>
+    </DockPanel>
+    <!-- how far through the cycle we are -->
+    <ProgressBar Style="{StaticResource Bar}" Value="{Binding V[progress], Mode=OneWay}" Maximum="100" Height="4" Margin="0,4,0,6"/>
+
+    <UniformGrid Columns="3" Margin="0,0,0,4">
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.this_cycle}"/>
+            <TextBlock FontSize="22" Foreground="{StaticResource Hud}" Text="{Binding V[current]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.average}"/>
+            <TextBlock FontSize="22" Foreground="{StaticResource HudText}" Text="{Binding V[avg]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.best}"/>
+            <TextBlock FontSize="22" Foreground="{StaticResource Good}" Text="{Binding V[best]}"/>
+            <TextBlock Style="{StaticResource Label}" FontSize="10" Text="{Binding V[bestWhen]}"/>
+        </StackPanel>
+    </UniformGrid>
+    <TextBlock FontSize="11.5" Foreground="{StaticResource Ok}" Text="{Binding V[pace]}"/>
+    <TextBlock FontSize="11.5" Foreground="{StaticResource HudDim}" Text="{Binding V[vsAvg]}" Margin="0,0,0,6"/>
+
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.last_12_cycles}"/>
+    <ItemsControl ItemsSource="{Binding V[rows]}" Margin="0,2,0,0">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <DockPanel Margin="0,1">
+                    <TextBlock x:Name="Label" DockPanel.Dock="Left" Text="{Binding label}" Width="64" FontSize="11" Foreground="{StaticResource HudDim}"/>
+                    <TextBlock controls:Responsive.HideBelow="Compact" DockPanel.Dock="Right" Text="{Binding rank}" Width="52" TextAlignment="Right" FontSize="10.5" Foreground="{StaticResource HudDim}"/>
+                    <TextBlock DockPanel.Dock="Right" Text="{Binding text}" Width="58" TextAlignment="Right" FontSize="12" Foreground="{StaticResource HudText}"/>
+                    <Grid Height="6" Margin="0,0,6,0" VerticalAlignment="Center" Background="{StaticResource PanelBorder}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding fill}"/>
+                            <ColumnDefinition Width="{Binding rest}"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="Fill" Background="{StaticResource Purple}"/>
+                    </Grid>
+                </DockPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding current}" Value="True">
+                        <Setter TargetName="Fill" Property="Background" Value="{StaticResource Hud}"/>
+                        <Setter TargetName="Label" Property="Foreground" Value="{StaticResource Hud}"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</StackPanel>

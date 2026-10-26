@@ -1,0 +1,26 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Sistema de Powerplay",
+    "addon.description": "El panorama de Powerplay en tu sistema: quién lo controla y con qué fuerza (Explotado / Fortificado / Bastión), progreso del control, refuerzo frente al socavamiento este ciclo, poderes que se lo disputan y lo que significa para tu poder. Además, los últimos sistemas que visitaste.",
+    "ui.control_progress": "PROGRESO DEL CONTROL",
+    "ui.undermining": "socavamiento ",
+    "ui.reinforcement": "refuerzo ",
+    "ui.recent_systems": "SISTEMAS RECIENTES",
+    "js.waiting_for_your_location": "Esperando tu ubicación…",
+    "js.no_powerplay_activity_here": "No hay actividad de Powerplay aquí.",
+    "js.pledge_to_a_power_to_see": "Jura lealtad a un poder para ver qué significa este sistema para ti.",
+    "js.your_power_s_system_and_it": "Sistema de tu poder, y lo socavan más de lo que se refuerza: refuérzalo.",
+    "js.your_power_s_system_reinforce_it": "Sistema de tu poder: refuérzalo para afianzar el control.",
+    "js.held_by_undermine_it_to_weaken": "En manos de {0}: socávalo para debilitar su control.",
+    "js.contested_and_your_power_leads_keep": "En disputa, y tu poder va en cabeza: sigue adquiriendo.",
+    "js.contested_leads_your_power_acquire_to": "En disputa: {0} va por delante de tu poder. Adquiere para alcanzarlo.",
+    "js.being_fought_over_by": "Disputado por {0}.",
+    "js.your_power_has_a_presence_here": "Tu poder tiene presencia aquí.",
+    "js.pledged": "Lealtad: ",
+    "js.not_pledged": "Sin lealtad",
+    "js.no_controlling_power": "NINGÚN PODER AL MANDO",
+    "js.also_present": "También presentes: "
+  }
+}

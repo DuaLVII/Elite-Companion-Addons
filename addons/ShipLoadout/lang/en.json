@@ -1,0 +1,26 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Ship Loadout",
+    "addon.description": "Ship, fuel, hull and pips like the built-in Ship module, plus ship value, rebuy (red if you can't afford it), and every fitted module with its size, class and engineering.",
+    "ui.fuel": "FUEL",
+    "ui.hull": "HULL",
+    "ui.shields": "SHIELDS  ",
+    "ui.sys": "SYS",
+    "ui.eng": "ENG",
+    "ui.wep": "WEP",
+    "ui.jump": "JUMP",
+    "ui.cargo": "CARGO",
+    "ui.value": "VALUE",
+    "ui.rebuy": "REBUY",
+    "js.waiting_for_your_loadout_it_s": "Waiting for your loadout (it's written when you load the game, launch, or change ships or modules).",
+    "js.insufficient_rebuy_need_0_you_have": "⚠ INSUFFICIENT REBUY · need {0}, you have {1}",
+    "js.no_modules_listed_in_the_last": "No modules listed in the last loadout.",
+    "js.you_can_t_cover_the_rebuy": "⚠ You can't cover the rebuy: {0} short",
+    "js.section_hardpoints": "HARDPOINTS",
+    "js.section_utility": "UTILITY",
+    "js.section_core": "CORE",
+    "js.section_optional": "OPTIONAL"
+  }
+}

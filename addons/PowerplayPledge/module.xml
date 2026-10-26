@@ -1,0 +1,36 @@
+<!-- Powerplay Pledge: your power, rank, merits and the weekly cycle. -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <TextBlock Text="{Binding V[power]}" FontSize="18" FontWeight="Bold" Foreground="{StaticResource Purple}" TextTrimming="CharacterEllipsis"/>
+    <TextBlock Style="{StaticResource Label}" Margin="0,0,0,6">
+        <Run Text="{T ui.pledged}"/><Run Text="{Binding V[pledgedFor], Mode=OneWay}" Foreground="{StaticResource HudText}"/>
+    </TextBlock>
+    <TextBlock Text="{Binding V[hint]}" FontSize="11.5" Foreground="{StaticResource HudDim}" TextWrapping="Wrap" FontStyle="Italic"/>
+
+    <UniformGrid Columns="3" Margin="0,2,0,6">
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.rank}"/>
+            <TextBlock FontSize="24" Foreground="{StaticResource Purple}" Text="{Binding V[rank]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.this_cycle}"/>
+            <TextBlock FontSize="24" Foreground="{StaticResource Hud}" Text="{Binding V[cycle]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.total_merits}"/>
+            <TextBlock FontSize="24" Foreground="{StaticResource HudText}" Text="{Binding V[merits]}"/>
+        </StackPanel>
+    </UniformGrid>
+
+    <Border Background="{StaticResource HeaderBack}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="3" Padding="8,5" Margin="0,0,0,6">
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Right" Text="{Binding V[tick]}" FontSize="15" FontWeight="SemiBold" Foreground="{StaticResource Hud}" FontFamily="Consolas"/>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.cycle_tick_in_thu_07_00}" VerticalAlignment="Center"/>
+        </DockPanel>
+    </Border>
+
+    <TextBlock Style="{StaticResource Label}" Text="{Binding V[lastGain]}"/>
+    <TextBlock Style="{StaticResource Label}" Text="{Binding V[rankUp]}"/>
+    <TextBlock Style="{StaticResource Label}" Text="{Binding V[salary]}"/>
+</StackPanel>

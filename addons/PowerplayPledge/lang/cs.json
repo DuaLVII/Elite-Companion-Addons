@@ -1,0 +1,21 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Přísaha Powerplay",
+    "addon.description": "Tvá mocnost na první pohled: komu jsi přísahal věrnost, hodnost, celkové zásluhy, zásluhy v tomto cyklu, doba přísahy a odpočet do týdenního přepnutí cyklu (čtvrtek 07:00 UTC).",
+    "ui.pledged": "Přísaha od ",
+    "ui.rank": "HODNOST",
+    "ui.this_cycle": "TENTO CYKLUS",
+    "ui.total_merits": "CELKOVÉ ZÁSLUHY",
+    "ui.cycle_tick_in_thu_07_00": "PŘEPNUTÍ CYKLU ZA (čt 07:00 UTC)",
+    "js.powerplay_rank_0_1": "★ HODNOST POWERPLAY {0} · {1}",
+    "js.not_pledged": "BEZ PŘÍSAHY",
+    "js.pledge_to_a_power_in_the": "Přísahej věrnost mocnosti ve hře (obrazovka Powerplay). Tvá hodnost a zásluhy se tu objeví při příštím přihlášení nebo až získáš první zásluhy.",
+    "js.last_merits": "Naposledy: +{0} zásluh {1}",
+    "js.rank_reached": "Hodnost {0} dosažena {1}",
+    "js.last_salary": "Poslední plat {0}",
+    "js.one_day": "1 den",
+    "js.days": "{0} dní"
+  }
+}

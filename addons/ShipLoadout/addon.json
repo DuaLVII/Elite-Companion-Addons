@@ -1,0 +1,8 @@
+{
+  // Example addon: the Ship module rebuilt as an addon, plus your full loadout from the journal.
+  "title": "Ship Loadout",
+  "category": "Commander & Ship",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Ship, fuel, hull and pips like the built-in Ship module, plus ship value, rebuy (red if you can't afford it), and every fitted module with its size, class and engineering."
+}

@@ -1,0 +1,22 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Trafic du système",
+    "addon.description": "L'activité du système où vous êtes, d'après EDSM : commandants passés aujourd'hui, cette semaine et depuis toujours, les vaisseaux qu'ils pilotaient et les morts ici. Tapez un nom de système pour en consulter un autre.",
+    "ui.type_a_system_name_leave_empty": "Tapez un nom de système (laissez vide pour suivre le système où vous êtes)",
+    "ui.today": "AUJOURD'HUI",
+    "ui.this_week": "CETTE SEMAINE",
+    "ui.all_time": "DEPUIS TOUJOURS",
+    "ui.ships_seen_today": "VAISSEAUX VUS AUJOURD'HUI",
+    "ui.traffic_from_edsm_edsm_net_commanders": "Trafic d'EDSM (edsm.net) : commandants qui partagent leur journal avec EDSM.",
+    "js.asking_edsm": "Interrogation d'EDSM…",
+    "js.couldn_t_reach_edsm": "Impossible de joindre EDSM : ",
+    "js.edsm_doesn_t_know": "EDSM ne connaît pas encore ",
+    "js.yet": ".",
+    "js.from_edsm": "D'après EDSM · ",
+    "js.first_reported_to_edsm_by_cmdr": "Signalé en premier à EDSM par le CMDT ",
+    "js.today_this_week_ever": "☠ {0} aujourd'hui · {1} cette semaine · {2} au total",
+    "js.no_deaths_reported_here": "Aucun décès signalé ici"
+  }
+}

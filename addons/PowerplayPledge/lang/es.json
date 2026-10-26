@@ -1,0 +1,21 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Lealtad de Powerplay",
+    "addon.description": "Tu poder de un vistazo: a quién has jurado lealtad, rango, méritos totales, méritos de este ciclo, tiempo de lealtad y una cuenta atrás hasta el cambio de ciclo semanal (jueves 07:00 UTC).",
+    "ui.pledged": "Leal desde ",
+    "ui.rank": "RANGO",
+    "ui.this_cycle": "ESTE CICLO",
+    "ui.total_merits": "MÉRITOS TOTALES",
+    "ui.cycle_tick_in_thu_07_00": "CAMBIO DE CICLO EN (jue 07:00 UTC)",
+    "js.powerplay_rank_0_1": "★ RANGO DE POWERPLAY {0} · {1}",
+    "js.not_pledged": "SIN LEALTAD",
+    "js.pledge_to_a_power_in_the": "Jura lealtad a un poder en el juego (pantalla de Powerplay). Tu rango y méritos aparecerán aquí en tu próximo inicio de sesión o cuando ganes tus primeros méritos.",
+    "js.last_merits": "Último: +{0} méritos {1}",
+    "js.rank_reached": "Rango {0} alcanzado {1}",
+    "js.last_salary": "Último salario {0}",
+    "js.one_day": "1 día",
+    "js.days": "{0} días"
+  }
+}

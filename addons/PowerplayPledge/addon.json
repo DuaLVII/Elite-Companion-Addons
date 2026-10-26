@@ -1,0 +1,8 @@
+{
+  // Powerplay set, 1 of 5.
+  "title": "Powerplay Pledge",
+  "category": "Powerplay",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Your power at a glance: who you're pledged to, rank, total merits, merits this cycle, time pledged, and a countdown to the weekly cycle tick (Thursday 07:00 UTC)."
+}

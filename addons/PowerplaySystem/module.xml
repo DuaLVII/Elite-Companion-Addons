@@ -1,0 +1,99 @@
+<!-- Powerplay System: the system you're in, from your power's point of view. -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+
+    <TextBlock Style="{StaticResource Label}" Text="{Binding V[power]}"/>
+    <TextBlock Style="{StaticResource Value}" FontSize="15" Text="{Binding V[system]}"/>
+    <TextBlock FontSize="13" FontWeight="Bold" Foreground="{StaticResource Purple}" Text="{Binding V[controller]}" TextWrapping="Wrap"/>
+    <TextBlock Style="{StaticResource Label}" Text="{Binding V[state]}" Margin="0,0,0,4"/>
+
+    <!-- What it means for you -->
+    <Border BorderThickness="3,0,0,0" Padding="8,3" Margin="0,2,0,8">
+        <Border.Style>
+            <Style TargetType="Border">
+                <Setter Property="BorderBrush" Value="{StaticResource HudDim}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding V[kind]}" Value="good"><Setter Property="BorderBrush" Value="{StaticResource Good}"/></DataTrigger>
+                    <DataTrigger Binding="{Binding V[kind]}" Value="warn"><Setter Property="BorderBrush" Value="{StaticResource Warn}"/></DataTrigger>
+                    <DataTrigger Binding="{Binding V[kind]}" Value="bad"><Setter Property="BorderBrush" Value="{StaticResource Danger}"/></DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+        <TextBlock Text="{Binding V[verdict]}" FontSize="12" Foreground="{StaticResource HudText}" TextWrapping="Wrap"/>
+    </Border>
+
+    <!-- Control progress (how strong the hold is) -->
+    <StackPanel Margin="0,0,0,6" Visibility="{Binding V[hasControl], Converter={StaticResource BoolToVis}}">
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Right" Text="{Binding V[controlText]}" FontSize="11" Foreground="{StaticResource HudText}"/>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.control_progress}"/>
+        </DockPanel>
+        <ProgressBar Style="{StaticResource Bar}" Value="{Binding V[control], Mode=OneWay}" Maximum="100" Height="6" Margin="0,2,0,0"/>
+    </StackPanel>
+
+    <!-- Reinforcement against undermining this cycle -->
+    <StackPanel Margin="0,0,0,6" Visibility="{Binding V[hasFight], Converter={StaticResource BoolToVis}}">
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Right" FontSize="11" Foreground="{StaticResource Danger}">
+                <Run Text="{T ui.undermining}"/><Run Text="{Binding V[undermine], Mode=OneWay}" FontWeight="SemiBold"/>
+            </TextBlock>
+            <TextBlock FontSize="11" Foreground="{StaticResource Good}">
+                <Run Text="{T ui.reinforcement}"/><Run Text="{Binding V[reinforce], Mode=OneWay}" FontWeight="SemiBold"/>
+            </TextBlock>
+        </DockPanel>
+        <Grid Height="6" Margin="0,2,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{Binding V[rFill]}"/>
+                <ColumnDefinition Width="{Binding V[uFill]}"/>
+            </Grid.ColumnDefinitions>
+            <Border Background="{StaticResource Good}"/>
+            <Border Grid.Column="1" Background="{StaticResource Danger}"/>
+        </Grid>
+    </StackPanel>
+
+    <!-- Powers fighting over it -->
+    <ItemsControl ItemsSource="{Binding V[conflict]}" Margin="0,0,0,4">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <DockPanel Margin="0,1">
+                    <TextBlock DockPanel.Dock="Right" Text="{Binding text}" Width="50" TextAlignment="Right" FontSize="11" Foreground="{StaticResource HudText}"/>
+                    <Grid controls:Responsive.HideBelow="Compact" DockPanel.Dock="Right" Width="90" Height="5" Margin="6,0,0,0" VerticalAlignment="Center" Background="{StaticResource PanelBorder}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding fill}"/>
+                            <ColumnDefinition Width="{Binding rest}"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="Fill" Background="{StaticResource HudDim}"/>
+                    </Grid>
+                    <TextBlock x:Name="Name" Text="{Binding power}" FontSize="12" Foreground="{StaticResource HudText}" TextTrimming="CharacterEllipsis"/>
+                </DockPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding mine}" Value="True">
+                        <Setter TargetName="Fill" Property="Background" Value="{StaticResource Purple}"/>
+                        <Setter TargetName="Name" Property="Foreground" Value="{StaticResource Purple}"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+    <TextBlock Style="{StaticResource Label}" Text="{Binding V[others]}" TextWrapping="Wrap" Margin="0,0,0,8"/>
+
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.recent_systems}"/>
+    <ItemsControl ItemsSource="{Binding V[visited]}" Margin="0,2,0,0">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <DockPanel Margin="0,1">
+                    <TextBlock DockPanel.Dock="Right" Text="{Binding when}" FontSize="10.5" Foreground="{StaticResource HudDim}" Margin="6,0,0,0"/>
+                    <TextBlock x:Name="Sys" DockPanel.Dock="Left" Text="{Binding name}" Width="130" FontSize="12" Foreground="{StaticResource HudText}" TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Text="{Binding what}" FontSize="11" Foreground="{StaticResource HudDim}" TextTrimming="CharacterEllipsis"/>
+                </DockPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding mine}" Value="True">
+                        <Setter TargetName="Sys" Property="Foreground" Value="{StaticResource Purple}"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+</StackPanel>

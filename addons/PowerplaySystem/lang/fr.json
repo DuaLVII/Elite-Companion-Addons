@@ -1,0 +1,26 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Système Powerplay",
+    "addon.description": "La situation Powerplay dans votre système : qui le contrôle et avec quelle force (Exploité / Fortifié / Bastion), progression du contrôle, renforcement contre la sape ce cycle, puissances qui se le disputent et ce que cela signifie pour votre puissance. Plus les derniers systèmes visités.",
+    "ui.control_progress": "PROGRESSION DU CONTRÔLE",
+    "ui.undermining": "sape ",
+    "ui.reinforcement": "renforcement ",
+    "ui.recent_systems": "SYSTÈMES RÉCENTS",
+    "js.waiting_for_your_location": "En attente de votre position…",
+    "js.no_powerplay_activity_here": "Aucune activité Powerplay ici.",
+    "js.pledge_to_a_power_to_see": "Prêtez allégeance à une puissance pour voir ce que ce système signifie pour vous.",
+    "js.your_power_s_system_and_it": "Système de votre puissance, et il est plus sapé que renforcé : renforcez-le.",
+    "js.your_power_s_system_reinforce_it": "Système de votre puissance : renforcez-le pour consolider son emprise.",
+    "js.held_by_undermine_it_to_weaken": "Tenu par {0} : sapez-le pour affaiblir son emprise.",
+    "js.contested_and_your_power_leads_keep": "Disputé, et votre puissance mène : continuez l'acquisition.",
+    "js.contested_leads_your_power_acquire_to": "Disputé : {0} devance votre puissance. Faites de l'acquisition pour rattraper.",
+    "js.being_fought_over_by": "Disputé par {0}.",
+    "js.your_power_has_a_presence_here": "Votre puissance est présente ici.",
+    "js.pledged": "Allégeance : ",
+    "js.not_pledged": "Sans allégeance",
+    "js.no_controlling_power": "AUCUNE PUISSANCE DOMINANTE",
+    "js.also_present": "Également présentes : "
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Systém Powerplay",
+    "addon.description": "Situace Powerplay v systému, kde jsi: kdo ho ovládá a jak silně (Vytěžovaný / Opevněný / Bašta), postup kontroly, posílení proti podkopávání v tomto cyklu, mocnosti, které o něj bojují, a co to znamená pro tvou mocnost. K tomu poslední navštívené systémy.",
+    "ui.control_progress": "POSTUP KONTROLY",
+    "ui.undermining": "podkopávání ",
+    "ui.reinforcement": "posílení ",
+    "ui.recent_systems": "POSLEDNÍ SYSTÉMY",
+    "js.waiting_for_your_location": "Čekání na tvou polohu…",
+    "js.no_powerplay_activity_here": "Žádná aktivita Powerplay.",
+    "js.pledge_to_a_power_to_see": "Přísahej věrnost mocnosti a uvidíš, co pro tebe tento systém znamená.",
+    "js.your_power_s_system_and_it": "Systém tvé mocnosti a je podkopáván víc, než je posilován: posil ho.",
+    "js.your_power_s_system_reinforce_it": "Systém tvé mocnosti: posil ho a upevni kontrolu.",
+    "js.held_by_undermine_it_to_weaken": "Drží ho {0}: podkopej ho a oslab jejich kontrolu.",
+    "js.contested_and_your_power_leads_keep": "Sporný a tvá mocnost vede: pokračuj v získávání.",
+    "js.contested_leads_your_power_acquire_to": "Sporný: {0} vede před tvou mocností. Získávej, abys ji dohnal.",
+    "js.being_fought_over_by": "Bojují o něj: {0}.",
+    "js.your_power_has_a_presence_here": "Tvá mocnost je tu přítomna.",
+    "js.pledged": "Přísaha: ",
+    "js.not_pledged": "Bez přísahy",
+    "js.no_controlling_power": "ŽÁDNÁ OVLÁDAJÍCÍ MOCNOST",
+    "js.also_present": "Přítomny také: "
+  }
+}
