@@ -1,0 +1,27 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Portanaves",
+    "addon.description": "Tu portanaves de un vistazo: nombre, indicativo, ubicación, estado del salto, saldo, tritio, espacio libre, servicios y acceso de atraque.",
+    "ui.balance": "SALDO",
+    "ui.tritium": "TRITIO",
+    "ui.free_space": "ESPACIO LIBRE",
+    "ui.services": "SERVICIOS",
+    "js.where_you_bought_it": "donde lo compraste",
+    "js.assumed_arrived_after_its_jump": "supuesto: llegó tras su salto",
+    "js.jumping_to_in": "Salta a {0} en {1}",
+    "js.lockdown_jumping_to_in": "BLOQUEO · salta a {0} en {1}",
+    "js.in_hyperspace_to": "En el hiperespacio hacia {0}…",
+    "js.arrived_cooling_down_about": "Llegado · enfriándose (unos {0})",
+    "js.parked_no_jump_booked": "Aparcado · ningún salto programado",
+    "js.no_fleet_carrier_found_yet_open": "Aún no se ha encontrado ningún portanaves. Abre una vez la gestión del portanaves en el juego y aparecerá aquí.",
+    "js.fleet_carrier": "Portanaves",
+    "js.location_unknown": "Ubicación desconocida",
+    "js.docking": "Atraque: {0}{1}",
+    "js.decommissioning_scrapped_refund": "⚠ DESMANTELAMIENTO · se desguaza {0} · reembolso {1}",
+    "js.carrier_management_last_opened": "Gestión del portanaves abierta por última vez {0}",
+    "js.open_carrier_management_in_game_for": "Abre la gestión del portanaves en el juego para ver todos los detalles",
+    "js.notorious_pilots_allowed": " · pilotos notorios permitidos"
+  }
+}

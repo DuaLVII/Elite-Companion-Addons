@@ -1,0 +1,31 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Exobiología",
+    "addon.description": "Seguimiento de muestras: la especie que estás muestreando, muestras tomadas (1–3), distancia a tus muestras anteriores frente a la que necesita ese género, las señales biológicas y géneros del planeta, las muestras sin vender y su valor.",
+    "ui.values_are_learnt_from_your_own": "Los valores se aprenden de tus propias ventas en Vista Genomics (sin incluir bonificaciones de primera pisada). Morir hace perder las muestras sin vender.",
+    "js.no_species_in_progress": "Ninguna especie en curso",
+    "js.use_the_genetic_sampler_on_a": "Usa el muestreador genético en una planta para empezar",
+    "js.sample_0_of_3": "Muestra {0} de 3",
+    "js.0_unfinished_sample_discarded": "{0}: muestra incompleta descartada",
+    "js.0_analysed_1": "✓ {0} analizada{1}",
+    "js.exobiology_data_sold_0": "Datos de exobiología vendidos: {0}",
+    "js.far_enough_for_the_next_0": "✓ Suficientemente lejos para la siguiente muestra de {0}",
+    "js.needs": "necesita {0}",
+    "js.range_unknown_for_this_genus": "distancia desconocida para este género",
+    "js.far_enough_take_the_next_sample": "✓ Suficientemente lejos: toma la siguiente muestra",
+    "js.keep_going_more": "Sigue: {0} más",
+    "js.needs_between_samples": "necesita {0} entre muestras",
+    "js.you_re_on_a_different_body": "Estás en otro cuerpo",
+    "js.distance_shows_when_you_re_on": "La distancia se muestra cuando estás en la superficie",
+    "js.no_biological_signals_known": "no se conocen señales biológicas",
+    "js.unsold": "{0} sin vender · {1}{2}",
+    "js.nothing_unsold": "Nada sin vender",
+    "js.sold_so_far": "Vendido hasta ahora: {0}",
+    "js.biological_signals": "{0} señales biológicas",
+    "js.one_biological_signal": "1 señal biológica",
+    "js.value_unknown": "valor desconocido",
+    "js.not_yet_priced": " + {0} aún sin precio"
+  }
+}

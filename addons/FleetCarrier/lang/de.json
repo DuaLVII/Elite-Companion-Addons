@@ -1,0 +1,27 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Flottenträger",
+    "addon.description": "Dein Träger auf einen Blick: Name, Rufzeichen, Standort, Sprungstatus, Kontostand, Tritium, freier Platz, Dienste und Andockzugang.",
+    "ui.balance": "KONTOSTAND",
+    "ui.tritium": "TRITIUM",
+    "ui.free_space": "FREIER PLATZ",
+    "ui.services": "DIENSTE",
+    "js.where_you_bought_it": "wo du ihn gekauft hast",
+    "js.assumed_arrived_after_its_jump": "angenommen: nach dem Sprung angekommen",
+    "js.jumping_to_in": "Sprung nach {0} in {1}",
+    "js.lockdown_jumping_to_in": "SPERRE · Sprung nach {0} in {1}",
+    "js.in_hyperspace_to": "Im Hyperraum nach {0}…",
+    "js.arrived_cooling_down_about": "Angekommen · Abklingzeit (etwa {0})",
+    "js.parked_no_jump_booked": "Geparkt · kein Sprung gebucht",
+    "js.no_fleet_carrier_found_yet_open": "Noch kein Flottenträger gefunden. Öffne einmal die Trägerverwaltung im Spiel, dann erscheint er hier.",
+    "js.fleet_carrier": "Flottenträger",
+    "js.location_unknown": "Standort unbekannt",
+    "js.docking": "Andocken: {0}{1}",
+    "js.decommissioning_scrapped_refund": "⚠ STILLLEGUNG · verschrottet {0} · Erstattung {1}",
+    "js.carrier_management_last_opened": "Trägerverwaltung zuletzt geöffnet {0}",
+    "js.open_carrier_management_in_game_for": "Öffne die Trägerverwaltung im Spiel für alle Details",
+    "js.notorious_pilots_allowed": " · berüchtigte Piloten erlaubt"
+  }
+}

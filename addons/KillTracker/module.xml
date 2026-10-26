@@ -1,0 +1,248 @@
+<!-- Kill Tracker: kills by type, Powerplay kills by power, filters and shared presets. Buttons call the script with
+     Tag="name" → on("click:name", value => …), where value is the button's CommandParameter. -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+
+    <StackPanel.Resources>
+        <!-- A toggle-looking button: lit when its item's "on" is true -->
+        <Style x:Key="Pick" TargetType="Button" BasedOn="{StaticResource HudButton}">
+            <Setter Property="Margin" Value="0,0,4,4"/>
+            <Setter Property="Padding" Value="7,2"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding on}" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource Hud}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource Hud}"/>
+                    <Setter Property="Background" Value="{StaticResource HudSoft}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <!-- The coloured mark for each kill type -->
+        <Style x:Key="CatDot" TargetType="Border">
+            <Setter Property="Width" Value="8"/>
+            <Setter Property="Height" Value="8"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="{StaticResource HudDim}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding id}" Value="wanted"><Setter Property="Background" Value="{StaticResource Good}"/></DataTrigger>
+                <DataTrigger Binding="{Binding id}" Value="clean"><Setter Property="Background" Value="{StaticResource Danger}"/></DataTrigger>
+                <DataTrigger Binding="{Binding id}" Value="czone"><Setter Property="Background" Value="{StaticResource Warn}"/></DataTrigger>
+                <DataTrigger Binding="{Binding id}" Value="capital"><Setter Property="Background" Value="{StaticResource Purple}"/></DataTrigger>
+                <DataTrigger Binding="{Binding id}" Value="thargoid"><Setter Property="Background" Value="{StaticResource Cyan}"/></DataTrigger>
+                <DataTrigger Binding="{Binding id}" Value="cmdr"><Setter Property="Background" Value="{StaticResource Hud}"/></DataTrigger>
+                <DataTrigger Binding="{Binding id}" Value="foot"><Setter Property="Background" Value="{StaticResource Ok}"/></DataTrigger>
+                <DataTrigger Binding="{Binding cat}" Value="wanted"><Setter Property="Background" Value="{StaticResource Good}"/></DataTrigger>
+                <DataTrigger Binding="{Binding cat}" Value="clean"><Setter Property="Background" Value="{StaticResource Danger}"/></DataTrigger>
+                <DataTrigger Binding="{Binding cat}" Value="czone"><Setter Property="Background" Value="{StaticResource Warn}"/></DataTrigger>
+                <DataTrigger Binding="{Binding cat}" Value="capital"><Setter Property="Background" Value="{StaticResource Purple}"/></DataTrigger>
+                <DataTrigger Binding="{Binding cat}" Value="thargoid"><Setter Property="Background" Value="{StaticResource Cyan}"/></DataTrigger>
+                <DataTrigger Binding="{Binding cat}" Value="cmdr"><Setter Property="Background" Value="{StaticResource Hud}"/></DataTrigger>
+                <DataTrigger Binding="{Binding cat}" Value="foot"><Setter Property="Background" Value="{StaticResource Ok}"/></DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <ItemsPanelTemplate x:Key="Wrap"><WrapPanel/></ItemsPanelTemplate>
+    </StackPanel.Resources>
+
+    <!-- What's shown, and the filter switch -->
+    <DockPanel>
+        <Button DockPanel.Dock="Right" Style="{StaticResource HudButton}" Tag="toggleFilters" Content="{Binding V[filterArrow]}" Padding="7,1"/>
+        <TextBlock Text="{Binding V[summary]}" FontSize="11.5" Foreground="{StaticResource HudDim}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+    </DockPanel>
+
+    <!-- Filters -->
+    <Border Visibility="{Binding V[showFilters], Converter={StaticResource BoolToVis}}" Margin="0,6,0,0" Padding="6"
+            BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="2">
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.period}"/>
+            <ItemsControl ItemsSource="{Binding V[periods]}" ItemsPanel="{StaticResource Wrap}" Margin="0,2,0,4">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Style="{StaticResource Pick}" Tag="period" CommandParameter="{Binding id}" Content="{Binding name}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <DockPanel>
+                <Button DockPanel.Dock="Right" Style="{StaticResource HudButton}" Tag="allTypes" Content="{Binding V[allTypesText]}" Padding="7,0" Margin="0"/>
+                <TextBlock Style="{StaticResource Label}" Text="{T ui.kill_types}"/>
+            </DockPanel>
+            <ItemsControl ItemsSource="{Binding V[types]}" ItemsPanel="{StaticResource Wrap}" Margin="0,2,0,4">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Style="{StaticResource Pick}" Tag="type" CommandParameter="{Binding id}">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Style="{StaticResource CatDot}" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding name}"/>
+                                <TextBlock Text="{Binding count}" Margin="5,0,0,0" Opacity="0.7"/>
+                            </StackPanel>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <Button Tag="pp" Content="{Binding V[ppText]}" HorizontalAlignment="Left" Margin="0,0,0,6">
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource HudButton}">
+                        <Setter Property="Margin" Value="0,0,0,6"/>
+                        <Setter Property="Padding" Value="7,2"/>
+                        <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding V[ppOn]}" Value="True">
+                                <Setter Property="Foreground" Value="{StaticResource Purple}"/>
+                                <Setter Property="BorderBrush" Value="{StaticResource Purple}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <!-- Presets: saved for every Kill Tracker copy -->
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.saved_filters_shared_by_every_kill}"/>
+            <ItemsControl ItemsSource="{Binding V[presets]}" ItemsPanel="{StaticResource Wrap}" Margin="0,2,0,2">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,4,4">
+                            <Button Style="{StaticResource Pick}" Margin="0" Tag="loadPreset" CommandParameter="{Binding name}" Content="{Binding name}" ToolTip="{T ui.use_these_filters_here}"/>
+                            <Button Style="{StaticResource HudButton}" Margin="0" Padding="5,2" Tag="deletePreset" CommandParameter="{Binding name}" Content="✕" ToolTip="{T ui.delete_this_saved_filter}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <DockPanel Margin="0,2,0,0">
+                <Button DockPanel.Dock="Right" Style="{StaticResource HudButton}" Tag="savePreset" Content="{T ui.save_current}" ToolTip="{T ui.save_these_filters_under_this_name}"/>
+                <TextBox Style="{StaticResource SearchBox}" Text="{Binding V[presetName], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="{T ui.name_for_the_current_filters}"/>
+            </DockPanel>
+            <TextBlock Text="{Binding V[presetMsg]}" FontSize="11" Foreground="{StaticResource HudDim}" Margin="0,2,0,0"/>
+
+            <Button Style="{StaticResource HudButton}" HorizontalAlignment="Right" Margin="0,4,0,0" Tag="clearKills" Content="{Binding V[clearText]}"
+                    ToolTip="{T ui.forget_this_copy_s_kill_history}"/>
+        </StackPanel>
+    </Border>
+
+    <!-- Totals -->
+    <UniformGrid Columns="3" Margin="0,8,0,2">
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.kills}"/>
+            <TextBlock FontSize="22" Foreground="{StaticResource Hud}" Text="{Binding V[kills]}"/>
+            <TextBlock FontSize="11" Foreground="{StaticResource HudDim}" Text="{Binding V[rate]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.earned}"/>
+            <TextBlock FontSize="22" Foreground="{StaticResource Good}" Text="{Binding V[credits]}"/>
+            <TextBlock FontSize="11" Foreground="{StaticResource Danger}" Text="{Binding V[fines]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.merits_from_kills}"/>
+            <TextBlock FontSize="22" Foreground="{StaticResource Purple}" Text="{Binding V[merits]}"/>
+            <TextBlock FontSize="11" Foreground="{StaticResource HudDim}" Text="{Binding V[ppKills]}"/>
+        </StackPanel>
+    </UniformGrid>
+
+    <!-- By type (the period's counts; click to switch a type on or off) -->
+    <ItemsControl ItemsSource="{Binding V[types]}" ItemsPanel="{StaticResource Wrap}" Margin="0,4,0,4">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Button Style="{StaticResource Pick}" Tag="type" CommandParameter="{Binding id}" ToolTip="{T ui.show_or_hide_this_kind_of}">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Style="{StaticResource CatDot}" Margin="0,0,5,0"/>
+                        <TextBlock Text="{Binding count}" FontWeight="SemiBold"/>
+                        <TextBlock Text="{Binding name}" Margin="4,0,0,0" Opacity="0.75"/>
+                    </StackPanel>
+                </Button>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+    <!-- Thargoid encounters (hyperdictions / interdictions) in the period -->
+    <DockPanel Margin="0,0,0,6">
+        <DockPanel.Style>
+            <Style TargetType="DockPanel">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding V[encounters]}" Value=""><Setter Property="Visibility" Value="Collapsed"/></DataTrigger>
+                    <DataTrigger Binding="{Binding V[encounters]}" Value="{x:Null}"><Setter Property="Visibility" Value="Collapsed"/></DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </DockPanel.Style>
+        <TextBlock Style="{StaticResource Label}" Text="{T ui.thargoid_encounters}" VerticalAlignment="Center"/>
+        <TextBlock Text="{Binding V[encounters]}" FontSize="12" Foreground="{StaticResource Cyan}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+    </DockPanel>
+
+    <!-- Breakdowns -->
+    <StackPanel Visibility="{Binding V[hasPowers], Converter={StaticResource BoolToVis}}">
+        <TextBlock Style="{StaticResource Label}" Text="{T ui.powerplay_kills_by_power}"/>
+        <ItemsControl ItemsSource="{Binding V[byPower]}" Margin="0,2,0,6">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel Margin="0,1">
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding text}" Width="44" TextAlignment="Right" FontSize="12" Foreground="{StaticResource HudText}"/>
+                        <Grid controls:Responsive.HideBelow="Compact" DockPanel.Dock="Right" Width="80" Height="4" Margin="6,0,0,0" VerticalAlignment="Center" Background="{StaticResource PanelBorder}">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="{Binding fill}"/><ColumnDefinition Width="{Binding rest}"/></Grid.ColumnDefinitions>
+                            <Border Background="{StaticResource Purple}"/>
+                        </Grid>
+                        <TextBlock Text="{Binding name}" FontSize="12" Foreground="{StaticResource HudText}" TextTrimming="CharacterEllipsis"/>
+                    </DockPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
+
+    <UniformGrid Columns="2">
+        <StackPanel Margin="0,0,6,0" Visibility="{Binding V[hasShips], Converter={StaticResource BoolToVis}}">
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.top_ships}"/>
+            <ItemsControl ItemsSource="{Binding V[topShips]}" Margin="0,2,0,6">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel Margin="0,1">
+                            <TextBlock DockPanel.Dock="Right" Text="{Binding text}" FontSize="12" Foreground="{StaticResource HudText}" Margin="4,0,0,0"/>
+                            <TextBlock Text="{Binding name}" FontSize="12" Foreground="{StaticResource HudDim}" TextTrimming="CharacterEllipsis"/>
+                        </DockPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+        <StackPanel Visibility="{Binding V[hasFactions], Converter={StaticResource BoolToVis}}">
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.top_factions}"/>
+            <ItemsControl ItemsSource="{Binding V[topFactions]}" Margin="0,2,0,6">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel Margin="0,1">
+                            <TextBlock DockPanel.Dock="Right" Text="{Binding text}" FontSize="12" Foreground="{StaticResource HudText}" Margin="4,0,0,0"/>
+                            <TextBlock Text="{Binding name}" FontSize="12" Foreground="{StaticResource HudDim}" TextTrimming="CharacterEllipsis"/>
+                        </DockPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </UniformGrid>
+
+    <!-- Recent kills -->
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.recent}"/>
+    <TextBlock Text="{Binding V[empty]}" FontStyle="Italic" FontSize="11.5" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+    <ItemsControl ItemsSource="{Binding V[recent]}" MaxHeight="240">
+        <ItemsControl.Template>
+            <ControlTemplate TargetType="ItemsControl">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><ItemsPresenter/></ScrollViewer>
+            </ControlTemplate>
+        </ItemsControl.Template>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <DockPanel Margin="0,2">
+                    <Border DockPanel.Dock="Left" Style="{StaticResource CatDot}" Margin="0,0,6,0" ToolTip="{Binding type}"/>
+                    <TextBlock DockPanel.Dock="Left" Text="{Binding when}" Width="78" FontSize="11" Foreground="{StaticResource HudDim}" VerticalAlignment="Center"/>
+                    <StackPanel DockPanel.Dock="Right" Margin="6,0,0,0">
+                        <TextBlock Text="{Binding reward}" FontSize="11.5" Foreground="{StaticResource Good}" HorizontalAlignment="Right"/>
+                        <TextBlock Text="{Binding merits}" FontSize="11" Foreground="{StaticResource Purple}" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="{Binding what}" FontSize="12" Foreground="{StaticResource HudText}" TextTrimming="CharacterEllipsis"/>
+                        <TextBlock FontSize="11" Foreground="{StaticResource HudDim}" TextTrimming="CharacterEllipsis">
+                            <Run Text="{Binding type, Mode=OneWay}"/><Run Text="  "/><Run Text="{Binding power, Mode=OneWay}" Foreground="{StaticResource Purple}"/><Run Text="  "/><Run Text="{Binding system, Mode=OneWay}"/>
+                        </TextBlock>
+                    </StackPanel>
+                </DockPanel>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</StackPanel>

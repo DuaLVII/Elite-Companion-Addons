@@ -1,0 +1,31 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Exobiologie",
+    "addon.description": "Suivi des échantillons : l'espèce échantillonnée, les échantillons pris (1–3), la distance depuis vos échantillons précédents comparée à celle exigée par le genre, les signaux biologiques et genres de la planète, les échantillons non vendus et leur valeur.",
+    "ui.values_are_learnt_from_your_own": "Les valeurs viennent de vos propres ventes à Vista Genomics (bonus de premier pas non compris). Mourir fait perdre les échantillons non vendus.",
+    "js.no_species_in_progress": "Aucune espèce en cours",
+    "js.use_the_genetic_sampler_on_a": "Utilisez l'échantillonneur génétique sur une plante pour commencer",
+    "js.sample_0_of_3": "Échantillon {0} sur 3",
+    "js.0_unfinished_sample_discarded": "{0} : échantillon inachevé abandonné",
+    "js.0_analysed_1": "✓ {0} analysé{1}",
+    "js.exobiology_data_sold_0": "Données d'exobiologie vendues : {0}",
+    "js.far_enough_for_the_next_0": "✓ Assez loin pour le prochain échantillon de {0}",
+    "js.needs": "il faut {0}",
+    "js.range_unknown_for_this_genus": "distance inconnue pour ce genre",
+    "js.far_enough_take_the_next_sample": "✓ Assez loin : prenez l'échantillon suivant",
+    "js.keep_going_more": "Continuez : encore {0}",
+    "js.needs_between_samples": "il faut {0} entre les échantillons",
+    "js.you_re_on_a_different_body": "Vous êtes sur un autre corps",
+    "js.distance_shows_when_you_re_on": "La distance s'affiche quand vous êtes à la surface",
+    "js.no_biological_signals_known": "aucun signal biologique connu",
+    "js.unsold": "{0} non vendus · {1}{2}",
+    "js.nothing_unsold": "Rien d'invendu",
+    "js.sold_so_far": "Vendu jusqu'ici : {0}",
+    "js.biological_signals": "{0} signaux biologiques",
+    "js.one_biological_signal": "1 signal biologique",
+    "js.value_unknown": "valeur inconnue",
+    "js.not_yet_priced": " + {0} pas encore estimés"
+  }
+}

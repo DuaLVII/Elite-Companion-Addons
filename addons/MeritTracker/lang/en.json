@@ -1,0 +1,18 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Merits",
+    "addon.description": "Powerplay merits this cycle, today and this session, merits per hour, a graph, what earned them (bounties, deliveries, missions…) and every recent gain with where you were.",
+    "ui.this_cycle": "THIS CYCLE",
+    "ui.today": "TODAY",
+    "ui.session": "SESSION",
+    "ui.rate": "RATE",
+    "ui.this_cycle_by_activity": "THIS CYCLE BY ACTIVITY",
+    "ui.recent": "RECENT",
+    "js.merits_this_cycle": "Merits this cycle",
+    "js.not_pledged": "Not pledged",
+    "js.cycle_ends_in": "Cycle ends in ",
+    "js.no_merits_yet_they_re_picked": "No merits yet. They're picked up from the last few weeks of journals at startup, and live as you earn them."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Méritos",
+    "addon.description": "Méritos de Powerplay de este ciclo, de hoy y de esta sesión, méritos por hora, un gráfico, qué los generó (recompensas, entregas, misiones…) y cada ganancia reciente con dónde estabas.",
+    "ui.this_cycle": "ESTE CICLO",
+    "ui.today": "HOY",
+    "ui.session": "SESIÓN",
+    "ui.rate": "RITMO",
+    "ui.this_cycle_by_activity": "ESTE CICLO POR ACTIVIDAD",
+    "ui.recent": "RECIENTES",
+    "js.merits_this_cycle": "Méritos este ciclo",
+    "js.not_pledged": "Sin lealtad",
+    "js.cycle_ends_in": "El ciclo termina en ",
+    "js.no_merits_yet_they_re_picked": "Aún no hay méritos. Se recogen de los diarios de las últimas semanas al arrancar, y en directo a medida que los ganas."
+  }
+}

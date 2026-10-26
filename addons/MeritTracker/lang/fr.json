@@ -1,0 +1,18 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Mérites",
+    "addon.description": "Mérites Powerplay de ce cycle, d'aujourd'hui et de cette session, mérites par heure, un graphique, ce qui les a rapportés (primes, livraisons, missions…) et chaque gain récent avec l'endroit où vous étiez.",
+    "ui.this_cycle": "CE CYCLE",
+    "ui.today": "AUJOURD'HUI",
+    "ui.session": "SESSION",
+    "ui.rate": "RYTHME",
+    "ui.this_cycle_by_activity": "CE CYCLE PAR ACTIVITÉ",
+    "ui.recent": "RÉCENT",
+    "js.merits_this_cycle": "Mérites de ce cycle",
+    "js.not_pledged": "Sans allégeance",
+    "js.cycle_ends_in": "Fin du cycle dans ",
+    "js.no_merits_yet_they_re_picked": "Aucun mérite pour l'instant. Ils sont lus dans les journaux des dernières semaines au démarrage, puis en direct quand vous les gagnez."
+  }
+}

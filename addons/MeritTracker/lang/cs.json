@@ -1,0 +1,18 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Zásluhy",
+    "addon.description": "Zásluhy v Powerplay za tento cyklus, dnes a v této relaci, zásluhy za hodinu, graf, za co byly získány (odměny, dodávky, mise…) a každý nedávný zisk s místem, kde jsi byl.",
+    "ui.this_cycle": "TENTO CYKLUS",
+    "ui.today": "DNES",
+    "ui.session": "RELACE",
+    "ui.rate": "TEMPO",
+    "ui.this_cycle_by_activity": "TENTO CYKLUS PODLE ČINNOSTI",
+    "ui.recent": "POSLEDNÍ",
+    "js.merits_this_cycle": "Zásluhy v tomto cyklu",
+    "js.not_pledged": "Bez přísahy",
+    "js.cycle_ends_in": "Cyklus končí za ",
+    "js.no_merits_yet_they_re_picked": "Zatím žádné zásluhy. Při spuštění se načtou z deníků posledních týdnů a pak živě, jak je získáváš."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Fleet Carrier",
+    "addon.description": "Your carrier at a glance: name, callsign, where it is, jump status, balance, tritium, free space, services and docking access.",
+    "ui.balance": "BALANCE",
+    "ui.tritium": "TRITIUM",
+    "ui.free_space": "FREE SPACE",
+    "ui.services": "SERVICES",
+    "js.where_you_bought_it": "where you bought it",
+    "js.assumed_arrived_after_its_jump": "assumed: arrived after its jump",
+    "js.jumping_to_in": "Jumping to {0} in {1}",
+    "js.lockdown_jumping_to_in": "LOCKDOWN · jumping to {0} in {1}",
+    "js.in_hyperspace_to": "In hyperspace to {0}…",
+    "js.arrived_cooling_down_about": "Arrived · cooling down (about {0})",
+    "js.parked_no_jump_booked": "Parked · no jump booked",
+    "js.no_fleet_carrier_found_yet_open": "No fleet carrier found yet. Open carrier management in the game once and it'll appear here.",
+    "js.fleet_carrier": "Fleet carrier",
+    "js.location_unknown": "Location unknown",
+    "js.docking": "Docking: {0}{1}",
+    "js.decommissioning_scrapped_refund": "⚠ DECOMMISSIONING · scrapped {0} · refund {1}",
+    "js.carrier_management_last_opened": "Carrier management last opened {0}",
+    "js.open_carrier_management_in_game_for": "Open carrier management in game for full details",
+    "js.notorious_pilots_allowed": " · notorious pilots allowed"
+  }
+}

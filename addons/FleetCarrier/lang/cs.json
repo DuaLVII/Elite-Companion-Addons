@@ -1,0 +1,27 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Nosič flotily",
+    "addon.description": "Tvůj nosič na první pohled: jméno, volací znak, poloha, stav skoku, zůstatek, tritium, volné místo, služby a přístup k přistání.",
+    "ui.balance": "ZŮSTATEK",
+    "ui.tritium": "TRITIUM",
+    "ui.free_space": "VOLNÉ MÍSTO",
+    "ui.services": "SLUŽBY",
+    "js.where_you_bought_it": "tam, kde jsi ho koupil",
+    "js.assumed_arrived_after_its_jump": "předpoklad: dorazil po skoku",
+    "js.jumping_to_in": "Skok do {0} za {1}",
+    "js.lockdown_jumping_to_in": "UZAMČENÍ · skok do {0} za {1}",
+    "js.in_hyperspace_to": "V hyperprostoru do {0}…",
+    "js.arrived_cooling_down_about": "Dorazil · chladne (asi {0})",
+    "js.parked_no_jump_booked": "Zaparkován · žádný naplánovaný skok",
+    "js.no_fleet_carrier_found_yet_open": "Zatím nebyl nalezen žádný nosič flotily. Jednou otevři ve hře správu nosiče a objeví se zde.",
+    "js.fleet_carrier": "Nosič flotily",
+    "js.location_unknown": "Poloha neznámá",
+    "js.docking": "Přistání: {0}{1}",
+    "js.decommissioning_scrapped_refund": "⚠ VYŘAZOVÁNÍ · sešrotování {0} · vrácení {1}",
+    "js.carrier_management_last_opened": "Správa nosiče naposledy otevřena {0}",
+    "js.open_carrier_management_in_game_for": "Pro všechny podrobnosti otevři ve hře správu nosiče",
+    "js.notorious_pilots_allowed": " · notoričtí piloti povoleni"
+  }
+}

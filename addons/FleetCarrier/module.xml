@@ -1,0 +1,57 @@
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <TextBlock Text="{Binding V[empty]}" FontStyle="Italic" FontSize="12" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+
+    <!-- Name and callsign -->
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Right" Text="{Binding V[callsign]}" Foreground="{StaticResource Hud}" FontSize="14"
+                   FontWeight="Bold" VerticalAlignment="Center" Margin="8,0,0,0"/>
+        <TextBlock Style="{StaticResource Value}" FontSize="18" Text="{Binding V[name]}"/>
+    </DockPanel>
+
+    <!-- Where it is -->
+    <TextBlock FontSize="13" Foreground="{StaticResource HudText}" TextTrimming="CharacterEllipsis" Margin="0,2,0,0">
+        <Run Text="◎ " Foreground="{StaticResource Hud}"/><Run Text="{Binding V[location], Mode=OneWay}"/>
+        <Run Text="{Binding V[locationNote], Mode=OneWay}" Foreground="{StaticResource HudDim}" FontSize="11"/>
+    </TextBlock>
+
+    <!-- Jump status, coloured by phase -->
+    <TextBlock Text="{Binding V[status]}" FontSize="12.5" FontWeight="SemiBold" Margin="0,4,0,6" TextWrapping="Wrap">
+        <TextBlock.Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding V[phase]}" Value="jump"><Setter Property="Foreground" Value="{StaticResource Hud}"/></DataTrigger>
+                    <DataTrigger Binding="{Binding V[phase]}" Value="lockdown"><Setter Property="Foreground" Value="{StaticResource Danger}"/></DataTrigger>
+                    <DataTrigger Binding="{Binding V[phase]}" Value="transit"><Setter Property="Foreground" Value="{StaticResource Purple}"/></DataTrigger>
+                    <DataTrigger Binding="{Binding V[phase]}" Value="cooldown"><Setter Property="Foreground" Value="{StaticResource Ok}"/></DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </TextBlock.Style>
+    </TextBlock>
+
+    <!-- Numbers -->
+    <UniformGrid Columns="4">
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.balance}"/>
+            <TextBlock FontSize="14" FontWeight="SemiBold" Foreground="{StaticResource Good}" Text="{Binding V[balance]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.tritium}"/>
+            <TextBlock FontSize="14" FontWeight="SemiBold" Foreground="{StaticResource Ok}" Text="{Binding V[fuel]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.free_space}"/>
+            <TextBlock Style="{StaticResource Value}" FontSize="14" Text="{Binding V[free]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.services}"/>
+            <TextBlock Style="{StaticResource Value}" FontSize="14" Text="{Binding V[services]}"/>
+        </StackPanel>
+    </UniformGrid>
+
+    <TextBlock Style="{StaticResource Label}" Text="{Binding V[access]}" Margin="0,6,0,0"/>
+    <TextBlock Text="{Binding V[decom]}" Foreground="{StaticResource Danger}" FontWeight="Bold" FontSize="12" TextWrapping="Wrap" Margin="0,4,0,0"/>
+    <TextBlock Style="{StaticResource Label}" FontSize="10" Text="{Binding V[updated]}" Margin="0,6,0,0"/>
+</StackPanel>

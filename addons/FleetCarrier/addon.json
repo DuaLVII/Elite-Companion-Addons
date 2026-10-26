@@ -1,0 +1,9 @@
+{
+  // Fleet carrier set, 1 of 7: the overview. The others: Carrier Jumps, Carrier Tritium, Carrier Finance,
+  // Carrier Services, Carrier Orders, Carrier Log. They share Addons\_shared\carrier.js.
+  "title": "Fleet Carrier",
+  "category": "Fleet Carrier",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Your carrier at a glance: name, callsign, where it is, jump status, balance, tritium, free space, services and docking access."
+}

@@ -1,0 +1,27 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Porte-vaisseaux",
+    "addon.description": "Votre porte-vaisseaux d'un coup d'œil : nom, indicatif, position, état du saut, solde, tritium, espace libre, services et accès d'amarrage.",
+    "ui.balance": "SOLDE",
+    "ui.tritium": "TRITIUM",
+    "ui.free_space": "ESPACE LIBRE",
+    "ui.services": "SERVICES",
+    "js.where_you_bought_it": "là où vous l'avez acheté",
+    "js.assumed_arrived_after_its_jump": "supposé : arrivé après son saut",
+    "js.jumping_to_in": "Saut vers {0} dans {1}",
+    "js.lockdown_jumping_to_in": "VERROUILLAGE · saut vers {0} dans {1}",
+    "js.in_hyperspace_to": "En hyperespace vers {0}…",
+    "js.arrived_cooling_down_about": "Arrivé · en recharge (environ {0})",
+    "js.parked_no_jump_booked": "Stationné · aucun saut programmé",
+    "js.no_fleet_carrier_found_yet_open": "Aucun porte-vaisseaux trouvé pour l'instant. Ouvrez une fois la gestion du porte-vaisseaux en jeu et il apparaîtra ici.",
+    "js.fleet_carrier": "Porte-vaisseaux",
+    "js.location_unknown": "Position inconnue",
+    "js.docking": "Amarrage : {0}{1}",
+    "js.decommissioning_scrapped_refund": "⚠ DÉMANTÈLEMENT · détruit {0} · remboursement {1}",
+    "js.carrier_management_last_opened": "Gestion du porte-vaisseaux ouverte pour la dernière fois {0}",
+    "js.open_carrier_management_in_game_for": "Ouvrez la gestion du porte-vaisseaux en jeu pour tous les détails",
+    "js.notorious_pilots_allowed": " · pilotes notoires autorisés"
+  }
+}

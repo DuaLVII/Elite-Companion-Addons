@@ -1,0 +1,31 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Exobiologie",
+    "addon.description": "Probenverfolgung: die Art, die du beprobst, genommene Proben (1–3), Abstand zu deinen früheren Proben gegenüber dem Abstand, den die Gattung braucht, die biologischen Signale und Gattungen des Planeten, unverkaufte Proben und ihr Wert.",
+    "ui.values_are_learnt_from_your_own": "Werte stammen aus deinen eigenen Verkäufen bei Vista Genomics (ohne Erstbetretungsboni). Beim Tod gehen unverkaufte Proben verloren.",
+    "js.no_species_in_progress": "Keine Art in Arbeit",
+    "js.use_the_genetic_sampler_on_a": "Benutze den genetischen Probennehmer an einer Pflanze, um zu beginnen",
+    "js.sample_0_of_3": "Probe {0} von 3",
+    "js.0_unfinished_sample_discarded": "{0}: unvollständige Probe verworfen",
+    "js.0_analysed_1": "✓ {0} analysiert{1}",
+    "js.exobiology_data_sold_0": "Exobiologie-Daten verkauft: {0}",
+    "js.far_enough_for_the_next_0": "✓ Weit genug für die nächste {0}-Probe",
+    "js.needs": "braucht {0}",
+    "js.range_unknown_for_this_genus": "Abstand für diese Gattung unbekannt",
+    "js.far_enough_take_the_next_sample": "✓ Weit genug: nimm die nächste Probe",
+    "js.keep_going_more": "Weiter: noch {0}",
+    "js.needs_between_samples": "braucht {0} zwischen den Proben",
+    "js.you_re_on_a_different_body": "Du bist auf einem anderen Körper",
+    "js.distance_shows_when_you_re_on": "Der Abstand erscheint, wenn du auf der Oberfläche bist",
+    "js.no_biological_signals_known": "keine biologischen Signale bekannt",
+    "js.unsold": "{0} unverkauft · {1}{2}",
+    "js.nothing_unsold": "Nichts unverkauft",
+    "js.sold_so_far": "Bisher verkauft: {0}",
+    "js.biological_signals": "{0} biologische Signale",
+    "js.one_biological_signal": "1 biologisches Signal",
+    "js.value_unknown": "Wert unbekannt",
+    "js.not_yet_priced": " + {0} noch ohne Preis"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Verdienste",
+    "addon.description": "Powerplay-Verdienste in diesem Zyklus, heute und in dieser Sitzung, Verdienste pro Stunde, ein Diagramm, wofür sie verdient wurden (Kopfgelder, Lieferungen, Missionen…) und jeder letzte Gewinn mit Ort.",
+    "ui.this_cycle": "DIESER ZYKLUS",
+    "ui.today": "HEUTE",
+    "ui.session": "SITZUNG",
+    "ui.rate": "RATE",
+    "ui.this_cycle_by_activity": "DIESER ZYKLUS NACH AKTIVITÄT",
+    "ui.recent": "ZULETZT",
+    "js.merits_this_cycle": "Verdienste in diesem Zyklus",
+    "js.not_pledged": "Keine Treue geschworen",
+    "js.cycle_ends_in": "Zyklus endet in ",
+    "js.no_merits_yet_they_re_picked": "Noch keine Verdienste. Sie werden beim Start aus den Journalen der letzten Wochen gelesen und live erfasst, während du sie verdienst."
+  }
+}

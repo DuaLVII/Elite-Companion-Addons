@@ -1,0 +1,7 @@
+{
+  "title": "Kill Tracker",
+  "category": "Combat",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Every kill sorted into wanted, clean, combat zone, capital ship, Thargoid, commander and on-foot, with Powerplay kills tagged by the victim's power. Filter by type and period, and save filters as presets that every Kill Tracker copy can load."
+}

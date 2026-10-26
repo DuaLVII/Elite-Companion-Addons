@@ -1,0 +1,31 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Exobiologie",
+    "addon.description": "Sledování vzorků: druh, který vzorkuješ, odebrané vzorky (1–3), vzdálenost od předchozích vzorků oproti vzdálenosti, kterou rod vyžaduje, biologické signály a rody planety, neprodané vzorky a jejich hodnota.",
+    "ui.values_are_learnt_from_your_own": "Hodnoty se učí z tvých vlastních prodejů ve Vista Genomics (bez bonusů za první šlápnutí). Smrt znamená ztrátu neprodaných vzorků.",
+    "js.no_species_in_progress": "Žádný rozpracovaný druh",
+    "js.use_the_genetic_sampler_on_a": "Začni použitím genetického vzorkovače na rostlinu",
+    "js.sample_0_of_3": "Vzorek {0} ze 3",
+    "js.0_unfinished_sample_discarded": "{0}: nedokončený vzorek zahozen",
+    "js.0_analysed_1": "✓ {0} analyzováno{1}",
+    "js.exobiology_data_sold_0": "Prodána exobiologická data: {0}",
+    "js.far_enough_for_the_next_0": "✓ Dost daleko pro další vzorek {0}",
+    "js.needs": "potřebuje {0}",
+    "js.range_unknown_for_this_genus": "vzdálenost pro tento rod neznámá",
+    "js.far_enough_take_the_next_sample": "✓ Dost daleko: odeber další vzorek",
+    "js.keep_going_more": "Pokračuj: ještě {0}",
+    "js.needs_between_samples": "potřebuje {0} mezi vzorky",
+    "js.you_re_on_a_different_body": "Jsi na jiném tělese",
+    "js.distance_shows_when_you_re_on": "Vzdálenost se zobrazí, až budeš na povrchu",
+    "js.no_biological_signals_known": "žádné známé biologické signály",
+    "js.unsold": "{0} neprodáno · {1}{2}",
+    "js.nothing_unsold": "Nic neprodaného",
+    "js.sold_so_far": "Zatím prodáno: {0}",
+    "js.biological_signals": "{0} biologických signálů",
+    "js.one_biological_signal": "1 biologický signál",
+    "js.value_unknown": "hodnota neznámá",
+    "js.not_yet_priced": " + {0} zatím bez ceny"
+  }
+}
