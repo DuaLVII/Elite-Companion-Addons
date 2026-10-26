@@ -1,0 +1,120 @@
+<!--
+  Community Goals. Values come from script.js; texts from lang\<language>.json.
+-->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel.Resources>
+        <!-- A system / station name you can select and copy (Ctrl+C) for the galaxy map -->
+        <Style x:Key="Copyable" TargetType="TextBox">
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Setter Property="FontSize" Value="11.5"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="ToolTip" Value="{T ui.copy_tip}"/>
+        </Style>
+        <!-- Time left: dim normally, yellow under a day, red under 6 hours, green when complete, grey once ended -->
+        <Style x:Key="TimeChip" TargetType="Border">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="2"/>
+            <Setter Property="Padding" Value="6,0,6,1"/>
+            <Setter Property="Margin" Value="8,0,0,0"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="BorderBrush" Value="{StaticResource HudSoft}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding soon}" Value="True"><Setter Property="BorderBrush" Value="{StaticResource Warn}"/></DataTrigger>
+                <DataTrigger Binding="{Binding urgent}" Value="True"><Setter Property="BorderBrush" Value="{StaticResource Danger}"/></DataTrigger>
+                <DataTrigger Binding="{Binding complete}" Value="True"><Setter Property="BorderBrush" Value="{StaticResource Good}"/></DataTrigger>
+                <DataTrigger Binding="{Binding ended}" Value="True"><Setter Property="BorderBrush" Value="{StaticResource PanelBorder}"/></DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="TimeText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10.5"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="{StaticResource Hud}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding soon}" Value="True"><Setter Property="Foreground" Value="{StaticResource Warn}"/></DataTrigger>
+                <DataTrigger Binding="{Binding urgent}" Value="True"><Setter Property="Foreground" Value="{StaticResource Danger}"/></DataTrigger>
+                <DataTrigger Binding="{Binding complete}" Value="True"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
+                <DataTrigger Binding="{Binding ended}" Value="True"><Setter Property="Foreground" Value="{StaticResource HudDim}"/></DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <!-- Your percentile band: green for the top 10%, accent for 25 / 50%, dim below -->
+        <Style x:Key="BandText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding bandMid}" Value="True"><Setter Property="Foreground" Value="{StaticResource Hud}"/></DataTrigger>
+                <DataTrigger Binding="{Binding bandTop}" Value="True"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Line" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="11.5"/>
+            <Setter Property="Foreground" Value="{StaticResource HudText}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <!-- (lines with nothing to say take no room) -->
+            <Style.Triggers>
+                <Trigger Property="Text" Value=""><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+            </Style.Triggers>
+        </Style>
+    </StackPanel.Resources>
+
+    <DockPanel Margin="0,0,0,4">
+        <Button DockPanel.Dock="Right" Style="{StaticResource HudButton}" Tag="done" Content="{Binding V[doneText]}" ToolTip="{T ui.done_tip}" Margin="6,0,0,0"/>
+        <TextBlock Text="{Binding V[summary]}" FontSize="11" Foreground="{StaticResource HudDim}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+    </DockPanel>
+    <TextBlock Style="{StaticResource Line}" Text="{Binding V[empty]}" FontSize="11.5" FontStyle="Italic" Foreground="{StaticResource HudDim}" TextWrapping="Wrap" Margin="0,2,0,4"/>
+
+    <!-- The goals -->
+    <ItemsControl ItemsSource="{Binding V[goals]}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Border BorderBrush="{StaticResource PanelBorder}" BorderThickness="0,0,0,1" Padding="0,6,0,8">
+                    <StackPanel>
+                        <DockPanel>
+                            <Border DockPanel.Dock="Right" Style="{StaticResource TimeChip}"><TextBlock Style="{StaticResource TimeText}" Text="{Binding left}"/></Border>
+                            <TextBlock Text="{Binding title}" FontSize="12.5" FontWeight="SemiBold" Foreground="{StaticResource HudText}" TextWrapping="Wrap"/>
+                        </DockPanel>
+                        <TextBox Style="{StaticResource Copyable}" Text="{Binding place, Mode=OneWay}" Margin="0,1,0,4"/>
+
+                        <!-- Tier -->
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Right" Text="{Binding tierNext}" FontSize="10.5" Foreground="{StaticResource HudDim}" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding tierText}" FontSize="11.5" FontWeight="SemiBold" Foreground="{StaticResource Hud}"/>
+                        </DockPanel>
+                        <ProgressBar Style="{StaticResource Bar}" Maximum="100" Value="{Binding tierPct, Mode=OneWay}" Foreground="{StaticResource Hud}" Height="6"/>
+                        <TextBlock Style="{StaticResource Line}" Text="{Binding totalText}" Foreground="{StaticResource HudDim}"/>
+                        <TextBlock Style="{StaticResource Line}" Text="{Binding trend}" Foreground="{StaticResource HudDim}"/>
+
+                        <!-- You -->
+                        <DockPanel Margin="0,4,0,0">
+                            <TextBlock DockPanel.Dock="Right" Style="{StaticResource BandText}" Text="{Binding band}" Margin="8,0,0,0"/>
+                            <TextBlock Style="{StaticResource Line}" Text="{Binding mine}"/>
+                        </DockPanel>
+                        <TextBlock Style="{StaticResource Line}" Text="{Binding top}" Foreground="{StaticResource Good}"/>
+                        <TextBlock Style="{StaticResource Line}" Text="{Binding reward}" Foreground="{StaticResource Hud}"/>
+                    </StackPanel>
+                </Border>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+    <!-- Rewards collected -->
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.rewards}" Margin="0,10,0,2"/>
+    <TextBlock Style="{StaticResource Line}" Text="{Binding V[rewardsNone]}" FontSize="11" FontStyle="Italic" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+    <ItemsControl ItemsSource="{Binding V[rewards]}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <DockPanel Margin="0,1,0,2">
+                    <TextBlock DockPanel.Dock="Right" Text="{Binding reward}" FontSize="11.5" FontWeight="SemiBold" Foreground="{StaticResource Good}" Margin="8,0,0,0"/>
+                    <TextBlock FontSize="11.5" Foreground="{StaticResource HudText}" TextTrimming="CharacterEllipsis">
+                        <Run Text="{Binding name, Mode=OneWay}"/><Run Text="  ·  " Foreground="{StaticResource HudDim}"/><Run Text="{Binding when, Mode=OneWay}" Foreground="{StaticResource HudDim}"/>
+                    </TextBlock>
+                </DockPanel>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</StackPanel>

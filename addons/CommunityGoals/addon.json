@@ -1,0 +1,9 @@
+{
+  "title": "Community Goals",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "The community goals you've signed up for, from your journal: where they are, time left, the tier reached and how far to the top tier, your contribution and percentile band, the reward if it ended now, and how fast it's moving. Alerts when a tier is reached, your band improves, you make the top commanders, or a goal is about to end. Keeps the rewards you've collected.",
+  "category": "Trade, Mining & Missions",
+  "tags": ["community goals", "cg", "missions", "trade", "combat", "rewards"],
+  "minAppVersion": "1.0"
+}
