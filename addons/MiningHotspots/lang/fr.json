@@ -3,7 +3,7 @@
   "Code": "fr",
   "Strings": {
     "addon.title": "Points chauds miniers",
-    "addon.description": "Les points chauds d'anneaux les plus proches pour une ressource (platine, painite, diamants basse température, opales du vide…) autour de votre système ou d'un système saisi, via Spansh : anneau, type d'anneau, nombre de points chauds superposés, réserve et distance. Plus chaque point chaud que vous avez cartographié vous-même, d'après vos journaux.",
+    "addon.description": "Les points chauds d'anneaux les plus proches pour une ressource (platine, painite, diamants basse température, opales du vide…) autour de votre système ou d'un système saisi, via Spansh : anneau, type d'anneau, nombre de points chauds de la ressource dans l'anneau, réserve et distance. Plus chaque point chaud que vous avez cartographié vous-même, d'après vos journaux.",
     "ui.commodity": "RESSOURCE",
     "ui.pick_tip": "Choisir ce qu'on cherche",
     "ui.reference": "SYSTÈME DE RÉFÉRENCE",
@@ -11,7 +11,6 @@
     "ui.from": "Depuis ",
     "ui.search": "Rechercher",
     "ui.radius_tip": "Jusqu'où chercher (cliquer pour changer)",
-    "ui.min_tip": "Seulement les anneaux où autant de points chauds se superposent (cliquer pour changer)",
     "ui.pristine_tip": "Seulement les anneaux aux réserves intactes",
     "ui.auto_tip": "Rechercher à nouveau après chaque saut (si aucun système n'est saisi)",
     "ui.nearest": "LES PLUS PROCHES (Spansh)",
@@ -32,12 +31,10 @@
     "js.spansh_odd": "La réponse de Spansh est inattendue ; réessayez dans une minute.",
     "js.filter_ignored": "Spansh a répondu, mais sans anneaux à points chauds : sa recherche a peut-être changé. (Première réponse : {0} ; champs d'anneau : {1})",
     "js.no_rings": "aucun anneau",
-    "js.overlap": "×{0}",
     "js.one": "×1",
     "js.ly": "{0} al",
     "js.ls": "{0} sl",
     "js.within": "Jusqu'à {0} al",
-    "js.min_on": "✓ {0}+ superposés",
     "js.min_off": "Nombre quelconque",
     "js.pristine_on": "✓ Intactes seulement",
     "js.pristine_off": "Intactes seulement",
@@ -50,6 +47,9 @@
     "js.none_found": "Aucun point chaud de {0} connu à moins de {1} al de {2}. Essayez un rayon plus grand.",
     "js.searched": "{0} autour de {1}, {2} · via Spansh, qui connaît les anneaux cartographiés par les joueurs.",
     "js.mapped_when": "cartographié {0}",
-    "js.mine_none": "Aucun pour l'instant : cartographiez un anneau avec des sondes et ses points chauds de {0} apparaîtront ici."
+    "js.mine_none": "Aucun pour l'instant : cartographiez un anneau avec des sondes et ses points chauds de {0} apparaîtront ici.",
+    "ui.min_tip2": "Seulement les anneaux avec au moins autant de points chauds de cette ressource (cliquer pour changer)",
+    "js.min_on2": "✓ {0}+ points chauds",
+    "js.count": "×{0}"
   }
 }

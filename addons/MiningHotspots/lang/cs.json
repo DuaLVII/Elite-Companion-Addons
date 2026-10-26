@@ -3,7 +3,7 @@
   "Code": "cs",
   "Strings": {
     "addon.title": "Těžební hotspoty",
-    "addon.description": "Nejbližší hotspoty v prstencích pro danou surovinu (platina, painit, nízkoteplotní diamanty, void opály…) kolem tvého systému nebo zadaného systému, ze Spanshe: prstenec, typ prstence, kolik hotspotů se překrývá, rezervy a vzdálenost. K tomu každý hotspot, který jsi sám zmapoval, z tvých deníků.",
+    "addon.description": "Nejbližší hotspoty v prstencích pro danou surovinu (platina, painit, nízkoteplotní diamanty, void opály…) kolem tvého systému nebo zadaného systému, ze Spanshe: prstenec, typ prstence, kolik hotspotů dané suroviny prstenec má, rezervy a vzdálenost. K tomu každý hotspot, který jsi sám zmapoval, z tvých deníků.",
     "ui.commodity": "SUROVINA",
     "ui.pick_tip": "Vyber, co hledat",
     "ui.reference": "REFERENČNÍ SYSTÉM",
@@ -11,7 +11,6 @@
     "ui.from": "Od ",
     "ui.search": "Hledat",
     "ui.radius_tip": "Jak daleko hledat (kliknutím změníš)",
-    "ui.min_tip": "Jen prstence, kde se překrývá tolik hotspotů (kliknutím změníš)",
     "ui.pristine_tip": "Jen prstence s nedotčenými rezervami",
     "ui.auto_tip": "Po každém skoku hledat znovu (když není zadán systém)",
     "ui.nearest": "NEJBLIŽŠÍ (ze Spanshe)",
@@ -32,12 +31,10 @@
     "js.spansh_odd": "Odpověď Spanshe byla neočekávaná; zkus to za minutu.",
     "js.filter_ignored": "Spansh odpověděl, ale ne prstenci s hotspoty, jeho vyhledávání se možná změnilo. (První odpověď: {0}; pole prstence: {1})",
     "js.no_rings": "žádné prstence",
-    "js.overlap": "×{0}",
     "js.one": "×1",
     "js.ly": "{0} ly",
     "js.ls": "{0} ls",
     "js.within": "Do {0} ly",
-    "js.min_on": "✓ {0}+ překrývajících",
     "js.min_off": "Libovolný počet",
     "js.pristine_on": "✓ Jen nedotčené",
     "js.pristine_off": "Jen nedotčené",
@@ -50,6 +47,9 @@
     "js.none_found": "Žádné známé hotspoty {0} do {1} ly od {2}. Zkus větší okruh.",
     "js.searched": "{0} kolem {1}, {2} · ze Spanshe, který zná prstence zmapované hráči.",
     "js.mapped_when": "zmapováno {0}",
-    "js.mine_none": "Zatím žádné: zmapuj prstenec sondami a jeho hotspoty {0} se objeví tady."
+    "js.mine_none": "Zatím žádné: zmapuj prstenec sondami a jeho hotspoty {0} se objeví tady.",
+    "ui.min_tip2": "Jen prstence s alespoň tolika hotspoty této suroviny (kliknutím změníš)",
+    "js.min_on2": "✓ {0}+ hotspotů",
+    "js.count": "×{0}"
   }
 }

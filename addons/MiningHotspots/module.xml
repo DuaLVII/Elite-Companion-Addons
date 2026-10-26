@@ -27,7 +27,7 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-        <!-- The ×2 / ×3 overlap tag -->
+        <!-- How many hotspots of it the ring has (×1, ×2, ×3…) -->
         <Style x:Key="CountChip" TargetType="Border">
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="CornerRadius" Value="2"/>
@@ -36,7 +36,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="BorderBrush" Value="{StaticResource HudSoft}"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding overlap}" Value="True"><Setter Property="BorderBrush" Value="{StaticResource Good}"/></DataTrigger>
+                <DataTrigger Binding="{Binding several}" Value="True"><Setter Property="BorderBrush" Value="{StaticResource Good}"/></DataTrigger>
             </Style.Triggers>
         </Style>
         <Style x:Key="CountText" TargetType="TextBlock">
@@ -44,7 +44,7 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="{StaticResource Hud}"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding overlap}" Value="True"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
+                <DataTrigger Binding="{Binding several}" Value="True"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
             </Style.Triggers>
         </Style>
     </StackPanel.Resources>
@@ -76,7 +76,7 @@
     <WrapPanel Margin="0,6,0,2">
         <Button Style="{StaticResource HudButton}" Tag="search" Content="{T ui.search}" Margin="0,0,4,4" Foreground="{StaticResource Hud}" FontWeight="SemiBold"/>
         <Button Style="{StaticResource HudButton}" Tag="radius" Content="{Binding V[radiusText]}" Margin="0,0,4,4" ToolTip="{T ui.radius_tip}"/>
-        <Button Style="{StaticResource HudButton}" Tag="min" Content="{Binding V[minText]}" Margin="0,0,4,4" ToolTip="{T ui.min_tip}"/>
+        <Button Style="{StaticResource HudButton}" Tag="min" Content="{Binding V[minText]}" Margin="0,0,4,4" ToolTip="{T ui.min_tip2}"/>
         <Button Style="{StaticResource HudButton}" Tag="pristine" Content="{Binding V[pristineText]}" Margin="0,0,4,4" ToolTip="{T ui.pristine_tip}"/>
         <Button Style="{StaticResource HudButton}" Tag="auto" Content="{Binding V[autoText]}" Margin="0,0,4,4" ToolTip="{T ui.auto_tip}"/>
     </WrapPanel>

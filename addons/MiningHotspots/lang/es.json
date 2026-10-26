@@ -3,7 +3,7 @@
   "Code": "es",
   "Strings": {
     "addon.title": "Puntos calientes mineros",
-    "addon.description": "Los puntos calientes de anillos más cercanos para un recurso (platino, painita, diamantes de baja temperatura, ópalos del vacío…) alrededor de tu sistema o de uno que escribas, desde Spansh: anillo, tipo de anillo, cuántos puntos calientes se solapan, reserva y distancia. Además, cada punto caliente que hayas cartografiado tú, desde tus diarios.",
+    "addon.description": "Los puntos calientes de anillos más cercanos para un recurso (platino, painita, diamantes de baja temperatura, ópalos del vacío…) alrededor de tu sistema o de uno que escribas, desde Spansh: anillo, tipo de anillo, cuántos puntos calientes de ese recurso tiene el anillo, reserva y distancia. Además, cada punto caliente que hayas cartografiado tú, desde tus diarios.",
     "ui.commodity": "RECURSO",
     "ui.pick_tip": "Elige qué buscar",
     "ui.reference": "SISTEMA DE REFERENCIA",
@@ -11,7 +11,6 @@
     "ui.from": "Desde ",
     "ui.search": "Buscar",
     "ui.radius_tip": "Hasta dónde buscar (clic para cambiar)",
-    "ui.min_tip": "Solo anillos con este número de puntos calientes solapados (clic para cambiar)",
     "ui.pristine_tip": "Solo anillos con reservas intactas",
     "ui.auto_tip": "Buscar de nuevo tras cada salto (si no hay sistema escrito)",
     "ui.nearest": "MÁS CERCANOS (de Spansh)",
@@ -32,12 +31,10 @@
     "js.spansh_odd": "La respuesta de Spansh no era la esperada; inténtalo en un minuto.",
     "js.filter_ignored": "Spansh respondió, pero no con anillos con puntos calientes; puede que su búsqueda haya cambiado. (Primera respuesta: {0}; campos del anillo: {1})",
     "js.no_rings": "sin anillos",
-    "js.overlap": "×{0}",
     "js.one": "×1",
     "js.ly": "{0} al",
     "js.ls": "{0} sl",
     "js.within": "Hasta {0} al",
-    "js.min_on": "✓ {0}+ solapados",
     "js.min_off": "Cualquier cantidad",
     "js.pristine_on": "✓ Solo intactas",
     "js.pristine_off": "Solo intactas",
@@ -50,6 +47,9 @@
     "js.none_found": "No se conocen puntos calientes de {0} a menos de {1} al de {2}. Prueba con un radio mayor.",
     "js.searched": "{0} alrededor de {1}, {2} · de Spansh, que conoce los anillos cartografiados por los jugadores.",
     "js.mapped_when": "cartografiado {0}",
-    "js.mine_none": "Ninguno aún: cartografía un anillo con sondas y sus puntos calientes de {0} aparecerán aquí."
+    "js.mine_none": "Ninguno aún: cartografía un anillo con sondas y sus puntos calientes de {0} aparecerán aquí.",
+    "ui.min_tip2": "Solo anillos con al menos este número de puntos calientes de ese recurso (clic para cambiar)",
+    "js.min_on2": "✓ {0}+ puntos calientes",
+    "js.count": "×{0}"
   }
 }

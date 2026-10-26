@@ -3,7 +3,7 @@
   "Code": "de",
   "Strings": {
     "addon.title": "Bergbau-Hotspots",
-    "addon.description": "Die nächsten Ring-Hotspots für einen Rohstoff (Platin, Painit, Tieftemperaturdiamanten, Leere-Opale…) rund um dein System oder ein eingegebenes, von Spansh: Ring, Ringtyp, wie viele Hotspots sich überlappen, Reserve und Entfernung. Dazu jeder Hotspot, den du selbst kartiert hast, aus deinen Journalen.",
+    "addon.description": "Die nächsten Ring-Hotspots für einen Rohstoff (Platin, Painit, Tieftemperaturdiamanten, Leere-Opale…) rund um dein System oder ein eingegebenes, von Spansh: Ring, Ringtyp, wie viele Hotspots davon der Ring hat, Reserve und Entfernung. Dazu jeder Hotspot, den du selbst kartiert hast, aus deinen Journalen.",
     "ui.commodity": "ROHSTOFF",
     "ui.pick_tip": "Wähle, wonach gesucht wird",
     "ui.reference": "REFERENZSYSTEM",
@@ -11,7 +11,6 @@
     "ui.from": "Von ",
     "ui.search": "Suchen",
     "ui.radius_tip": "Wie weit gesucht wird (klicken zum Ändern)",
-    "ui.min_tip": "Nur Ringe, in denen sich so viele Hotspots davon überlappen (klicken zum Ändern)",
     "ui.pristine_tip": "Nur Ringe mit unberührten Reserven",
     "ui.auto_tip": "Nach jedem Sprung automatisch neu suchen (wenn kein System eingegeben ist)",
     "ui.nearest": "AM NÄCHSTEN (von Spansh)",
@@ -32,12 +31,10 @@
     "js.spansh_odd": "Die Antwort von Spansh war unerwartet; versuche es in einer Minute erneut.",
     "js.filter_ignored": "Spansh hat geantwortet, aber nicht mit Hotspot-Ringen – die Suche hat sich womöglich geändert. (Erste Antwort: {0}; Ringfelder: {1})",
     "js.no_rings": "keine Ringe",
-    "js.overlap": "×{0}",
     "js.one": "×1",
     "js.ly": "{0} Lj",
     "js.ls": "{0} Ls",
     "js.within": "Bis {0} Lj",
-    "js.min_on": "✓ {0}+ überlappend",
     "js.min_off": "Beliebige Anzahl",
     "js.pristine_on": "✓ Nur unberührt",
     "js.pristine_off": "Nur unberührt",
@@ -50,6 +47,9 @@
     "js.none_found": "Keine bekannten {0}-Hotspots im Umkreis von {1} Lj um {2}. Versuche einen größeren Radius.",
     "js.searched": "{0} um {1}, {2} · von Spansh, das die von Spielern kartierten Ringe kennt.",
     "js.mapped_when": "kartiert {0}",
-    "js.mine_none": "Noch keine: kartiere einen Ring mit Sonden, dann erscheinen seine {0}-Hotspots hier."
+    "js.mine_none": "Noch keine: kartiere einen Ring mit Sonden, dann erscheinen seine {0}-Hotspots hier.",
+    "ui.min_tip2": "Nur Ringe mit mindestens so vielen Hotspots davon (klicken zum Ändern)",
+    "js.min_on2": "✓ {0}+ Hotspots",
+    "js.count": "×{0}"
   }
 }

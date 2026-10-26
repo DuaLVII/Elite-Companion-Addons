@@ -3,7 +3,7 @@
   "Code": "en",
   "Strings": {
     "addon.title": "Mining Hotspots",
-    "addon.description": "The nearest ring hotspots for a commodity (Platinum, Painite, Low Temperature Diamonds, Void Opals…) around your system or one you type, from Spansh: ring, ring type, how many hotspots overlap, reserve and distance. Plus every hotspot you've mapped yourself, from your own journals.",
+    "addon.description": "The nearest ring hotspots for a commodity (Platinum, Painite, Low Temperature Diamonds, Void Opals…) around your system or one you type, from Spansh: ring, ring type, how many hotspots of it the ring has, reserve and distance. Plus every hotspot you've mapped yourself, from your own journals.",
     "ui.commodity": "COMMODITY",
     "ui.pick_tip": "Choose what to look for",
     "ui.reference": "REFERENCE SYSTEM",
@@ -11,7 +11,6 @@
     "ui.from": "From ",
     "ui.search": "Search",
     "ui.radius_tip": "How far to look (click to change)",
-    "ui.min_tip": "Only rings with this many hotspots of it overlapping (click to change)",
     "ui.pristine_tip": "Only rings with pristine reserves",
     "ui.auto_tip": "Search again automatically after each jump (when no system is typed)",
     "ui.nearest": "NEAREST (from Spansh)",
@@ -32,12 +31,10 @@
     "js.spansh_odd": "Spansh's answer wasn't what was expected; try again in a minute.",
     "js.filter_ignored": "Spansh answered, but not with hotspot rings, so its search may have changed. (First answer: {0}; ring fields: {1})",
     "js.no_rings": "no rings",
-    "js.overlap": "×{0}",
     "js.one": "×1",
     "js.ly": "{0} ly",
     "js.ls": "{0} ls",
     "js.within": "Within {0} ly",
-    "js.min_on": "✓ {0}+ overlapping",
     "js.min_off": "Any count",
     "js.pristine_on": "✓ Pristine only",
     "js.pristine_off": "Pristine only",
@@ -50,6 +47,9 @@
     "js.none_found": "No {0} hotspots known within {1} ly of {2}. Try a bigger radius.",
     "js.searched": "{0} around {1}, {2} · from Spansh, which knows the rings players have mapped.",
     "js.mapped_when": "mapped {0}",
-    "js.mine_none": "None yet: map a ring with probes and its {0} hotspots appear here."
+    "js.mine_none": "None yet: map a ring with probes and its {0} hotspots appear here.",
+    "ui.min_tip2": "Only rings with at least this many hotspots of it (click to change)",
+    "js.min_on2": "✓ {0}+ hotspots",
+    "js.count": "×{0}"
   }
 }

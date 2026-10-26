@@ -209,7 +209,7 @@ on("click:choose", item => {
     if (results) search(); else show();
 });
 on("click:radius", () => { opts.radius = RADII[(RADII.indexOf(opts.radius) + 1) % RADII.length]; save(); show(); });
-on("click:min", () => { opts.min = opts.min >= 3 ? 1 : opts.min + 1; save(); show(); });
+on("click:min", () => { opts.min = opts.min >= 4 ? 1 : opts.min + 1; save(); show(); });
 on("click:pristine", () => { opts.pristine = !opts.pristine; save(); show(); });
 on("click:auto", () => { opts.auto = !opts.auto; save(); show(); });
 on("change:ref", () => show());
@@ -218,7 +218,7 @@ on("tick", () => { if (Date.now() % 60000 < 1000) show(); });   // keep "x min a
 
 // ---- the view ----
 
-function countText(n) { return n > 1 ? tr("js.overlap", "×{0}", n) : tr("js.one", "×1"); }
+function countText(n) { return n > 1 ? tr("js.count", "×{0}", n) : tr("js.one", "×1"); }
 const ly = d => d != null ? tr("js.ly", "{0} ly", d < 10 ? d.toFixed(2) : d.toFixed(1)) : "";
 const ls = d => d != null ? tr("js.ls", "{0} ls", Math.round(d).toLocaleString()) : "";
 
@@ -230,7 +230,7 @@ function show() {
     const extra = Object.values(mapped).flatMap(m => Object.keys(m.signals)).filter((k, i, a) => !KINDS.includes(k) && a.indexOf(k) === i);
     set("kinds", KINDS.concat(extra).map(name => ({ name, on: name === opts.commodity })));
     set("radiusText", tr("js.within", "Within {0} ly", opts.radius));
-    set("minText", opts.min > 1 ? tr("js.min_on", "✓ {0}+ overlapping", opts.min) : tr("js.min_off", "Any count"));
+    set("minText", opts.min > 1 ? tr("js.min_on2", "✓ {0}+ hotspots", opts.min) : tr("js.min_off", "Any count"));
     set("pristineText", opts.pristine ? tr("js.pristine_on", "✓ Pristine only") : tr("js.pristine_off", "Pristine only"));
     set("autoText", opts.auto ? tr("js.auto_on", "✓ After each jump") : tr("js.auto_off", "After each jump"));
     set("busy", busy);
@@ -242,7 +242,7 @@ function show() {
     set("nearRows", list.map(h => ({
         system: h.system,
         ly: ly(h.ly),
-        count: countText(h.count), overlap: h.count > 1,
+        count: countText(h.count), several: h.count > 1,
         ring: h.ring,
         detail: [h.type, reserveName(h.reserve), ls(h.arrival)].filter(Boolean).map(x => "  ·  " + x).join(""),
         others: [h.others.length ? tr("js.also", "Also: {0}", h.others.join(", ")) : "", h.updated ? tr("js.spansh_updated", "Spansh: updated {0}", ago(h.updated)) : ""].filter(Boolean).join("   "),
@@ -264,7 +264,7 @@ function show() {
         const others = Object.keys(m.signals).filter(k => k !== key).map(k => m.signals[k] > 1 ? `${k} ×${m.signals[k]}` : k);
         return [{
             system: m.system, ly: ly(d), order: d ?? 1e9,
-            count: countText(m.signals[key]), overlap: m.signals[key] > 1,
+            count: countText(m.signals[key]), several: m.signals[key] > 1,
             ring: name,
             detail: [info.type, reserveName(info.reserve)].filter(Boolean).map(x => "  ·  " + x).join(""),
             others: [others.length ? tr("js.also", "Also: {0}", others.join(", ")) : "", tr("js.mapped_when", "mapped {0}", ago(m.at))].filter(Boolean).join("   "),
