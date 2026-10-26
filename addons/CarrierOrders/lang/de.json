@@ -1,0 +1,19 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Trägeraufträge",
+    "addon.description": "Die Kauf- und Verkaufsaufträge, die du auf dem Markt deines Trägers eingestellt hast: Ware, Menge, Preis, Gesamtwert, Aufträge im gesicherten Lager (Schwarzmarkt) markiert.",
+    "ui.secure_warehouse_black_market_orders_as": "⚑ = gesichertes Lager (Schwarzmarkt). Aufträge wie von dir eingestellt: Das Journal meldet nicht, wenn andere Spieler sie erfüllen.",
+    "js.buying_0": "KAUF · {0}",
+    "js.selling_0": "VERKAUF · {0}",
+    "js.carrier_order_cancelled_0": "Trägerauftrag storniert: {0}",
+    "js.carrier_0_order_1_t_2": "Träger-{0}-Auftrag: {1} t {2} @ {3} cr",
+    "js.cr": "{0} cr",
+    "js.up_to": " · bis zu {0}",
+    "js.worth": " · Wert {0}",
+    "js.no_market_orders_yet_set_some": "Noch keine Marktaufträge. Stelle welche in der Trägerverwaltung ein (Rohstoffmarkt).",
+    "js.buy": "Kauf",
+    "js.sell": "Verkauf"
+  }
+}

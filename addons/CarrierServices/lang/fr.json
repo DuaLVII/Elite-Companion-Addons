@@ -1,0 +1,24 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Services du porte-vaisseaux",
+    "addon.description": "Comment les 25 000 t du porte-vaisseaux sont utilisées (services, cargaison, réservé, kits de vaisseaux et de modules, libre), chaque service avec son équipage et s'il fonctionne, est en pause ou non installé, et les kits installés.",
+    "ui.capacity": "CAPACITÉ",
+    "ui.services": "SERVICES",
+    "ui.packs": "KITS",
+    "js.carrier_0_1_d": "Porte-vaisseaux {0} : {1} j",
+    "js.open_carrier_management_in_game_once": "Ouvrez une fois la gestion du porte-vaisseaux en jeu pour lire son agencement.",
+    "js.services_crew": "Services et équipage",
+    "js.reserved_for_buy_orders": "Réservé aux ordres d'achat",
+    "js.ship_packs": "Kits de vaisseaux",
+    "js.module_packs": "Kits de modules",
+    "js.t_used": "{0} / {1} t utilisées",
+    "js.not_installed": "non installé",
+    "js.captain": "Capitaine {0}",
+    "js.ship_pack": "Kit de vaisseaux : {0} {1}",
+    "js.module_pack": "Kit de modules : {0} {1}",
+    "js.no_ship_or_module_packs": "Aucun kit de vaisseaux ou de modules",
+    "js.carrier_management_last_opened": "Gestion du porte-vaisseaux ouverte pour la dernière fois {0}"
+  }
+}

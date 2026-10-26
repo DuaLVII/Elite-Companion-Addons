@@ -1,0 +1,25 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Kopfgeldtafel",
+    "addon.description": "Kopfgeld-Abschüsse und Credits in dieser Sitzung, heute, gestern, in den letzten 7 Tagen und insgesamt (aus den Journalen der letzten Wochen), nicht eingelöste Kopfgelder, größte Auszahlung, ein Diagramm und die letzten Abschüsse.",
+    "ui.hunting_in": "Jagd in ",
+    "ui.session_bounties": "KOPFGELDER DER SITZUNG",
+    "ui.earned": "VERDIENT",
+    "ui.per_hour": "PRO STUNDE",
+    "ui.today": "HEUTE",
+    "ui.yesterday": "GESTERN",
+    "ui.7_days": "7 TAGE",
+    "ui.all_time": "INSGESAMT ",
+    "ui.biggest": "GRÖSSTES ",
+    "ui.recent_bounties": "LETZTE KOPFGELDER",
+    "js.0_kills_1": "{0} Abschüsse · {1}",
+    "js.big_bounty_0_1_cr": "★ GROSSES KOPFGELD · {0} · {1} CR",
+    "js.bounties_cashed_in_0_cr": "Kopfgelder eingelöst: {0} cr",
+    "js.earned_this_session": "In dieser Sitzung verdient",
+    "js.cr": " cr",
+    "js.unclaimed_bounties": "NICHT EINGELÖSTE KOPFGELDER · {0}",
+    "js.no_bounty_kills_in_the_last": "Noch keine Kopfgeld-Abschüsse in den Journalen der letzten Wochen. Gute Jagd, Commander."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Zpět k lodi",
+    "addon.description": "Kompasové šipky a vzdálenosti k tvé přistálé lodi, zaparkovanému SRV a místu, které si sám označíš, s časem cesty při tvé aktuální rychlosti. Funguje pěšky i v SRV.",
+    "ui.mark_this_spot": "📍 Označit toto místo",
+    "ui.clear_marker": "Smazat značku",
+    "ui.straight_ahead_distances_are_along_the": "▲ = přímo vpřed. Vzdálenosti jsou po povrchu; výškové rozdíly nejsou započítány.",
+    "js.marker_set": "Značka nastavena",
+    "js.not_set": "{0}: nenastaveno",
+    "js.on": "{0}: na {1}",
+    "js.bearing": "azimut {0}°",
+    "js.at_this_speed": " · {0} při této rychlosti",
+    "js.min_s": "{0} min {1} s",
+    "js.h_min": "{0} h {1} min",
+    "js.heading": "{0} · kurz {1}°",
+    "js.not_on_a_planet_surface": "Nejsi na povrchu planety",
+    "js.ship": "LOĎ",
+    "js.srv": "SRV",
+    "js.marker": "ZNAČKA",
+    "js.another_body": "jiném tělese",
+    "js.surface": "Povrch"
+  }
+}

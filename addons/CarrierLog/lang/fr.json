@@ -1,0 +1,30 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Journal du porte-vaisseaux",
+    "addon.description": "Tout ce qui est arrivé à votre porte-vaisseaux, le plus récent d'abord : sauts, tritium, virements, taxes, services, modules, ordres, accès d'amarrage, changements de nom et démantèlement. Conservé entre les sessions.",
+    "js.bought_carrier_in_for": "Porte-vaisseaux {0} acheté à {1} pour {2}",
+    "js.carrier_management_t_tritium_t_free": "Gestion du porte-vaisseaux : {0} t de tritium · {1} · {2} t libres",
+    "js.jump_booked_to": "Saut programmé vers {0}{1}{2}",
+    "js.jump_cancelled": "Saut annulé",
+    "js.arrived_in": "Arrivé à {0}{1}",
+    "js.tritium_t_t": "Tritium +{0} t → {1} t",
+    "js.deposited": "Dépôt {0} → {1}",
+    "js.withdrew": "Retrait {0} → {1}",
+    "js.finance_tax_reserve_available": "Finances : taxe {0} % · réserve {1} % · disponible {2}",
+    "js.order_cancelled": "Ordre annulé : {0}",
+    "js.buy_order_t_cr": "Ordre d'achat : {0} t {1} @ {2} cr",
+    "js.sell_order_t_cr": "Ordre de vente : {0} t {1} @ {2} cr",
+    "js.docking": "Amarrage : {0}{1}",
+    "js.renamed_to": "Renommé en {0} ({1})",
+    "js.decommission_requested_refund": "Démantèlement demandé · remboursement {0}",
+    "js.decommission_cancelled": "Démantèlement annulé",
+    "js.nothing_yet_carrier_events_from_the": "Rien pour l'instant. Les événements du porte-vaisseaux des dernières semaines apparaissent ici, et les nouveaux au fur et à mesure.",
+    "js.events": "{0} événements",
+    "js.departs": " · départ {0}",
+    "js.ship_pack": "Kit de vaisseaux {0} {1} : ",
+    "js.module_pack": "Kit de modules {0} {1} : ",
+    "js.notorious_allowed": " · notoires autorisés"
+  }
+}

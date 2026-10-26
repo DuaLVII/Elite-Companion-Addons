@@ -1,0 +1,8 @@
+{
+  // Fleet carrier set, 4 of 7.
+  "title": "Carrier Finance",
+  "category": "Fleet Carrier",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Carrier balance, reserve and available funds, tax rates per service, transfers in and out, and an alert when the balance drops below an amount you choose."
+}

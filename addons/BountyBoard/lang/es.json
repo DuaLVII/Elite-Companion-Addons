@@ -1,0 +1,25 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Tablón de recompensas",
+    "addon.description": "Bajas con recompensa y créditos de esta sesión, hoy, ayer, los últimos 7 días y en total (leído de los diarios de las últimas semanas), recompensas sin cobrar, mayor pago, un gráfico y las últimas bajas.",
+    "ui.hunting_in": "Cazando en ",
+    "ui.session_bounties": "RECOMPENSAS DE LA SESIÓN",
+    "ui.earned": "GANADO",
+    "ui.per_hour": "POR HORA",
+    "ui.today": "HOY",
+    "ui.yesterday": "AYER",
+    "ui.7_days": "7 DÍAS",
+    "ui.all_time": "TOTAL ",
+    "ui.biggest": "MAYOR ",
+    "ui.recent_bounties": "RECOMPENSAS RECIENTES",
+    "js.0_kills_1": "{0} bajas · {1}",
+    "js.big_bounty_0_1_cr": "★ GRAN RECOMPENSA · {0} · {1} CR",
+    "js.bounties_cashed_in_0_cr": "Recompensas cobradas: {0} cr",
+    "js.earned_this_session": "Ganado esta sesión",
+    "js.cr": " cr",
+    "js.unclaimed_bounties": "RECOMPENSAS SIN COBRAR · {0}",
+    "js.no_bounty_kills_in_the_last": "Aún no hay bajas con recompensa en los diarios de las últimas semanas. Buena caza, comandante."
+  }
+}

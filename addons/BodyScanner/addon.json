@@ -1,0 +1,8 @@
+{
+  // Example addon: the System Bodies module rebuilt as an addon, with more detail and filters.
+  "title": "Body Scanner",
+  "category": "Exploration",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Bodies scanned in the current system, most valuable first: rough value, first-discovery and mapped status, biological / geological signals, landable gravity, and filter boxes."
+}

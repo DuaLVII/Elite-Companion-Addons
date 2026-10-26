@@ -1,0 +1,24 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Carrier Finance",
+    "addon.description": "Carrier balance, reserve and available funds, tax rates per service, transfers in and out, and an alert when the balance drops below an amount you choose.",
+    "ui.carrier_balance": "CARRIER BALANCE",
+    "ui.reserved": "RESERVED",
+    "ui.available": "AVAILABLE",
+    "ui.alert_below_cr": "ALERT BELOW (cr)  ",
+    "ui.warn_me_when_the_carrier_balance": "Warn me when the carrier balance drops below this (0 = never)",
+    "ui.tax_rates": "TAX RATES",
+    "ui.transfers": "TRANSFERS",
+    "ui.weekly_upkeep_isn_t_written_to": " · weekly upkeep isn't written to the journal.",
+    "js.carrier_0_1_balance_2": "Carrier {0}: {1} · balance {2}",
+    "js.carrier_balance_low_0": "⚠ CARRIER BALANCE LOW · {0}",
+    "js.open_carrier_management_in_game_once": "Open carrier management in game once to read the carrier's finances.",
+    "js.cr": " cr",
+    "js.updated": "Updated {0}",
+    "js.below_your_alert_level_of_top": "⚠ Below your alert level of {0}: top it up to cover upkeep",
+    "js.deposit": "deposit",
+    "js.withdrawal": "withdrawal"
+  }
+}

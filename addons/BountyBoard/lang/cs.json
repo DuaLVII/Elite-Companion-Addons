@@ -1,0 +1,25 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Tabule odměn",
+    "addon.description": "Zabití s odměnou a kredity za tuto relaci, dnes, včera, posledních 7 dní i celkem (z deníků posledních týdnů), nevyzvednuté odměny, největší výplata, graf a poslední zabití.",
+    "ui.hunting_in": "Lov v ",
+    "ui.session_bounties": "ODMĚNY RELACE",
+    "ui.earned": "VYDĚLÁNO",
+    "ui.per_hour": "ZA HODINU",
+    "ui.today": "DNES",
+    "ui.yesterday": "VČERA",
+    "ui.7_days": "7 DNÍ",
+    "ui.all_time": "CELKEM ",
+    "ui.biggest": "NEJVĚTŠÍ ",
+    "ui.recent_bounties": "POSLEDNÍ ODMĚNY",
+    "js.0_kills_1": "{0} zabití · {1}",
+    "js.big_bounty_0_1_cr": "★ VELKÁ ODMĚNA · {0} · {1} CR",
+    "js.bounties_cashed_in_0_cr": "Odměny vyzvednuty: {0} cr",
+    "js.earned_this_session": "Vyděláno v této relaci",
+    "js.cr": " cr",
+    "js.unclaimed_bounties": "NEVYZVEDNUTÉ ODMĚNY · {0}",
+    "js.no_bounty_kills_in_the_last": "V denících posledních týdnů zatím nejsou žádná zabití s odměnou. Dobrý lov, veliteli."
+  }
+}

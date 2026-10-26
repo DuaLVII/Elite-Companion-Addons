@@ -1,0 +1,30 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Registro del portanaves",
+    "addon.description": "Todo lo que le ha pasado a tu portanaves, lo más reciente primero: saltos, tritio, transferencias, impuestos, servicios, paquetes, órdenes, acceso de atraque, cambios de nombre y desmantelamiento. Se conserva entre sesiones.",
+    "js.bought_carrier_in_for": "Portanaves {0} comprado en {1} por {2}",
+    "js.carrier_management_t_tritium_t_free": "Gestión del portanaves: {0} t de tritio · {1} · {2} t libres",
+    "js.jump_booked_to": "Salto programado a {0}{1}{2}",
+    "js.jump_cancelled": "Salto cancelado",
+    "js.arrived_in": "Llegada a {0}{1}",
+    "js.tritium_t_t": "Tritio +{0} t → {1} t",
+    "js.deposited": "Ingresado {0} → {1}",
+    "js.withdrew": "Retirado {0} → {1}",
+    "js.finance_tax_reserve_available": "Finanzas: impuesto {0} % · reserva {1} % · disponible {2}",
+    "js.order_cancelled": "Orden cancelada: {0}",
+    "js.buy_order_t_cr": "Orden de compra: {0} t {1} @ {2} cr",
+    "js.sell_order_t_cr": "Orden de venta: {0} t {1} @ {2} cr",
+    "js.docking": "Atraque: {0}{1}",
+    "js.renamed_to": "Renombrado a {0} ({1})",
+    "js.decommission_requested_refund": "Desmantelamiento solicitado · reembolso {0}",
+    "js.decommission_cancelled": "Desmantelamiento cancelado",
+    "js.nothing_yet_carrier_events_from_the": "Aún nada. Los eventos del portanaves de las últimas semanas de diarios aparecen aquí, y los nuevos según ocurren.",
+    "js.events": "{0} eventos",
+    "js.departs": " · sale {0}",
+    "js.ship_pack": "Paquete de naves {0} {1}: ",
+    "js.module_pack": "Paquete de módulos {0} {1}: ",
+    "js.notorious_allowed": " · notorios permitidos"
+  }
+}

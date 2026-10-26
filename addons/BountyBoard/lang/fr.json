@@ -1,0 +1,25 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Tableau des primes",
+    "addon.description": "Victimes et crédits de primes cette session, aujourd'hui, hier, ces 7 derniers jours et depuis toujours (lus dans les journaux des dernières semaines), primes non réclamées, plus grosse prime, un graphique et les dernières victimes.",
+    "ui.hunting_in": "Chasse à ",
+    "ui.session_bounties": "PRIMES DE LA SESSION",
+    "ui.earned": "GAGNÉ",
+    "ui.per_hour": "PAR HEURE",
+    "ui.today": "AUJOURD'HUI",
+    "ui.yesterday": "HIER",
+    "ui.7_days": "7 JOURS",
+    "ui.all_time": "DEPUIS TOUJOURS ",
+    "ui.biggest": "PLUS GROSSE ",
+    "ui.recent_bounties": "PRIMES RÉCENTES",
+    "js.0_kills_1": "{0} victimes · {1}",
+    "js.big_bounty_0_1_cr": "★ GROSSE PRIME · {0} · {1} CR",
+    "js.bounties_cashed_in_0_cr": "Primes encaissées : {0} cr",
+    "js.earned_this_session": "Gagné cette session",
+    "js.cr": " cr",
+    "js.unclaimed_bounties": "PRIMES NON RÉCLAMÉES · {0}",
+    "js.no_bounty_kills_in_the_last": "Aucune victime à prime dans les journaux des dernières semaines. Bonne chasse, Commandant."
+  }
+}

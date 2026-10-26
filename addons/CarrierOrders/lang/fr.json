@@ -1,0 +1,19 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Ordres du porte-vaisseaux",
+    "addon.description": "Les ordres d'achat et de vente que vous avez placés sur le marché de votre porte-vaisseaux : marchandise, quantité, prix, valeur totale, ordres de l'entrepôt sécurisé (marché noir) signalés.",
+    "ui.secure_warehouse_black_market_orders_as": "⚑ = entrepôt sécurisé (marché noir). Ordres tels que vous les avez placés : le journal n'indique pas quand d'autres joueurs les remplissent.",
+    "js.buying_0": "ACHAT · {0}",
+    "js.selling_0": "VENTE · {0}",
+    "js.carrier_order_cancelled_0": "Ordre du porte-vaisseaux annulé : {0}",
+    "js.carrier_0_order_1_t_2": "Ordre d'{0} du porte-vaisseaux : {1} t {2} @ {3} cr",
+    "js.cr": "{0} cr",
+    "js.up_to": " · jusqu'à {0}",
+    "js.worth": " · valeur {0}",
+    "js.no_market_orders_yet_set_some": "Aucun ordre de marché pour l'instant. Créez-en dans la gestion du porte-vaisseaux (marché des marchandises).",
+    "js.buy": "d'achat",
+    "js.sell": "de vente"
+  }
+}

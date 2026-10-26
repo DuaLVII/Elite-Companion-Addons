@@ -1,0 +1,27 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Body Scanner",
+    "addon.description": "Bodies scanned in the current system, most valuable first: rough value, first-discovery and mapped status, biological / geological signals, landable gravity, and filter boxes.",
+    "ui.landable": "Landable",
+    "ui.signals": "Signals",
+    "ui.valuable": "Valuable",
+    "ui.worth_mapping_about_100k_cr_or": "Worth mapping: about 100k cr or more",
+    "ui.stars": "Stars",
+    "ui.values_are_rough_estimates_scan_mapping": "Values are rough estimates (scan + mapping, with the first-discovery bonus where it applies).",
+    "js.terraformable": "Terraformable ",
+    "js.scoopable": " · scoopable",
+    "js.new": "NEW",
+    "js.mapped": "mapped ✓",
+    "js.landable_g": "landable {0} g",
+    "js.ls": " Ls",
+    "js.bodies": "{0} / {1} bodies{2}",
+    "js.bodies_2": "{0} bodies",
+    "js.so_far": " so far",
+    "js.landable_with_signals_mapped": "{0} landable · {1} with signals · {2} mapped",
+    "js.waiting_for_your_location": "Waiting for your location…",
+    "js.nothing_scanned_here_yet_honk_open": "Nothing scanned here yet. Honk, open the FSS, or fly near a body.",
+    "js.no_bodies_match_the_filters": "No bodies match the filters."
+  }
+}

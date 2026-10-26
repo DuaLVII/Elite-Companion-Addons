@@ -1,0 +1,8 @@
+{
+  // Fleet carrier set, 6 of 7.
+  "title": "Carrier Orders",
+  "category": "Fleet Carrier",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "The buy and sell orders you've set on your carrier's market: commodity, amount, price, total value, and secure-warehouse (black market) orders marked."
+}

@@ -1,0 +1,24 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Trägerdienste",
+    "addon.description": "Wie die 25.000 t des Trägers genutzt werden (Dienste, Fracht, reserviert, Schiffs- und Modulpakete, frei), jeder Dienst mit Crew und ob er läuft, pausiert oder nicht installiert ist, und installierte Pakete.",
+    "ui.capacity": "KAPAZITÄT",
+    "ui.services": "DIENSTE",
+    "ui.packs": "PAKETE",
+    "js.carrier_0_1_d": "Träger {0}: {1}d",
+    "js.open_carrier_management_in_game_once": "Öffne einmal die Trägerverwaltung im Spiel, um den Aufbau des Trägers zu lesen.",
+    "js.services_crew": "Dienste & Crew",
+    "js.reserved_for_buy_orders": "Reserviert für Kaufaufträge",
+    "js.ship_packs": "Schiffspakete",
+    "js.module_packs": "Modulpakete",
+    "js.t_used": "{0} / {1} t belegt",
+    "js.not_installed": "nicht installiert",
+    "js.captain": "Kapitän {0}",
+    "js.ship_pack": "Schiffspaket: {0} {1}",
+    "js.module_pack": "Modulpaket: {0} {1}",
+    "js.no_ship_or_module_packs": "Keine Schiffs- oder Modulpakete",
+    "js.carrier_management_last_opened": "Trägerverwaltung zuletzt geöffnet {0}"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Carrier Jumps",
+    "addon.description": "Big countdown to your carrier's next jump with lockdown warning, alerts at 10 / 5 / 1 minutes and on departure, and a list of recent jumps.",
+    "ui.recent_jumps": "RECENT JUMPS",
+    "ui.confirmed_you_were_aboard_otherwise_the": "✓ = confirmed (you were aboard). Otherwise the arrival is assumed from the departure time; lockdown and cooldown times are approximate.",
+    "js.no_jump_booked": "No jump booked",
+    "js.carrier_jump_cancelled": "CARRIER JUMP CANCELLED",
+    "js.carrier_jump_booked_0_departs_1": "CARRIER JUMP BOOKED · {0} · departs {1}",
+    "js.carrier_jumps_to_in": "CARRIER JUMPS TO {0} IN {1}",
+    "js.carrier_lockdown_jumping_to_in_launch": "⚠ CARRIER LOCKDOWN · jumping to {0} in {1} · launch or stay docked",
+    "js.carrier_jumps_in": "CARRIER JUMPS IN {0}",
+    "js.carrier_jumping": "CARRIER JUMPING · {0}",
+    "js.jumping": "JUMPING",
+    "js.departs": "departs {0}",
+    "js.lockdown": " · LOCKDOWN",
+    "js.at": "At {0}",
+    "js.no_carrier_jumps_yet_book_one": "No carrier jumps yet. Book one in carrier management and it'll count down here."
+  }
+}

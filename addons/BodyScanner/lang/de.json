@@ -1,0 +1,27 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Körperscanner",
+    "addon.description": "Gescannte Körper im aktuellen System, die wertvollsten zuerst: grober Wert, Erstentdeckung und Kartierung, biologische / geologische Signale, landbare Schwerkraft und Filter.",
+    "ui.landable": "Landbar",
+    "ui.signals": "Signale",
+    "ui.valuable": "Wertvoll",
+    "ui.worth_mapping_about_100k_cr_or": "Lohnt sich zu kartieren: etwa 100k cr oder mehr",
+    "ui.stars": "Sterne",
+    "ui.values_are_rough_estimates_scan_mapping": "Werte sind grobe Schätzungen (Scan + Kartierung, mit Erstentdeckungsbonus, wo er gilt).",
+    "js.terraformable": "Terraformierbar ",
+    "js.scoopable": " · schöpfbar",
+    "js.new": "NEU",
+    "js.mapped": "kartiert ✓",
+    "js.landable_g": "landbar {0} g",
+    "js.ls": " Ls",
+    "js.bodies": "{0} / {1} Körper{2}",
+    "js.bodies_2": "{0} Körper",
+    "js.so_far": " bisher",
+    "js.landable_with_signals_mapped": "{0} landbar · {1} mit Signalen · {2} kartiert",
+    "js.waiting_for_your_location": "Warte auf deinen Standort…",
+    "js.nothing_scanned_here_yet_honk_open": "Hier noch nichts gescannt. Hupe, öffne den FSS oder flieg nah an einen Körper.",
+    "js.no_bodies_match_the_filters": "Keine Körper passen zu den Filtern."
+  }
+}

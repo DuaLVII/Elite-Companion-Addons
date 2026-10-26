@@ -1,0 +1,23 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Träger-Tritium",
+    "addon.description": "Tritium im Tank des Trägers (von 1.000 t), Sprungreichweite, was die letzten Sprünge gekostet haben, wie viele Sprünge das ungefähr noch abdeckt und jede Einlagerung.",
+    "ui.range": "REICHWEITE",
+    "ui.per_jump": "PRO SPRUNG",
+    "ui.jumps_left": "SPRÜNGE ÜBRIG",
+    "ui.deposits": "EINLAGERUNGEN",
+    "js.measured_after_a_jump_open_carrier": "wird nach einem Sprung gemessen: öffne die Trägerverwaltung vor und nach einem Sprung",
+    "js.average_of_the_last_0_measured": "Durchschnitt der letzten {0} gemessenen Sprünge",
+    "js.carrier_tritium_0_t_1_t": "Träger-Tritium +{0} t → {1} t",
+    "js.open_carrier_management_in_game_once": "Öffne einmal die Trägerverwaltung im Spiel, um den Tank zu lesen.",
+    "js.of_t": "von {0} t",
+    "js.ly": "{0} / {1} LJ",
+    "js.read": "Gelesen {0}",
+    "js.low_tritium_may_not_cover_a": "⚠ Wenig Tritium: reicht evtl. nicht für einen langen Sprung",
+    "js.jumps_since_this_reading": "{0} Sprünge seit dieser Messung; öffne die Trägerverwaltung zum Aktualisieren",
+    "js.one_jump_since_this_reading": "1 Sprung seit dieser Messung; öffne die Trägerverwaltung zum Aktualisieren",
+    "js.the_one_measured_jump": "der eine gemessene Sprung"
+  }
+}

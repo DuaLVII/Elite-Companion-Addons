@@ -1,0 +1,25 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Zurück zum Schiff",
+    "addon.description": "Kompasspfeile und Entfernungen zurück zu deinem gelandeten Schiff, deinem geparkten SRV und einer selbst markierten Stelle, mit der Zeit bis dorthin bei deiner aktuellen Geschwindigkeit. Funktioniert zu Fuß und im SRV.",
+    "ui.mark_this_spot": "📍 Diese Stelle markieren",
+    "ui.clear_marker": "Markierung löschen",
+    "ui.straight_ahead_distances_are_along_the": "▲ = geradeaus. Entfernungen gelten entlang der Oberfläche; Höhenunterschiede sind nicht enthalten.",
+    "js.marker_set": "Markierung gesetzt",
+    "js.not_set": "{0}: nicht gesetzt",
+    "js.on": "{0}: auf {1}",
+    "js.bearing": "Peilung {0}°",
+    "js.at_this_speed": " · {0} bei diesem Tempo",
+    "js.min_s": "{0} Min. {1} s",
+    "js.h_min": "{0} Std. {1} Min.",
+    "js.heading": "{0} · Kurs {1}°",
+    "js.not_on_a_planet_surface": "Nicht auf einer Planetenoberfläche",
+    "js.ship": "SCHIFF",
+    "js.srv": "SRV",
+    "js.marker": "MARKIERUNG",
+    "js.another_body": "einem anderen Körper",
+    "js.surface": "Oberfläche"
+  }
+}

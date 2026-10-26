@@ -1,0 +1,22 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Sauts du porte-vaisseaux",
+    "addon.description": "Grand compte à rebours jusqu'au prochain saut de votre porte-vaisseaux avec alerte de verrouillage, alertes à 10 / 5 / 1 minutes et au départ, et la liste des derniers sauts.",
+    "ui.recent_jumps": "DERNIERS SAUTS",
+    "ui.confirmed_you_were_aboard_otherwise_the": "✓ = confirmé (vous étiez à bord). Sinon l'arrivée est déduite de l'heure de départ ; les durées de verrouillage et de recharge sont approximatives.",
+    "js.no_jump_booked": "Aucun saut programmé",
+    "js.carrier_jump_cancelled": "SAUT DU PORTE-VAISSEAUX ANNULÉ",
+    "js.carrier_jump_booked_0_departs_1": "SAUT DU PORTE-VAISSEAUX PROGRAMMÉ · {0} · départ {1}",
+    "js.carrier_jumps_to_in": "LE PORTE-VAISSEAUX SAUTE VERS {0} DANS {1}",
+    "js.carrier_lockdown_jumping_to_in_launch": "⚠ VERROUILLAGE DU PORTE-VAISSEAUX · saut vers {0} dans {1} · décollez ou restez amarré",
+    "js.carrier_jumps_in": "LE PORTE-VAISSEAUX SAUTE DANS {0}",
+    "js.carrier_jumping": "SAUT DU PORTE-VAISSEAUX · {0}",
+    "js.jumping": "EN SAUT",
+    "js.departs": "départ {0}",
+    "js.lockdown": " · VERROUILLAGE",
+    "js.at": "À {0}",
+    "js.no_carrier_jumps_yet_book_one": "Aucun saut pour l'instant. Programmez-en un dans la gestion du porte-vaisseaux et le compte à rebours s'affichera ici."
+  }
+}

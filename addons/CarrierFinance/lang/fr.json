@@ -1,0 +1,24 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Finances du porte-vaisseaux",
+    "addon.description": "Solde, réserve et fonds disponibles du porte-vaisseaux, taux de taxe par service, virements entrants et sortants, et une alerte quand le solde passe sous un montant choisi.",
+    "ui.carrier_balance": "SOLDE DU PORTE-VAISSEAUX",
+    "ui.reserved": "RÉSERVÉ",
+    "ui.available": "DISPONIBLE",
+    "ui.alert_below_cr": "ALERTE SOUS (cr)  ",
+    "ui.warn_me_when_the_carrier_balance": "M'avertir quand le solde du porte-vaisseaux passe sous ce montant (0 = jamais)",
+    "ui.tax_rates": "TAUX DE TAXE",
+    "ui.transfers": "VIREMENTS",
+    "ui.weekly_upkeep_isn_t_written_to": " · l'entretien hebdomadaire n'est pas écrit dans le journal.",
+    "js.carrier_0_1_balance_2": "Porte-vaisseaux {0} : {1} · solde {2}",
+    "js.carrier_balance_low_0": "⚠ SOLDE DU PORTE-VAISSEAUX FAIBLE · {0}",
+    "js.open_carrier_management_in_game_once": "Ouvrez une fois la gestion du porte-vaisseaux en jeu pour lire ses finances.",
+    "js.cr": " cr",
+    "js.updated": "Mis à jour {0}",
+    "js.below_your_alert_level_of_top": "⚠ Sous votre seuil d'alerte de {0} : rechargez pour couvrir l'entretien",
+    "js.deposit": "dépôt",
+    "js.withdrawal": "retrait"
+  }
+}

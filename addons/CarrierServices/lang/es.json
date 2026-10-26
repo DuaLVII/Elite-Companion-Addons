@@ -1,0 +1,24 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Servicios del portanaves",
+    "addon.description": "Cómo se usan las 25.000 t del portanaves (servicios, carga, reservado, paquetes de naves y módulos, libre), cada servicio con su tripulación y si funciona, está en pausa o no está instalado, y los paquetes instalados.",
+    "ui.capacity": "CAPACIDAD",
+    "ui.services": "SERVICIOS",
+    "ui.packs": "PAQUETES",
+    "js.carrier_0_1_d": "Portanaves {0}: {1} d",
+    "js.open_carrier_management_in_game_once": "Abre una vez la gestión del portanaves en el juego para leer su distribución.",
+    "js.services_crew": "Servicios y tripulación",
+    "js.reserved_for_buy_orders": "Reservado para órdenes de compra",
+    "js.ship_packs": "Paquetes de naves",
+    "js.module_packs": "Paquetes de módulos",
+    "js.t_used": "{0} / {1} t usadas",
+    "js.not_installed": "no instalado",
+    "js.captain": "Capitán {0}",
+    "js.ship_pack": "Paquete de naves: {0} {1}",
+    "js.module_pack": "Paquete de módulos: {0} {1}",
+    "js.no_ship_or_module_packs": "Sin paquetes de naves ni de módulos",
+    "js.carrier_management_last_opened": "Gestión del portanaves abierta por última vez {0}"
+  }
+}

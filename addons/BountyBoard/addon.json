@@ -1,0 +1,10 @@
+{
+  // Example addon: copy this folder, rename it, and change the files to make your own module.
+  "title": "Bounty Board",
+  "category": "Combat",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Bounty kills and credits this session, today, yesterday, the last 7 days and all-time (read from the last few weeks of journals), unclaimed bounties, biggest payout, a graph and the last few kills.",
+  "view": "module.xml",
+  "script": "script.js"
+}

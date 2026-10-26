@@ -1,0 +1,23 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Tritium nosiče",
+    "addon.description": "Tritium v nádrži nosiče (z 1 000 t), dosah skoku, kolik stály poslední skoky, na kolik dalších skoků zhruba vystačí a každý vklad.",
+    "ui.range": "DOSAH",
+    "ui.per_jump": "NA SKOK",
+    "ui.jumps_left": "ZBÝVÁ SKOKŮ",
+    "ui.deposits": "VKLADY",
+    "js.measured_after_a_jump_open_carrier": "měří se po skoku: otevři správu nosiče před skokem a po něm",
+    "js.average_of_the_last_0_measured": "průměr posledních {0} změřených skoků",
+    "js.carrier_tritium_0_t_1_t": "Tritium nosiče +{0} t → {1} t",
+    "js.open_carrier_management_in_game_once": "Jednou otevři ve hře správu nosiče, aby se načetla nádrž.",
+    "js.of_t": "z {0} t",
+    "js.ly": "{0} / {1} ly",
+    "js.read": "Načteno {0}",
+    "js.low_tritium_may_not_cover_a": "⚠ Málo tritia: nemusí stačit na dlouhý skok",
+    "js.jumps_since_this_reading": "{0} skoků od tohoto měření; otevři správu nosiče pro aktualizaci",
+    "js.one_jump_since_this_reading": "1 skok od tohoto měření; otevři správu nosiče pro aktualizaci",
+    "js.the_one_measured_jump": "jediný změřený skok"
+  }
+}

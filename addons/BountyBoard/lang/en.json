@@ -1,0 +1,25 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Bounty Board",
+    "addon.description": "Bounty kills and credits this session, today, yesterday, the last 7 days and all-time (read from the last few weeks of journals), unclaimed bounties, biggest payout, a graph and the last few kills.",
+    "ui.hunting_in": "Hunting in ",
+    "ui.session_bounties": "SESSION BOUNTIES",
+    "ui.earned": "EARNED",
+    "ui.per_hour": "PER HOUR",
+    "ui.today": "TODAY",
+    "ui.yesterday": "YESTERDAY",
+    "ui.7_days": "7 DAYS",
+    "ui.all_time": "ALL-TIME ",
+    "ui.biggest": "BIGGEST ",
+    "ui.recent_bounties": "RECENT BOUNTIES",
+    "js.0_kills_1": "{0} kills · {1}",
+    "js.big_bounty_0_1_cr": "★ BIG BOUNTY · {0} · {1} CR",
+    "js.bounties_cashed_in_0_cr": "Bounties cashed in: {0} cr",
+    "js.earned_this_session": "Earned this session",
+    "js.cr": " cr",
+    "js.unclaimed_bounties": "UNCLAIMED BOUNTIES · {0}",
+    "js.no_bounty_kills_in_the_last": "No bounty kills in the last few weeks of journals yet. Good hunting, Commander."
+  }
+}

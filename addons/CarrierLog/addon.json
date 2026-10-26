@@ -1,0 +1,8 @@
+{
+  // Fleet carrier set, 7 of 7.
+  "title": "Carrier Log",
+  "category": "Fleet Carrier",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Everything that's happened to your carrier, newest first: jumps, tritium, transfers, tax, services, packs, orders, docking access, name changes and decommissioning. Kept between sessions."
+}

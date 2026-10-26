@@ -1,0 +1,30 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Deník nosiče",
+    "addon.description": "Vše, co se tvému nosiči stalo, nejnovější první: skoky, tritium, převody, daně, služby, balíčky, příkazy, přístup k přistání, změny jména a vyřazení. Uchovává se mezi relacemi.",
+    "js.bought_carrier_in_for": "Nosič {0} koupen v {1} za {2}",
+    "js.carrier_management_t_tritium_t_free": "Správa nosiče: {0} t tritia · {1} · {2} t volno",
+    "js.jump_booked_to": "Skok naplánován do {0}{1}{2}",
+    "js.jump_cancelled": "Skok zrušen",
+    "js.arrived_in": "Přílet do {0}{1}",
+    "js.tritium_t_t": "Tritium +{0} t → {1} t",
+    "js.deposited": "Vloženo {0} → {1}",
+    "js.withdrew": "Vybráno {0} → {1}",
+    "js.finance_tax_reserve_available": "Finance: daň {0} % · rezerva {1} % · k dispozici {2}",
+    "js.order_cancelled": "Příkaz zrušen: {0}",
+    "js.buy_order_t_cr": "Nákupní příkaz: {0} t {1} @ {2} cr",
+    "js.sell_order_t_cr": "Prodejní příkaz: {0} t {1} @ {2} cr",
+    "js.docking": "Přistání: {0}{1}",
+    "js.renamed_to": "Přejmenováno na {0} ({1})",
+    "js.decommission_requested_refund": "Vyřazení požadováno · vrácení {0}",
+    "js.decommission_cancelled": "Vyřazení zrušeno",
+    "js.nothing_yet_carrier_events_from_the": "Zatím nic. Události nosiče z deníků posledních týdnů se objeví zde a nové hned, jak nastanou.",
+    "js.events": "{0} událostí",
+    "js.departs": " · odlet {0}",
+    "js.ship_pack": "Balíček lodí {0} {1}: ",
+    "js.module_pack": "Balíček modulů {0} {1}: ",
+    "js.notorious_allowed": " · notoričtí povoleni"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Tritio del portanaves",
+    "addon.description": "Tritio en el depósito del portanaves (de 1.000 t), alcance de salto, lo que costaron los últimos saltos, cuántos saltos más cubre aproximadamente y cada depósito.",
+    "ui.range": "ALCANCE",
+    "ui.per_jump": "POR SALTO",
+    "ui.jumps_left": "SALTOS RESTANTES",
+    "ui.deposits": "DEPÓSITOS",
+    "js.measured_after_a_jump_open_carrier": "se mide tras un salto: abre la gestión del portanaves antes y después de uno",
+    "js.average_of_the_last_0_measured": "media de los últimos {0} saltos medidos",
+    "js.carrier_tritium_0_t_1_t": "Tritio del portanaves +{0} t → {1} t",
+    "js.open_carrier_management_in_game_once": "Abre una vez la gestión del portanaves en el juego para leer el depósito.",
+    "js.of_t": "de {0} t",
+    "js.ly": "{0} / {1} al",
+    "js.read": "Leído {0}",
+    "js.low_tritium_may_not_cover_a": "⚠ Poco tritio: puede no bastar para un salto largo",
+    "js.jumps_since_this_reading": "{0} saltos desde esta lectura; abre la gestión del portanaves para actualizar",
+    "js.one_jump_since_this_reading": "1 salto desde esta lectura; abre la gestión del portanaves para actualizar",
+    "js.the_one_measured_jump": "el único salto medido"
+  }
+}

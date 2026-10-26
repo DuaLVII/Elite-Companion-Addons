@@ -1,0 +1,22 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Trägersprünge",
+    "addon.description": "Großer Countdown bis zum nächsten Sprung deines Trägers mit Sperrwarnung, Alarmen bei 10 / 5 / 1 Minute und beim Abflug, und eine Liste der letzten Sprünge.",
+    "ui.recent_jumps": "LETZTE SPRÜNGE",
+    "ui.confirmed_you_were_aboard_otherwise_the": "✓ = bestätigt (du warst an Bord). Sonst wird die Ankunft aus der Abflugzeit angenommen; Sperr- und Abklingzeiten sind ungefähr.",
+    "js.no_jump_booked": "Kein Sprung gebucht",
+    "js.carrier_jump_cancelled": "TRÄGERSPRUNG ABGEBROCHEN",
+    "js.carrier_jump_booked_0_departs_1": "TRÄGERSPRUNG GEBUCHT · {0} · Abflug {1}",
+    "js.carrier_jumps_to_in": "TRÄGER SPRINGT NACH {0} IN {1}",
+    "js.carrier_lockdown_jumping_to_in_launch": "⚠ TRÄGERSPERRE · Sprung nach {0} in {1} · starten oder angedockt bleiben",
+    "js.carrier_jumps_in": "TRÄGER SPRINGT IN {0}",
+    "js.carrier_jumping": "TRÄGER SPRINGT · {0}",
+    "js.jumping": "SPRINGT",
+    "js.departs": "Abflug {0}",
+    "js.lockdown": " · SPERRE",
+    "js.at": "Bei {0}",
+    "js.no_carrier_jumps_yet_book_one": "Noch keine Trägersprünge. Buche einen in der Trägerverwaltung, dann läuft hier der Countdown."
+  }
+}

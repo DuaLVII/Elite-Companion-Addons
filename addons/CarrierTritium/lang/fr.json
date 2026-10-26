@@ -1,0 +1,23 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Tritium du porte-vaisseaux",
+    "addon.description": "Tritium dans le réservoir du porte-vaisseaux (sur 1 000 t), portée de saut, coût des derniers sauts, combien de sauts cela couvre environ et chaque dépôt.",
+    "ui.range": "PORTÉE",
+    "ui.per_jump": "PAR SAUT",
+    "ui.jumps_left": "SAUTS RESTANTS",
+    "ui.deposits": "DÉPÔTS",
+    "js.measured_after_a_jump_open_carrier": "mesuré après un saut : ouvrez la gestion du porte-vaisseaux avant et après un saut",
+    "js.average_of_the_last_0_measured": "moyenne des {0} derniers sauts mesurés",
+    "js.carrier_tritium_0_t_1_t": "Tritium du porte-vaisseaux +{0} t → {1} t",
+    "js.open_carrier_management_in_game_once": "Ouvrez une fois la gestion du porte-vaisseaux en jeu pour lire le réservoir.",
+    "js.of_t": "sur {0} t",
+    "js.ly": "{0} / {1} AL",
+    "js.read": "Lu {0}",
+    "js.low_tritium_may_not_cover_a": "⚠ Tritium bas : peut ne pas suffire pour un long saut",
+    "js.jumps_since_this_reading": "{0} sauts depuis cette lecture ; ouvrez la gestion du porte-vaisseaux pour mettre à jour",
+    "js.one_jump_since_this_reading": "1 saut depuis cette lecture ; ouvrez la gestion du porte-vaisseaux pour mettre à jour",
+    "js.the_one_measured_jump": "le seul saut mesuré"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Back to Ship",
+    "addon.description": "Compass arrows and distances back to your landed ship, your parked SRV, and a spot you mark yourself, with time to get there at your current speed. Works on foot and in the SRV.",
+    "ui.mark_this_spot": "📍 Mark this spot",
+    "ui.clear_marker": "Clear marker",
+    "ui.straight_ahead_distances_are_along_the": "▲ = straight ahead. Distances are along the surface; height differences aren't included.",
+    "js.marker_set": "Marker set",
+    "js.not_set": "{0}: not set",
+    "js.on": "{0}: on {1}",
+    "js.bearing": "bearing {0}°",
+    "js.at_this_speed": " · {0} at this speed",
+    "js.min_s": "{0} min {1} s",
+    "js.h_min": "{0} h {1} min",
+    "js.heading": "{0} · heading {1}°",
+    "js.not_on_a_planet_surface": "Not on a planet surface",
+    "js.ship": "SHIP",
+    "js.srv": "SRV",
+    "js.marker": "MARKER",
+    "js.another_body": "another body",
+    "js.surface": "Surface"
+  }
+}

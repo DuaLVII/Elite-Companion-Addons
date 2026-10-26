@@ -1,0 +1,81 @@
+<!--
+  Body Scanner: the System Bodies module rebuilt as an addon.
+
+  New trick in this one: the filter check boxes write straight into the script's values
+  (IsChecked="{Binding V[onlyLandable], Mode=TwoWay}"), and the script reads them back with get("onlyLandable").
+-->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel.Resources>
+        <Style x:Key="Filter" TargetType="CheckBox">
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Margin" Value="0,0,10,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </StackPanel.Resources>
+
+    <!-- System, scan progress and total -->
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Right" Style="{StaticResource Label}" Text="{Binding V[progress]}" VerticalAlignment="Bottom"/>
+        <TextBlock Style="{StaticResource Value}" FontSize="15" Text="{Binding Game.StarSystem}"/>
+    </DockPanel>
+    <DockPanel Margin="0,2,0,4">
+        <TextBlock DockPanel.Dock="Right" Foreground="{StaticResource Good}" FontSize="12" FontWeight="SemiBold" Text="{Binding V[total]}"/>
+        <TextBlock Style="{StaticResource Label}" Text="{Binding V[summary]}" TextTrimming="CharacterEllipsis"/>
+    </DockPanel>
+
+    <!-- Filters (two-way bindings into the script's values) -->
+    <WrapPanel Margin="0,0,0,4">
+        <CheckBox Style="{StaticResource Filter}" Content="{T ui.landable}" IsChecked="{Binding V[onlyLandable], Mode=TwoWay}"/>
+        <CheckBox Style="{StaticResource Filter}" Content="{T ui.signals}" IsChecked="{Binding V[onlySignals], Mode=TwoWay}"/>
+        <CheckBox Style="{StaticResource Filter}" Content="{T ui.valuable}" IsChecked="{Binding V[onlyValuable], Mode=TwoWay}"
+                  ToolTip="{T ui.worth_mapping_about_100k_cr_or}"/>
+        <CheckBox Style="{StaticResource Filter}" Content="{T ui.stars}" IsChecked="{Binding V[showStars], Mode=TwoWay}"/>
+    </WrapPanel>
+
+    <TextBlock Text="{Binding V[empty]}" FontStyle="Italic" FontSize="12" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+
+    <ItemsControl ItemsSource="{Binding V[bodies]}" MaxHeight="260">
+        <ItemsControl.Template>
+            <ControlTemplate TargetType="ItemsControl">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><ItemsPresenter/></ScrollViewer>
+            </ControlTemplate>
+        </ItemsControl.Template>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Border BorderBrush="{StaticResource PanelBorder}" BorderThickness="0,0,0,1" Padding="0,2,0,3">
+                    <StackPanel>
+                        <DockPanel>
+                            <TextBlock x:Name="Value" DockPanel.Dock="Right" Text="{Binding value}" FontSize="12"
+                                       Foreground="{StaticResource HudDim}" Margin="8,0,0,0"/>
+                            <TextBlock FontSize="12.5" TextTrimming="CharacterEllipsis">
+                                <Run x:Name="Star" Text="{Binding star, Mode=OneWay}" Foreground="{StaticResource Hud}"/>
+                                <Run Text="{Binding name, Mode=OneWay}" Foreground="{StaticResource Hud}"/>
+                                <Run Text="{Binding type, Mode=OneWay}" Foreground="{StaticResource HudText}"/>
+                            </TextBlock>
+                        </DockPanel>
+                        <!-- tags: "new · mapped · landable 0.42 g · 3 bio · 1 geo · 1,204 Ls" -->
+                        <TextBlock FontSize="10.5" Foreground="{StaticResource HudDim}" TextTrimming="CharacterEllipsis" Margin="10,0,0,0">
+                            <Run Text="{Binding firstText, Mode=OneWay}" Foreground="{StaticResource Purple}"/>
+                            <Run Text="{Binding mappedText, Mode=OneWay}" Foreground="{StaticResource Ok}"/>
+                            <Run Text="{Binding landText, Mode=OneWay}" Foreground="{StaticResource Warn}"/>
+                            <Run Text="{Binding signalText, Mode=OneWay}" Foreground="{StaticResource Good}"/>
+                            <Run Text="{Binding distance, Mode=OneWay}"/>
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding valuable}" Value="True">
+                        <Setter TargetName="Value" Property="Foreground" Value="{StaticResource Good}"/>
+                        <Setter TargetName="Value" Property="FontWeight" Value="Bold"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+    <TextBlock Style="{StaticResource Label}" FontSize="10" Margin="0,4,0,0" TextWrapping="Wrap"
+               Text="{T ui.values_are_rough_estimates_scan_mapping}"/>
+</StackPanel>

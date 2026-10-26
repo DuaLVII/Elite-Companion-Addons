@@ -1,0 +1,27 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Escáner de cuerpos",
+    "addon.description": "Cuerpos escaneados en el sistema actual, los más valiosos primero: valor aproximado, primer descubrimiento y cartografía, señales biológicas / geológicas, gravedad de los aterrizables y filtros.",
+    "ui.landable": "Aterrizable",
+    "ui.signals": "Señales",
+    "ui.valuable": "Valioso",
+    "ui.worth_mapping_about_100k_cr_or": "Vale la pena cartografiarlo: unos 100k cr o más",
+    "ui.stars": "Estrellas",
+    "ui.values_are_rough_estimates_scan_mapping": "Los valores son estimaciones aproximadas (escaneo + cartografía, con la bonificación de primer descubrimiento cuando aplica).",
+    "js.terraformable": "Terraformable ",
+    "js.scoopable": " · recolectable",
+    "js.new": "NUEVO",
+    "js.mapped": "cartografiado ✓",
+    "js.landable_g": "aterrizable {0} g",
+    "js.ls": " sl",
+    "js.bodies": "{0} / {1} cuerpos{2}",
+    "js.bodies_2": "{0} cuerpos",
+    "js.so_far": " hasta ahora",
+    "js.landable_with_signals_mapped": "{0} aterrizables · {1} con señales · {2} cartografiados",
+    "js.waiting_for_your_location": "Esperando tu ubicación…",
+    "js.nothing_scanned_here_yet_honk_open": "Aún no hay nada escaneado aquí. Toca la bocina, abre el FSS o acércate a un cuerpo.",
+    "js.no_bodies_match_the_filters": "Ningún cuerpo coincide con los filtros."
+  }
+}

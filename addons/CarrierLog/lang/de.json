@@ -1,0 +1,30 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Trägerlogbuch",
+    "addon.description": "Alles, was deinem Träger passiert ist, das Neueste zuerst: Sprünge, Tritium, Überweisungen, Steuern, Dienste, Pakete, Aufträge, Andockzugang, Namensänderungen und Stilllegung. Bleibt zwischen Sitzungen erhalten.",
+    "js.bought_carrier_in_for": "Träger {0} in {1} für {2} gekauft",
+    "js.carrier_management_t_tritium_t_free": "Trägerverwaltung: {0} t Tritium · {1} · {2} t frei",
+    "js.jump_booked_to": "Sprung gebucht nach {0}{1}{2}",
+    "js.jump_cancelled": "Sprung abgebrochen",
+    "js.arrived_in": "Angekommen in {0}{1}",
+    "js.tritium_t_t": "Tritium +{0} t → {1} t",
+    "js.deposited": "Eingezahlt {0} → {1}",
+    "js.withdrew": "Abgehoben {0} → {1}",
+    "js.finance_tax_reserve_available": "Finanzen: Steuer {0}% · Rücklage {1}% · verfügbar {2}",
+    "js.order_cancelled": "Auftrag storniert: {0}",
+    "js.buy_order_t_cr": "Kaufauftrag: {0} t {1} @ {2} cr",
+    "js.sell_order_t_cr": "Verkaufsauftrag: {0} t {1} @ {2} cr",
+    "js.docking": "Andocken: {0}{1}",
+    "js.renamed_to": "Umbenannt in {0} ({1})",
+    "js.decommission_requested_refund": "Stilllegung beantragt · Erstattung {0}",
+    "js.decommission_cancelled": "Stilllegung abgebrochen",
+    "js.nothing_yet_carrier_events_from_the": "Noch nichts. Trägerereignisse aus den Journalen der letzten Wochen erscheinen hier, neue sobald sie passieren.",
+    "js.events": "{0} Ereignisse",
+    "js.departs": " · Abflug {0}",
+    "js.ship_pack": "Schiffspaket {0} {1}: ",
+    "js.module_pack": "Modulpaket {0} {1}: ",
+    "js.notorious_allowed": " · Berüchtigte erlaubt"
+  }
+}

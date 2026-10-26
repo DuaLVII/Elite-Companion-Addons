@@ -1,0 +1,24 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Služby nosiče",
+    "addon.description": "Jak je využito 25 000 t nosiče (služby, náklad, rezervace, balíčky lodí a modulů, volno), každá služba s posádkou a stavem běží / pozastaveno / nenainstalováno a nainstalované balíčky.",
+    "ui.capacity": "KAPACITA",
+    "ui.services": "SLUŽBY",
+    "ui.packs": "BALÍČKY",
+    "js.carrier_0_1_d": "Nosič {0}: {1} d",
+    "js.open_carrier_management_in_game_once": "Jednou otevři ve hře správu nosiče, aby se načetlo jeho uspořádání.",
+    "js.services_crew": "Služby a posádka",
+    "js.reserved_for_buy_orders": "Rezervováno pro nákupní příkazy",
+    "js.ship_packs": "Balíčky lodí",
+    "js.module_packs": "Balíčky modulů",
+    "js.t_used": "{0} / {1} t využito",
+    "js.not_installed": "nenainstalováno",
+    "js.captain": "Kapitán {0}",
+    "js.ship_pack": "Balíček lodí: {0} {1}",
+    "js.module_pack": "Balíček modulů: {0} {1}",
+    "js.no_ship_or_module_packs": "Žádné balíčky lodí ani modulů",
+    "js.carrier_management_last_opened": "Správa nosiče naposledy otevřena {0}"
+  }
+}

@@ -1,0 +1,72 @@
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <TextBlock Text="{Binding V[empty]}" FontStyle="Italic" FontSize="12" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Right" Style="{StaticResource Label}" Text="{Binding V[usedText]}"/>
+        <TextBlock Style="{StaticResource Label}" Text="{T ui.capacity}"/>
+    </DockPanel>
+
+    <!-- One bar per use of space, out of the carrier's total -->
+    <ItemsControl ItemsSource="{Binding V[space]}" Margin="0,2,0,0">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <StackPanel Margin="0,1">
+                    <DockPanel>
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding text}" FontSize="11" Foreground="{StaticResource HudDim}"/>
+                        <TextBlock Text="{Binding label}" FontSize="11.5" Foreground="{StaticResource HudText}"/>
+                    </DockPanel>
+                    <ProgressBar x:Name="Bar" Style="{StaticResource Bar}" Maximum="100" Value="{Binding percent, Mode=OneWay}" Height="5"/>
+                </StackPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding color}" Value="Ok"><Setter TargetName="Bar" Property="Foreground" Value="{StaticResource Ok}"/></DataTrigger>
+                    <DataTrigger Binding="{Binding color}" Value="Hud"><Setter TargetName="Bar" Property="Foreground" Value="{StaticResource Hud}"/></DataTrigger>
+                    <DataTrigger Binding="{Binding color}" Value="Warn"><Setter TargetName="Bar" Property="Foreground" Value="{StaticResource Warn}"/></DataTrigger>
+                    <DataTrigger Binding="{Binding color}" Value="Purple"><Setter TargetName="Bar" Property="Foreground" Value="{StaticResource Purple}"/></DataTrigger>
+                    <DataTrigger Binding="{Binding color}" Value="Good"><Setter TargetName="Bar" Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+    <DockPanel Margin="0,10,0,2">
+        <TextBlock DockPanel.Dock="Right" Style="{StaticResource Label}" Text="{Binding V[captain]}"/>
+        <TextBlock Style="{StaticResource Label}" Text="{T ui.services}"/>
+    </DockPanel>
+    <ItemsControl ItemsSource="{Binding V[crew]}" MaxHeight="230">
+        <ItemsControl.Template>
+            <ControlTemplate TargetType="ItemsControl">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><ItemsPresenter/></ScrollViewer>
+            </ControlTemplate>
+        </ItemsControl.Template>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <DockPanel Margin="0,1">
+                    <TextBlock x:Name="State" DockPanel.Dock="Right" Text="{Binding state}" FontSize="11" Foreground="{StaticResource HudDim}" Margin="8,0,0,0"/>
+                    <TextBlock x:Name="Dot" DockPanel.Dock="Left" Text="●" FontSize="10" Foreground="{StaticResource PanelBorder}" Margin="0,1,6,0" VerticalAlignment="Center"/>
+                    <TextBlock FontSize="12" TextTrimming="CharacterEllipsis">
+                        <Run x:Name="Service" Text="{Binding service, Mode=OneWay}" Foreground="{StaticResource HudDim}"/>
+                        <Run Text="{Binding name, Mode=OneWay}" Foreground="{StaticResource HudDim}" FontSize="10.5"/>
+                    </TextBlock>
+                </DockPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding running}" Value="True">
+                        <Setter TargetName="Dot" Property="Foreground" Value="{StaticResource Good}"/>
+                        <Setter TargetName="Service" Property="Foreground" Value="{StaticResource HudText}"/>
+                        <Setter TargetName="State" Property="Foreground" Value="{StaticResource Good}"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding paused}" Value="True">
+                        <Setter TargetName="Dot" Property="Foreground" Value="{StaticResource Warn}"/>
+                        <Setter TargetName="Service" Property="Foreground" Value="{StaticResource HudText}"/>
+                        <Setter TargetName="State" Property="Foreground" Value="{StaticResource Warn}"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.packs}" Margin="0,10,0,2"/>
+    <TextBlock Text="{Binding V[packs]}" FontSize="12" Foreground="{StaticResource HudText}" TextWrapping="Wrap"/>
+    <TextBlock Style="{StaticResource Label}" FontSize="10" Margin="0,6,0,0" Text="{Binding V[updated]}"/>
+</StackPanel>

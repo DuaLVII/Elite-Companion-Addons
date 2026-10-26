@@ -1,0 +1,24 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Trägerfinanzen",
+    "addon.description": "Kontostand, Rücklage und verfügbare Mittel des Trägers, Steuersätze je Dienst, Ein- und Auszahlungen und eine Warnung, wenn der Kontostand unter einen gewählten Betrag fällt.",
+    "ui.carrier_balance": "TRÄGER-KONTOSTAND",
+    "ui.reserved": "RESERVIERT",
+    "ui.available": "VERFÜGBAR",
+    "ui.alert_below_cr": "WARNUNG UNTER (cr)  ",
+    "ui.warn_me_when_the_carrier_balance": "Warnen, wenn der Träger-Kontostand darunter fällt (0 = nie)",
+    "ui.tax_rates": "STEUERSÄTZE",
+    "ui.transfers": "ÜBERWEISUNGEN",
+    "ui.weekly_upkeep_isn_t_written_to": " · der wöchentliche Unterhalt steht nicht im Journal.",
+    "js.carrier_0_1_balance_2": "Träger {0}: {1} · Kontostand {2}",
+    "js.carrier_balance_low_0": "⚠ TRÄGER-KONTOSTAND NIEDRIG · {0}",
+    "js.open_carrier_management_in_game_once": "Öffne einmal die Trägerverwaltung im Spiel, um die Finanzen des Trägers zu lesen.",
+    "js.cr": " cr",
+    "js.updated": "Aktualisiert {0}",
+    "js.below_your_alert_level_of_top": "⚠ Unter deiner Warnschwelle von {0}: aufstocken, um den Unterhalt zu decken",
+    "js.deposit": "Einzahlung",
+    "js.withdrawal": "Auszahlung"
+  }
+}

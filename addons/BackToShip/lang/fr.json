@@ -1,0 +1,25 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Retour au vaisseau",
+    "addon.description": "Flèches de boussole et distances vers votre vaisseau posé, votre VRS garé et un point que vous marquez vous-même, avec le temps pour y arriver à votre vitesse actuelle. Fonctionne à pied et en VRS.",
+    "ui.mark_this_spot": "📍 Marquer cet endroit",
+    "ui.clear_marker": "Effacer le marqueur",
+    "ui.straight_ahead_distances_are_along_the": "▲ = tout droit. Les distances suivent la surface ; les différences d'altitude ne sont pas comptées.",
+    "js.marker_set": "Marqueur placé",
+    "js.not_set": "{0} : non défini",
+    "js.on": "{0} : sur {1}",
+    "js.bearing": "relèvement {0}°",
+    "js.at_this_speed": " · {0} à cette vitesse",
+    "js.min_s": "{0} min {1} s",
+    "js.h_min": "{0} h {1} min",
+    "js.heading": "{0} · cap {1}°",
+    "js.not_on_a_planet_surface": "Pas à la surface d'une planète",
+    "js.ship": "VAISSEAU",
+    "js.srv": "VRS",
+    "js.marker": "MARQUEUR",
+    "js.another_body": "un autre corps",
+    "js.surface": "Surface"
+  }
+}

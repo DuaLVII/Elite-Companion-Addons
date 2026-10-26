@@ -1,0 +1,24 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Finanzas del portanaves",
+    "addon.description": "Saldo, reserva y fondos disponibles del portanaves, tasas por servicio, transferencias de entrada y salida, y un aviso cuando el saldo baja de la cantidad que elijas.",
+    "ui.carrier_balance": "SALDO DEL PORTANAVES",
+    "ui.reserved": "RESERVADO",
+    "ui.available": "DISPONIBLE",
+    "ui.alert_below_cr": "AVISAR POR DEBAJO DE (cr)  ",
+    "ui.warn_me_when_the_carrier_balance": "Avísame cuando el saldo del portanaves baje de esto (0 = nunca)",
+    "ui.tax_rates": "TASAS",
+    "ui.transfers": "TRANSFERENCIAS",
+    "ui.weekly_upkeep_isn_t_written_to": " · el mantenimiento semanal no se escribe en el diario.",
+    "js.carrier_0_1_balance_2": "Portanaves ({0}): {1} · saldo {2}",
+    "js.carrier_balance_low_0": "⚠ SALDO DEL PORTANAVES BAJO · {0}",
+    "js.open_carrier_management_in_game_once": "Abre una vez la gestión del portanaves en el juego para leer sus finanzas.",
+    "js.cr": " cr",
+    "js.updated": "Actualizado {0}",
+    "js.below_your_alert_level_of_top": "⚠ Por debajo de tu nivel de aviso de {0}: recárgalo para cubrir el mantenimiento",
+    "js.deposit": "ingreso",
+    "js.withdrawal": "retirada"
+  }
+}

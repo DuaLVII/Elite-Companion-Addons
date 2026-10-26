@@ -1,0 +1,24 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Finance nosiče",
+    "addon.description": "Zůstatek, rezerva a dostupné prostředky nosiče, daně za jednotlivé služby, převody dovnitř i ven a upozornění, když zůstatek klesne pod zvolenou částku.",
+    "ui.carrier_balance": "ZŮSTATEK NOSIČE",
+    "ui.reserved": "REZERVOVÁNO",
+    "ui.available": "K DISPOZICI",
+    "ui.alert_below_cr": "UPOZORNIT POD (cr)  ",
+    "ui.warn_me_when_the_carrier_balance": "Upozorni mě, když zůstatek nosiče klesne pod tuto hodnotu (0 = nikdy)",
+    "ui.tax_rates": "DANĚ",
+    "ui.transfers": "PŘEVODY",
+    "ui.weekly_upkeep_isn_t_written_to": " · týdenní údržba se do deníku nezapisuje.",
+    "js.carrier_0_1_balance_2": "Nosič ({0}): {1} · zůstatek {2}",
+    "js.carrier_balance_low_0": "⚠ NÍZKÝ ZŮSTATEK NOSIČE · {0}",
+    "js.open_carrier_management_in_game_once": "Jednou otevři ve hře správu nosiče, aby se načetly jeho finance.",
+    "js.cr": " cr",
+    "js.updated": "Aktualizováno {0}",
+    "js.below_your_alert_level_of_top": "⚠ Pod tvou hranicí upozornění {0}: doplň prostředky na údržbu",
+    "js.deposit": "vklad",
+    "js.withdrawal": "výběr"
+  }
+}

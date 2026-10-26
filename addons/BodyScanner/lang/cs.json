@@ -1,0 +1,27 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Skener těles",
+    "addon.description": "Naskenovaná tělesa v aktuálním systému, nejcennější první: přibližná hodnota, první objev a zmapování, biologické / geologické signály, gravitace u přistávatelných a filtry.",
+    "ui.landable": "Přistávatelné",
+    "ui.signals": "Signály",
+    "ui.valuable": "Cenné",
+    "ui.worth_mapping_about_100k_cr_or": "Vyplatí se zmapovat: zhruba 100k cr a víc",
+    "ui.stars": "Hvězdy",
+    "ui.values_are_rough_estimates_scan_mapping": "Hodnoty jsou hrubé odhady (sken + mapování, s bonusem za první objev, kde platí).",
+    "js.terraformable": "Terraformovatelné ",
+    "js.scoopable": " · lze sbírat palivo",
+    "js.new": "NOVÉ",
+    "js.mapped": "zmapováno ✓",
+    "js.landable_g": "přistávatelné {0} g",
+    "js.ls": " ls",
+    "js.bodies": "{0} / {1} těles{2}",
+    "js.bodies_2": "{0} těles",
+    "js.so_far": " zatím",
+    "js.landable_with_signals_mapped": "{0} přistávatelných · {1} se signály · {2} zmapováno",
+    "js.waiting_for_your_location": "Čekání na tvou polohu…",
+    "js.nothing_scanned_here_yet_honk_open": "Zatím tu nic není naskenováno. Zatrub, otevři FSS nebo leť blízko k tělesu.",
+    "js.no_bodies_match_the_filters": "Filtrům neodpovídá žádné těleso."
+  }
+}

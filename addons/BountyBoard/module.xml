@@ -1,0 +1,103 @@
+<!--
+  Bounty Board: what the module looks like.
+
+  Bindings:
+    {Binding V[name]}          a value the script set with set("name", value)
+    {Binding Game.StarSystem}  anything the app knows (see Addons\README.md for the list)
+
+  Styles and colours from the app: Label, Value, Header, HudButton, Bar, Chip;
+  Hud (orange), HudText, HudDim, Ok (blue), Good (green), Warn (yellow), Danger (red), Purple, PanelBorder.
+-->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+
+    <TextBlock Style="{StaticResource Label}">
+        <Run Text="{T ui.hunting_in}"/><Run Text="{Binding Game.StarSystem, Mode=OneWay}" Foreground="{StaticResource Hud}"/>
+    </TextBlock>
+
+    <!-- This game session -->
+    <UniformGrid Columns="3" Margin="0,6,0,4">
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.session_bounties}"/>
+            <TextBlock Style="{StaticResource Value}" FontSize="22" Text="{Binding V[kills]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.earned}"/>
+            <TextBlock FontSize="22" Foreground="{StaticResource Good}" Text="{Binding V[earned]}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.per_hour}"/>
+            <TextBlock FontSize="22" Foreground="{StaticResource Hud}" Text="{Binding V[rate]}"/>
+        </StackPanel>
+    </UniformGrid>
+
+    <!-- Across sessions (from the last few weeks of journals, then remembered) -->
+    <UniformGrid Columns="3" Margin="0,2,0,4">
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.today}"/>
+            <TextBlock FontSize="13" Foreground="{StaticResource HudText}">
+                <Run Text="{Binding V[today], Mode=OneWay}" FontWeight="SemiBold"/>
+                <Run Text="{Binding V[todayCr], Mode=OneWay}" Foreground="{StaticResource HudDim}" FontSize="11"/>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.yesterday}"/>
+            <TextBlock FontSize="13" Foreground="{StaticResource HudText}">
+                <Run Text="{Binding V[yesterday], Mode=OneWay}" FontWeight="SemiBold"/>
+                <Run Text="{Binding V[yesterdayCr], Mode=OneWay}" Foreground="{StaticResource HudDim}" FontSize="11"/>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.7_days}"/>
+            <TextBlock FontSize="13" Foreground="{StaticResource HudText}">
+                <Run Text="{Binding V[week], Mode=OneWay}" FontWeight="SemiBold"/>
+                <Run Text="{Binding V[weekCr], Mode=OneWay}" Foreground="{StaticResource HudDim}" FontSize="11"/>
+            </TextBlock>
+        </StackPanel>
+    </UniformGrid>
+
+    <DockPanel Margin="0,2,0,2">
+        <TextBlock DockPanel.Dock="Right" Style="{StaticResource Label}">
+            <Run Text="{T ui.all_time}"/><Run Text="{Binding V[allTime], Mode=OneWay}" Foreground="{StaticResource HudText}"/>
+        </TextBlock>
+        <TextBlock Style="{StaticResource Label}">
+            <Run Text="{T ui.biggest}"/><Run Text="{Binding V[biggest], Mode=OneWay}" Foreground="{StaticResource HudText}"/>
+        </TextBlock>
+    </DockPanel>
+    <!-- Vouchers not handed in yet: lost if you're destroyed -->
+    <TextBlock Text="{Binding V[unclaimed]}" FontSize="11.5" FontWeight="SemiBold" Foreground="{StaticResource Warn}" Margin="0,0,0,6"/>
+
+    <!-- A graph of anything the script records with metric("bounty.earned", …): use "addon." + that name -->
+    <controls:TimeSeriesChart Series="addon.bounty.earned" Height="110" ShowLegend="False"/>
+
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.recent_bounties}" Margin="0,8,0,2"/>
+    <TextBlock Text="{Binding V[empty]}" FontStyle="Italic" FontSize="12" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+
+    <!-- A list the script set with set("recent", [{ time, ship, faction, reward, big }, …]) -->
+    <ItemsControl ItemsSource="{Binding V[recent]}" MaxHeight="180">
+        <ItemsControl.Template>
+            <ControlTemplate TargetType="ItemsControl">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><ItemsPresenter/></ScrollViewer>
+            </ControlTemplate>
+        </ItemsControl.Template>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <DockPanel Margin="0,1">
+                    <TextBlock x:Name="Reward" DockPanel.Dock="Right" Text="{Binding reward}" Foreground="{StaticResource Good}" FontSize="12"/>
+                    <TextBlock FontSize="12" Foreground="{StaticResource HudText}" TextTrimming="CharacterEllipsis">
+                        <Run Text="{Binding time, Mode=OneWay}" Foreground="{StaticResource HudDim}"/>
+                        <Run Text="{Binding ship, Mode=OneWay}"/>
+                        <Run Text="{Binding faction, Mode=OneWay}" Foreground="{StaticResource HudDim}"/>
+                    </TextBlock>
+                </DockPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding big}" Value="True">
+                        <Setter TargetName="Reward" Property="Foreground" Value="{StaticResource Hud}"/>
+                        <Setter TargetName="Reward" Property="FontWeight" Value="Bold"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</StackPanel>

@@ -1,0 +1,22 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Saltos del portanaves",
+    "addon.description": "Gran cuenta atrás hasta el próximo salto de tu portanaves con aviso de bloqueo, avisos a los 10 / 5 / 1 minutos y al partir, y una lista de los saltos recientes.",
+    "ui.recent_jumps": "SALTOS RECIENTES",
+    "ui.confirmed_you_were_aboard_otherwise_the": "✓ = confirmado (estabas a bordo). Si no, la llegada se deduce de la hora de salida; los tiempos de bloqueo y enfriamiento son aproximados.",
+    "js.no_jump_booked": "Ningún salto programado",
+    "js.carrier_jump_cancelled": "SALTO DEL PORTANAVES CANCELADO",
+    "js.carrier_jump_booked_0_departs_1": "SALTO DEL PORTANAVES PROGRAMADO · {0} · sale {1}",
+    "js.carrier_jumps_to_in": "EL PORTANAVES SALTA A {0} EN {1}",
+    "js.carrier_lockdown_jumping_to_in_launch": "⚠ BLOQUEO DEL PORTANAVES · salto a {0} en {1} · despega o quédate atracado",
+    "js.carrier_jumps_in": "EL PORTANAVES SALTA EN {0}",
+    "js.carrier_jumping": "PORTANAVES SALTANDO · {0}",
+    "js.jumping": "SALTANDO",
+    "js.departs": "sale {0}",
+    "js.lockdown": " · BLOQUEO",
+    "js.at": "En {0}",
+    "js.no_carrier_jumps_yet_book_one": "Aún no hay saltos del portanaves. Programa uno en la gestión del portanaves y la cuenta atrás aparecerá aquí."
+  }
+}

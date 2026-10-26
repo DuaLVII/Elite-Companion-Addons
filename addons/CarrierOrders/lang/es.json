@@ -1,0 +1,19 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Órdenes del portanaves",
+    "addon.description": "Las órdenes de compra y venta que has puesto en el mercado de tu portanaves: mercancía, cantidad, precio, valor total y las órdenes del almacén seguro (mercado negro) marcadas.",
+    "ui.secure_warehouse_black_market_orders_as": "⚑ = almacén seguro (mercado negro). Órdenes tal como las pusiste: el diario no informa cuando otros jugadores las completan.",
+    "js.buying_0": "COMPRANDO · {0}",
+    "js.selling_0": "VENDIENDO · {0}",
+    "js.carrier_order_cancelled_0": "Orden del portanaves cancelada: {0}",
+    "js.carrier_0_order_1_t_2": "Orden de {0} del portanaves: {1} t {2} @ {3} cr",
+    "js.cr": "{0} cr",
+    "js.up_to": " · hasta {0}",
+    "js.worth": " · valor {0}",
+    "js.no_market_orders_yet_set_some": "Aún no hay órdenes de mercado. Crea alguna en la gestión del portanaves (mercado de mercancías).",
+    "js.buy": "compra",
+    "js.sell": "venta"
+  }
+}

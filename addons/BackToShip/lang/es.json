@@ -1,0 +1,25 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Volver a la nave",
+    "addon.description": "Flechas de brújula y distancias hasta tu nave aterrizada, tu SRV aparcado y un punto que marques tú, con el tiempo para llegar a tu velocidad actual. Funciona a pie y en el SRV.",
+    "ui.mark_this_spot": "📍 Marcar este punto",
+    "ui.clear_marker": "Borrar marcador",
+    "ui.straight_ahead_distances_are_along_the": "▲ = de frente. Las distancias son sobre la superficie; no incluyen diferencias de altura.",
+    "js.marker_set": "Marcador colocado",
+    "js.not_set": "{0}: sin marcar",
+    "js.on": "{0}: en {1}",
+    "js.bearing": "rumbo {0}°",
+    "js.at_this_speed": " · {0} a esta velocidad",
+    "js.min_s": "{0} min {1} s",
+    "js.h_min": "{0} h {1} min",
+    "js.heading": "{0} · rumbo {1}°",
+    "js.not_on_a_planet_surface": "No estás en la superficie de un planeta",
+    "js.ship": "NAVE",
+    "js.srv": "SRV",
+    "js.marker": "MARCADOR",
+    "js.another_body": "otro cuerpo",
+    "js.surface": "Superficie"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Skoky nosiče",
+    "addon.description": "Velký odpočet do dalšího skoku tvého nosiče s varováním před uzamčením, upozornění 10 / 5 / 1 minutu předem a při odletu a seznam posledních skoků.",
+    "ui.recent_jumps": "POSLEDNÍ SKOKY",
+    "ui.confirmed_you_were_aboard_otherwise_the": "✓ = potvrzeno (byl jsi na palubě). Jinak se přílet odhaduje z času odletu; doby uzamčení a chlazení jsou přibližné.",
+    "js.no_jump_booked": "Žádný naplánovaný skok",
+    "js.carrier_jump_cancelled": "SKOK NOSIČE ZRUŠEN",
+    "js.carrier_jump_booked_0_departs_1": "SKOK NOSIČE NAPLÁNOVÁN · {0} · odlet {1}",
+    "js.carrier_jumps_to_in": "NOSIČ SKÁČE DO {0} ZA {1}",
+    "js.carrier_lockdown_jumping_to_in_launch": "⚠ UZAMČENÍ NOSIČE · skok do {0} za {1} · odleť, nebo zůstaň přistán",
+    "js.carrier_jumps_in": "NOSIČ SKÁČE ZA {0}",
+    "js.carrier_jumping": "NOSIČ SKÁČE · {0}",
+    "js.jumping": "SKÁČE",
+    "js.departs": "odlet {0}",
+    "js.lockdown": " · UZAMČENÍ",
+    "js.at": "V {0}",
+    "js.no_carrier_jumps_yet_book_one": "Zatím žádné skoky nosiče. Naplánuj nějaký ve správě nosiče a odpočet se objeví zde."
+  }
+}

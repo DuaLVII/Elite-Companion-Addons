@@ -1,0 +1,8 @@
+{
+  // Fleet carrier set, 2 of 7.
+  "title": "Carrier Jumps",
+  "category": "Fleet Carrier",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Big countdown to your carrier's next jump with lockdown warning, alerts at 10 / 5 / 1 minutes and on departure, and a list of recent jumps."
+}

@@ -1,0 +1,30 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Carrier Log",
+    "addon.description": "Everything that's happened to your carrier, newest first: jumps, tritium, transfers, tax, services, packs, orders, docking access, name changes and decommissioning. Kept between sessions.",
+    "js.bought_carrier_in_for": "Bought carrier {0} in {1} for {2}",
+    "js.carrier_management_t_tritium_t_free": "Carrier management: {0} t tritium · {1} · {2} t free",
+    "js.jump_booked_to": "Jump booked to {0}{1}{2}",
+    "js.jump_cancelled": "Jump cancelled",
+    "js.arrived_in": "Arrived in {0}{1}",
+    "js.tritium_t_t": "Tritium +{0} t → {1} t",
+    "js.deposited": "Deposited {0} → {1}",
+    "js.withdrew": "Withdrew {0} → {1}",
+    "js.finance_tax_reserve_available": "Finance: tax {0}% · reserve {1}% · available {2}",
+    "js.order_cancelled": "Order cancelled: {0}",
+    "js.buy_order_t_cr": "Buy order: {0} t {1} @ {2} cr",
+    "js.sell_order_t_cr": "Sell order: {0} t {1} @ {2} cr",
+    "js.docking": "Docking: {0}{1}",
+    "js.renamed_to": "Renamed to {0} ({1})",
+    "js.decommission_requested_refund": "Decommission requested · refund {0}",
+    "js.decommission_cancelled": "Decommission cancelled",
+    "js.nothing_yet_carrier_events_from_the": "Nothing yet. Carrier events from the last few weeks of journals appear here, and new ones as they happen.",
+    "js.events": "{0} events",
+    "js.departs": " · departs {0}",
+    "js.ship_pack": "Ship pack {0} {1}: ",
+    "js.module_pack": "Module pack {0} {1}: ",
+    "js.notorious_allowed": " · notorious allowed"
+  }
+}
