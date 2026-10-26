@@ -68,8 +68,9 @@ function arrived(e, replay) {
     if (!replay) {
         save();
         if (opts.auto && !typed()) search();
+        show();
     }
-    show();
+    else pending = true;   // reading back old journals at start: show once at the end, not every system on the way
 }
 on("FSDJump", arrived);
 on("Location", arrived);
@@ -214,7 +215,12 @@ on("click:pristine", () => { opts.pristine = !opts.pristine; save(); show(); });
 on("click:auto", () => { opts.auto = !opts.auto; save(); show(); });
 on("change:ref", () => show());
 
-on("tick", () => { if (Date.now() % 60000 < 1000) show(); });   // keep "x min ago" fresh
+// Once a second: catch up after the start-up read-back (once), and keep "x min ago" fresh
+let pending = false;
+on("tick", () => {
+    if (pending) { pending = false; save(); show(); return; }
+    if (Date.now() % 60000 < 1000) show();
+});
 
 // ---- the view ----
 

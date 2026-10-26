@@ -42,6 +42,7 @@ function arrived(e, replay) {
     for (const s of Object.keys(seen)) if (seen[s].at < week) delete seen[s];
     save();
     if (!replay && opts.auto && results && results.from !== here.system) search();
+    if (replay) { pending = true; return; }   // reading back old journals at start: show once at the end
     show();
 }
 on("FSDJump", arrived);
@@ -113,7 +114,12 @@ on("click:radius", () => { opts.radius = RADII[(RADII.indexOf(opts.radius) + 1) 
 on("click:elections", () => { opts.elections = !opts.elections; save(); show(); });
 on("click:auto", () => { opts.auto = !opts.auto; save(); show(); });
 
-on("tick", () => { if (Date.now() % 60000 < 1000) show(); });   // keep "x min ago" fresh
+// Once a second: catch up after the start-up read-back (once), and keep "x min ago" fresh
+let pending = false;
+on("tick", () => {
+    if (pending) { pending = false; show(); return; }
+    if (Date.now() % 60000 < 1000) show();
+});
 
 // ---- the view ----
 

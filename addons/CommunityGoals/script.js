@@ -73,6 +73,7 @@ on("CommunityGoal", (e, replay) => {
     for (const id of Object.keys(goals)) if (!listed.has(id)) goals[id].listed = false;
     lastUpdate = when;
     tidy();
+    if (replay) { pending = true; return; }   // reading back old journals at start: show once at the end
     save();
     show();
 });
@@ -113,8 +114,9 @@ function tidy() {
 }
 
 // Once a minute: the time left moves on; a warning a day before a goal you've contributed to ends
-let lastMinute = 0;
+let lastMinute = 0, pending = false;
 on("tick", () => {
+    if (pending) { pending = false; save(); show(); }
     const now = Date.now();
     if (now - lastMinute < 60000) return;
     lastMinute = now;

@@ -1,7 +1,7 @@
 {
   "title": "Nearest Wars",
   "author": "CMDR Snickerdoodlez",
-  "version": "1.2",
+  "version": "1.3",
   "description": "The nearest systems where factions are at war or in civil war (and elections, if you like), from Spansh, with who's fighting whom. Plus the exact conflicts in systems you've visited lately: sides, stakes and days won, from your own journals.",
   "category": "Combat",
   "tags": [
@@ -14,5 +14,8 @@
   "web": [
     "spansh"
   ],
-  "minAppVersion": "1.0"
+  "minAppVersion": "1.0",
+  "changes": [
+    "No longer flicks through old systems while the app starts"
+  ]
 }
