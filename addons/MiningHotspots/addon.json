@@ -1,0 +1,10 @@
+{
+  "title": "Mining Hotspots",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "The nearest ring hotspots for a commodity (Platinum, Painite, Low Temperature Diamonds, Void Opals…) around your system or one you type, from Spansh: ring, ring type, how many hotspots overlap, reserve and distance. Plus every hotspot you've mapped yourself, from your own journals.",
+  "category": "Trade, Mining & Missions",
+  "tags": ["mining", "hotspots", "rings", "laser mining", "core mining", "platinum", "painite", "ltd", "void opals"],
+  "web": ["spansh"],
+  "minAppVersion": "1.0"
+}

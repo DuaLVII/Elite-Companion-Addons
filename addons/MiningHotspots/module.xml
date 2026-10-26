@@ -1,0 +1,140 @@
+<!--
+  Mining Hotspots. Values come from script.js; texts from lang\<language>.json.
+-->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel.Resources>
+        <!-- A system name you can select and copy (Ctrl+C) for the galaxy map -->
+        <Style x:Key="Copyable" TargetType="TextBox">
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Foreground" Value="{StaticResource HudText}"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="12.5"/>
+            <Setter Property="ToolTip" Value="{T ui.copy_tip}"/>
+        </Style>
+        <!-- A commodity to pick (the chosen one is lit) -->
+        <Style x:Key="Chip" TargetType="Button" BasedOn="{StaticResource HudButton}">
+            <Setter Property="Margin" Value="0,0,4,4"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding on}" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource Hud}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource Hud}"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <!-- The ×2 / ×3 overlap tag -->
+        <Style x:Key="CountChip" TargetType="Border">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="2"/>
+            <Setter Property="Padding" Value="5,0,5,1"/>
+            <Setter Property="Margin" Value="0,0,6,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="{StaticResource HudSoft}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding overlap}" Value="True"><Setter Property="BorderBrush" Value="{StaticResource Good}"/></DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="CountText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="{StaticResource Hud}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding overlap}" Value="True"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </StackPanel.Resources>
+
+    <!-- What, and from where -->
+    <DockPanel Margin="0,0,0,4">
+        <Button DockPanel.Dock="Right" Style="{StaticResource HudButton}" Tag="pick" Content="{Binding V[pickText]}" Margin="6,0,0,0"
+                Foreground="{StaticResource Hud}" FontWeight="SemiBold" ToolTip="{T ui.pick_tip}"/>
+        <TextBlock Style="{StaticResource Label}" VerticalAlignment="Center" Text="{T ui.commodity}"/>
+    </DockPanel>
+    <ItemsControl ItemsSource="{Binding V[kinds]}" Visibility="{Binding V[picking], Converter={StaticResource BoolToVis}}" Margin="0,0,0,4">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Button Style="{StaticResource Chip}" Tag="choose" Content="{Binding name}"/>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.reference}"/>
+    <TextBox Style="{StaticResource SearchBox}" Text="{Binding V[ref], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+             ToolTip="{T ui.reference_tip}" Margin="0,2,0,4"/>
+    <TextBlock FontSize="11" Foreground="{StaticResource HudDim}">
+        <Run Text="{T ui.from}"/><Run Text="{Binding V[from], Mode=OneWay}" Foreground="{StaticResource Hud}"/>
+    </TextBlock>
+
+    <WrapPanel Margin="0,6,0,2">
+        <Button Style="{StaticResource HudButton}" Tag="search" Content="{T ui.search}" Margin="0,0,4,4" Foreground="{StaticResource Hud}" FontWeight="SemiBold"/>
+        <Button Style="{StaticResource HudButton}" Tag="radius" Content="{Binding V[radiusText]}" Margin="0,0,4,4" ToolTip="{T ui.radius_tip}"/>
+        <Button Style="{StaticResource HudButton}" Tag="min" Content="{Binding V[minText]}" Margin="0,0,4,4" ToolTip="{T ui.min_tip}"/>
+        <Button Style="{StaticResource HudButton}" Tag="pristine" Content="{Binding V[pristineText]}" Margin="0,0,4,4" ToolTip="{T ui.pristine_tip}"/>
+        <Button Style="{StaticResource HudButton}" Tag="auto" Content="{Binding V[autoText]}" Margin="0,0,4,4" ToolTip="{T ui.auto_tip}"/>
+    </WrapPanel>
+    <TextBlock Text="{Binding V[status]}" FontSize="11" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+
+    <!-- Nearest: from Spansh -->
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.nearest}" Margin="0,8,0,2"/>
+    <TextBlock Text="{Binding V[nearNote]}" FontSize="11" Foreground="{StaticResource HudDim}" TextWrapping="Wrap" Margin="0,0,0,2"/>
+    <ItemsControl ItemsSource="{Binding V[nearRows]}" MaxHeight="340">
+        <ItemsControl.Template>
+            <ControlTemplate TargetType="ItemsControl">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><ItemsPresenter/></ScrollViewer>
+            </ControlTemplate>
+        </ItemsControl.Template>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Border BorderBrush="{StaticResource PanelBorder}" BorderThickness="0,0,0,1" Padding="0,4,0,5">
+                    <StackPanel>
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Right" Text="{Binding ly}" FontSize="12" Foreground="{StaticResource Hud}" FontWeight="SemiBold" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                            <Border Style="{StaticResource CountChip}" DockPanel.Dock="Left"><TextBlock Style="{StaticResource CountText}" Text="{Binding count}"/></Border>
+                            <TextBox Style="{StaticResource Copyable}" Text="{Binding system, Mode=OneWay}"/>
+                        </DockPanel>
+                        <TextBlock FontSize="11.5" Foreground="{StaticResource HudText}" TextWrapping="Wrap" Margin="0,2,0,0">
+                            <Run Text="{Binding ring, Mode=OneWay}"/><Run Text="{Binding detail, Mode=OneWay}" Foreground="{StaticResource HudDim}"/>
+                        </TextBlock>
+                        <TextBlock Text="{Binding others}" FontSize="10.5" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+    <!-- Mapped by you: exact, from your journals -->
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.mapped}" Margin="0,10,0,2"/>
+    <TextBlock Text="{Binding V[mineNote]}" FontSize="11" FontStyle="Italic" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+    <ItemsControl ItemsSource="{Binding V[mineRows]}" MaxHeight="240">
+        <ItemsControl.Template>
+            <ControlTemplate TargetType="ItemsControl">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><ItemsPresenter/></ScrollViewer>
+            </ControlTemplate>
+        </ItemsControl.Template>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Border BorderBrush="{StaticResource PanelBorder}" BorderThickness="0,0,0,1" Padding="0,4,0,5">
+                    <StackPanel>
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Right" Text="{Binding ly}" FontSize="12" Foreground="{StaticResource Hud}" FontWeight="SemiBold" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                            <Border Style="{StaticResource CountChip}" DockPanel.Dock="Left"><TextBlock Style="{StaticResource CountText}" Text="{Binding count}"/></Border>
+                            <TextBox Style="{StaticResource Copyable}" Text="{Binding system, Mode=OneWay}"/>
+                        </DockPanel>
+                        <TextBlock FontSize="11.5" Foreground="{StaticResource HudText}" TextWrapping="Wrap" Margin="0,2,0,0">
+                            <Run Text="{Binding ring, Mode=OneWay}"/><Run Text="{Binding detail, Mode=OneWay}" Foreground="{StaticResource HudDim}"/>
+                        </TextBlock>
+                        <TextBlock Text="{Binding others}" FontSize="10.5" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</StackPanel>
