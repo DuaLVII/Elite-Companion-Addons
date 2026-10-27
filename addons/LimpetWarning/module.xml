@@ -1,0 +1,61 @@
+<!-- Limpet Warning: made with the Elite Companion addon designer. Open it in the designer to change it (design.json); edits made here by hand are replaced when the designer saves again. -->
+<StackPanel xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:controls="clr-namespace:EliteCompanion.Controls" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <StackPanel Margin="0,0,0,4">
+    <TextBlock Style="{StaticResource Header}" Text="Warn me when Limpets are below;" Foreground="{DynamicResource HudText}" Margin="0" TextTrimming="CharacterEllipsis" />
+    <Border Height="1" Margin="0,3,0,0" Background="{DynamicResource HudSoft}" />
+  </StackPanel>
+  <Grid Margin="0,0,0,4">
+    <TextBox x:Name="in3" Style="{StaticResource SearchBox}" Text="{Binding V[limpetWarningValue], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+    <TextBlock Text="Type here…" IsHitTestVisible="False" Margin="7,0,0,0" VerticalAlignment="Center" FontSize="12" Foreground="{DynamicResource HudDim}">
+      <TextBlock.Style>
+        <Style TargetType="TextBlock">
+          <Setter Property="Visibility" Value="Collapsed" />
+          <Style.Triggers>
+            <DataTrigger Binding="{Binding Text, ElementName=in3}" Value="">
+              <Setter Property="Visibility" Value="Visible" />
+            </DataTrigger>
+          </Style.Triggers>
+        </Style>
+      </TextBlock.Style>
+    </TextBlock>
+  </Grid>
+  <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+    <Ellipse Width="9" Height="9" Margin="0,0,7,0" VerticalAlignment="Center">
+      <Ellipse.Style>
+        <Style TargetType="Ellipse">
+          <Setter Property="Fill" Value="{DynamicResource Danger}" />
+          <Style.Triggers>
+            <DataTrigger Binding="{Binding V[hasEnoughLimpets]}" Value="True">
+              <Setter Property="Fill" Value="{DynamicResource Good}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding V[hasEnoughLimpets]}" Value="true">
+              <Setter Property="Fill" Value="{DynamicResource Good}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding V[hasEnoughLimpets]}" Value="yes">
+              <Setter Property="Fill" Value="{DynamicResource Good}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding V[hasEnoughLimpets]}" Value="Yes">
+              <Setter Property="Fill" Value="{DynamicResource Good}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding V[hasEnoughLimpets]}" Value="YES">
+              <Setter Property="Fill" Value="{DynamicResource Good}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding V[hasEnoughLimpets]}" Value="on">
+              <Setter Property="Fill" Value="{DynamicResource Good}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding V[hasEnoughLimpets]}" Value="On">
+              <Setter Property="Fill" Value="{DynamicResource Good}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding V[hasEnoughLimpets]}" Value="ON">
+              <Setter Property="Fill" Value="{DynamicResource Good}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding V[hasEnoughLimpets]}" Value="1">
+              <Setter Property="Fill" Value="{DynamicResource Good}" />
+            </DataTrigger>
+          </Style.Triggers>
+        </Style>
+      </Ellipse.Style>
+    </Ellipse>
+    <TextBlock Text="Enough Limpets" FontSize="12" Foreground="{DynamicResource HudText}" VerticalAlignment="Center" />
+  </StackPanel>
+</StackPanel>

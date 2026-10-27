@@ -1,0 +1,8 @@
+{
+  "title": "Limpet Warning",
+  "category": "Trade, Mining & Missions",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "This was the first test module made using addon designer.\r\nYou can set the limpet warning value and be notified if your limpet\r\ncount drops lower than the set amount.",
+  "designer": true
+}

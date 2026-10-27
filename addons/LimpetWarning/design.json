@@ -1,0 +1,188 @@
+{
+  "designer": 1,
+  "title": "Limpet Warning",
+  "folder": "LimpetWarning",
+  "category": "Trade, Mining & Missions",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "This was the first test module made using addon designer.\r\nYou can set the limpet warning value and be notified if your limpet\r\ncount drops lower than the set amount.",
+  "changes": "",
+  "samples": {},
+  "root": {
+    "id": 1,
+    "kind": "stack",
+    "p": {},
+    "children": [
+      {
+        "id": 2,
+        "kind": "heading",
+        "p": {
+          "text": "Warn me when Limpets are below;",
+          "colour": "HudText",
+          "line": "true",
+          "space": "4"
+        },
+        "children": [],
+        "fields": []
+      },
+      {
+        "id": 3,
+        "kind": "input",
+        "p": {
+          "value": "limpetWarningValue",
+          "hint": "Type here…",
+          "keep": "true",
+          "space": "4"
+        },
+        "children": [],
+        "fields": []
+      },
+      {
+        "id": 4,
+        "kind": "light",
+        "p": {
+          "value": "=V.hasEnoughLimpets",
+          "label": "Enough Limpets",
+          "on": "Good",
+          "off": "Danger",
+          "space": "4"
+        },
+        "children": [],
+        "fields": []
+      }
+    ],
+    "fields": []
+  },
+  "rules": [
+    {
+      "id": 1,
+      "when": "cross",
+      "p": {
+        "event": "FSDJump",
+        "value": "g:Limpets",
+        "at": "f:{limpetWarningValue}"
+      },
+      "actions": [
+        {
+          "id": 2,
+          "kind": "notify",
+          "p": {
+            "text": "t:Low Limpet Warning",
+            "level": "warning",
+            "seconds": "10"
+          },
+          "then": [],
+          "else": []
+        },
+        {
+          "id": 9,
+          "kind": "set",
+          "p": {
+            "target": "hasEnoughLimpets",
+            "to": "t:false"
+          },
+          "then": [],
+          "else": []
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "when": "cross",
+      "p": {
+        "event": "FSDJump",
+        "value": "g:Limpets",
+        "at": "f:{limpetWarningValue}",
+        "op": "above"
+      },
+      "actions": [
+        {
+          "id": 12,
+          "kind": "set",
+          "p": {
+            "target": "hasEnoughLimpets",
+            "to": "t:true"
+          },
+          "then": [],
+          "else": []
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "when": "start",
+      "p": {
+        "event": "FSDJump"
+      },
+      "actions": [
+        {
+          "id": 6,
+          "kind": "set",
+          "p": {
+            "target": "hasEnoughLimpets",
+            "to": "t:false"
+          },
+          "then": [],
+          "else": []
+        },
+        {
+          "id": 7,
+          "kind": "if",
+          "p": {
+            "left": "g:Limpets",
+            "op": "gt",
+            "right": "f:{limpetWarningValue}"
+          },
+          "then": [
+            {
+              "id": 8,
+              "kind": "set",
+              "p": {
+                "target": "hasEnoughLimpets",
+                "to": "t:true"
+              },
+              "then": [],
+              "else": []
+            }
+          ],
+          "else": []
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "when": "every",
+      "p": {
+        "event": "FSDJump",
+        "minutes": "1"
+      },
+      "actions": [
+        {
+          "id": 14,
+          "kind": "if",
+          "p": {
+            "left": "g:Limpets",
+            "op": "lt",
+            "right": "f:{limpetWarningValue}"
+          },
+          "then": [
+            {
+              "id": 15,
+              "kind": "notify",
+              "p": {
+                "text": "t:Low Limpet Warning",
+                "level": "warning",
+                "seconds": "10"
+              },
+              "then": [],
+              "else": []
+            }
+          ],
+          "else": []
+        }
+      ]
+    }
+  ],
+  "values": {},
+  "customJs": ""
+}
