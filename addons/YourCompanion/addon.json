@@ -1,0 +1,9 @@
+{
+  "title": "Your Companion",
+  "category": "Decorative",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Just a fun little decoration test using addon module.",
+  "designer": true,
+  "decorative": true
+}
