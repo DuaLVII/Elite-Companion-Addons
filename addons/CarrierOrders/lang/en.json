@@ -4,7 +4,7 @@
   "Strings": {
     "addon.title": "Carrier Orders",
     "addon.description": "The buy and sell orders you've set on your carrier's market: commodity, amount, price, total value, and secure-warehouse (black market) orders marked.",
-    "ui.secure_warehouse_black_market_orders_as": "⚑ = secure warehouse (black market). Orders as you set them: the journal doesn't report other players filling them.",
+    "ui.secure_warehouse_black_market_orders_as": "⚑ = secure warehouse (black market): those stay as you set them, as the market file doesn't list them.",
     "js.buying_0": "BUYING · {0}",
     "js.selling_0": "SELLING · {0}",
     "js.carrier_order_cancelled_0": "Carrier order cancelled: {0}",
@@ -14,6 +14,9 @@
     "js.worth": " · worth {0}",
     "js.no_market_orders_yet_set_some": "No market orders yet. Set some in carrier management (Commodity Market).",
     "js.buy": "buy",
-    "js.sell": "sell"
+    "js.sell": "sell",
+    "js.checked_0": "Amounts from your carrier's market, {0}. Open its Commodity Market to refresh.",
+    "js.not_checked": "Open the Commodity Market on your carrier once to bring the amounts up to date.",
+    "js.orders_updated_0": "Carrier orders updated from its market: {0} changed"
   }
 }

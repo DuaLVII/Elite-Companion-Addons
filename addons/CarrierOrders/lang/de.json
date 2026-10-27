@@ -4,7 +4,7 @@
   "Strings": {
     "addon.title": "Trägeraufträge",
     "addon.description": "Die Kauf- und Verkaufsaufträge, die du auf dem Markt deines Trägers eingestellt hast: Ware, Menge, Preis, Gesamtwert, Aufträge im gesicherten Lager (Schwarzmarkt) markiert.",
-    "ui.secure_warehouse_black_market_orders_as": "⚑ = gesichertes Lager (Schwarzmarkt). Aufträge wie von dir eingestellt: Das Journal meldet nicht, wenn andere Spieler sie erfüllen.",
+    "ui.secure_warehouse_black_market_orders_as": "⚑ = Sicheres Lager (Schwarzmarkt): diese bleiben wie eingestellt, da die Marktdatei sie nicht enthält.",
     "js.buying_0": "KAUF · {0}",
     "js.selling_0": "VERKAUF · {0}",
     "js.carrier_order_cancelled_0": "Trägerauftrag storniert: {0}",
@@ -14,6 +14,9 @@
     "js.worth": " · Wert {0}",
     "js.no_market_orders_yet_set_some": "Noch keine Marktaufträge. Stelle welche in der Trägerverwaltung ein (Rohstoffmarkt).",
     "js.buy": "Kauf",
-    "js.sell": "Verkauf"
+    "js.sell": "Verkauf",
+    "js.checked_0": "Mengen vom Markt deines Carriers, {0}. Öffne seinen Rohstoffmarkt zum Aktualisieren.",
+    "js.not_checked": "Öffne einmal den Rohstoffmarkt auf deinem Carrier, um die Mengen zu aktualisieren.",
+    "js.orders_updated_0": "Carrier-Aufträge vom Markt aktualisiert: {0} geändert"
   }
 }

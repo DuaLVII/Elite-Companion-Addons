@@ -45,6 +45,7 @@
         </ItemsControl.Template>
     </ItemsControl>
 
-    <TextBlock Style="{StaticResource Label}" FontSize="10" Margin="0,6,0,0" TextWrapping="Wrap"
+    <TextBlock Text="{Binding V[checked]}" FontSize="10.5" Foreground="{StaticResource HudDim}" Margin="0,8,0,0" TextWrapping="Wrap"/>
+    <TextBlock Style="{StaticResource Label}" FontSize="10" Margin="0,4,0,0" TextWrapping="Wrap"
                Text="{T ui.secure_warehouse_black_market_orders_as}"/>
 </StackPanel>

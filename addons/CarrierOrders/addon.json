@@ -3,6 +3,7 @@
   "title": "Carrier Orders",
   "category": "Fleet Carrier",
   "author": "Elite Companion",
-  "version": "1.0",
+  "version": "1.1",
+  "changes": ["Amounts now update from your carrier's market: open its Commodity Market and filled or changed orders show as they really are", "Fixed orders not showing when the app is in another language"],
   "description": "The buy and sell orders you've set on your carrier's market: commodity, amount, price, total value, and secure-warehouse (black market) orders marked."
 }

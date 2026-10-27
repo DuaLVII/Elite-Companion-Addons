@@ -4,7 +4,7 @@
   "Strings": {
     "addon.title": "Příkazy nosiče",
     "addon.description": "Nákupní a prodejní příkazy, které jsi zadal na trhu svého nosiče: komodita, množství, cena, celková hodnota a označené příkazy zabezpečeného skladu (černý trh).",
-    "ui.secure_warehouse_black_market_orders_as": "⚑ = zabezpečený sklad (černý trh). Příkazy tak, jak jsi je zadal: deník nehlásí, když je ostatní hráči plní.",
+    "ui.secure_warehouse_black_market_orders_as": "⚑ = zabezpečený sklad (černý trh): zůstávají, jak jste je nastavili, soubor trhu je neobsahuje.",
     "js.buying_0": "NÁKUP · {0}",
     "js.selling_0": "PRODEJ · {0}",
     "js.carrier_order_cancelled_0": "Příkaz nosiče zrušen: {0}",
@@ -14,6 +14,9 @@
     "js.worth": " · hodnota {0}",
     "js.no_market_orders_yet_set_some": "Zatím žádné tržní příkazy. Zadej nějaké ve správě nosiče (komoditní trh).",
     "js.buy": "nákupu",
-    "js.sell": "prodeji"
+    "js.sell": "prodeji",
+    "js.checked_0": "Množství z trhu vašeho nosiče, {0}. Otevřete jeho komoditní trh pro obnovení.",
+    "js.not_checked": "Jednou otevřete komoditní trh na svém nosiči, aby se množství aktualizovala.",
+    "js.orders_updated_0": "Objednávky nosiče aktualizovány z jeho trhu: změněno {0}"
   }
 }
