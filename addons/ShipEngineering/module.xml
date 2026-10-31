@@ -1,0 +1,125 @@
+<!-- Ship Engineering: each module's blueprint, grade, quality and experimental, and what's left. Click a module for
+     what its engineering changed. Buttons call the script with Tag="name". -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+
+    <StackPanel.Resources>
+        <ItemsPanelTemplate x:Key="Wrap"><WrapPanel/></ItemsPanelTemplate>
+        <Style x:Key="Pick" TargetType="Button" BasedOn="{StaticResource HudButton}">
+            <Setter Property="Margin" Value="0,0,4,4"/>
+            <Setter Property="Padding" Value="7,2"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding on}" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource Hud}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource Hud}"/>
+                    <Setter Property="Background" Value="{StaticResource HudSoft}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <!-- ✓ done · ◐ to finish · ○ not engineered -->
+        <Style x:Key="Mark" TargetType="TextBlock">
+            <Setter Property="Width" Value="16"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Text" Value="○"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding state}" Value="done"><Setter Property="Text" Value="✓"/><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
+                <DataTrigger Binding="{Binding state}" Value="todo"><Setter Property="Text" Value="◐"/><Setter Property="Foreground" Value="{StaticResource Warn}"/></DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="HideEmpty" TargetType="TextBlock">
+            <Style.Triggers>
+                <Trigger Property="Text" Value=""><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+            </Style.Triggers>
+        </Style>
+    </StackPanel.Resources>
+
+    <TextBlock Text="{Binding V[ship]}" FontSize="12" FontWeight="SemiBold" Foreground="{StaticResource Hud}" TextTrimming="CharacterEllipsis"/>
+    <TextBlock Text="{Binding V[summary]}" FontSize="11.5" Foreground="{StaticResource HudDim}" Margin="0,1,0,5" TextWrapping="Wrap"/>
+
+    <ItemsControl ItemsSource="{Binding V[filters]}" ItemsPanel="{StaticResource Wrap}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Button Style="{StaticResource Pick}" Tag="filter" CommandParameter="{Binding id}" Content="{Binding name}"/>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+    <TextBlock Text="{Binding V[empty]}" Style="{StaticResource HideEmpty}" FontStyle="Italic" FontSize="11.5" Foreground="{StaticResource HudDim}" TextWrapping="Wrap"/>
+
+    <ScrollViewer MaxHeight="460" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <ItemsControl ItemsSource="{Binding V[rows]}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="{StaticResource PanelBorder}" BorderThickness="0,0,0,1" Padding="0,4,0,5">
+                        <StackPanel>
+                            <!-- the module (click: what the engineering changed) -->
+                            <Button Tag="open" CommandParameter="{Binding slot}" Cursor="Hand" Background="Transparent" BorderThickness="0" Padding="0"
+                                    HorizontalContentAlignment="Stretch" Focusable="False">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button"><ContentPresenter/></ControlTemplate>
+                                </Button.Template>
+                                <DockPanel>
+                                    <TextBlock Style="{StaticResource Mark}" DockPanel.Dock="Left" VerticalAlignment="Top"/>
+                                    <TextBlock DockPanel.Dock="Right" Text="{Binding qualityText}" FontSize="11.5" Foreground="{StaticResource HudText}" Margin="6,0,0,0"/>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding name}" FontSize="12" Foreground="{StaticResource HudText}" TextTrimming="CharacterEllipsis"/>
+                                        <TextBlock FontSize="11" Foreground="{StaticResource Hud}" TextWrapping="Wrap">
+                                            <Run Text="{Binding bp, Mode=OneWay}"/><Run Text="  "/><Run Text="{Binding exp, Mode=OneWay}" Foreground="{StaticResource Purple}"/>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </DockPanel>
+                            </Button>
+                            <!-- quality -->
+                            <ProgressBar Height="3" Maximum="100" Value="{Binding quality, Mode=OneWay}" Margin="16,3,0,0">
+                                <ProgressBar.Style>
+                                    <Style TargetType="ProgressBar" BasedOn="{StaticResource Bar}">
+                                        <Setter Property="Foreground" Value="{StaticResource Warn}"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding state}" Value="done"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
+                                            <DataTrigger Binding="{Binding state}" Value="plain"><Setter Property="Visibility" Value="Collapsed"/></DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ProgressBar.Style>
+                            </ProgressBar>
+                            <TextBlock Text="{Binding engineer}" Style="{StaticResource HideEmpty}" FontSize="10.5" Foreground="{StaticResource HudDim}" Margin="16,2,0,0" controls:Responsive.HideBelow="Compact"/>
+                            <TextBlock Text="{Binding next}" Style="{StaticResource HideEmpty}" FontSize="10.5" Foreground="{StaticResource Warn}" Margin="16,1,0,0" TextWrapping="Wrap"/>
+                            <!-- what it changed (opened by clicking the module) -->
+                            <ItemsControl ItemsSource="{Binding changes}" Margin="16,4,0,0">
+                                <ItemsControl.Style>
+                                    <Style TargetType="ItemsControl">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding open}" Value="True"><Setter Property="Visibility" Value="Visible"/></DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ItemsControl.Style>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <DockPanel Margin="0,0,0,1">
+                                            <TextBlock DockPanel.Dock="Right" Text="{Binding diff}" FontSize="10.5" Width="48" TextAlignment="Right">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Foreground" Value="{StaticResource Danger}"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding good}" Value="True"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                            <TextBlock DockPanel.Dock="Right" Text="{Binding text}" FontSize="10.5" Foreground="{StaticResource HudText}" Margin="6,0,0,0"/>
+                                            <TextBlock Text="{Binding label}" FontSize="10.5" Foreground="{StaticResource HudDim}" TextTrimming="CharacterEllipsis"/>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </ScrollViewer>
+</StackPanel>

@@ -1,0 +1,15 @@
+{
+  "title": "Ship Engineering",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Every module on your ship with its engineering: blueprint, grade, quality and experimental effect, what each roll changed, what's still to finish (and who can do the next grade), and what isn't engineered yet.",
+  "category": "Engineering",
+  "tags": [
+    "engineering",
+    "blueprints",
+    "modules",
+    "loadout",
+    "experimental"
+  ],
+  "minAppVersion": "1.0"
+}
