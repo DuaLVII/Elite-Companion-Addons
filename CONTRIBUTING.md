@@ -68,6 +68,20 @@ repo and run `python scripts/validate.py`.
 5. The gallery's owner reviews it and either merges it or asks for changes. Once merged, it shows in everyone's gallery
    within a few minutes.
 
+## Themes, layouts and languages
+
+They go through the same steps: fork, add your folder, open a pull request, the checks run, it's reviewed.
+
+| What | Folder | Its file | How to make it |
+|---|---|---|---|
+| Theme | `themes/<Id>/` | `theme.json` | SETTINGS → THEME → ＋ New theme, then Save |
+| Layout | `layouts/<Id>/` | `layout.json` | LAYOUT → Export |
+| Language | `languages/<code>/` | `language.json` | STUDIO → LANGUAGES |
+
+Each folder also needs an `about.json` (`title`, `author`, `version`, `description`, optional `tags`) and can have a
+`preview.png`. The README in each folder ([themes](themes/README.md), [layouts](layouts/README.md),
+[languages](languages/README.md)) has the details. Layouts may only use addons that are in this gallery.
+
 ## Updating your addon
 
 Send a pull request changing the files in your folder, and **raise `version`** in `addon.json` (e.g. `1.0` → `1.1`):

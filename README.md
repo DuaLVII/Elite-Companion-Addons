@@ -1,6 +1,6 @@
-# Elite Companion · Addon Gallery
+# Elite Companion · Gallery
 
-Community-made modules for [Elite Companion](https://github.com/DuaLVII/Elite-Companion), the Elite Dangerous
+Community-made modules, themes, layouts and languages for [Elite Companion](https://github.com/DuaLVII/Elite-Companion), the Elite Dangerous
 companion app.
 
 ## Installing addons
@@ -32,6 +32,9 @@ then send a pull request adding it as `addons/<YourAddonId>/`. The full guide to
 ## How this repo works
 
 ```
+themes/<Id>/          about.json + theme.json (+ preview.png)          → the app's Themes folder
+layouts/<Id>/         about.json + layout.json (+ preview.png)         → the app's Layouts folder
+languages/<code>/     about.json + language.json                       → the app's Languages folder
 addons/<Id>/          one folder per addon (the folder name is its id)
   addon.json          title, author, version, description, category…
   module.xml          the look (WPF XAML)
