@@ -1,0 +1,35 @@
+{
+  // Thargoid: bio-luminescent green and teal on deep organic black-green, with gradients throughout
+  // (see "Gradients" in README.md). Text stays solid so it's easy to read.
+  "name": "Thargoid",
+  "author": "Elite Companion",
+  "description": "Bio-luminescent greens and teals on deep alien black, with glowing gradients. Caustic pink alerts.",
+  "font": "Bahnschrift",
+  "colors": {
+    "Hud":             "linear(#5CFFB8, #2EE6D6, 0)",            // Accent: a glow running green → teal
+    "HudText":         "#CFEDE3",
+    "HudDim":          "#6F9A8C",
+    "Danger":          "#FF4D7A",                                // caustic pink
+    "Warn":            "#E3FF5C",                                // acid yellow-green
+    "Good":            "#46FF9A",
+    "Ok":              "#45C8FF",
+    "Purple":          "#9B7CFF",
+    "Cyan":            "#5CF2FF",
+    "Canvas":          "radial(#0F241E, #040807)",               // text on the accent colour (first colour of the gradient)
+    "Panel":           "linear(#10201C, #070E0C)",               // top → bottom
+    "PanelBorder":     "linear(#1F4E40, #10302A, #1F4E40, 0)",   // a soft sheen along the edges
+    "HeaderBack":      "linear(#17402F, #0B1A16, 0)",            // module title bars fade off to the right
+    "Control":         "linear(#143029, #0C1C18)",
+    "ControlHover":    "linear(#1C4A3C, #10281F)",
+    "ControlPressed":  "#22604E",
+    "Thumb":           "linear(#36A383, #1D5A49)",
+    "Track":           "#1046FFAA",
+    "WindowBack":      "radial(#F2102620, #F2040908)",
+    "FullScreenBack":  "radial(#0E211B, #030605)",
+    "BarBack":         "linear(#F20B1A16, #F2133A2E, #F20B1A16, 0)",   // the title bar glows in the middle
+    "Overlay":         "linear(#F50A1A16, #F5040A08)",
+    "LoadingBack":     "radial(#F7123128, #F7030605)",
+    "GlitchA":         "#AA46FFAA",
+    "GlitchB":         "#AAFF4D7A"
+  }
+}

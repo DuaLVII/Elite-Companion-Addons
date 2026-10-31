@@ -1,0 +1,33 @@
+{
+  "name": "Nebula",
+  "author": "Elite Companion",
+  "description": "Deep purple space with violet highlights, mint greens and pink alerts.",
+  "font": "Segoe UI",
+  "colors": {
+    "Hud":             "#C77DFF",
+    "HudText":         "#E6DDF2",
+    "HudDim":          "#9A8BAE",
+    "Danger":          "#FF5C8A",
+    "Warn":            "#FFC75F",
+    "Good":            "#5EE6A8",
+    "Ok":              "#6EA8FF",
+    "Purple":          "#E08BFF",
+    "Cyan":            "#7FE7FF",
+    "Canvas":          "#0F0A17",
+    "Panel":           "#171024",
+    "PanelBorder":     "#2E2442",
+    "HeaderBack":      "#1E1530",
+    "Control":         "#251A3A",
+    "ControlHover":    "#2F2249",
+    "ControlPressed":  "#3B2B5C",
+    "Thumb":           "#4E3D6E",
+    "Track":           "#10FFFFFF",
+    "WindowBack":      "#F20F0A17",
+    "FullScreenBack":  "#09060F",
+    "BarBack":         "#F2171024",
+    "Overlay":         "#F50C0814",
+    "LoadingBack":     "#F70C0814",
+    "GlitchA":         "#AAFF5C8A",
+    "GlitchB":         "#AA7FE7FF"
+  }
+}

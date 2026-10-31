@@ -1,0 +1,43 @@
+{
+  // A light theme: white modules on a soft grey dashboard, with a deeper Elite orange so it reads on white.
+  // The "style" block (optional in any theme) softens the shadows and turns the glitch effects off,
+  // since dark scanlines look out of place on a light background.
+  "name": "Light",
+  "author": "Elite Companion",
+  "description": "Bright and clean: white modules, grey dashboard, deep orange highlights.",
+  "font": "Segoe UI",
+  "colors": {
+    "Hud":             "#D9620B",
+    "HudText":         "#1F2328",
+    "HudDim":          "#6A717B",
+    "Danger":          "#D12F45",
+    "Warn":            "#B07D00",
+    "Good":            "#2E8A3E",
+    "Ok":              "#2C6BD6",
+    "Purple":          "#8547BB",
+    "Cyan":            "#0A8AB0",
+    "Canvas":          "#ECEEF2",
+    "Panel":           "#FFFFFF",
+    "PanelBorder":     "#D6DAE0",
+    "HeaderBack":      "#F5F6F8",
+    "Control":         "#EFF1F4",
+    "ControlHover":    "#E3E7ED",
+    "ControlPressed":  "#D2D8E0",
+    "Thumb":           "#B5BCC6",
+    "Track":           "#12000000",
+    "WindowBack":      "#F7ECEEF2",
+    "FullScreenBack":  "#ECEEF2",
+    "BarBack":         "#F7FFFFFF",
+    "Overlay":         "#FAFFFFFF",
+    "LoadingBack":     "#F7ECEEF2",
+    "GlitchA":         "#88D12F45",
+    "GlitchB":         "#880A8AB0",
+    "HudFaint":        "#1AD9620B",
+    "OkFaint":         "#1A2C6BD6"
+  },
+  "style": {
+    "corners": 4,
+    "shadowStrength": 0.25,
+    "glitch": false
+  }
+}

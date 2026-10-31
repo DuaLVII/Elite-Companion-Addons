@@ -1,0 +1,47 @@
+{
+  // Matrix: phosphor green on terminal black, in a monospace font. Square edges, scanline glitches on, and a faint
+  // glow in the gradients (see "Gradients" in README.md). Text stays solid so it's easy to read; red is kept for
+  // danger so warnings still stand out.
+  "name": "Matrix",
+  "author": "Elite Companion",
+  "description": "Phosphor green on terminal black, monospace and square-edged, like an old green-screen terminal.",
+  "font": "Consolas",
+  "colors": {
+    "Hud":             "#00FF41",                                // phosphor green
+    "HudText":         "#B8FFC8",                                // pale green-white, easy to read
+    "HudDim":          "#3FA45E",
+    "Danger":          "#FF3B30",                                // red stays red
+    "Warn":            "#D8FF3A",                                // lime yellow
+    "Good":            "#39FF7A",
+    "Ok":              "#2EE6B8",                                // mint
+    "Purple":          "#9CFF5C",                                // (engineering / extras: a yellower green)
+    "Cyan":            "#6BFFE0",
+    "Canvas":          "#000A03",                                // text on the accent: near black
+    "Panel":           "linear(#03170A, #010A04)",               // top → bottom
+    "PanelBorder":     "linear(#0C6328, #063A17, #0C6328, 0)",   // a faint glow along the edges
+    "HeaderBack":      "linear(#073318, #021108, 0)",            // title bars fade off to the right
+    "Control":         "#04200D",
+    "ControlHover":    "#073A18",
+    "ControlPressed":  "#0B5A24",
+    "InputBack":       "#000A03",
+    "Thumb":           "#0E7A32",
+    "Track":           "#1400FF41",
+    "WindowBack":      "radial(#F2041C0B, #F2000302)",
+    "FullScreenBack":  "radial(#03160A, #000000)",
+    "BarBack":         "linear(#F2010A04, #F2052A12, #F2010A04, 0)",   // the title bar glows in the middle
+    "Overlay":         "linear(#F5021208, #F5000502)",
+    "LoadingBack":     "radial(#F7062A12, #F7000000)",
+    "GlitchA":         "#AA00FF41",
+    "GlitchB":         "#AA003B0F"
+  },
+  "style": {
+    "corners": 0,
+    "buttonCorners": 0,
+    "borders": 1,
+    "buttonBorders": 1,
+    "headerLine": true,
+    "shadows": true,
+    "shadowStrength": 0.9,
+    "glitch": true
+  }
+}

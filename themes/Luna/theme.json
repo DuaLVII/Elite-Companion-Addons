@@ -1,0 +1,63 @@
+{
+  // Luna Blue: an early-2000s desktop look. Glossy blue title bars with white titles, cream windows with black
+  // text, white-and-cream buttons that warm up under the mouse with an orange edge, Tahoma, top corners rounded,
+  // and a sky-and-green-hill dashboard behind it all. Shows the title bar colours (TitleBack, TitleText…) and
+  // "topCornersOnly" (see README.md).
+  "name": "Luna Blue",
+  "author": "Elite Companion",
+  "description": "Early-2000s desktop style: glossy blue title bars, cream windows, Tahoma and a sky-blue dashboard.",
+  "font": "Tahoma",
+  "colors": {
+    "Hud":             "#245EDB",                                // selection blue: headings, the open tab, highlights
+    "HudText":         "#000000",
+    "HudDim":          "#6F6F6F",
+    "Danger":          "#C42B1C",
+    "Warn":            "#B36B00",
+    "Good":            "#2F8A28",
+    "Ok":              "#1F5FBF",
+    "Purple":          "#7B3FB0",
+    "Cyan":            "#0A7FA0",
+    "Canvas":          "#FFFFFF",                                // text on the accent: white
+    "Panel":           "#ECE9D8",                                // the classic cream window
+    "PanelBorder":     "#ACA899",                                // lines and dividers inside the windows
+    "HeaderBack":      "linear(#FFFFFF, #F1EFE2 70%, #E2DED0)",  // table headers and tiles
+    "Control":         "linear(#FFFFFF, #F4F3EE 70%, #DEDBD0)",  // buttons: white fading to cream
+    "ControlHover":    "linear(#FFFFFF, #FDF8EC 65%, #F7E3B4)",  // a warm glow under the mouse
+    "ControlPressed":  "linear(#DCD9CE, #EEEDE5)",
+    "InputBack":       "#FFFFFF",
+    "Thumb":           "linear(#D3DFFD, #BCCDF7, #A8BEF2, 0)",   // pale blue scroll handle
+    "Track":           "#FFF3F1EA",
+    "WindowBack":      "linear(#F2477FD9, #F277ABEA 40%, #F2A8CEF3 68%, #F28CC064 80%, #F2569A35)",   // sky down to a green hill
+    "FullScreenBack":  "linear(#477FD9, #77ABEA 40%, #A8CEF3 68%, #8CC064 80%, #569A35)",
+    "BarBack":         "#F5F4F2E8",                              // side bars and panels: a lighter cream
+    "Overlay":         "#F8ECE9D8",                              // side panels: cream
+    "LoadingBack":     "linear(#F7FFFFFF, #F7ECE9D8)",
+    "GlitchA":         "#88245EDB",
+    "GlitchB":         "#88F2A93B",
+
+    // title bars and frames
+    "TitleBack":       "linear(#3B8CF7, #0A5FEA 9%, #0058E6 45%, #0262F0 85%, #0049C6)",   // glossy caption blue
+    "TitleHover":      "linear(#5AA2FF, #2575F6 9%, #1668EE 45%, #1A72F8 85%, #0A55D6)",
+    "TitleText":       "#FFFFFF",
+    "TitleDim":        "#DCE8FF",
+    "FrameBorder":     "linear(#0A5CE8, #0841C8)",               // the blue window frame
+    "ButtonEdge":      "#003C74",                                // dark blue button borders
+    "ButtonEdgeHover": "#E8A12E",                                // orange edge under the mouse
+    "TopBarBack":      "linear(#3D7BE6, #4C93EC 6%, #2860D8 25%, #245CD6 80%, #1B48B5)",   // top bar and tab bar: the taskbar blue
+    "BarText":         "#FFFFFF",
+    "BarDim":          "#D6E4FF",
+    "StatusBack":      "linear(#F4F2E8, #E4E0D0)",               // the status bar: cream, like the bottom of a window
+    "StatusText":      "#3C3C3C"
+  },
+  "style": {
+    "corners": 7,
+    "buttonCorners": 3,
+    "topCornersOnly": true,
+    "borders": 2,
+    "buttonBorders": 1,
+    "headerLine": false,
+    "shadows": true,
+    "shadowStrength": 0.35,
+    "glitch": false
+  }
+}

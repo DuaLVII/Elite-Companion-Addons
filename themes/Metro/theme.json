@@ -1,0 +1,44 @@
+{
+  // Metro Flat: square tiles, no borders, no shadows, no glitches, one bold accent.
+  // Everything flat comes from the "style" block, which any theme can use.
+  "name": "Metro Flat",
+  "author": "Elite Companion",
+  "description": "Flat square tiles on charcoal with a bold blue accent. No borders, shadows or glitches.",
+  "font": "Segoe UI",
+  "colors": {
+    "Hud":             "#1BA1E2",
+    "HudText":         "#F2F2F2",
+    "HudDim":          "#9A9A9A",
+    "Danger":          "#E51400",
+    "Warn":            "#F0A30A",
+    "Good":            "#60A917",
+    "Ok":              "#1BA1E2",
+    "Purple":          "#AA00FF",
+    "Cyan":            "#00ABA9",
+    "Canvas":          "#1A1A1A",
+    "Panel":           "#2B2B2B",
+    "PanelBorder":     "#3D3D3D",
+    "HeaderBack":      "#333333",
+    "Control":         "#3B3B3B",
+    "ControlHover":    "#4A4A4A",
+    "ControlPressed":  "#1BA1E2",
+    "Thumb":           "#5A5A5A",
+    "Track":           "#1AFFFFFF",
+    "WindowBack":      "#FA1A1A1A",
+    "FullScreenBack":  "#141414",
+    "BarBack":         "#FF1F1F1F",
+    "Overlay":         "#FA222222",
+    "LoadingBack":     "#FA141414",
+    "GlitchA":         "#88E51400",
+    "GlitchB":         "#881BA1E2"
+  },
+  "style": {
+    "corners": 0,
+    "buttonCorners": 0,
+    "borders": 0,
+    "buttonBorders": 0,
+    "headerLine": false,
+    "shadows": false,
+    "glitch": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Monochrome",
+  "author": "Elite Companion",
+  "description": "Black and white: pure black backgrounds, white highlights and shades of grey.",
+  "font": "Segoe UI",
+  "colors": {
+    "Hud":             "#FFFFFF",
+    "HudText":         "#E6E6E6",
+    "HudDim":          "#8C8C8C",
+    "Danger":          "#FFFFFF",
+    "Warn":            "#F0F0F0",
+    "Good":            "#D4D4D4",
+    "Ok":              "#B4B4B4",
+    "Purple":          "#A0A0A0",
+    "Cyan":            "#C8C8C8",
+    "Canvas":          "#000000",
+    "Panel":           "#0A0A0A",
+    "PanelBorder":     "#3A3A3A",
+    "HeaderBack":      "#141414",
+    "Control":         "#1A1A1A",
+    "ControlHover":    "#262626",
+    "ControlPressed":  "#333333",
+    "Thumb":           "#5A5A5A",
+    "Track":           "#14FFFFFF",
+    "WindowBack":      "#F2000000",
+    "FullScreenBack":  "#000000",
+    "BarBack":         "#F20A0A0A",
+    "Overlay":         "#F5050505",
+    "LoadingBack":     "#F7000000",
+    "GlitchA":         "#88FFFFFF",
+    "GlitchB":         "#66808080"
+  }
+}
