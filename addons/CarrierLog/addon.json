@@ -3,6 +3,9 @@
   "title": "Carrier Log",
   "category": "Fleet Carrier",
   "author": "Elite Companion",
-  "version": "1.0",
-  "description": "Everything that's happened to your carrier, newest first: jumps, tritium, transfers, tax, services, packs, orders, docking access, name changes and decommissioning. Kept between sessions."
+  "version": "1.0.1",
+  "description": "Everything that's happened to your carrier, newest first: jumps, tritium, transfers, tax, services, packs, orders, docking access, name changes and decommissioning. Kept between sessions.",
+  "changes": [
+    "Stands alone: no longer needs the app's shared script files"
+  ]
 }

@@ -3,6 +3,9 @@
   "title": "Carrier Finance",
   "category": "Fleet Carrier",
   "author": "Elite Companion",
-  "version": "1.0",
-  "description": "Carrier balance, reserve and available funds, tax rates per service, transfers in and out, and an alert when the balance drops below an amount you choose."
+  "version": "1.0.1",
+  "description": "Carrier balance, reserve and available funds, tax rates per service, transfers in and out, and an alert when the balance drops below an amount you choose.",
+  "changes": [
+    "Stands alone: no longer needs the app's shared script files"
+  ]
 }

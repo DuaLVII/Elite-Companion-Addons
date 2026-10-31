@@ -3,6 +3,9 @@
   "title": "Carrier Tritium",
   "category": "Fleet Carrier",
   "author": "Elite Companion",
-  "version": "1.0",
-  "description": "Tritium in the carrier's tank (of 1,000 t), jump range, what recent jumps cost, roughly how many more jumps that covers and every deposit."
+  "version": "1.0.1",
+  "description": "Tritium in the carrier's tank (of 1,000 t), jump range, what recent jumps cost, roughly how many more jumps that covers and every deposit.",
+  "changes": [
+    "Stands alone: no longer needs the app's shared script files"
+  ]
 }

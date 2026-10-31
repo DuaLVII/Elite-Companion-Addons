@@ -3,6 +3,9 @@
   "title": "Carrier Jumps",
   "category": "Fleet Carrier",
   "author": "Elite Companion",
-  "version": "1.0",
-  "description": "Big countdown to your carrier's next jump with lockdown warning, alerts at 10 / 5 / 1 minutes and on departure, and a list of recent jumps."
+  "version": "1.0.1",
+  "description": "Big countdown to your carrier's next jump with lockdown warning, alerts at 10 / 5 / 1 minutes and on departure, and a list of recent jumps.",
+  "changes": [
+    "Stands alone: no longer needs the app's shared script files"
+  ]
 }
