@@ -1,0 +1,10 @@
+{
+  // One of the app's own modules, as an addon (it used to be built in as "CreditsCard"; dashboards that had it get this instead).
+  "title": "Credits",
+  "category": "Trade, Mining & Missions",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Your credit balance and profit over time, as line charts.",
+  "builtIn": true,
+  "replaces": "CreditsCard"
+}

@@ -1,0 +1,9 @@
+<!-- Exploration: one of the app's own modules, made as an addon so it can be restyled, translated or used as a
+     starting point (copy the folder and rename it). The charts draw from the series the app records itself. -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+    <controls:TimeSeriesChart Series="explore" Height="100" ShowLegend="False"/>
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.bodies_scanned_by_type}" Margin="0,8,0,4"/>
+    <controls:BarList Key="bodies"/>
+</StackPanel>

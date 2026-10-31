@@ -1,0 +1,8 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "PUISSANCE",
+    "addon.description": "La répartition de ton distributeur d'énergie (SYS, MOT, ARM) dans le temps."
+  }
+}

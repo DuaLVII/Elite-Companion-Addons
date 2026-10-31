@@ -1,0 +1,10 @@
+{
+  // One of the app's own modules, as an addon (it used to be built in as "ActivityCard"; dashboards that had it get this instead).
+  "title": "Activity",
+  "category": "Stats & Logs",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "How busy the journal has been: events over time.",
+  "builtIn": true,
+  "replaces": "ActivityCard"
+}

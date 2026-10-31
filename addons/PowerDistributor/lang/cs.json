@@ -1,0 +1,8 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "ENERGIE",
+    "addon.description": "Jak byly v čase rozdělené body rozvaděče energie (SYS, MOT, ZBR)."
+  }
+}

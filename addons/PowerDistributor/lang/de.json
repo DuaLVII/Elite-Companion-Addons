@@ -1,0 +1,8 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "MACHT",
+    "addon.description": "Wie deine Energieverteiler-Pips (SYS, ANT, WAF) im Zeitverlauf standen."
+  }
+}

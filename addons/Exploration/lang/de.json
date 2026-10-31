@@ -1,0 +1,9 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "ERKUNDUNG",
+    "addon.description": "Erkundung im Zeitverlauf und die gescannten Himmelskörper nach Typ.",
+    "ui.bodies_scanned_by_type": "Gescannte Körper nach Typ"
+  }
+}

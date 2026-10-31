@@ -1,0 +1,15 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "COMBAT",
+    "addon.description": "Kills this session, today, yesterday and the last 7 days, unclaimed bounties, bounties and kills over time, and kills by ship.",
+    "ui.session": "SESSION",
+    "ui.today": "TODAY",
+    "ui.yesterday": "YESTERDAY",
+    "ui.7_days": "7 DAYS",
+    "ui.unclaimed": "UNCLAIMED · ",
+    "ui.lost_if_you_re_destroyed": " (lost if you're destroyed)",
+    "ui.kills_by_ship": "Kills by ship"
+  }
+}

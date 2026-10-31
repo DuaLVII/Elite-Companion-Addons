@@ -1,0 +1,10 @@
+{
+  // One of the app's own modules, as an addon (it used to be built in as "CombatCard"; dashboards that had it get this instead).
+  "title": "Combat",
+  "category": "Combat",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Kills this session, today, yesterday and the last 7 days, unclaimed bounties, bounties and kills over time, and kills by ship.",
+  "builtIn": true,
+  "replaces": "CombatCard"
+}

@@ -1,0 +1,8 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "AKTIVITÄT",
+    "addon.description": "Wie viel im Logbuch los war: Ereignisse im Zeitverlauf."
+  }
+}

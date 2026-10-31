@@ -1,0 +1,10 @@
+{
+  // One of the app's own modules, as an addon (it used to be built in as "PowerCard"; dashboards that had it get this instead).
+  "title": "Power",
+  "category": "Commander & Ship",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Where your power distributor pips have been (SYS, ENG, WEP) over time.",
+  "builtIn": true,
+  "replaces": "PowerCard"
+}

@@ -1,0 +1,15 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "KAMPF",
+    "addon.description": "Abschüsse in dieser Sitzung, heute, gestern und in 7 Tagen, nicht eingelöste Kopfgelder, Kopfgelder und Abschüsse im Zeitverlauf, und Abschüsse nach Schiff.",
+    "ui.session": "SITZUNG",
+    "ui.today": "HEUTE",
+    "ui.yesterday": "GESTERN",
+    "ui.7_days": "7 TAGE",
+    "ui.unclaimed": "NICHT EINGELÖST · ",
+    "ui.lost_if_you_re_destroyed": " (verloren, wenn du zerstört wirst)",
+    "ui.kills_by_ship": "Abschüsse nach Schiff"
+  }
+}

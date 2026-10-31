@@ -1,0 +1,36 @@
+<!-- Combat: one of the app's own modules, made as an addon so it can be restyled, translated or used as a
+     starting point (copy the folder and rename it). The charts draw from the series the app records itself. -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+    <!-- Kills: this session, today, yesterday and the last 7 days (from older journals too) -->
+    <UniformGrid Columns="4" Margin="0,0,0,6">
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.session}"/>
+            <TextBlock Style="{StaticResource Value}" FontSize="17" Text="{Binding Game.SessionKills}"/>
+            <TextBlock Style="{StaticResource Label}" FontSize="10" Text="{Binding Game.BountiesShort}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.today}"/>
+            <TextBlock Style="{StaticResource Value}" FontSize="17" Text="{Binding Game.KillsToday}"/>
+            <TextBlock Style="{StaticResource Label}" FontSize="10" Text="{Binding Game.CombatTodayText}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.yesterday}"/>
+            <TextBlock Style="{StaticResource Value}" FontSize="17" Text="{Binding Game.KillsYesterday}"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.7_days}"/>
+            <TextBlock Style="{StaticResource Value}" FontSize="17" Text="{Binding Game.KillsWeek}"/>
+            <TextBlock Style="{StaticResource Label}" FontSize="10" Text="{Binding Game.CombatWeekText}"/>
+        </StackPanel>
+    </UniformGrid>
+    <!-- Bounties and bonds not handed in yet -->
+    <TextBlock FontSize="11.5" Foreground="{DynamicResource Warn}" Margin="0,0,0,6" TextWrapping="Wrap"
+               Visibility="{Binding Game.HasUnclaimed, Converter={StaticResource BoolToVis}}">
+        <Run Text="{T ui.unclaimed}"/><Run Text="{Binding Game.UnclaimedText, Mode=OneWay}"/><Run Text="{T ui.lost_if_you_re_destroyed}" Foreground="{DynamicResource HudDim}"/>
+    </TextBlock>
+    <controls:TimeSeriesChart Series="bounties,kills" Height="110"/>
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.kills_by_ship}" Margin="0,8,0,4"/>
+    <controls:BarList Key="killtypes"/>
+</StackPanel>

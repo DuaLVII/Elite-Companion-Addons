@@ -1,0 +1,15 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "COMBATE",
+    "addon.description": "Muertes de la sesión, de hoy, de ayer y de los últimos 7 días, recompensas sin cobrar, recompensas y muertes a lo largo del tiempo, y muertes por nave.",
+    "ui.session": "SESIÓN",
+    "ui.today": "HOY",
+    "ui.yesterday": "AYER",
+    "ui.7_days": "7 DÍAS",
+    "ui.unclaimed": "SIN RECLAMAR · ",
+    "ui.lost_if_you_re_destroyed": " (se pierde si te destruyen)",
+    "ui.kills_by_ship": "Bajas por nave"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "EXPLORATION",
+    "addon.description": "Exploration over time, and the bodies you've scanned by type.",
+    "ui.bodies_scanned_by_type": "Bodies scanned by type"
+  }
+}

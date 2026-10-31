@@ -1,0 +1,8 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "ENERGÍA",
+    "addon.description": "Cómo han estado los pips del distribuidor de energía (SIS, MOT, ARM) a lo largo del tiempo."
+  }
+}

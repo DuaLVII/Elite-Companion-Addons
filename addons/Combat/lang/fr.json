@@ -1,0 +1,15 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "COMBAT",
+    "addon.description": "Victimes de la session, d'aujourd'hui, d'hier et des 7 derniers jours, primes non réclamées, primes et victimes dans le temps, et victimes par vaisseau.",
+    "ui.session": "SESSION",
+    "ui.today": "AUJOURD'HUI",
+    "ui.yesterday": "HIER",
+    "ui.7_days": "7 JOURS",
+    "ui.unclaimed": "NON RÉCLAMÉ · ",
+    "ui.lost_if_you_re_destroyed": " (perdu si vous êtes détruit)",
+    "ui.kills_by_ship": "Victimes par vaisseau"
+  }
+}

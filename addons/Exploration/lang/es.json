@@ -1,0 +1,9 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "EXPLORACIÓN",
+    "addon.description": "La exploración a lo largo del tiempo y los cuerpos escaneados por tipo.",
+    "ui.bodies_scanned_by_type": "Cuerpos escaneados por tipo"
+  }
+}

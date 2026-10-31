@@ -1,0 +1,15 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "BOJ",
+    "addon.description": "Zničení za sezení, dnes, včera a za 7 dní, nevybrané odměny, odměny a zničení v čase a zničení podle lodí.",
+    "ui.session": "RELACE",
+    "ui.today": "DNES",
+    "ui.yesterday": "VČERA",
+    "ui.7_days": "7 DNÍ",
+    "ui.unclaimed": "NEVYZVEDNUTO · ",
+    "ui.lost_if_you_re_destroyed": " (ztratí se, pokud tě zničí)",
+    "ui.kills_by_ship": "Zabití podle lodi"
+  }
+}

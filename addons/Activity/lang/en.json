@@ -1,0 +1,8 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "ACTIVITY",
+    "addon.description": "How busy the journal has been: events over time."
+  }
+}

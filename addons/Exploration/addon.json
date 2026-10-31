@@ -1,0 +1,10 @@
+{
+  // One of the app's own modules, as an addon (it used to be built in as "ExploreCard"; dashboards that had it get this instead).
+  "title": "Exploration",
+  "category": "Exploration",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Exploration over time, and the bodies you've scanned by type.",
+  "builtIn": true,
+  "replaces": "ExploreCard"
+}

@@ -1,0 +1,8 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "ACTIVIDAD",
+    "addon.description": "Cuánta actividad ha tenido el diario: eventos a lo largo del tiempo."
+  }
+}

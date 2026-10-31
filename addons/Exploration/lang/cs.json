@@ -1,0 +1,9 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "PRŮZKUM",
+    "addon.description": "Průzkum v čase a naskenovaná tělesa podle typu.",
+    "ui.bodies_scanned_by_type": "Naskenovaná tělesa podle typu"
+  }
+}
