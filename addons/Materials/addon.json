@@ -1,0 +1,16 @@
+{
+  "title": "Materials",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Every raw, manufactured and encoded material with a bar against its cap (300 / 250 / 200 / 150 / 100), grouped as material traders group them, with warnings when something's full or nearly full.",
+  "category": "Engineering",
+  "tags": [
+    "materials",
+    "engineering",
+    "raw",
+    "manufactured",
+    "encoded",
+    "material traders"
+  ],
+  "minAppVersion": "1.0"
+}
