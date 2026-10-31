@@ -1,6 +1,6 @@
-# Runs on every pull request (and push): checks every addon is well-formed and safe.
+# Runs on every pull request (and push): checks every addon, theme, layout and language is well-formed and safe.
 # A pull request can't be merged while this is red (set "Require status checks" in the branch rules).
-name: Check addons
+name: Check the gallery
 on:
   pull_request:
   push:
@@ -15,5 +15,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Check addons
+      - name: Check the gallery
         run: python scripts/validate.py

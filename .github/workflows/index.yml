@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - "addons/**"
+      - "themes/**"
+      - "layouts/**"
+      - "languages/**"
       - "scripts/**"
   workflow_dispatch:
 permissions:
