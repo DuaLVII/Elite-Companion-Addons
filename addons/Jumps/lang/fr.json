@@ -1,0 +1,11 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "SAUTS",
+    "addon.description": "Distance et carburant par saut, et les classes d'étoiles visitées.",
+    "ui.distance_per_jump_hover_for_system": "Distance par saut (survoler pour le système)",
+    "ui.fuel_used_per_jump": "Carburant utilisé par saut",
+    "ui.star_classes_visited": "Classes d'étoiles visitées"
+  }
+}

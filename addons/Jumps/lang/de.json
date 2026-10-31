@@ -1,0 +1,11 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "SPRÜNGE",
+    "addon.description": "Distanz und Treibstoffverbrauch pro Sprung, und die besuchten Sternklassen.",
+    "ui.distance_per_jump_hover_for_system": "Entfernung pro Sprung (für System darüberfahren)",
+    "ui.fuel_used_per_jump": "Treibstoffverbrauch pro Sprung",
+    "ui.star_classes_visited": "Besuchte Sternklassen"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "TELEMETRIE LODI",
+    "addon.description": "Palivo, trup a náklad jako budíky, s jejich průběhem v čase.",
+    "ui.fuel_t": "Palivo (t)",
+    "ui.hull_cargo": "Trup a náklad",
+    "gauge_fuel": "Palivo",
+    "gauge_hull": "Trup",
+    "gauge_cargo": "Nákladový prostor"
+  }
+}

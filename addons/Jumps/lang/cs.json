@@ -1,0 +1,11 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "SKOKY",
+    "addon.description": "Vzdálenost a spotřeba paliva na skok a navštívené třídy hvězd.",
+    "ui.distance_per_jump_hover_for_system": "Vzdálenost na skok (najeď myší pro systém)",
+    "ui.fuel_used_per_jump": "Spotřeba paliva na skok",
+    "ui.star_classes_visited": "Navštívené třídy hvězd"
+  }
+}

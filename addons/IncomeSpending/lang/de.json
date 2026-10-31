@@ -1,0 +1,11 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "EINNAHMEN & AUSGABEN",
+    "addon.description": "Woher deine Credits kommen und wohin sie gehen, und der Gewinn jedes Marktverkaufs.",
+    "ui.income_by_source": "Einnahmen nach Quelle",
+    "ui.spending": "Ausgaben",
+    "ui.profit_per_market_sale": "Gewinn pro Marktverkauf"
+  }
+}

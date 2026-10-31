@@ -1,0 +1,11 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "JUMPS",
+    "addon.description": "Distance and fuel used per jump, and the star classes you've visited.",
+    "ui.distance_per_jump_hover_for_system": "Distance per jump (hover for system)",
+    "ui.fuel_used_per_jump": "Fuel used per jump",
+    "ui.star_classes_visited": "Star classes visited"
+  }
+}

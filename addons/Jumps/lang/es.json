@@ -1,0 +1,11 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "SALTOS",
+    "addon.description": "Distancia y combustible por salto, y las clases de estrella visitadas.",
+    "ui.distance_per_jump_hover_for_system": "Distancia por salto (pasa el ratón para ver el sistema)",
+    "ui.fuel_used_per_jump": "Combustible usado por salto",
+    "ui.star_classes_visited": "Clases de estrellas visitadas"
+  }
+}

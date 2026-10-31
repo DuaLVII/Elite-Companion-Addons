@@ -1,0 +1,13 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "SCHIFFSTELEMETRIE",
+    "addon.description": "Treibstoff, Hülle und Fracht als Anzeigen, dazu ihr Verlauf.",
+    "ui.fuel_t": "Treibstoff (t)",
+    "ui.hull_cargo": "Hülle & Fracht",
+    "gauge_fuel": "Treibstoff",
+    "gauge_hull": "Hülle",
+    "gauge_cargo": "Frachtraum"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "SHIP TELEMETRY",
+    "addon.description": "Fuel, hull and cargo as gauges, with fuel, hull and cargo over time.",
+    "ui.fuel_t": "Fuel (t)",
+    "ui.hull_cargo": "Hull & cargo",
+    "gauge_fuel": "Fuel",
+    "gauge_hull": "Hull",
+    "gauge_cargo": "Cargo hold"
+  }
+}

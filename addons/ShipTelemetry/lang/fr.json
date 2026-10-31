@@ -1,0 +1,13 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "TÉLÉMÉTRIE DU VAISSEAU",
+    "addon.description": "Carburant, coque et cargaison en jauges, avec leur évolution dans le temps.",
+    "ui.fuel_t": "Carburant (t)",
+    "ui.hull_cargo": "Coque & cargaison",
+    "gauge_fuel": "Carburant",
+    "gauge_hull": "Coque",
+    "gauge_cargo": "Soute"
+  }
+}

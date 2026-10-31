@@ -1,0 +1,11 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "INGRESOS Y GASTOS",
+    "addon.description": "De dónde vienen tus créditos y a dónde van, y el beneficio de cada venta en el mercado.",
+    "ui.income_by_source": "Ingresos por fuente",
+    "ui.spending": "Gastos",
+    "ui.profit_per_market_sale": "Beneficio por venta en el mercado"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "PŘÍJMY A VÝDAJE",
+    "addon.description": "Odkud kredity přicházejí a kam odcházejí, a zisk z každého prodeje na trhu.",
+    "ui.income_by_source": "Příjmy podle zdroje",
+    "ui.spending": "Výdaje",
+    "ui.profit_per_market_sale": "Zisk na prodej na trhu"
+  }
+}

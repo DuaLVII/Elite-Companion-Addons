@@ -1,0 +1,10 @@
+{
+  // One of the app's own modules, as an addon (it used to be built in as "TelemetryCard"; dashboards that had it get this instead).
+  "title": "Ship Telemetry",
+  "category": "Commander & Ship",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Fuel, hull and cargo as gauges, with fuel, hull and cargo over time.",
+  "builtIn": true,
+  "replaces": "TelemetryCard"
+}

@@ -1,0 +1,10 @@
+{
+  // One of the app's own modules, as an addon (it used to be built in as "JumpsCard"; dashboards that had it get this instead).
+  "title": "Jumps",
+  "category": "Navigation & Travel",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Distance and fuel used per jump, and the star classes you've visited.",
+  "builtIn": true,
+  "replaces": "JumpsCard"
+}

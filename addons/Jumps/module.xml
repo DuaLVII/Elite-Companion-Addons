@@ -1,0 +1,18 @@
+<!-- Jumps: one of the app's own modules, made as an addon so it can be restyled, translated or used as a
+     starting point (copy the folder and rename it). The charts draw from the series the app records itself. -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+    <UniformGrid Columns="1" controls:Responsive.WideColumns="2">
+        <StackPanel Margin="0,0,4,0">
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.distance_per_jump_hover_for_system}" Margin="0,0,0,2"/>
+            <controls:ColumnChart Key="jumpdist" Unit="ly" Color="#5794F2" Height="100"/>
+        </StackPanel>
+        <StackPanel Margin="0,0,4,0">
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.fuel_used_per_jump}" Margin="0,0,0,2"/>
+            <controls:ColumnChart Key="fuelused" Unit="t" Color="#FF9830" Height="100"/>
+        </StackPanel>
+    </UniformGrid>
+    <TextBlock Style="{StaticResource Label}" Text="{T ui.star_classes_visited}" Margin="0,8,0,4"/>
+    <controls:BarList Key="starclass"/>
+</StackPanel>

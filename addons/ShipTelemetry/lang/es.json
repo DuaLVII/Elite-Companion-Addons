@@ -1,0 +1,13 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "TELEMETRÍA DE LA NAVE",
+    "addon.description": "Combustible, casco y carga como indicadores, con su evolución en el tiempo.",
+    "ui.fuel_t": "Combustible (t)",
+    "ui.hull_cargo": "Casco y carga",
+    "gauge_fuel": "Combustible",
+    "gauge_hull": "Casco",
+    "gauge_cargo": "Bodega"
+  }
+}

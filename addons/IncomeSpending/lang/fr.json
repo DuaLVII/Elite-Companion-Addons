@@ -1,0 +1,11 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "REVENUS & DÉPENSES",
+    "addon.description": "D'où viennent tes crédits et où ils vont, et le bénéfice de chaque vente au marché.",
+    "ui.income_by_source": "Revenus par source",
+    "ui.spending": "Dépenses",
+    "ui.profit_per_market_sale": "Bénéfice par vente au marché"
+  }
+}

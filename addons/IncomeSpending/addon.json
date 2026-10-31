@@ -1,0 +1,10 @@
+{
+  // One of the app's own modules, as an addon (it used to be built in as "IncomeCard"; dashboards that had it get this instead).
+  "title": "Income & Spending",
+  "category": "Trade, Mining & Missions",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Where your credits come from and go to, and the profit from each market sale.",
+  "builtIn": true,
+  "replaces": "IncomeCard"
+}

@@ -1,0 +1,11 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "INCOME & SPENDING",
+    "addon.description": "Where your credits come from and go to, and the profit from each market sale.",
+    "ui.income_by_source": "Income by source",
+    "ui.spending": "Spending",
+    "ui.profit_per_market_sale": "Profit per market sale"
+  }
+}
