@@ -6,6 +6,20 @@ import xml.etree.ElementTree as ET
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 ADDONS = os.path.join(ROOT, "addons")
 
+# Themes, layouts and languages: one folder each, every entry a folder with about.json (title, author, version,
+# description…), its file, and an optional preview.png.
+#   themes/<Id>/theme.json            → the app's Themes\<Id>.json
+#   layouts/<Id>/layout.json          → the app's Layouts\<Id>.ecl.json
+#   languages/<code>/language.json    → the app's Languages\<code>.json (the folder name is the language code)
+KINDS = {
+    "themes":    {"file": "theme.json",    "max": 64 * 1024,   "id": re.compile(r"^[A-Za-z][A-Za-z0-9_-]{1,40}$")},
+    "layouts":   {"file": "layout.json",   "max": 512 * 1024,  "id": re.compile(r"^[A-Za-z][A-Za-z0-9_-]{1,40}$")},
+    "languages": {"file": "language.json", "max": 1024 * 1024, "id": re.compile(r"^[a-z]{2,3}(-[A-Za-z]{2,4})?$")},
+}
+ITEM_REQUIRED = ["title", "author", "version", "description"]
+COLOUR_RE = re.compile(r"^#([0-9A-Fa-f]{3,4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$")
+GRADIENT_RE = re.compile(r"^(linear|radial)\([^()]*\)$", re.I)
+
 ALLOWED_EXT = {".json", ".xml", ".js", ".png", ".jpg", ".md", ".txt"}
 MAX_FILE = 512 * 1024          # any one file
 MAX_ADDON = 2 * 1024 * 1024    # the whole addon
@@ -179,6 +193,126 @@ def check_addon(folder, problems):
                 problems.append(f"{rel}/lang/{n}: can't be read ({e})")
 
 
+def check_about(folder, rel, problems):
+    path = os.path.join(folder, "about.json")
+    if not os.path.isfile(path):
+        problems.append(f"{rel}: about.json is missing (title, author, version, description)")
+        return None
+    try:
+        m = load_json(path)
+        if not isinstance(m, dict): raise ValueError("not an object")
+    except Exception as e:
+        problems.append(f"{rel}/about.json: can't be read ({e})"); return None
+    for k in ITEM_REQUIRED:
+        if not isinstance(m.get(k), str) or not m.get(k).strip():
+            problems.append(f"{rel}/about.json: \"{k}\" is required")
+    if isinstance(m.get("version"), str) and not VERSION_RE.match(m["version"].strip()):
+        problems.append(f"{rel}/about.json: version \"{m['version']}\" should look like 1.0 or 1.2.3")
+    if "tags" in m and (not isinstance(m["tags"], list) or any(not isinstance(t, str) for t in m["tags"])):
+        problems.append(f"{rel}/about.json: \"tags\" should be a list of words")
+    if "minAppVersion" in m and not VERSION_RE.match(str(m["minAppVersion"])):
+        problems.append(f"{rel}/about.json: minAppVersion should look like 1.4 or 1.4.0")
+    if len(m.get("description", "")) > 400:
+        problems.append(f"{rel}/about.json: keep the description under 400 characters")
+    return m
+
+
+def check_theme(path, rel, problems):
+    t = load_json(path)
+    if not isinstance(t, dict) or not isinstance(t.get("colors", {}), dict):
+        problems.append(f"{rel}: should be {{ \"name\": …, \"colors\": {{ \"Hud\": \"#FF9830\", … }} }}"); return
+    for k, v in t.get("colors", {}).items():
+        if not isinstance(v, str) or not (COLOUR_RE.match(v.strip()) or GRADIENT_RE.match(v.strip())):
+            problems.append(f"{rel}: colour \"{k}\": \"{v}\" isn't a colour (#RRGGBB, #AARRGGBB, linear(…) or radial(…))")
+    if "font" in t and not isinstance(t["font"], str):
+        problems.append(f"{rel}: \"font\" should be a font's name")
+    if "style" in t and not isinstance(t["style"], dict):
+        problems.append(f"{rel}: \"style\" should be an object")
+
+
+def check_layout(path, rel, problems):
+    f = load_json(path)
+    if not isinstance(f, dict) or f.get("Format") != "EliteCompanion.Layout" or not f.get("Tabs"):
+        problems.append(f"{rel}: should be a layout exported from the app (LAYOUT → Export), with at least one tab"); return
+    addons = {a.lower() for a in os.listdir(ADDONS)} if os.path.isdir(ADDONS) else set()
+    for a in f.get("Addons", []) or []:
+        aid, frm = str(a.get("Id", "")), str(a.get("From", ""))
+        if frm == "gallery" and aid.lower() not in addons:
+            problems.append(f"{rel}: uses the addon \"{aid}\", which isn't in the gallery (add it to addons/ first)")
+        elif frm not in ("gallery", "link"):
+            problems.append(f"{rel}: uses \"{aid}\", an addon only its maker has: layouts here can only use addons from the gallery or a link")
+    if any(isinstance(v, dict) and v for v in (f.get("AddonData") or {}).values()):
+        pass   # (addons' saved settings travel with the layout: fine, they're plain text)
+
+
+def check_language(path, rel, problems, code):
+    d = load_json(path)
+    strings = d.get("Strings") if isinstance(d, dict) else None
+    if not isinstance(d, dict) or not isinstance(strings, dict) or any(not isinstance(v, str) for v in strings.values()):
+        problems.append(f"{rel}: should be {{ \"Language\": \"Italiano\", \"Code\": \"it\", \"Strings\": {{ \"key\": \"text\", … }} }}"); return
+    if str(d.get("Code", "")).lower() != code.lower():
+        problems.append(f"{rel}: \"Code\" is \"{d.get('Code')}\" but the folder is {code}: they should match")
+    if not str(d.get("Language", "")).strip():
+        problems.append(f"{rel}: \"Language\" (its name, in that language) is required")
+    for k, v in strings.items():
+        if "<" in v and re.search(r"<\s*(script|iframe|object)", v, re.I):
+            problems.append(f"{rel}: \"{k}\" has markup in it")
+
+
+def check_item(kind, folder, problems):
+    spec = KINDS[kind]
+    name = os.path.basename(folder)
+    rel = f"{kind}/{name}"
+    if not spec["id"].match(name):
+        problems.append(f"{rel}: " + ("the folder name is the language code, like it or pt-BR" if kind == "languages"
+                                      else "the folder name is its id: letters, digits, - and _ only, starting with a letter"))
+    allowed = {"about.json", spec["file"], "preview.png", "preview.jpg", "README.md"}
+    for dirpath, dirs, names in os.walk(folder):
+        if dirpath != folder:
+            problems.append(f"{rel}: no sub-folders"); continue
+        for n in names:
+            p = os.path.join(dirpath, n)
+            size = os.path.getsize(p)
+            if n not in allowed:
+                problems.append(f"{rel}/{n}: only {', '.join(sorted(allowed))} belong here")
+            if n == spec["file"] and size > spec["max"]:
+                problems.append(f"{rel}/{n}: {size // 1024} KB is too big (max {spec['max'] // 1024} KB)")
+            if n.startswith("preview.") and size > MAX_PREVIEW:
+                problems.append(f"{rel}/{n}: the preview is {size // 1024} KB (max {MAX_PREVIEW // 1024} KB)")
+    check_about(folder, rel, problems)
+    path = os.path.join(folder, spec["file"])
+    if not os.path.isfile(path):
+        problems.append(f"{rel}: {spec['file']} is missing"); return
+    try:
+        if kind == "themes": check_theme(path, f"{rel}/{spec['file']}", problems)
+        elif kind == "layouts": check_layout(path, f"{rel}/{spec['file']}", problems)
+        else: check_language(path, f"{rel}/{spec['file']}", problems, name)
+    except Exception as e:
+        problems.append(f"{rel}/{spec['file']}: can't be read ({e})")
+
+
+def check_kind(kind, problems):
+    """Returns how many entries were checked."""
+    root = os.path.join(ROOT, kind)
+    if not os.path.isdir(root):
+        return 0
+    seen, n = {}, 0
+    for name in sorted(os.listdir(root)):
+        folder = os.path.join(root, name)
+        if not os.path.isdir(folder):
+            if name not in (".gitkeep", "README.md"):
+                problems.append(f"{kind}/{name}: only folders belong in {kind}/")
+            continue
+        if name.startswith("_"):
+            continue
+        if name.lower() in seen:
+            problems.append(f"{kind}/{name}: the same name as {kind}/{seen[name.lower()]} (names ignore upper / lower case)")
+        seen[name.lower()] = name
+        check_item(kind, folder, problems)
+        n += 1
+    return n
+
+
 def main():
     problems = []
     if not os.path.isdir(ADDONS):
@@ -195,11 +329,13 @@ def main():
             problems.append(f"addons/{name}: the same id as addons/{seen[low]} (ids ignore upper / lower case)")
         seen[low] = name
         check_addon(folder, problems)
+    counts = {kind: check_kind(kind, problems) for kind in KINDS}
     if problems:
         print(f"✗ {len(problems)} problem(s):\n")
         for p in problems: print("  • " + p)
         return 1
-    print(f"✓ {len([n for n in seen if not n.startswith('_')])} addon(s) checked, all fine")
+    print(f"✓ {len([n for n in seen if not n.startswith('_')])} addon(s), "
+          + ", ".join(f"{n} {kind[:-1] if n == 1 else kind}" for kind, n in counts.items()) + " checked, all fine")
     return 0
 
 
