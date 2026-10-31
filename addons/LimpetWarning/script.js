@@ -6,12 +6,17 @@
 const START = {
     limpetWarningValue: "",
     hasEnoughLimpets: "",
+    isEnabled: "",
 };
 const V = JSON.parse(JSON.stringify(START));
 const num = x => Number(x) || 0;
 const txt = x => x == null ? "" : typeof x === "number" ? (Number.isInteger(x) ? fmt(x) : fmt(x, 1)) : String(x);
 const clock = t => { const d = t ? new Date(Date.parse(t)) : new Date(); return String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0"); };
 const once = {};
+// yes / no: true, or text a rule set ("yes", "on", "true"), or a number that isn't 0
+const __yes = x => x === true || (typeof x === "number" && x !== 0) || (typeof x === "string" && /^(yes|on|true|1)$/i.test(x.trim()));
+// a translated text with {value} / {e.Field} / {game.X} in it, filled in
+const __tpl = (s, e) => String(s).replace(/\{(e\.|game\.)?([A-Za-z_]\w*)\}/g, (m, p, k) => txt(p === "e." ? (e || {})[k] : p === "game." ? game[k] : V[k]));
 const pick = (o, path) => path.split(".").reduce((x, k) => x == null ? undefined : x[k], o);
 // formulas: a mistake in the maths (dividing by nothing…) gives 0 instead of stopping the rule
 const __calc = f => { try { const r = f(); return Number.isFinite(r) ? r : 0; } catch (_) { return 0; } };
@@ -54,8 +59,10 @@ on("tick", () => {
     __past1 = past;
     if (before !== false || !past) return;   // only the moment it goes past
     {
-        if (!replay) notify(`Low Limpet Warning`, "warning", 10);
-        V.hasEnoughLimpets = `false`;
+        if (V.isEnabled == `true`) {
+            if (!replay) notify(`Low Limpet Warning`, "warning", 10);
+            V.hasEnoughLimpets = `false`;
+        }
     }
     changed();
 });
@@ -93,9 +100,38 @@ on("tick", () => {
     __every13 = Date.now();
     const e = {}, replay = false;
     {
-        if (num(game.Limpets) < num(__calc(() => num(V.limpetWarningValue)))) {
+        if ((num(game.Limpets) < num(__calc(() => num(V.limpetWarningValue)))) && (V.isEnabled == `true`)) {
             if (!replay) notify(`Low Limpet Warning`, "warning", 10);
         }
+    }
+    changed();
+});
+
+on("SellDrones", (e, replay) => {
+    if (!fresh(e)) return;
+    // When SellDrones
+    {
+        if ((num(game.Limpets) < num(__calc(() => num(V.limpetWarningValue)))) && (V.isEnabled == `true`)) {
+            if (!replay) notify(`Low Limpet Warning`, "warning", 10);
+        }
+    }
+    changed();
+});
+
+on("Shutdown", (e, replay) => {
+    if (!fresh(e)) return;
+    // When Game closed
+    {
+        V.isEnabled = `false`;
+    }
+    changed();
+});
+
+on("LoadGame", (e, replay) => {
+    if (!fresh(e)) return;
+    // When Game loaded (a new session)
+    {
+        V.isEnabled = `true`;
     }
     changed();
 });

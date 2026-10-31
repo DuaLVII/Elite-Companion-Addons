@@ -4,7 +4,7 @@
   "folder": "LimpetWarning",
   "category": "Trade, Mining & Missions",
   "author": "CMDR Snickerdoodlez",
-  "version": "1.0",
+  "version": "1.1",
   "description": "This was the first test module made using addon designer.\r\nYou can set the limpet warning value and be notified if your limpet\r\ncount drops lower than the set amount.",
   "changes": "",
   "samples": {},
@@ -64,24 +64,36 @@
       },
       "actions": [
         {
-          "id": 2,
-          "kind": "notify",
+          "id": 20,
+          "kind": "if",
           "p": {
-            "text": "t:Low Limpet Warning",
-            "level": "warning",
-            "seconds": "10"
+            "left": "v:isEnabled",
+            "op": "eq",
+            "right": "t:true"
           },
-          "then": [],
-          "else": []
-        },
-        {
-          "id": 9,
-          "kind": "set",
-          "p": {
-            "target": "hasEnoughLimpets",
-            "to": "t:false"
-          },
-          "then": [],
+          "then": [
+            {
+              "id": 21,
+              "kind": "notify",
+              "p": {
+                "text": "t:Low Limpet Warning",
+                "level": "warning",
+                "seconds": "10"
+              },
+              "then": [],
+              "else": []
+            },
+            {
+              "id": 22,
+              "kind": "set",
+              "p": {
+                "target": "hasEnoughLimpets",
+                "to": "t:false"
+              },
+              "then": [],
+              "else": []
+            }
+          ],
           "else": []
         }
       ]
@@ -163,7 +175,11 @@
           "p": {
             "left": "g:Limpets",
             "op": "lt",
-            "right": "f:{limpetWarningValue}"
+            "right": "f:{limpetWarningValue}",
+            "left2": "v:isEnabled",
+            "op2": "eq",
+            "right2": "t:true",
+            "join": "and"
           },
           "then": [
             {
@@ -181,8 +197,87 @@
           "else": []
         }
       ]
+    },
+    {
+      "id": 23,
+      "when": "event",
+      "p": {
+        "event": "SellDrones",
+        "minutes": "1"
+      },
+      "actions": [
+        {
+          "id": 24,
+          "kind": "if",
+          "p": {
+            "left": "g:Limpets",
+            "op": "lt",
+            "right": "f:{limpetWarningValue}",
+            "left2": "v:isEnabled",
+            "op2": "eq",
+            "right2": "t:true",
+            "join": "and"
+          },
+          "then": [
+            {
+              "id": 25,
+              "kind": "notify",
+              "p": {
+                "text": "t:Low Limpet Warning",
+                "level": "warning",
+                "seconds": "10"
+              },
+              "then": [],
+              "else": []
+            }
+          ],
+          "else": []
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "when": "event",
+      "p": {
+        "event": "Shutdown",
+        "skipReplay": "false"
+      },
+      "actions": [
+        {
+          "id": 17,
+          "kind": "set",
+          "p": {
+            "target": "isEnabled",
+            "to": "t:false"
+          },
+          "then": [],
+          "else": []
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "when": "event",
+      "p": {
+        "event": "LoadGame",
+        "skipReplay": "false"
+      },
+      "actions": [
+        {
+          "id": 19,
+          "kind": "set",
+          "p": {
+            "target": "isEnabled",
+            "to": "t:true"
+          },
+          "then": [],
+          "else": []
+        }
+      ]
     }
   ],
   "values": {},
-  "customJs": ""
+  "customJs": "",
+  "languageNames": {},
+  "translations": {}
 }
