@@ -2,6 +2,9 @@
   "title": "On Foot",
   "category": "Surface & On Foot",
   "author": "Elite Companion",
-  "version": "1.0",
-  "description": "Where you are (hangar, social space, outside…), oxygen, health, temperature and gravity with warnings, your suit and weapons with class and mods, consumables, backpack contents and ship locker totals."
+  "version": "1.0.1",
+  "description": "Where you are (hangar, social space, outside…), oxygen, health, temperature and gravity with warnings, your suit and weapons with class and mods, consumables, backpack contents and ship locker totals.",
+  "changes": [
+    "Stands alone: no longer needs the app's shared script files"
+  ]
 }

@@ -1,0 +1,14 @@
+{
+  "title": "Engineers",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Every ship engineer with your status and rank, where they are and how far, what they can engineer and to which grade, and how to find, meet and unlock the ones you haven't. Pick a module to see who can do it.",
+  "category": "Engineering",
+  "tags": [
+    "engineers",
+    "engineering",
+    "unlock",
+    "blueprints"
+  ],
+  "minAppVersion": "1.0"
+}

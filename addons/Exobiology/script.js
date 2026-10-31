@@ -6,7 +6,69 @@
 //
 // Values are learnt from your own sales at Vista Genomics (SellOrganicData), so once you've sold a species once,
 // its value shows next time.
-include("_shared/surface.js");
+// ---------------------------------------------------------------- surface.js (built in, so the addon stands alone)
+// Shared helpers for the planet-surface addons (Exobiology, On Foot, SRV, Back to Ship):
+//
+//
+// Surface.pos          the latest position from Status.json: { lat, lon, alt, heading, radius, body } (or null)
+// Surface.distance(a, b)   metres between two { lat, lon } points on the current planet
+// Surface.bearing(a, b)    compass bearing (0–360°) from a to b
+// Surface.flag(status, n) / Surface.flag2(status, n)   Status.json flag bits
+// Surface.metres(m)        "850 m" / "3.2 km"
+
+const Surface = (() => {
+    let pos = null;
+    const listeners = [];
+
+    on("Status", s => {
+        if (s.Latitude === undefined || s.Longitude === undefined) {
+            if (pos) { pos = null; listeners.forEach(f => f(null, s)); }
+            return;
+        }
+        pos = {
+            lat: s.Latitude, lon: s.Longitude, alt: s.Altitude || 0, heading: s.Heading || 0,
+            radius: s.PlanetRadius || (pos && pos.radius) || 0, body: s.BodyName || (pos && pos.body) || "",
+        };
+        listeners.forEach(f => f(pos, s));
+    });
+
+    const rad = d => d * Math.PI / 180;
+
+    function distance(a, b, radius) {
+        const r = radius || (pos && pos.radius) || 0;
+        if (!a || !b || !r) return NaN;
+        const dLat = rad(b.lat - a.lat), dLon = rad(b.lon - a.lon);
+        const h = Math.sin(dLat / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLon / 2) ** 2;
+        return 2 * r * Math.asin(Math.min(1, Math.sqrt(h)));
+    }
+
+    function bearing(a, b) {
+        const y = Math.sin(rad(b.lon - a.lon)) * Math.cos(rad(b.lat));
+        const x = Math.cos(rad(a.lat)) * Math.sin(rad(b.lat)) - Math.sin(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.cos(rad(b.lon - a.lon));
+        return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+    }
+
+    // Status.json flags can use bit 31, which JavaScript's | and & treat as a sign bit, so use arithmetic
+    const bit = (value, n) => Math.floor((value || 0) / Math.pow(2, n)) % 2 === 1;
+
+    function metres(m) {
+        if (!isFinite(m)) return "—";
+        return m < 1000 ? `${Math.round(m)} m` : `${(m / 1000).toFixed(m < 10000 ? 2 : 1)} km`;
+    }
+
+    function titleCase(s) {
+        return String(s || "").replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+    return {
+        get pos() { return pos; },
+        onMove: fn => listeners.push(fn),
+        distance, bearing, metres, titleCase,
+        flag: (s, n) => bit(s.Flags, n),
+        flag2: (s, n) => bit(s.Flags2, n),
+    };
+})();
+// ---------------------------------------------------------------- end of surface.js
 wantHistory();
 
 // Minimum distance between samples of one species (metres)
