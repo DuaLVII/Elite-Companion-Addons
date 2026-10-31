@@ -1,0 +1,33 @@
+{
+  "name": "Cobalt",
+  "author": "CMDR Snickerdoodlez",
+  "description": "Deep navy with ice-blue highlights, teal greens and coral alerts. Cool and calm for long sessions.",
+  "font": "Segoe UI",
+  "colors": {
+    "Hud": "#5CC8FF",
+    "HudText": "#D9E6F2",
+    "HudDim": "#7F93A8",
+    "Danger": "#FF6B6B",
+    "Warn": "#FFD166",
+    "Good": "#4FD1A5",
+    "Ok": "#7AA2FF",
+    "Purple": "#B39DFF",
+    "Cyan": "#7FF0FF",
+    "Canvas": "#0A111C",
+    "Panel": "#0F1928",
+    "PanelBorder": "#1F2E44",
+    "HeaderBack": "#132136",
+    "Control": "#172840",
+    "ControlHover": "#1D3150",
+    "ControlPressed": "#264066",
+    "Thumb": "#35507A",
+    "Track": "#10FFFFFF",
+    "WindowBack": "#F20A111C",
+    "FullScreenBack": "#070C14",
+    "BarBack": "#F20F1928",
+    "Overlay": "#F5080E17",
+    "LoadingBack": "#F7080E17",
+    "GlitchA": "#AAFF6B6B",
+    "GlitchB": "#AA7FF0FF"
+  }
+}

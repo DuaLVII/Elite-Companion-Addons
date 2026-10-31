@@ -1,0 +1,33 @@
+{
+  "name": "Ember",
+  "author": "CMDR Snickerdoodlez",
+  "description": "Charcoal and soot with glowing amber and ember-red highlights, like a drive core running hot.",
+  "font": "Segoe UI",
+  "colors": {
+    "Hud": "#FF7A3D",
+    "HudText": "#EDE0D6",
+    "HudDim": "#A08F84",
+    "Danger": "#FF4D4D",
+    "Warn": "#FFC145",
+    "Good": "#9BD46A",
+    "Ok": "#6FA8DC",
+    "Purple": "#D08CE0",
+    "Cyan": "#6FD6E8",
+    "Canvas": "#120D0B",
+    "Panel": "#1B1411",
+    "PanelBorder": "#3A2A22",
+    "HeaderBack": "#231915",
+    "Control": "#2A1E19",
+    "ControlHover": "#33251F",
+    "ControlPressed": "#45312A",
+    "Thumb": "#5A4136",
+    "Track": "#10FFFFFF",
+    "WindowBack": "#F2120D0B",
+    "FullScreenBack": "#0C0807",
+    "BarBack": "#F21B1411",
+    "Overlay": "#F50E0A08",
+    "LoadingBack": "#F70E0A08",
+    "GlitchA": "#AAFF4D4D",
+    "GlitchB": "#AAFFC145"
+  }
+}
