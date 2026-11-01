@@ -179,10 +179,9 @@ def check_addon(folder, problems):
     script = os.path.join(folder, script_file)
     if os.path.isfile(script):
         src = open(script, encoding="utf-8-sig", errors="replace").read()
-        for m_ in re.finditer(r'include\(\s*["\']([^"\']+)["\']', src):
-            target = m_.group(1)
-            if not target.startswith("_shared/"):
-                problems.append(f"{rel}/{script_file}: include(\"{target}\"): only the app's own _shared/ helpers can be included")
+        for m_ in re.finditer(r'(?<![\w.])include\(\s*["\']([^"\']+)["\']', src):
+            # a gallery addon stands alone: everything it needs is in its own folder (the app has no shared helpers)
+            problems.append(f"{rel}/{script_file}: include(\"{m_.group(1)}\"): put what you need in this addon's own script.js instead")
 
     langdir = os.path.join(folder, "lang")
     if os.path.isdir(langdir):
