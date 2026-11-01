@@ -3735,6 +3735,8 @@
     "galnet.read_online": "Číst na elitedangerous.com ↗",
     "galnet.http": "GalNet odpověděl {0} {1}",
     "tour.NewsBtn.title": "GALNET",
-    "tour.NewsBtn.text": "Nejnovější zprávy GalNet od Frontieru na celé obrazovce: vlevo vyberte článek ke čtení. Zobrazí se i při spuštění aplikace (lze změnit úplně dole)."
+    "tour.NewsBtn.text": "Nejnovější zprávy GalNet od Frontieru na celé obrazovce: vlevo vyberte článek ke čtení. Zobrazí se i při spuštění aplikace (lze změnit úplně dole).",
+    "galnet.mark_all_read": "Označit vše jako přečtené",
+    "galnet.mark_all_read_tip": "Odebrat ● ze všech článků"
   }
 }

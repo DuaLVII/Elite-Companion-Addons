@@ -3735,6 +3735,8 @@
     "galnet.read_online": "Leerlo en elitedangerous.com ↗",
     "galnet.http": "GalNet respondió {0} {1}",
     "tour.NewsBtn.title": "GALNET",
-    "tour.NewsBtn.text": "Las últimas noticias de GalNet de Frontier, a pantalla completa: elige un artículo a la izquierda para leerlo. También salen al iniciar la app (se cambia abajo del todo)."
+    "tour.NewsBtn.text": "Las últimas noticias de GalNet de Frontier, a pantalla completa: elige un artículo a la izquierda para leerlo. También salen al iniciar la app (se cambia abajo del todo).",
+    "galnet.mark_all_read": "Marcar todo como leído",
+    "galnet.mark_all_read_tip": "Quitar el ● de todos los artículos"
   }
 }
