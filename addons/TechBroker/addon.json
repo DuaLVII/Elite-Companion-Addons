@@ -1,0 +1,17 @@
+{
+  "title": "Tech Broker",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Every human and Guardian technology broker unlock with the materials and commodities it takes, what you have and what's short. Track the ones you want for one combined shopping list; unlocks are ticked off as you make them.",
+  "category": "Engineering",
+  "tags": [
+    "tech broker",
+    "guardian",
+    "unlocks",
+    "materials",
+    "commodities",
+    "shopping list",
+    "engineering"
+  ],
+  "minAppVersion": "0.9.5"
+}

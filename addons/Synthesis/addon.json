@@ -1,0 +1,17 @@
+{
+  "title": "Synthesis",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "What you can synthesise right now (FSD injections, ammo for your weapons, limpets, AFM refills, SRV supplies…), how many times, and what's short for the rest. Shows what your ship can use first.",
+  "category": "Engineering",
+  "tags": [
+    "synthesis",
+    "fsd injection",
+    "jumponium",
+    "ammo",
+    "limpets",
+    "materials",
+    "engineering"
+  ],
+  "minAppVersion": "0.9.5"
+}

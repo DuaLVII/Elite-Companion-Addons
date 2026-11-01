@@ -1,0 +1,166 @@
+<!-- Synthesis: what you can make now from your materials, and what's short. Click a recipe (Tag="pick") for its materials.
+     Two columns when the module is wide (controls:Responsive.WideColumns). -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+
+    <StackPanel.Resources>
+        <ItemsPanelTemplate x:Key="Wrap"><WrapPanel/></ItemsPanelTemplate>
+        <Style x:Key="Pick" TargetType="Button" BasedOn="{StaticResource HudButton}">
+            <Setter Property="Margin" Value="0,0,4,4"/>
+            <Setter Property="Padding" Value="8,2"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding on}" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource Hud}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource Hud}"/>
+                    <Setter Property="Background" Value="{StaticResource HudSoft}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Head" TargetType="TextBlock" BasedOn="{StaticResource Label}">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,6,0,3"/>
+            <Style.Triggers>
+                <Trigger Property="Text" Value=""><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Small" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style x:Key="Note" TargetType="TextBlock" BasedOn="{StaticResource Small}">
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Style.Triggers>
+                <Trigger Property="Text" Value=""><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+            </Style.Triggers>
+        </Style>
+        <!-- a level badge: green when you can make it -->
+        <Style x:Key="Lvl" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10.5"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ok}" Value="True"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </StackPanel.Resources>
+
+    <TextBlock Style="{StaticResource Note}" Text="{Binding V[status]}" Margin="0,0,0,4"/>
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Right" Text="{Binding V[ship]}" Style="{StaticResource Small}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
+                   controls:Responsive.HideBelow="Normal"/>
+        <ItemsControl ItemsSource="{Binding V[views]}" ItemsPanel="{StaticResource Wrap}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Style="{StaticResource Pick}" Tag="view" CommandParameter="{Binding id}" Content="{Binding name}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </DockPanel>
+
+    <UniformGrid Columns="1" controls:Responsive.WideColumns="2">
+        <!-- the recipes -->
+        <StackPanel Margin="0,0,8,0">
+            <TextBlock Text="{Binding V[count]}" Style="{StaticResource Small}" Margin="0,0,0,3"/>
+            <ScrollViewer MaxHeight="240" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                <ItemsControl ItemsSource="{Binding V[rows]}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Tag="pick" CommandParameter="{Binding id}" HorizontalContentAlignment="Stretch" Padding="6,2" Margin="0,0,0,2">
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource HudButton}">
+                                        <Setter Property="BorderBrush" Value="Transparent"/>
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding on}" Value="True">
+                                                <Setter Property="BorderBrush" Value="{StaticResource Hud}"/>
+                                                <Setter Property="Background" Value="{StaticResource HudSoft}"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <DockPanel>
+                                    <ItemsControl DockPanel.Dock="Right" ItemsSource="{Binding levels}" ItemsPanel="{StaticResource Wrap}" VerticalAlignment="Center">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate><TextBlock Style="{StaticResource Lvl}" Text="{Binding text}"/></DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                    <TextBlock Text="{Binding name}" FontSize="12" TextTrimming="CharacterEllipsis" VerticalAlignment="Center">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ready}" Value="True"><Setter Property="Foreground" Value="{StaticResource HudText}"/></DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </DockPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </StackPanel>
+
+        <!-- the one picked -->
+        <StackPanel>
+            <TextBlock Text="{Binding V[selTitle]}" FontSize="12.5" FontWeight="SemiBold" Foreground="{StaticResource Hud}" TextWrapping="Wrap" Margin="0,4,0,2"/>
+            <ItemsControl ItemsSource="{Binding V[detail]}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="0,2,0,5">
+                            <DockPanel>
+                                <TextBlock DockPanel.Dock="Right" Text="{Binding can}" FontSize="11">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="{StaticResource Warn}"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ok}" Value="True"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                                <TextBlock Text="{Binding level}" Style="{StaticResource Label}" FontSize="10.5" FontWeight="SemiBold"/>
+                            </DockPanel>
+                            <ItemsControl ItemsSource="{Binding mats}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <DockPanel Margin="6,0,0,0">
+                                            <TextBlock DockPanel.Dock="Right" Text="{Binding have}" FontSize="10.5" Margin="6,0,0,0">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding short}" Value="True"><Setter Property="Foreground" Value="{StaticResource Danger}"/></DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                            <TextBlock Text="{Binding text}" FontSize="11.5" Foreground="{StaticResource HudText}" TextTrimming="CharacterEllipsis"/>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <TextBlock Style="{StaticResource Head}" Text="{Binding V[madeHead]}"/>
+            <ItemsControl ItemsSource="{Binding V[made]}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Right" Text="{Binding when}" Style="{StaticResource Small}" Margin="6,0,0,0"/>
+                            <TextBlock Text="{Binding text}" FontSize="11" Foreground="{StaticResource HudText}" TextTrimming="CharacterEllipsis"/>
+                        </DockPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </UniformGrid>
+</StackPanel>

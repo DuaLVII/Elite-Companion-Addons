@@ -8,5 +8,6 @@
   "view": "module.xml",
   "script": "script.js",
   // The sites this addon asks the app to fetch from: "edsm" and/or "spansh"
-  "web": ["edsm"]
+  "web": ["edsm"],
+  "minAppVersion": "0.9.5"
 }
