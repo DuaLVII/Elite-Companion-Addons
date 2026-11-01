@@ -15,7 +15,12 @@ KINDS = {
     "themes":    {"file": "theme.json",    "max": 64 * 1024,   "id": re.compile(r"^[A-Za-z][A-Za-z0-9_-]{1,40}$")},
     "layouts":   {"file": "layout.json",   "max": 512 * 1024,  "id": re.compile(r"^[A-Za-z][A-Za-z0-9_-]{1,40}$")},
     "languages": {"file": "language.json", "max": 1024 * 1024, "id": re.compile(r"^[a-z]{2,3}(-[A-Za-z]{2,4})?$")},
+    "sounds":    {"file": "sounds.json",   "max": 64 * 1024,   "id": re.compile(r"^[A-Za-z][A-Za-z0-9_-]{1,40}$")},
 }
+AUDIO_EXT = {".wav", ".ogg", ".mp3"}
+MAX_SOUND_FILE = 1024 * 1024          # any one sound
+MAX_SOUND_PACK = 8 * 1024 * 1024      # a whole pack
+SOUND_ID_RE = re.compile(r"^[a-z]+(\.[a-z0-9_]+)+$")
 ITEM_REQUIRED = ["title", "author", "version", "description"]
 COLOUR_RE = re.compile(r"^#([0-9A-Fa-f]{3,4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$")
 GRADIENT_RE = re.compile(r"^(linear|radial)\([^()]*\)$", re.I)
@@ -259,6 +264,26 @@ def check_language(path, rel, problems, code):
             problems.append(f"{rel}: \"{k}\" has markup in it")
 
 
+def check_sounds(path, rel, problems, folder):
+    d = load_json(path)
+    sounds = d.get("sounds") if isinstance(d, dict) else None
+    if not isinstance(sounds, dict) or not sounds:
+        problems.append(f"{rel}: should be {{ \"name\": …, \"sounds\": {{ \"ui.click\": {{ \"files\": [\"click.ogg\"] }}, … }} }}"); return
+    for sid, entry in sounds.items():
+        if not SOUND_ID_RE.match(sid):
+            problems.append(f"{rel}: \"{sid}\" isn't a sound id (like ui.click or game.docked)")
+        files = [entry] if isinstance(entry, str) else (entry.get("files") if isinstance(entry, dict) else None)
+        if not isinstance(files, list) or not files or any(not isinstance(f, str) for f in files):
+            problems.append(f"{rel}: \"{sid}\" needs \"files\": [\"…\"]"); continue
+        for f in files:
+            if "/" in f or "\\" in f or ".." in f:
+                problems.append(f"{rel}: \"{sid}\": {f}: files sit beside sounds.json (no folders)")
+            elif not os.path.isfile(os.path.join(folder, f)):
+                problems.append(f"{rel}: \"{sid}\": {f} isn't in the folder")
+        if isinstance(entry, dict) and "volume" in entry and not (isinstance(entry["volume"], (int, float)) and 0 <= entry["volume"] <= 2):
+            problems.append(f"{rel}: \"{sid}\": volume should be 0 to 2")
+
+
 def check_item(kind, folder, problems):
     spec = KINDS[kind]
     name = os.path.basename(folder)
@@ -267,18 +292,26 @@ def check_item(kind, folder, problems):
         problems.append(f"{rel}: " + ("the folder name is the language code, like it or pt-BR" if kind == "languages"
                                       else "the folder name is its id: letters, digits, - and _ only, starting with a letter"))
     allowed = {"about.json", spec["file"], "preview.png", "preview.jpg", "README.md"}
+    total = 0
     for dirpath, dirs, names in os.walk(folder):
         if dirpath != folder:
             problems.append(f"{rel}: no sub-folders"); continue
         for n in names:
             p = os.path.join(dirpath, n)
             size = os.path.getsize(p)
+            total += size
+            if kind == "sounds" and os.path.splitext(n)[1].lower() in AUDIO_EXT:
+                if size > MAX_SOUND_FILE:
+                    problems.append(f"{rel}/{n}: {size // 1024} KB is too big for one sound (max {MAX_SOUND_FILE // 1024} KB: shorter, or OGG)")
+                continue
             if n not in allowed:
-                problems.append(f"{rel}/{n}: only {', '.join(sorted(allowed))} belong here")
+                problems.append(f"{rel}/{n}: only {', '.join(sorted(allowed))}" + (" and .wav / .ogg / .mp3 sounds" if kind == "sounds" else "") + " belong here")
             if n == spec["file"] and size > spec["max"]:
                 problems.append(f"{rel}/{n}: {size // 1024} KB is too big (max {spec['max'] // 1024} KB)")
             if n.startswith("preview.") and size > MAX_PREVIEW:
                 problems.append(f"{rel}/{n}: the preview is {size // 1024} KB (max {MAX_PREVIEW // 1024} KB)")
+    if kind == "sounds" and total > MAX_SOUND_PACK:
+        problems.append(f"{rel}: {total // 1024} KB in all is too big (max {MAX_SOUND_PACK // 1024 // 1024} MB a pack)")
     check_about(folder, rel, problems)
     path = os.path.join(folder, spec["file"])
     if not os.path.isfile(path):
@@ -286,6 +319,7 @@ def check_item(kind, folder, problems):
     try:
         if kind == "themes": check_theme(path, f"{rel}/{spec['file']}", problems)
         elif kind == "layouts": check_layout(path, f"{rel}/{spec['file']}", problems)
+        elif kind == "sounds": check_sounds(path, f"{rel}/{spec['file']}", problems, folder)
         else: check_language(path, f"{rel}/{spec['file']}", problems, name)
     except Exception as e:
         problems.append(f"{rel}/{spec['file']}: can't be read ({e})")

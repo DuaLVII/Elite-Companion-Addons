@@ -64,6 +64,8 @@ def items(kind):
             "size": sum(f["size"] for f in files),
             "files": files,
         }
+        if kind == "sounds":      # a sound to hear in the gallery before installing (preview.ogg / .wav / .mp3)
+            entry["listen"] = next((f["path"] for f in files if f["path"].rsplit(".", 1)[0] == "preview" and f["path"].rsplit(".", 1)[-1] in ("ogg", "wav", "mp3")), "")
         if kind == "languages":   # how much of the app it covers, for the gallery to show
             try:
                 entry["strings"] = len(load_json(os.path.join(folder, KINDS[kind]["file"])).get("Strings", {}))
@@ -123,11 +125,12 @@ def main():
         "themes": items("themes"),
         "layouts": items("layouts"),
         "languages": items("languages"),
+        "sounds": items("sounds"),
     }
     with open(os.path.join(ROOT, "index.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump(index, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"index.json: {len(addons)} addon(s), {len(index['themes'])} theme(s), {len(index['layouts'])} layout(s), {len(index['languages'])} language(s)")
+    print(f"index.json: {len(addons)} addon(s), {len(index['themes'])} theme(s), {len(index['layouts'])} layout(s), {len(index['languages'])} language(s), {len(index['sounds'])} sound pack(s)")
 
 if __name__ == "__main__":
     main()
