@@ -1,0 +1,17 @@
+{
+  "title": "Material Trader",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "What to give a material trader for what you need, best trade first, keeping back the share you choose. Plus suggestions for anything nearly full: trade the surplus into what you have least of in the same group.",
+  "category": "Engineering",
+  "tags": [
+    "materials",
+    "material traders",
+    "engineering",
+    "trading",
+    "raw",
+    "manufactured",
+    "encoded"
+  ],
+  "minAppVersion": "0.9.5"
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Material Sources",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Where to find each material, starting with what you're running low on: how full you are of every raw, manufactured, encoded, Guardian and Thargoid material, where each comes from, and what a trader would take for it.",
+  "category": "Engineering",
+  "tags": [
+    "materials",
+    "farming",
+    "where to find",
+    "high grade emissions",
+    "raw",
+    "manufactured",
+    "encoded"
+  ],
+  "minAppVersion": "0.9.5"
+}

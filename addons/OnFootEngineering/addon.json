@@ -1,0 +1,17 @@
+{
+  "title": "On-Foot Engineering",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Suit and weapon grade upgrades and engineer modifications against what's in your ship locker, the next grade for what you have on, and the on-foot engineers with your progress, distance and how to unlock them.",
+  "category": "Engineering",
+  "tags": [
+    "odyssey",
+    "on foot",
+    "suits",
+    "weapons",
+    "engineers",
+    "upgrades",
+    "modifications"
+  ],
+  "minAppVersion": "0.9.5"
+}

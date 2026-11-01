@@ -7,5 +7,6 @@
   "description": "Powerplay merits this cycle, today and this session, merits per hour, a graph, what earned them (bounties, deliveries, missions…) and every recent gain with where you were.",
   "changes": [
     "Stands alone: no longer needs the app's shared script files"
-  ]
+  ],
+  "minAppVersion": "0.9.5"
 }
