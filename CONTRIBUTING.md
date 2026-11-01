@@ -8,8 +8,8 @@ Thanks for making something! Here's how to get it in.
    folder name becomes your addon's **id**: letters, digits, `-` and `_`, starting with a letter (e.g. `MiningLog`).
    Pick something that's unlikely to clash with someone else's.
 2. Edit `addon.json`, `module.xml` and `script.js`. Save while the app is running and the module reloads straight away;
-   mistakes show in orange inside it. The **[addon guide](docs/README.md)** explains everything addons can do, and the addons
-   that come with the app are good examples to copy from.
+   mistakes show in orange inside it. The **[addon guide](docs/README.md)** (also on the [wiki](https://github.com/DuaLVII/Elite-Companion-Addons/wiki)) explains everything addons can do, and the
+   addons already in the gallery are good examples to copy from.
 3. Use it for a while in real play.
 
 ## 2. Check it
@@ -25,13 +25,13 @@ Thanks for making something! Here's how to get it in.
   "category": "Trade, Mining & Missions",
   "tags": ["mining", "log"],
   "web": [],
-  "minAppVersion": "1.0",
+  "minAppVersion": "0.9.5",
   "homepage": ""
 }
 ```
 
 - **category:** one of `Commander & Ship`, `Navigation & Travel`, `Combat`, `Exploration`, `Surface & On Foot`,
-  `Trade, Mining & Missions`, `Fleet Carrier`, `Powerplay`, `Stats & Logs`, `Colonisation`, or your own.
+  `Trade, Mining & Missions`, `Fleet Carrier`, `Powerplay`, `Stats & Logs`, `Engineering`, `Colonisation`, or your own.
 - **web:** `["edsm"]`, `["spansh"]` or both if your script uses `web.edsm(…)` / `web.spansh(…)`. Nothing else is allowed.
 - **minAppVersion:** the oldest Elite Companion it works with (optional).
 - **tags** and **homepage** are optional.
@@ -44,7 +44,7 @@ The rules (checked automatically on your pull request):
 | up to 512 KB a file, 2 MB in all (preview up to 400 KB) | |
 | the WPF namespace, `x:` and `controls:` (the app's charts and gauges) in `module.xml` | any other `xmlns`, `ObjectDataProvider`, `XmlDataProvider`, `WebBrowser`, `Frame`, `MediaElement`, `x:Code`, `x:FactoryMethod` / `x:Arguments` |
 | buttons with `Tag="name"` + `on("click:name", …)` in the script | event handlers like `Click="…"` |
-| `include("_shared/…")` (the app's helpers) | including anything else |
+| everything in your addon's own folder | `include()` of other files |
 | | links to files or web addresses in `module.xml` (`http://…`, `C:\…`) |
 
 Also, please:
