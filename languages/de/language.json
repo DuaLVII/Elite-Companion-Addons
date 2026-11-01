@@ -3639,6 +3639,10 @@
     "glangs.c_no_changes": "Gib an, was in dieser Version neu ist",
     "glangs.export_where": "Wohin soll der Ordner der Sprache?",
     "glangs.export_not_languages": "Wähle einen anderen Ort als den Languages-Ordner (die App würde die Dateien als Sprachen lesen).",
-    "glangs.exported_folder": "✓ Exportiert nach {0}. Lade diesen Ordner in languages/ im Galerie-Repo hoch."
+    "glangs.exported_folder": "✓ Exportiert nach {0}. Lade diesen Ordner in languages/ im Galerie-Repo hoch.",
+    "layout.saved_folder": "✓ LAYOUT GESPEICHERT · LAYOUTS\\{0} · BEREIT FÜR DIE GALERIE",
+    "gallery.update_all_n": "Alle aktualisieren ({0})",
+    "gallery.update_all_tip": "Alles aktualisieren, was du aus der Galerie installiert hast und eine neuere Version hat",
+    "gallery.confirm_update_all2": "{0} Eintrag/Einträge aus der Galerie aktualisieren?\n\n{1}"
   }
 }

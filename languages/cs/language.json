@@ -3639,6 +3639,10 @@
     "glangs.c_no_changes": "Uveďte, co je v této verzi nového",
     "glangs.export_where": "Kam má jít složka jazyka?",
     "glangs.export_not_languages": "Vyberte jiné místo než složku Languages (aplikace by soubory četla jako jazyky).",
-    "glangs.exported_folder": "✓ Exportováno do {0}. Nahrajte tu složku do languages/ v repozitáři galerie."
+    "glangs.exported_folder": "✓ Exportováno do {0}. Nahrajte tu složku do languages/ v repozitáři galerie.",
+    "layout.saved_folder": "✓ ROZVRŽENÍ ULOŽENO · LAYOUTS\\{0} · PŘIPRAVENO PRO GALERII",
+    "gallery.update_all_n": "Aktualizovat vše ({0})",
+    "gallery.update_all_tip": "Aktualizovat vše, co jste nainstalovali z galerie a má novější verzi",
+    "gallery.confirm_update_all2": "Aktualizovat položky z galerie ({0})?\n\n{1}"
   }
 }

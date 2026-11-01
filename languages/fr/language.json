@@ -3639,6 +3639,10 @@
     "glangs.c_no_changes": "Indiquez les nouveautés de cette version",
     "glangs.export_where": "Où mettre le dossier de la langue ?",
     "glangs.export_not_languages": "Choisissez un autre endroit que le dossier Languages (l'application lirait les fichiers comme des langues).",
-    "glangs.exported_folder": "✓ Exporté dans {0}. Envoyez ce dossier dans languages/ du dépôt de la galerie."
+    "glangs.exported_folder": "✓ Exporté dans {0}. Envoyez ce dossier dans languages/ du dépôt de la galerie.",
+    "layout.saved_folder": "✓ DISPOSITION ENREGISTRÉE · LAYOUTS\\{0} · PRÊTE POUR LA GALERIE",
+    "gallery.update_all_n": "Tout mettre à jour ({0})",
+    "gallery.update_all_tip": "Mettre à jour tout ce que vous avez installé depuis la galerie et qui a une version plus récente",
+    "gallery.confirm_update_all2": "Mettre à jour {0} élément(s) depuis la galerie ?\n\n{1}"
   }
 }
