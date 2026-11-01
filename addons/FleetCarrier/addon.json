@@ -8,5 +8,6 @@
   "description": "Your carrier at a glance: name, callsign, where it is, jump status, balance, tritium, free space, services and docking access.",
   "changes": [
     "Stands alone: no longer needs the app's shared script files"
-  ]
+  ],
+  "minAppVersion": "0.9.5"
 }

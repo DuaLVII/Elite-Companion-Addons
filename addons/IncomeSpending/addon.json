@@ -5,5 +5,6 @@
   "author": "Elite Companion",
   "version": "1.0",
   "description": "Where your credits come from and go to, and the profit from each market sale.",
-  "replaces": "IncomeCard"
+  "replaces": "IncomeCard",
+  "minAppVersion": "0.9.5"
 }
