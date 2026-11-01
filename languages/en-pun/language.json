@@ -352,6 +352,10 @@
     "gitems.in_use": "Wearing it",
     "gitems.use_theme": "Try it on",
     "gitems.use_language": "Talk like this",
-    "gitems.put_on_dashboard": "Slap it on the dashboard"
+    "gitems.put_on_dashboard": "Slap it on the dashboard",
+    "galnet.button": "SPACE GOSSIP",
+    "galnet.button_open": "SPACE GOSSIP ▴",
+    "galnet.subtitle": "Galactic Natter Network",
+    "galnet.loading": "Tuning the space radio…"
   }
 }
