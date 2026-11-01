@@ -6,5 +6,6 @@
   "description": "Compass arrows and distances back to your landed ship, your parked SRV, and a spot you mark yourself, with time to get there at your current speed. Works on foot and in the SRV.",
   "changes": [
     "Stands alone: no longer needs the app's shared script files"
-  ]
+  ],
+  "minAppVersion": "0.9.5"
 }

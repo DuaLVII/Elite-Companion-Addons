@@ -1,0 +1,16 @@
+{
+  "title": "Blueprint Planner",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Plan the engineering you're after: module, blueprint, grades, rolls and an experimental. Totals the materials against what you have, says what's short and how to trade for it, and counts rolls off as you engineer.",
+  "category": "Engineering",
+  "tags": [
+    "engineering",
+    "blueprints",
+    "engineers",
+    "materials",
+    "shopping list",
+    "experimental effects"
+  ],
+  "minAppVersion": "0.9.5"
+}

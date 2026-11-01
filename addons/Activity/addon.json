@@ -5,5 +5,6 @@
   "author": "Elite Companion",
   "version": "1.0",
   "description": "How busy the journal has been: events over time.",
-  "replaces": "ActivityCard"
+  "replaces": "ActivityCard",
+  "minAppVersion": "0.9.5"
 }
