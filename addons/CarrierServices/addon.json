@@ -7,5 +7,6 @@
   "description": "How the carrier's 25,000 t is used (services, cargo, reserved, ship and module packs, free), every service with its crew and whether it's running, paused or not installed, and installed packs.",
   "changes": [
     "Stands alone: no longer needs the app's shared script files"
-  ]
+  ],
+  "minAppVersion": "0.9.5"
 }

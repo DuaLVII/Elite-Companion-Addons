@@ -5,5 +5,6 @@
   "author": "Elite Companion",
   "version": "1.0",
   "description": "Your credit balance and profit over time, as line charts.",
-  "replaces": "CreditsCard"
+  "replaces": "CreditsCard",
+  "minAppVersion": "0.9.5"
 }

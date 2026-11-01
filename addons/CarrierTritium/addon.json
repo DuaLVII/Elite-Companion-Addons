@@ -7,5 +7,6 @@
   "description": "Tritium in the carrier's tank (of 1,000 t), jump range, what recent jumps cost, roughly how many more jumps that covers and every deposit.",
   "changes": [
     "Stands alone: no longer needs the app's shared script files"
-  ]
+  ],
+  "minAppVersion": "0.9.5"
 }

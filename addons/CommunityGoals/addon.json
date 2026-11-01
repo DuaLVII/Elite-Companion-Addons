@@ -12,7 +12,7 @@
     "combat",
     "rewards"
   ],
-  "minAppVersion": "1.0",
+  "minAppVersion": "0.9.5",
   "changes": [
     "Doesn't redraw for every old report while the app starts"
   ]
