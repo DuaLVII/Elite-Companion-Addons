@@ -1,0 +1,84 @@
+{
+  "name": "Dark Companion",
+  "author": "CMDR Snickerdoodlez",
+  "description": "A test sound pack that have dark sounding effects.\r\nDue to this pack being a test I may change these sounds in future.",
+  "sounds": {
+    "login.key": {
+      "files": [
+        "Key-Press.wav"
+      ],
+      "volume": 0.7
+    },
+    "login.engage": {
+      "files": [
+        "Tap.wav"
+      ]
+    },
+    "login.granted": {
+      "files": [
+        "Glitchy.wav"
+      ]
+    },
+    "ui.hover": {
+      "files": [
+        "Dark-Button-Hover.wav"
+      ],
+      "volume": 0.5
+    },
+    "ui.click": {
+      "files": [
+        "Dark-Button-Click.wav"
+      ]
+    },
+    "ui.toggle_on": {
+      "files": [
+        "Dark-Button-Click.wav"
+      ]
+    },
+    "ui.toggle_off": {
+      "files": [
+        "Dark-Button-Click.wav"
+      ]
+    },
+    "ui.panel_open": {
+      "files": [
+        "Dark-Transition.wav"
+      ]
+    },
+    "ui.panel_close": {
+      "files": [
+        "Dark-Close.wav"
+      ]
+    },
+    "ui.tab": {
+      "files": [
+        "Dark-Transition-2.wav"
+      ]
+    },
+    "ui.page": {
+      "files": [
+        "Dark-Transition-3.wav"
+      ]
+    },
+    "module.hover": {
+      "files": [
+        "Dark-Button-Hover.wav"
+      ]
+    },
+    "note.info": {
+      "files": [
+        "Dark-Notification.wav"
+      ]
+    },
+    "note.warning": {
+      "files": [
+        "Dark-Notification-Warning.wav"
+      ]
+    },
+    "note.danger": {
+      "files": [
+        "Dark-Notification-Error.wav"
+      ]
+    }
+  }
+}
