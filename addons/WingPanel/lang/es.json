@@ -1,0 +1,33 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Panel del ala",
+    "addon.description": "Quién está en tu ala y desde cuándo, invitaciones, el chat del ala y quién entró y salió.",
+    "js.just_now": "ahora mismo",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} días",
+    "js.expired": "caducada",
+    "js.joined_wing": "Te uniste a un ala ({0} más)",
+    "js.n_joined": "Te uniste al ala: {0}",
+    "js.member_joined": "{0} se unió al ala",
+    "js.n_added": "{0} se unió a tu ala",
+    "js.left_wing": "Dejaste el ala",
+    "js.wing_ended": "Ala terminada (volviste a iniciar sesión)",
+    "js.wing_ended_quit": "Ala terminada (el juego se cerró)",
+    "js.n_invite": "{0} te invitó a un ala",
+    "js.you": "Tú",
+    "js.copied": "{0} copiado",
+    "js.in_wing": "EN UN ALA · {0}",
+    "js.no_wing": "NO ESTÁS EN UN ALA",
+    "js.since": "desde hace {0} (desde las {1})",
+    "js.joined_at": "se unió a las {0}",
+    "js.waiting": "Esperando a que se unan compañeros…",
+    "js.invites": "INVITACIONES",
+    "js.chat": "CHAT DEL ALA",
+    "js.history": "RECIENTE",
+    "ui.copy_tip": "Copiar el nombre",
+    "ui.clear_chat": "Borrar el chat"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Mise křídla",
+    "addon.description": "Sdílené doručovací mise křídla s postupem celého křídla: sebráno, doručeno, váš podíl, zbývající tuny a čas, s upozorněním při 50 %, 90 % a dokončení.",
+    "js.just_now": "právě teď",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} dní",
+    "js.expired": "vypršelo",
+    "js.wing_mission": "Mise křídla",
+    "js.n_done": "Mise křídla doručena: {0}",
+    "js.n_step": "Mise křídla doručena z {0} %: {1} z {2} {3}",
+    "js.copied": "{0} zkopírováno",
+    "js.completed": "dokončena",
+    "js.abandoned": "opuštěna",
+    "js.failed": "selhala",
+    "js.over": "skončila",
+    "js.deliver": "{0} {1}",
+    "js.stats": "sebráno {0} · doručeno {1} z {2} · vy {3}",
+    "js.hand_in": "vše doručeno: odevzdejte ji pro odměnu",
+    "js.left": "zbývá {0} t · zbývá {1}",
+    "js.summary": "{0} aktivních misí křídla",
+    "js.none": "Žádné mise křídla. Vezměte si jednu na kartě „Křídlo“ nástěnky misí a sdílejte ji s křídlem: její postup se zobrazí zde.",
+    "ui.clear_done": "Odebrat dokončené",
+    "ui.copy_system": "Zkopírovat cílový systém (pro galaktickou mapu)"
+  }
+}

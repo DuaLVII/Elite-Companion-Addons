@@ -1,0 +1,15 @@
+{
+  "title": "Wing Missions",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Shared wing delivery missions with the whole wing's progress: collected, delivered, your share, tonnes to go and time left, with alerts at 50%, 90% and done.",
+  "category": "Wings & Crew",
+  "tags": [
+    "wing",
+    "missions",
+    "trade",
+    "delivery",
+    "cargo"
+  ],
+  "minAppVersion": "0.9.5"
+}

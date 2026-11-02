@@ -1,0 +1,33 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Amigos conectados",
+    "addon.description": "Qué amigos están en el juego, solicitudes de amistad y un aviso cuando se conectan los que marques.",
+    "js.just_now": "ahora mismo",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} días",
+    "js.expired": "caducada",
+    "js.n_online": "{0} está conectado",
+    "js.n_request": "Solicitud de amistad de {0}",
+    "js.copied": "{0} copiado",
+    "js.s_online": "conectado",
+    "js.s_offline": "desconectado",
+    "js.s_requested": "pidió amistad",
+    "js.s_added": "amigo",
+    "js.s_lost": "ya no es amigo",
+    "js.l_online": "{0} se conectó",
+    "js.l_offline": "{0} se desconectó",
+    "js.l_added": "{0} ahora es tu amigo",
+    "js.l_lost": "{0} ya no es tu amigo",
+    "js.for": "desde hace {0}",
+    "js.online_n": "{0} CONECTADOS",
+    "js.of": "de {0} conocidos",
+    "js.none_online": "Ninguno de tus amigos está conectado.",
+    "js.none": "Aún no se ven amigos: el juego lista los conectados al iniciar sesión y cada cambio después.",
+    "js.recent": "RECIENTE",
+    "ui.star_tip": "★: avisarme cuando se conecte",
+    "ui.copy_tip": "Copiar el nombre"
+  }
+}

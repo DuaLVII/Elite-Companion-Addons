@@ -1,0 +1,33 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Letka",
+    "addon.description": "Vaše letka a hodnost v ní, povýšení a vše ostatní, co se stalo, a chat letky.",
+    "js.just_now": "právě teď",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} dní",
+    "js.expired": "vypršelo",
+    "js.rank": "hodnost {0}",
+    "js.created": "Založili jste {0}",
+    "js.joined": "Vstoupili jste do {0}",
+    "js.left": "Opustili jste {0}",
+    "js.kicked": "Byli jste odebráni z {0}",
+    "js.disbanded": "{0} byla rozpuštěna",
+    "js.applied": "Požádali jste o vstup do {0}",
+    "js.invited": "Byli jste pozváni do {0}",
+    "js.promoted": "Povýšení: {0} → {1}",
+    "js.n_promoted": "Povýšení v letce: {0}",
+    "js.demoted": "Degradace: {0} → {1}",
+    "js.bookmark": "Sdíleli jste záložku s {0}",
+    "js.trophy": "Získali jste trofej pro {0}",
+    "js.you": "Vy",
+    "js.no_squadron": "Nejste v letce",
+    "js.since": "od {0}",
+    "js.history": "HISTORIE",
+    "js.chat": "CHAT LETKY",
+    "js.none": "Hra při přihlášení řekne, ve které letce jste.",
+    "ui.clear_chat": "Vymazat chat"
+  }
+}

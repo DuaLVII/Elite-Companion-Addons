@@ -1,0 +1,33 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Friends Online",
+    "addon.description": "Which of your friends are in the game, friend requests, and an alert when the ones you star come online.",
+    "js.just_now": "just now",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} days",
+    "js.expired": "expired",
+    "js.n_online": "{0} is online",
+    "js.n_request": "Friend request from {0}",
+    "js.copied": "{0} copied",
+    "js.s_online": "online",
+    "js.s_offline": "offline",
+    "js.s_requested": "asked to be friends",
+    "js.s_added": "friend",
+    "js.s_lost": "no longer a friend",
+    "js.l_online": "{0} came online",
+    "js.l_offline": "{0} went offline",
+    "js.l_added": "{0} is now a friend",
+    "js.l_lost": "{0} is no longer a friend",
+    "js.for": "for {0}",
+    "js.online_n": "{0} ONLINE",
+    "js.of": "of {0} known",
+    "js.none_online": "None of your friends are online.",
+    "js.none": "No friends seen yet: the game lists the ones online when you log in, and each change after that.",
+    "js.recent": "RECENTLY",
+    "ui.star_tip": "★: tell me when they come online",
+    "ui.copy_tip": "Copy the name"
+  }
+}

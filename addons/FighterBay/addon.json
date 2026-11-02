@@ -1,0 +1,28 @@
+{
+  "title": "Fighter Bay",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Your ship-launched fighters this session: what's out and who's flying it, losses, rebuilds (with an alert when one's ready again) and a log.",
+  "category": "Wings & Crew",
+  "tags": [
+    "fighters",
+    "hangar",
+    "ship-launched fighter",
+    "combat"
+  ],
+  "settings": [
+    {
+      "key": "notifyLoss",
+      "label": "Notify when a fighter is destroyed",
+      "type": "yesno",
+      "default": true
+    },
+    {
+      "key": "notifyReady",
+      "label": "Notify when a fighter is rebuilt",
+      "type": "yesno",
+      "default": true
+    }
+  ],
+  "minAppVersion": "0.9.5"
+}

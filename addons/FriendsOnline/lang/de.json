@@ -1,0 +1,33 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Freunde online",
+    "addon.description": "Welche Freunde im Spiel sind, Freundschaftsanfragen und ein Hinweis, wenn markierte Freunde online kommen.",
+    "js.just_now": "gerade eben",
+    "js.min": "{0} Min.",
+    "js.h_min": "{0} Std. {1} Min.",
+    "js.days": "{0} Tage",
+    "js.expired": "abgelaufen",
+    "js.n_online": "{0} ist online",
+    "js.n_request": "Freundschaftsanfrage von {0}",
+    "js.copied": "{0} kopiert",
+    "js.s_online": "online",
+    "js.s_offline": "offline",
+    "js.s_requested": "möchte befreundet sein",
+    "js.s_added": "Freund",
+    "js.s_lost": "kein Freund mehr",
+    "js.l_online": "{0} ist online gekommen",
+    "js.l_offline": "{0} ist offline gegangen",
+    "js.l_added": "{0} ist jetzt ein Freund",
+    "js.l_lost": "{0} ist kein Freund mehr",
+    "js.for": "seit {0}",
+    "js.online_n": "{0} ONLINE",
+    "js.of": "von {0} bekannten",
+    "js.none_online": "Keiner deiner Freunde ist online.",
+    "js.none": "Noch keine Freunde gesehen: Das Spiel listet beim Einloggen die Online-Freunde und danach jede Änderung.",
+    "js.recent": "ZULETZT",
+    "ui.star_tip": "★: Bescheid geben, wenn sie online kommen",
+    "ui.copy_tip": "Namen kopieren"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Squadron",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Your squadron and your rank in it, promotions and everything else that happened, and the squadron chat.",
+  "category": "Wings & Crew",
+  "tags": [
+    "squadron",
+    "rank",
+    "chat",
+    "social"
+  ],
+  "minAppVersion": "0.9.5"
+}

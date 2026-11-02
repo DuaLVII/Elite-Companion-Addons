@@ -1,0 +1,76 @@
+<!-- Multicrew: see script.js for where each value comes from. Buttons call the script with Tag="name". -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+
+    <StackPanel.Resources>
+        <ItemsPanelTemplate x:Key="Wrap"><WrapPanel/></ItemsPanelTemplate>
+        <Style x:Key="Pick" TargetType="Button" BasedOn="{StaticResource HudButton}">
+            <Setter Property="Margin" Value="0,0,4,4"/>
+            <Setter Property="Padding" Value="8,2"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding on}" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource Hud}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource Hud}"/>
+                    <Setter Property="Background" Value="{StaticResource HudSoft}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Head" TargetType="TextBlock" BasedOn="{StaticResource Label}">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,6,0,3"/>
+            <Style.Triggers>
+                <Trigger Property="Text" Value=""><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Small" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style x:Key="Note" TargetType="TextBlock" BasedOn="{StaticResource Small}">
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Style.Triggers>
+                <Trigger Property="Text" Value=""><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+            </Style.Triggers>
+        </Style>
+        <!-- a level badge: green when you can make it -->
+        <Style x:Key="Lvl" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10.5"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ok}" Value="True"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </StackPanel.Resources>
+
+    <TextBlock Text="{Binding V[title]}" FontSize="14" FontWeight="Bold"><TextBlock.Style><Style TargetType="TextBlock"><Setter Property="Foreground" Value="{StaticResource HudDim}"/><Style.Triggers><DataTrigger Binding="{Binding V[mode]}" Value="host"><Setter Property="Foreground" Value="{StaticResource Hud}"/></DataTrigger><DataTrigger Binding="{Binding V[mode]}" Value="guest"><Setter Property="Foreground" Value="{StaticResource Cyan}"/></DataTrigger></Style.Triggers></Style></TextBlock.Style></TextBlock>
+    <TextBlock FontSize="11" Margin="0,0,0,4"><Run Text="{Binding V[since], Mode=OneWay}" Foreground="{StaticResource HudDim}"/><Run Text="  "/><Run Text="{Binding V[you], Mode=OneWay}" Foreground="{StaticResource HudText}"/></TextBlock>
+    <TextBlock Style="{StaticResource Note}" Text="{Binding V[empty]}"/>
+    <ItemsControl ItemsSource="{Binding V[crew]}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <DockPanel Margin="0,1,0,3">
+                    <Button DockPanel.Dock="Right" Style="{StaticResource HudButton}" Tag="copy" CommandParameter="{Binding name}" Content="⧉" Padding="5,0" FontSize="10" Margin="4,0,0,0" ToolTip="{T ui.copy_tip}"/>
+                    <TextBlock DockPanel.Dock="Right" Text="{Binding joined}" Style="{StaticResource Small}" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                    <TextBlock DockPanel.Dock="Right" Text="{Binding role}" FontSize="11" Foreground="{StaticResource Cyan}" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                    <TextBlock FontSize="12.5" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"><Run Text="{Binding tele, Mode=OneWay}"/><Run Text=" "/><Run Text="{Binding name, Mode=OneWay}" Foreground="{StaticResource HudText}"/></TextBlock>
+                </DockPanel>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+    <TextBlock Style="{StaticResource Head}" Text="{Binding V[logHead]}"/>
+    <ItemsControl ItemsSource="{Binding V[log]}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <DockPanel Margin="0,0,0,2">
+                    <TextBlock DockPanel.Dock="Left" Text="{Binding when}" Style="{StaticResource Small}" Width="40"/>
+                    <TextBlock Text="{Binding text}" FontSize="11" TextWrapping="Wrap"><TextBlock.Style><Style TargetType="TextBlock"><Setter Property="Foreground" Value="{StaticResource HudText}"/><Style.Triggers><DataTrigger Binding="{Binding bad}" Value="True"><Setter Property="Foreground" Value="{StaticResource Danger}"/></DataTrigger></Style.Triggers></Style></TextBlock.Style></TextBlock>
+                </DockPanel>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</StackPanel>

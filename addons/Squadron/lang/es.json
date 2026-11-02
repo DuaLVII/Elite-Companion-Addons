@@ -1,0 +1,33 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Escuadrón",
+    "addon.description": "Tu escuadrón y tu rango en él, ascensos y todo lo demás que ha pasado, y el chat del escuadrón.",
+    "js.just_now": "ahora mismo",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} días",
+    "js.expired": "caducada",
+    "js.rank": "rango {0}",
+    "js.created": "Creaste {0}",
+    "js.joined": "Te uniste a {0}",
+    "js.left": "Dejaste {0}",
+    "js.kicked": "Te expulsaron de {0}",
+    "js.disbanded": "{0} se disolvió",
+    "js.applied": "Solicitaste unirte a {0}",
+    "js.invited": "Te invitaron a unirte a {0}",
+    "js.promoted": "Ascendido: {0} → {1}",
+    "js.n_promoted": "Ascenso en el escuadrón: {0}",
+    "js.demoted": "Degradado: {0} → {1}",
+    "js.bookmark": "Compartiste un marcador con {0}",
+    "js.trophy": "Ganaste un trofeo para {0}",
+    "js.you": "Tú",
+    "js.no_squadron": "No estás en un escuadrón",
+    "js.since": "desde el {0}",
+    "js.history": "HISTORIAL",
+    "js.chat": "CHAT DEL ESCUADRÓN",
+    "js.none": "El juego indica tu escuadrón al iniciar sesión.",
+    "ui.clear_chat": "Borrar el chat"
+  }
+}

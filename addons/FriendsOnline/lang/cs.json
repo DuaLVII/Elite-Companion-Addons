@@ -1,0 +1,33 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Přátelé online",
+    "addon.description": "Kteří přátelé jsou ve hře, žádosti o přátelství a upozornění, když se připojí označení přátelé.",
+    "js.just_now": "právě teď",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} dní",
+    "js.expired": "vypršelo",
+    "js.n_online": "{0} je online",
+    "js.n_request": "Žádost o přátelství od {0}",
+    "js.copied": "{0} zkopírováno",
+    "js.s_online": "online",
+    "js.s_offline": "offline",
+    "js.s_requested": "žádá o přátelství",
+    "js.s_added": "přítel",
+    "js.s_lost": "už není přítel",
+    "js.l_online": "{0} se připojil",
+    "js.l_offline": "{0} se odpojil",
+    "js.l_added": "{0} je teď přítel",
+    "js.l_lost": "{0} už není přítel",
+    "js.for": "už {0}",
+    "js.online_n": "{0} ONLINE",
+    "js.of": "z {0} známých",
+    "js.none_online": "Žádný z přátel není online.",
+    "js.none": "Zatím žádní přátelé: hra při přihlášení vypíše ty online a pak každou změnu.",
+    "js.recent": "NEDÁVNO",
+    "ui.star_tip": "★: dát vědět, až bude online",
+    "ui.copy_tip": "Zkopírovat jméno"
+  }
+}

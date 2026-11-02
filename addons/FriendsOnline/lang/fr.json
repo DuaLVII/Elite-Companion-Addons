@@ -1,0 +1,33 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Amis en ligne",
+    "addon.description": "Quels amis sont en jeu, les demandes d'ami, et une alerte quand ceux que vous marquez se connectent.",
+    "js.just_now": "à l'instant",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} jours",
+    "js.expired": "expirée",
+    "js.n_online": "{0} est en ligne",
+    "js.n_request": "Demande d'ami de {0}",
+    "js.copied": "{0} copié",
+    "js.s_online": "en ligne",
+    "js.s_offline": "hors ligne",
+    "js.s_requested": "demande d'ami",
+    "js.s_added": "ami",
+    "js.s_lost": "n'est plus un ami",
+    "js.l_online": "{0} s'est connecté",
+    "js.l_offline": "{0} s'est déconnecté",
+    "js.l_added": "{0} est maintenant un ami",
+    "js.l_lost": "{0} n'est plus un ami",
+    "js.for": "depuis {0}",
+    "js.online_n": "{0} EN LIGNE",
+    "js.of": "sur {0} connus",
+    "js.none_online": "Aucun de vos amis n'est en ligne.",
+    "js.none": "Aucun ami vu pour l'instant : le jeu liste ceux en ligne à la connexion, puis chaque changement.",
+    "js.recent": "RÉCEMMENT",
+    "ui.star_tip": "★ : me prévenir quand il se connecte",
+    "ui.copy_tip": "Copier le nom"
+  }
+}

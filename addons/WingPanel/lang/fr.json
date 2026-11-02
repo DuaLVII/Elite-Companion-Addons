@@ -1,0 +1,33 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Escadrille",
+    "addon.description": "Qui est dans votre escadrille et depuis quand, les invitations, le chat d'escadrille, et qui est arrivé ou parti.",
+    "js.just_now": "à l'instant",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} jours",
+    "js.expired": "expirée",
+    "js.joined_wing": "Vous avez rejoint une escadrille ({0} autres)",
+    "js.n_joined": "Escadrille rejointe : {0}",
+    "js.member_joined": "{0} a rejoint l'escadrille",
+    "js.n_added": "{0} a rejoint votre escadrille",
+    "js.left_wing": "Vous avez quitté l'escadrille",
+    "js.wing_ended": "Escadrille terminée (vous vous êtes reconnecté)",
+    "js.wing_ended_quit": "Escadrille terminée (le jeu s'est fermé)",
+    "js.n_invite": "{0} vous a invité dans une escadrille",
+    "js.you": "Vous",
+    "js.copied": "{0} copié",
+    "js.in_wing": "EN ESCADRILLE · {0}",
+    "js.no_wing": "PAS EN ESCADRILLE",
+    "js.since": "depuis {0} (à partir de {1})",
+    "js.joined_at": "arrivé à {0}",
+    "js.waiting": "En attente d'ailiers…",
+    "js.invites": "INVITATIONS",
+    "js.chat": "CHAT D'ESCADRILLE",
+    "js.history": "RÉCEMMENT",
+    "ui.copy_tip": "Copier le nom",
+    "ui.clear_chat": "Effacer le chat"
+  }
+}

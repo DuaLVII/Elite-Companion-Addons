@@ -1,0 +1,14 @@
+{
+  "title": "Multicrew",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Who's aboard your ship (or whose ship you're on), their roles (helm, gunner, fighter con), how long, and what happened in the session.",
+  "category": "Wings & Crew",
+  "tags": [
+    "multicrew",
+    "crew",
+    "telepresence",
+    "roles"
+  ],
+  "minAppVersion": "0.9.5"
+}

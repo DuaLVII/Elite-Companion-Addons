@@ -1,0 +1,33 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Geschwader",
+    "addon.description": "Wer in deinem Geschwader ist und seit wann, Einladungen, der Geschwader-Chat und wer kam und ging.",
+    "js.just_now": "gerade eben",
+    "js.min": "{0} Min.",
+    "js.h_min": "{0} Std. {1} Min.",
+    "js.days": "{0} Tage",
+    "js.expired": "abgelaufen",
+    "js.joined_wing": "Du bist einem Geschwader beigetreten ({0} weitere)",
+    "js.n_joined": "Geschwader beigetreten: {0}",
+    "js.member_joined": "{0} ist dem Geschwader beigetreten",
+    "js.n_added": "{0} ist deinem Geschwader beigetreten",
+    "js.left_wing": "Du hast den Geschwader verlassen",
+    "js.wing_ended": "Geschwader beendet (du hast dich neu eingeloggt)",
+    "js.wing_ended_quit": "Geschwader beendet (das Spiel wurde geschlossen)",
+    "js.n_invite": "{0} hat dich zu einem Geschwader eingeladen",
+    "js.you": "Du",
+    "js.copied": "{0} kopiert",
+    "js.in_wing": "IM GESCHWADER · {0}",
+    "js.no_wing": "KEIN GESCHWADER",
+    "js.since": "seit {0} (ab {1})",
+    "js.joined_at": "dabei seit {0}",
+    "js.waiting": "Warte auf Flügelleute…",
+    "js.invites": "EINLADUNGEN",
+    "js.chat": "GESCHWADER-CHAT",
+    "js.history": "ZULETZT",
+    "ui.copy_tip": "Namen kopieren",
+    "ui.clear_chat": "Chat leeren"
+  }
+}

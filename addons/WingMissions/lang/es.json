@@ -1,0 +1,29 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Misiones de ala",
+    "addon.description": "Misiones de entrega de ala compartidas con el progreso de toda el ala: recogido, entregado, tu parte, toneladas y tiempo restantes, con avisos al 50 %, 90 % y al terminar.",
+    "js.just_now": "ahora mismo",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} días",
+    "js.expired": "caducada",
+    "js.wing_mission": "Misión de ala",
+    "js.n_done": "Misión de ala entregada: {0}",
+    "js.n_step": "Misión de ala entregada al {0} %: {1} de {2} {3}",
+    "js.copied": "{0} copiado",
+    "js.completed": "completada",
+    "js.abandoned": "abandonada",
+    "js.failed": "fallida",
+    "js.over": "terminada",
+    "js.deliver": "{0} {1}",
+    "js.stats": "recogido {0} · entregado {1} de {2} · tú {3}",
+    "js.hand_in": "todo entregado: entrégala para cobrar la recompensa",
+    "js.left": "faltan {0} t · quedan {1}",
+    "js.summary": "{0} misión(es) de ala activa(s)",
+    "js.none": "No hay misiones de ala. Acepta una en la pestaña «Ala» del tablón de misiones y compártela con tu ala: su progreso se muestra aquí.",
+    "ui.clear_done": "Quitar terminadas",
+    "ui.copy_system": "Copiar el sistema de destino (para el mapa galáctico)"
+  }
+}

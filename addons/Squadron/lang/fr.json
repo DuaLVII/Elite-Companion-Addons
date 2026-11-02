@@ -1,0 +1,33 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Escadron",
+    "addon.description": "Votre escadron et votre rang, les promotions et tout ce qui s'est passé, et le chat d'escadron.",
+    "js.just_now": "à l'instant",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} jours",
+    "js.expired": "expirée",
+    "js.rank": "rang {0}",
+    "js.created": "Vous avez créé {0}",
+    "js.joined": "Vous avez rejoint {0}",
+    "js.left": "Vous avez quitté {0}",
+    "js.kicked": "Vous avez été retiré de {0}",
+    "js.disbanded": "{0} a été dissous",
+    "js.applied": "Vous avez postulé pour rejoindre {0}",
+    "js.invited": "Vous avez été invité à rejoindre {0}",
+    "js.promoted": "Promu : {0} → {1}",
+    "js.n_promoted": "Promotion d'escadron : {0}",
+    "js.demoted": "Rétrogradé : {0} → {1}",
+    "js.bookmark": "Vous avez partagé un signet avec {0}",
+    "js.trophy": "Vous avez gagné un trophée pour {0}",
+    "js.you": "Vous",
+    "js.no_squadron": "Pas dans un escadron",
+    "js.since": "depuis le {0}",
+    "js.history": "HISTORIQUE",
+    "js.chat": "CHAT D'ESCADRON",
+    "js.none": "Le jeu indique votre escadron à la connexion.",
+    "ui.clear_chat": "Effacer le chat"
+  }
+}

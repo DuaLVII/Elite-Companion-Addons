@@ -1,0 +1,29 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Missions d'escadrille",
+    "addon.description": "Missions de livraison d'escadrille partagées avec la progression de toute l'escadrille : collecté, livré, votre part, tonnes et temps restants, avec alertes à 50 %, 90 % et terminé.",
+    "js.just_now": "à l'instant",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} jours",
+    "js.expired": "expirée",
+    "js.wing_mission": "Mission d'escadrille",
+    "js.n_done": "Mission d'escadrille livrée : {0}",
+    "js.n_step": "Mission d'escadrille livrée à {0} % : {1} sur {2} {3}",
+    "js.copied": "{0} copié",
+    "js.completed": "terminée",
+    "js.abandoned": "abandonnée",
+    "js.failed": "échouée",
+    "js.over": "terminée",
+    "js.deliver": "{0} {1}",
+    "js.stats": "collecté {0} · livré {1} sur {2} · vous {3}",
+    "js.hand_in": "tout est livré : rendez-la pour la récompense",
+    "js.left": "encore {0} t · reste {1}",
+    "js.summary": "{0} mission(s) d'escadrille en cours",
+    "js.none": "Aucune mission d'escadrille. Prenez-en une dans l'onglet « Escadrille » du tableau des missions et partagez-la : sa progression s'affiche ici.",
+    "ui.clear_done": "Effacer les terminées",
+    "ui.copy_system": "Copier le système de destination (pour la carte galactique)"
+  }
+}

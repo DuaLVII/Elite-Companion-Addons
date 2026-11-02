@@ -1,0 +1,33 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Staffel",
+    "addon.description": "Deine Staffel und dein Rang darin, Beförderungen und alles andere, was passiert ist, sowie der Staffel-Chat.",
+    "js.just_now": "gerade eben",
+    "js.min": "{0} Min.",
+    "js.h_min": "{0} Std. {1} Min.",
+    "js.days": "{0} Tage",
+    "js.expired": "abgelaufen",
+    "js.rank": "Rang {0}",
+    "js.created": "Du hast {0} gegründet",
+    "js.joined": "Du bist {0} beigetreten",
+    "js.left": "Du hast {0} verlassen",
+    "js.kicked": "Du wurdest aus {0} entfernt",
+    "js.disbanded": "{0} wurde aufgelöst",
+    "js.applied": "Du hast dich bei {0} beworben",
+    "js.invited": "Du wurdest zu {0} eingeladen",
+    "js.promoted": "Befördert: {0} → {1}",
+    "js.n_promoted": "Staffel-Beförderung: {0}",
+    "js.demoted": "Degradiert: {0} → {1}",
+    "js.bookmark": "Du hast ein Lesezeichen mit {0} geteilt",
+    "js.trophy": "Du hast eine Trophäe für {0} gewonnen",
+    "js.you": "Du",
+    "js.no_squadron": "In keiner Staffel",
+    "js.since": "seit {0}",
+    "js.history": "VERLAUF",
+    "js.chat": "STAFFEL-CHAT",
+    "js.none": "Das Spiel meldet beim Einloggen, in welcher Staffel du bist.",
+    "ui.clear_chat": "Chat leeren"
+  }
+}

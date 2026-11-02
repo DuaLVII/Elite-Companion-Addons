@@ -1,0 +1,33 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Wing Panel",
+    "addon.description": "Who's in your wing and since when, wing invites, the wing chat, and who joined and left.",
+    "js.just_now": "just now",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} days",
+    "js.expired": "expired",
+    "js.joined_wing": "You joined a wing ({0} others)",
+    "js.n_joined": "Wing joined: {0}",
+    "js.member_joined": "{0} joined the wing",
+    "js.n_added": "{0} joined your wing",
+    "js.left_wing": "You left the wing",
+    "js.wing_ended": "Wing ended (you logged in again)",
+    "js.wing_ended_quit": "Wing ended (the game closed)",
+    "js.n_invite": "{0} invited you to a wing",
+    "js.you": "You",
+    "js.copied": "{0} copied",
+    "js.in_wing": "IN A WING · {0}",
+    "js.no_wing": "NOT IN A WING",
+    "js.since": "for {0} (since {1})",
+    "js.joined_at": "joined {0}",
+    "js.waiting": "Waiting for wingmates to join…",
+    "js.invites": "INVITES",
+    "js.chat": "WING CHAT",
+    "js.history": "RECENTLY",
+    "ui.copy_tip": "Copy the name",
+    "ui.clear_chat": "Clear the chat"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Crew Roster",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Your hired NPC pilots: who's on active duty, their combat rank and faction, what they cost to hire and what you've paid them in wages (today and in all).",
+  "category": "Wings & Crew",
+  "tags": [
+    "crew",
+    "npc",
+    "pilots",
+    "wages",
+    "fighters"
+  ],
+  "minAppVersion": "0.9.5"
+}

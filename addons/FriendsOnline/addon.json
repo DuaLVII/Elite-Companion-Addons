@@ -1,0 +1,28 @@
+{
+  "title": "Friends Online",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Which of your friends are in the game, friend requests, and an alert when the ones you star come online.",
+  "category": "Wings & Crew",
+  "tags": [
+    "friends",
+    "online",
+    "social",
+    "notifications"
+  ],
+  "settings": [
+    {
+      "key": "notifyAll",
+      "label": "Notify for every friend coming online (not only the starred ones)",
+      "type": "yesno",
+      "default": false
+    },
+    {
+      "key": "onlineOnly",
+      "label": "Only list friends who are online",
+      "type": "yesno",
+      "default": false
+    }
+  ],
+  "minAppVersion": "0.9.5"
+}

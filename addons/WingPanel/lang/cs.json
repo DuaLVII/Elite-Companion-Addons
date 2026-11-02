@@ -1,0 +1,33 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Panel křídla",
+    "addon.description": "Kdo je ve vašem křídle a odkdy, pozvánky, chat křídla a kdo přišel a odešel.",
+    "js.just_now": "právě teď",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} dní",
+    "js.expired": "vypršelo",
+    "js.joined_wing": "Přidali jste se ke křídlu ({0} dalších)",
+    "js.n_joined": "Připojeno ke křídlu: {0}",
+    "js.member_joined": "{0} se přidal ke křídlu",
+    "js.n_added": "{0} se přidal k vašemu křídlu",
+    "js.left_wing": "Opustili jste křídlo",
+    "js.wing_ended": "Křídlo skončilo (znovu jste se přihlásili)",
+    "js.wing_ended_quit": "Křídlo skončilo (hra se zavřela)",
+    "js.n_invite": "{0} vás pozval do křídla",
+    "js.you": "Vy",
+    "js.copied": "{0} zkopírováno",
+    "js.in_wing": "V KŘÍDLE · {0}",
+    "js.no_wing": "NEJSTE V KŘÍDLE",
+    "js.since": "už {0} (od {1})",
+    "js.joined_at": "připojen {0}",
+    "js.waiting": "Čekám na členy křídla…",
+    "js.invites": "POZVÁNKY",
+    "js.chat": "CHAT KŘÍDLA",
+    "js.history": "NEDÁVNO",
+    "ui.copy_tip": "Zkopírovat jméno",
+    "ui.clear_chat": "Vymazat chat"
+  }
+}

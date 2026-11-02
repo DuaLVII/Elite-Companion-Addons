@@ -1,0 +1,22 @@
+{
+  "title": "Wing Panel",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Who's in your wing and since when, wing invites, the wing chat, and who joined and left.",
+  "category": "Wings & Crew",
+  "tags": [
+    "wing",
+    "wingmates",
+    "chat",
+    "invites"
+  ],
+  "settings": [
+    {
+      "key": "notifyJoins",
+      "label": "Notify when someone joins the wing",
+      "type": "yesno",
+      "default": true
+    }
+  ],
+  "minAppVersion": "0.9.5"
+}

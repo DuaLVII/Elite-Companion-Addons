@@ -1,0 +1,29 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Geschwadermissionen",
+    "addon.description": "Geteilte Geschwader-Liefermissionen mit dem Fortschritt aller: gesammelt, geliefert, dein Anteil, verbleibende Tonnen und Zeit, mit Hinweisen bei 50 %, 90 % und fertig.",
+    "js.just_now": "gerade eben",
+    "js.min": "{0} Min.",
+    "js.h_min": "{0} Std. {1} Min.",
+    "js.days": "{0} Tage",
+    "js.expired": "abgelaufen",
+    "js.wing_mission": "Geschwadermission",
+    "js.n_done": "Geschwadermission geliefert: {0}",
+    "js.n_step": "Geschwadermission zu {0} % geliefert: {1} von {2} {3}",
+    "js.copied": "{0} kopiert",
+    "js.completed": "abgeschlossen",
+    "js.abandoned": "abgebrochen",
+    "js.failed": "gescheitert",
+    "js.over": "vorbei",
+    "js.deliver": "{0} {1}",
+    "js.stats": "gesammelt {0} · geliefert {1} von {2} · du {3}",
+    "js.hand_in": "alles geliefert: für die Belohnung abgeben",
+    "js.left": "noch {0} t · {1} übrig",
+    "js.summary": "{0} Geschwadermission(en) aktiv",
+    "js.none": "Keine Geschwadermissionen. Nimm eine im Tab „Geschwader“ des Missionsbretts an und teile sie mit deinem Geschwader: Der Fortschritt erscheint hier.",
+    "ui.clear_done": "Erledigte entfernen",
+    "ui.copy_system": "Zielsystem kopieren (für die Galaxiekarte)"
+  }
+}

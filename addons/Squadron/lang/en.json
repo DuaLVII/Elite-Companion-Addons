@@ -1,0 +1,33 @@
+{
+  "Language": "English",
+  "Code": "en",
+  "Strings": {
+    "addon.title": "Squadron",
+    "addon.description": "Your squadron and your rank in it, promotions and everything else that happened, and the squadron chat.",
+    "js.just_now": "just now",
+    "js.min": "{0} min",
+    "js.h_min": "{0} h {1} min",
+    "js.days": "{0} days",
+    "js.expired": "expired",
+    "js.rank": "rank {0}",
+    "js.created": "You created {0}",
+    "js.joined": "You joined {0}",
+    "js.left": "You left {0}",
+    "js.kicked": "You were removed from {0}",
+    "js.disbanded": "{0} was disbanded",
+    "js.applied": "You applied to join {0}",
+    "js.invited": "You were invited to join {0}",
+    "js.promoted": "Promoted: {0} → {1}",
+    "js.n_promoted": "Squadron promotion: {0}",
+    "js.demoted": "Demoted: {0} → {1}",
+    "js.bookmark": "You shared a bookmark with {0}",
+    "js.trophy": "You won a trophy for {0}",
+    "js.you": "You",
+    "js.no_squadron": "Not in a squadron",
+    "js.since": "since {0}",
+    "js.history": "HISTORY",
+    "js.chat": "SQUADRON CHAT",
+    "js.none": "The game says which squadron you're in when you log in.",
+    "ui.clear_chat": "Clear the chat"
+  }
+}
