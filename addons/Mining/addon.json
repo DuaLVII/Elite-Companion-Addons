@@ -1,0 +1,30 @@
+{
+  // Once one of the app's own modules (built in as "MiningCard"; dashboards that had it get this instead).
+  "title": "Mining",
+  "category": "Trade, Mining & Missions",
+  "author": "Elite Companion",
+  "version": "1.0",
+  "description": "Tons refined with tons and credits per hour, the last prospector result and how the rocks have been, when the hold will be full, limpets used per ton, motherlodes found and cracked, and the best place you've seen to sell what you mine.",
+  "replaces": "MiningCard",
+  "minAppVersion": "0.9.5",
+  "settings": [
+    {
+      "key": "watch",
+      "label": "Materials to look for (commas between them; blank: any)",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "key": "minPct",
+      "label": "A rock is worth mining from (%)",
+      "type": "number",
+      "default": 25
+    },
+    {
+      "key": "alert",
+      "label": "Notify me about rocks worth mining",
+      "type": "yesno",
+      "default": false
+    }
+  ]
+}

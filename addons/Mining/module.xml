@@ -1,0 +1,171 @@
+<!-- Mining: see script.js for where each value comes from. The reset button calls the script with Tag="reset". -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+
+    <StackPanel.Resources>
+        <ItemsPanelTemplate x:Key="Wrap"><WrapPanel/></ItemsPanelTemplate>
+        <Style x:Key="Head" TargetType="TextBlock" BasedOn="{StaticResource Label}">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,8,0,3"/>
+            <Style.Triggers>
+                <Trigger Property="Text" Value=""><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Small" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10.5"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Style.Triggers>
+                <Trigger Property="Text" Value=""><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Note" TargetType="TextBlock" BasedOn="{StaticResource Small}">
+            <Setter Property="FontSize" Value="11.5"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="Margin" Value="2,4"/>
+        </Style>
+        <Style x:Key="Shown" TargetType="FrameworkElement">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding V[hasMining]}" Value="False"><Setter Property="Visibility" Value="Collapsed"/></DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </StackPanel.Resources>
+
+    <TextBlock Style="{StaticResource Note}" Text="{Binding V[empty]}"/>
+    <StackPanel Style="{StaticResource Shown}">
+        <DockPanel>
+            <Button DockPanel.Dock="Right" Style="{StaticResource HudButton}" Tag="reset" Content="↺" Padding="5,0" FontSize="10" Margin="6,0,0,0" ToolTip="{T ui.reset}"/>
+            <TextBlock DockPanel.Dock="Right" Style="{StaticResource Label}" Text="{Binding V[rate]}" VerticalAlignment="Center"/>
+            <TextBlock Style="{StaticResource Label}" Text="{T ui.this_session}" VerticalAlignment="Center"/>
+        </DockPanel>
+
+        <!-- limpets (red under 5) · hold free (and when it'll be full) · the haul's value · collectors per ton -->
+        <UniformGrid Columns="4" Margin="0,4,0,2">
+            <StackPanel Margin="0,0,6,0">
+                <TextBlock Style="{StaticResource Label}" Text="{T ui.limpets}"/>
+                <TextBlock Text="{Binding V[limpets]}"><TextBlock.Style><Style TargetType="TextBlock" BasedOn="{StaticResource Value}"><Style.Triggers><DataTrigger Binding="{Binding V[limpetsLow]}" Value="True"><Setter Property="Foreground" Value="{StaticResource Danger}"/></DataTrigger></Style.Triggers></Style></TextBlock.Style></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="0,0,6,0">
+                <TextBlock Style="{StaticResource Label}" Text="{T ui.hold_free}"/>
+                <TextBlock Style="{StaticResource Value}" Text="{Binding V[holdFree]}"/>
+                <TextBlock Style="{StaticResource Small}" Text="{Binding V[fullIn]}"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,6,0">
+                <TextBlock Style="{StaticResource Label}" Text="{T ui.haul_value}"/>
+                <TextBlock Style="{StaticResource Value}" Text="{Binding V[value]}" Foreground="{StaticResource Good}"/>
+                <TextBlock Style="{StaticResource Small}" Text="{Binding V[valueRate]}"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Style="{StaticResource Label}" Text="{T ui.collectors_per_t}"/>
+                <TextBlock Style="{StaticResource Value}" Text="{Binding V[perTon]}"/>
+                <TextBlock Style="{StaticResource Small}" Text="{Binding V[limpetsUsed]}"/>
+            </StackPanel>
+        </UniformGrid>
+
+        <UniformGrid Columns="1" controls:Responsive.WideColumns="2">
+            <!-- the rocks: the last prospector's result, then how they've been -->
+            <StackPanel Margin="0,0,10,0">
+                <StackPanel>
+                    <StackPanel.Style><Style TargetType="StackPanel"><Style.Triggers><DataTrigger Binding="{Binding V[hasRock]}" Value="False"><Setter Property="Visibility" Value="Collapsed"/></DataTrigger></Style.Triggers></Style></StackPanel.Style>
+                    <DockPanel Margin="0,8,0,3">
+                        <TextBlock DockPanel.Dock="Right" Style="{StaticResource Small}" Text="{Binding V[rockContent]}"/>
+                        <TextBlock Style="{StaticResource Label}" FontSize="10" FontWeight="SemiBold" Text="{T ui.last_prospector}"/>
+                    </DockPanel>
+                    <Border Background="{StaticResource HudSelect}" Padding="6,2" Margin="0,0,0,3">
+                        <Border.Style><Style TargetType="Border"><Style.Triggers><DataTrigger Binding="{Binding V[motherlode]}" Value=""><Setter Property="Visibility" Value="Collapsed"/></DataTrigger></Style.Triggers></Style></Border.Style>
+                        <TextBlock Foreground="Black" FontWeight="Bold" FontSize="12" Text="{Binding V[motherlode]}"/>
+                    </Border>
+                    <ItemsControl ItemsSource="{Binding V[rockMats]}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="1.2*"/>
+                                        <ColumnDefinition Width="48"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding name}" FontSize="12"><TextBlock.Style><Style TargetType="TextBlock" BasedOn="{StaticResource Value}"><Style.Triggers><DataTrigger Binding="{Binding want}" Value="True"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger></Style.Triggers></Style></TextBlock.Style></TextBlock>
+                                    <ProgressBar Grid.Column="1" Height="6" Margin="6,0" VerticalAlignment="Center" Maximum="50" Value="{Binding pct, Mode=OneWay}">
+                                        <ProgressBar.Style><Style TargetType="ProgressBar" BasedOn="{StaticResource Bar}"><Style.Triggers><DataTrigger Binding="{Binding want}" Value="True"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger></Style.Triggers></Style></ProgressBar.Style>
+                                    </ProgressBar>
+                                    <TextBlock Grid.Column="2" Style="{StaticResource Label}" HorizontalAlignment="Right" Text="{Binding text}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+
+                <TextBlock Style="{StaticResource Head}" Text="{Binding V[rocksHead]}"/>
+                <TextBlock Style="{StaticResource Small}" Text="{Binding V[rocksLine]}"/>
+                <ItemsControl ItemsSource="{Binding V[rocks]}" ItemsPanel="{StaticResource Wrap}" Margin="0,3,0,0">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderThickness="1" CornerRadius="3" Padding="5,0,5,1" Margin="0,0,4,3" ToolTip="{Binding when}">
+                                <Border.Style><Style TargetType="Border"><Setter Property="BorderBrush" Value="{StaticResource PanelBorder}"/><Style.Triggers><DataTrigger Binding="{Binding worth}" Value="True"><Setter Property="BorderBrush" Value="{StaticResource Good}"/></DataTrigger></Style.Triggers></Style></Border.Style>
+                                <TextBlock Text="{Binding text}" FontSize="10.5"><TextBlock.Style><Style TargetType="TextBlock"><Setter Property="Foreground" Value="{StaticResource HudDim}"/><Style.Triggers><DataTrigger Binding="{Binding worth}" Value="True"><Setter Property="Foreground" Value="{StaticResource Good}"/></DataTrigger><DataTrigger Binding="{Binding ml}" Value="True"><Setter Property="Foreground" Value="{StaticResource Hud}"/></DataTrigger></Style.Triggers></Style></TextBlock.Style></TextBlock>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <ItemsControl ItemsSource="{Binding V[averages]}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel>
+                                <TextBlock DockPanel.Dock="Right" Text="{Binding text}" FontSize="10.5" Foreground="{StaticResource HudDim}"/>
+                                <TextBlock Text="{Binding name}" FontSize="11" Foreground="{StaticResource HudText}"/>
+                            </DockPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <TextBlock Style="{StaticResource Head}" Text="{Binding V[coreHead]}"/>
+                <TextBlock Style="{StaticResource Small}" Text="{Binding V[coreLine]}" Foreground="{StaticResource Hud}"/>
+                <ItemsControl ItemsSource="{Binding V[cracks]}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel>
+                                <TextBlock DockPanel.Dock="Right" Text="{Binding when}" FontSize="10.5" Foreground="{StaticResource HudDim}" Margin="6,0,0,0"/>
+                                <TextBlock Text="{Binding text}" FontSize="11" Foreground="{StaticResource HudText}" TextTrimming="CharacterEllipsis"/>
+                            </DockPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+
+            <!-- what's been refined (tons, rate, value), the chart, and where to sell it -->
+            <StackPanel>
+                <TextBlock Style="{StaticResource Head}" Text="{Binding V[refinedHead]}"/>
+                <ItemsControl ItemsSource="{Binding V[refined]}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel Margin="0,1">
+                                <TextBlock DockPanel.Dock="Right" Text="{Binding value}" FontSize="11" Foreground="{StaticResource Good}" Margin="8,0,0,0"/>
+                                <TextBlock DockPanel.Dock="Right" Style="{StaticResource Label}" Text="{Binding rate}"/>
+                                <TextBlock FontSize="12"><Run Text="{Binding tons, Mode=OneWay}" Foreground="{StaticResource Hud}"/><Run Text="  "/><Run Text="{Binding name, Mode=OneWay}" Foreground="{StaticResource HudText}"/></TextBlock>
+                            </DockPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <TextBlock Style="{StaticResource Small}" Text="{Binding V[sold]}" Foreground="{StaticResource Good}" Margin="0,3,0,0"/>
+                <controls:TimeSeriesChart Series="refined" Height="90" Margin="0,6,0,0" controls:Responsive.HideBelow="Compact"/>
+
+                <TextBlock Style="{StaticResource Head}" Text="{Binding V[sellHead]}"/>
+                <ItemsControl ItemsSource="{Binding V[sell]}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,3">
+                                <DockPanel>
+                                    <TextBlock DockPanel.Dock="Right" Text="{Binding price}" FontSize="11.5" FontWeight="SemiBold" Foreground="{StaticResource Good}"/>
+                                    <TextBlock Text="{Binding name}" FontSize="11.5" Foreground="{StaticResource HudText}"/>
+                                </DockPanel>
+                                <TextBlock FontSize="10.5" TextTrimming="CharacterEllipsis"><Run Text="{Binding at, Mode=OneWay}" Foreground="{StaticResource HudDim}"/><Run Text="  ·  "/><Run Text="{Binding age, Mode=OneWay}" Foreground="{StaticResource HudDim}"/></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </UniformGrid>
+    </StackPanel>
+</StackPanel>
