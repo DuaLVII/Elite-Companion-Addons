@@ -1,0 +1,24 @@
+{
+  "Language": "Español",
+  "Code": "es",
+  "Strings": {
+    "addon.title": "Rangos",
+    "addon.description": "Tus rangos de la Pilots' Federation (Combate, Comercio, Exploración, Mercenario, Exobiología, CQC) con el progreso hacia el siguiente, hasta Elite V, y tu historial de ascensos.",
+    "js.ranks": "PILOTS' FEDERATION",
+    "js.history": "ASCENSOS",
+    "js.k_combat": "Combate",
+    "js.k_trade": "Comercio",
+    "js.k_explore": "Exploración",
+    "js.k_soldier": "Mercenario",
+    "js.k_exobiologist": "Exobiología",
+    "js.k_cqc": "CQC",
+    "js.next": "siguiente: {0}",
+    "js.top": "lo más alto posible",
+    "js.moved": "+{0} % desde la última vez",
+    "js.elite_n": "Elite {0}",
+    "js.rank_n": "rango {0}",
+    "js.n_promoted": "Ascenso en {0}: {1}",
+    "js.h_up": "{0}: {1}",
+    "js.none": "El juego envía tus rangos al iniciar sesión."
+  }
+}

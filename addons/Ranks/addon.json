@@ -1,0 +1,16 @@
+{
+  "title": "Ranks",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Your Pilots' Federation ranks (Combat, Trade, Exploration, Mercenary, Exobiology, CQC) with progress to the next, up to Elite V, and a history of your rank-ups.",
+  "category": "Commander & Ship",
+  "tags": [
+    "rank",
+    "elite",
+    "combat",
+    "trade",
+    "exploration",
+    "progress"
+  ],
+  "minAppVersion": "0.9.5"
+}

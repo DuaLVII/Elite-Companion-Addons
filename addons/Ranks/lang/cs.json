@@ -1,0 +1,24 @@
+{
+  "Language": "Čeština",
+  "Code": "cs",
+  "Strings": {
+    "addon.title": "Hodnosti",
+    "addon.description": "Vaše hodnosti Pilots' Federation (Boj, Obchod, Průzkum, Žoldák, Exobiologie, CQC) s postupem k další, až po Elite V, a historie vašich povýšení.",
+    "js.ranks": "PILOTS' FEDERATION",
+    "js.history": "POVÝŠENÍ",
+    "js.k_combat": "Boj",
+    "js.k_trade": "Obchod",
+    "js.k_explore": "Průzkum",
+    "js.k_soldier": "Žoldák",
+    "js.k_exobiologist": "Exobiologie",
+    "js.k_cqc": "CQC",
+    "js.next": "další: {0}",
+    "js.top": "výš to nejde",
+    "js.moved": "+{0} % od minule",
+    "js.elite_n": "Elite {0}",
+    "js.rank_n": "hodnost {0}",
+    "js.n_promoted": "Povýšení ({0}): {1}",
+    "js.h_up": "{0}: {1}",
+    "js.none": "Hra pošle vaše hodnosti, když se přihlásíte."
+  }
+}

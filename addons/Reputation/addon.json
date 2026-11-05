@@ -1,0 +1,16 @@
+{
+  "title": "Reputation",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.0",
+  "description": "Where you stand with the superpowers, your Federal and Imperial navy ranks with progress to the next one, the permits and ships each rank unlocks, and a history of your promotions.",
+  "category": "Commander & Ship",
+  "tags": [
+    "reputation",
+    "rank",
+    "navy",
+    "permits",
+    "federation",
+    "empire"
+  ],
+  "minAppVersion": "0.9.5"
+}

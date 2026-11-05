@@ -1,0 +1,69 @@
+<!-- Ranks: see script.js for where each value comes from. -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:controls="clr-namespace:EliteCompanion.Controls">
+
+    <StackPanel.Resources>
+        <Style x:Key="Head" TargetType="TextBlock" BasedOn="{StaticResource Label}">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,6,0,4"/>
+            <Style.Triggers>
+                <Trigger Property="Text" Value=""><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Small" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10.5"/>
+            <Setter Property="Foreground" Value="{StaticResource HudDim}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Style.Triggers>
+                <Trigger Property="Text" Value=""><Setter Property="Visibility" Value="Collapsed"/></Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Note" TargetType="TextBlock" BasedOn="{StaticResource Small}">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+        </Style>
+    </StackPanel.Resources>
+
+    <TextBlock Style="{StaticResource Note}" Text="{Binding V[empty]}"/>
+    <TextBlock Style="{StaticResource Head}" Text="{Binding V[ranksHead]}"/>
+    <!-- one row per rank: what it's for, the rank (Elite in gold), progress to the next -->
+    <ItemsControl ItemsSource="{Binding V[ranks]}">
+        <ItemsControl.ItemsPanel><ItemsPanelTemplate><UniformGrid Columns="1" controls:Responsive.WideColumns="2"/></ItemsPanelTemplate></ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <StackPanel Margin="0,0,10,7">
+                    <DockPanel>
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding pctText}" FontSize="11" Foreground="{StaticResource HudText}"/>
+                        <TextBlock FontSize="12">
+                            <Run Text="{Binding kind, Mode=OneWay}" Foreground="{StaticResource HudDim}" FontSize="11"/><Run Text="  "/><Run Text="{Binding rank, Mode=OneWay}" FontWeight="Bold"><Run.Style><Style TargetType="Run"><Setter Property="Foreground" Value="{StaticResource Hud}"/><Style.Triggers><DataTrigger Binding="{Binding elite}" Value="True"><Setter Property="Foreground" Value="{StaticResource Warn}"/></DataTrigger></Style.Triggers></Style></Run.Style></Run>
+                        </TextBlock>
+                    </DockPanel>
+                    <ProgressBar Maximum="100" Value="{Binding pct, Mode=OneWay}" Height="5" Margin="0,3,0,1">
+                        <ProgressBar.Style>
+                            <Style TargetType="ProgressBar" BasedOn="{StaticResource Bar}">
+                                <Setter Property="Foreground" Value="{StaticResource Hud}"/>
+                                <Style.Triggers><DataTrigger Binding="{Binding hasBar}" Value="False"><Setter Property="Visibility" Value="Collapsed"/></DataTrigger></Style.Triggers>
+                            </Style>
+                        </ProgressBar.Style>
+                    </ProgressBar>
+                    <TextBlock FontSize="10.5" TextWrapping="Wrap"><Run Text="{Binding next, Mode=OneWay}" Foreground="{StaticResource HudDim}"/><Run Text="  "/><Run Text="{Binding moved, Mode=OneWay}" Foreground="{StaticResource Good}"/></TextBlock>
+                </StackPanel>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+    <!-- rank-ups, newest first -->
+    <TextBlock Style="{StaticResource Head}" Text="{Binding V[histHead]}"/>
+    <ItemsControl ItemsSource="{Binding V[hist]}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <DockPanel Margin="0,0,0,2">
+                    <TextBlock DockPanel.Dock="Left" Text="{Binding when}" FontSize="11" Foreground="{StaticResource HudDim}" Width="74"/>
+                    <TextBlock Text="{Binding text}" FontSize="11" TextWrapping="Wrap"><TextBlock.Style><Style TargetType="TextBlock"><Setter Property="Foreground" Value="{StaticResource Good}"/><Style.Triggers><DataTrigger Binding="{Binding elite}" Value="True"><Setter Property="Foreground" Value="{StaticResource Warn}"/></DataTrigger></Style.Triggers></Style></TextBlock.Style></TextBlock>
+                </DockPanel>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</StackPanel>

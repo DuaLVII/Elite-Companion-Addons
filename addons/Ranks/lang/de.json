@@ -1,0 +1,24 @@
+{
+  "Language": "Deutsch",
+  "Code": "de",
+  "Strings": {
+    "addon.title": "Ränge",
+    "addon.description": "Deine Ränge der Pilots' Federation (Kampf, Handel, Erkundung, Söldner, Exobiologie, CQC) mit Fortschritt zum nächsten, bis Elite V, und ein Verlauf deiner Aufstiege.",
+    "js.ranks": "PILOTS' FEDERATION",
+    "js.history": "AUFSTIEGE",
+    "js.k_combat": "Kampf",
+    "js.k_trade": "Handel",
+    "js.k_explore": "Erkundung",
+    "js.k_soldier": "Söldner",
+    "js.k_exobiologist": "Exobiologie",
+    "js.k_cqc": "CQC",
+    "js.next": "als Nächstes: {0}",
+    "js.top": "höher geht es nicht",
+    "js.moved": "+{0} % seit dem letzten Mal",
+    "js.elite_n": "Elite {0}",
+    "js.rank_n": "Rang {0}",
+    "js.n_promoted": "{0}-Aufstieg: {1}",
+    "js.h_up": "{0}: {1}",
+    "js.none": "Das Spiel sendet deine Ränge, wenn du dich einloggst."
+  }
+}

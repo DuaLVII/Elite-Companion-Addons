@@ -1,0 +1,24 @@
+{
+  "Language": "Français",
+  "Code": "fr",
+  "Strings": {
+    "addon.title": "Grades",
+    "addon.description": "Vos grades de la Pilots' Federation (Combat, Commerce, Exploration, Mercenaire, Exobiologie, CQC) avec la progression vers le suivant, jusqu'à Elite V, et l'historique de vos montées en grade.",
+    "js.ranks": "PILOTS' FEDERATION",
+    "js.history": "MONTÉES EN GRADE",
+    "js.k_combat": "Combat",
+    "js.k_trade": "Commerce",
+    "js.k_explore": "Exploration",
+    "js.k_soldier": "Mercenaire",
+    "js.k_exobiologist": "Exobiologie",
+    "js.k_cqc": "CQC",
+    "js.next": "ensuite : {0}",
+    "js.top": "au plus haut",
+    "js.moved": "+{0} % depuis la dernière fois",
+    "js.elite_n": "Elite {0}",
+    "js.rank_n": "grade {0}",
+    "js.n_promoted": "Montée en grade {0} : {1}",
+    "js.h_up": "{0} : {1}",
+    "js.none": "Le jeu envoie vos grades à la connexion."
+  }
+}
