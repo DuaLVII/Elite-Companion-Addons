@@ -1,0 +1,33 @@
+{
+  "name": "Orange OLED",
+  "author": "Arpaleggia",
+  "description": "A deep black and orange combo befitting your second screen. Good for OLEDs.",
+  "font": "Eurostile",
+  "colors": {
+    "Hud":             "#FD7022",
+    "HudText":         "#FD7022",
+    "HudDim":          "#7F7F7F",
+    "Danger":          "#FF0000",
+    "Warn":            "#FF0000",
+    "Good":            "#FD7022",
+    "Ok":              "#FD7022",
+    "Purple":          "#8150C7",
+    "Cyan":            "#81C8C7",
+    "Canvas":          "#000000",
+    "Panel":           "#000000",
+    "PanelBorder":     "#00000000",
+    "HeaderBack":      "#000000",
+    "Control":         "#000000",
+    "ControlHover":    "#0C0C0C",
+    "ControlPressed":  "#0C0C0C",
+    "Thumb":           "#667F7F7F",
+    "Track":           "#FF000000",
+    "WindowBack":      "#FF000000",
+    "FullScreenBack":  "#000000",
+    "BarBack":         "#00000000",
+    "Overlay":         "#FF000000",
+    "LoadingBack":     "#FF000000",
+    "GlitchA":         "#FFFD7022",
+    "GlitchB":         "#FF000000"
+  }
+}
