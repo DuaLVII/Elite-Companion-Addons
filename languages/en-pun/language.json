@@ -356,6 +356,9 @@
     "galnet.button": "SPACE GOSSIP",
     "galnet.button_open": "SPACE GOSSIP ▴",
     "galnet.subtitle": "Galactic Natter Network",
-    "galnet.loading": "Tuning the space radio…"
+    "galnet.loading": "Tuning the space radio…",
+    "snd.button": "BEEP BOOP",
+    "snd.button_muted": "SHUSHED",
+    "settings.tab_sounds": "Bleeps & Bloops"
   }
 }

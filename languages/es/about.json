@@ -1,10 +1,19 @@
 {
   "title": "Español",
   "author": "Elite Companion",
-  "version": "1.0",
-  "description": "Spanish for the whole app (100% translated). A first draft: corrections from native speakers are very welcome.",
+  "version": "1.1",
+  "description": "Spanish for the whole app (100% translated, up to date with the app's latest texts). A first draft: corrections from native speakers are very welcome.",
   "tags": [
     "spanish",
     "es"
+  ],
+  "changes": [
+    "All 4,970 of the app's texts translated, including everything added since 1.0",
+    "System bookmarks: the title bar's BOOKMARKS, the Bookmarks module, the ☆ in Location, quick search, the console and the hotkey",
+    "SETTINGS → ACCESSIBILITY: UI scale, colour-blind colours, stronger contrast, motion and flashing",
+    "The welcome pages for more monitors (extra windows) and bookmarks",
+    "The journey's credits (\"With thanks to\") and its new button tooltip",
+    "The module designer: about 170 more journal events with their fields, and 30 more live game values",
+    "The theme editor's tooltip colours"
   ]
 }
