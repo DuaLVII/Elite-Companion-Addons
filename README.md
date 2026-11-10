@@ -1,52 +1,51 @@
-# Random sounds
+# Elite Companion · Gallery
 
-Sounds that play by themselves, now and then, whichever sound pack someone uses: voice lines, music, ambience. One
-folder per set of them; the folder name is its id.
+Community-made modules, themes, layouts, languages and sound packs for [Elite Companion](https://github.com/DuaLVII/Elite-Companion), the Elite Dangerous
+companion app.
+
+## Installing addons
+
+**In the app:** open **MODULES → Addon gallery**, pick one and press **Install**. It lands in your `Addons` folder and
+appears in the MODULES list straight away. Updates show up there too.
+
+**By hand:** download the addon's folder from [`addons/`](addons) and put it in the `Addons` folder next to
+`EliteCompanion.exe`.
+
+## What's safe about addons
+
+- **Every addon is reviewed** before it's added here. Nothing is published without the owner approving it.
+- **Every addon is checked automatically** on each change (`scripts/validate.py`): only the app's own building blocks
+  are allowed in the look (`module.xml`), nothing that can run programs, read files or load web pages.
+- **Scripts are sandboxed by the app:** no access to your files or the internet. An addon can only ask the app to
+  fetch from EDSM or Spansh's public APIs, and only if it says so in `addon.json` (the gallery shows "online: EDSM").
+- **Downloads are verified:** the app checks every file against the hash in `index.json` before installing.
+
+Found a problem with an addon? [Open an issue](../../issues/new/choose).
+
+## Making your own
+
+The **[addon guide](docs/README.md)** covers everything: a first addon in ten minutes, the look, the script, journal
+events, charts, languages, recipes and the safety rules. To publish yours, see **[CONTRIBUTING.md](CONTRIBUTING.md)**. In short: copy [`template/`](template), make it yours, try it in the app,
+then send a pull request adding it as `addons/<YourAddonId>/`. The full guide to what addons can do is the
+`Addons\README.md` that comes with the app.
+
+## How this repo works
 
 ```
-random/<Id>/
-  about.json     title, author, version, description, tags
-  random.json    the sets: which files, what kind, when they play
-  *.ogg / *.wav / *.mp3   the sounds, beside random.json (no sub-folders)
-  preview.ogg    (optional) a sample to hear in the gallery before installing (.wav / .mp3 too)
-  preview.png    (optional) a picture for the gallery card
+themes/<Id>/          about.json + theme.json (+ preview.png, assets/) → the app's Themes folder
+layouts/<Id>/         about.json + layout.json (+ preview.png)         → the app's Layouts folder
+languages/<code>/     about.json + language.json                       → the app's Languages folder
+sounds/<Id>/          about.json + sounds.json + the sounds            → the app's Sounds folder
+random/<Id>/          about.json + random.json + the sounds            → the app's Sounds\Random folder
+addons/<Id>/          one folder per addon (the folder name is its id)
+  addon.json          title, author, version, description, category…
+  module.xml          the look (WPF XAML)
+  script.js           the logic (optional)
+  lang/en.json …      its texts in each language (optional)
+  preview.png         a screenshot for the gallery (optional, ~600 × 340)
+template/             a starting point to copy
+docs/                 the addon guide
+(index.json)          the list the app reads: built after every merge and published on the "gallery" release
+scripts/validate.py   the safety and format checks (runs on every pull request)
+scripts/build_index.py  builds index.json (runs after every merge)
 ```
-
-**Making one:** in the app, **STUDIO → Sounds editor → AT RANDOM**: make your sets (＋ New set, pick the files, say
-what kind each is and when it plays), then **SHARE YOURS → Export for the gallery**. It writes this whole folder for
-you. Upload it into `random/` here. Installing it from the gallery puts it in the app's `Sounds\Random\<Id>\`, where
-every set can be switched on or off.
-
-`random.json`:
-
-```json
-{
-  "name": "Mycelium Murmurs",
-  "author": "CMDR You",
-  "description": "Slow dark music and the odd drip and creak.",
-  "sets": [
-    { "name": "Undergrowth", "kind": "music", "files": ["undergrowth.ogg", "deep-hyphae.ogg"],
-      "minMinutes": 12, "maxMinutes": 30, "onlyWhilePlaying": true },
-    { "name": "Drips and creaks", "kind": "effect", "files": ["drip1.ogg", "creak1.ogg"],
-      "minMinutes": 3, "maxMinutes": 9, "volume": 90 },
-    { "name": "Docking chatter", "kind": "voice", "files": ["line1.ogg", "line2.ogg"],
-      "trigger": "game.docked", "chance": 40, "triggerOnly": true, "activities": ["docked"] }
-  ]
-}
-```
-
-| Key | |
-|---|---|
-| `kind` | `voice`: never over another voice line, and music goes quieter while it plays · `music`: one track at a time, fading in and out · `effect`: whenever it's due. Each follows its own volume in the app (SETTINGS → Sounds). |
-| `files` | One is picked at random each time (never the same twice running). |
-| `minMinutes`, `maxMinutes` | Plays every so often, at a random time in between (1 to 600). |
-| `trigger`, `chance` | Also (or, with `"triggerOnly": true`, only) after that sound plays, this often in 100 (`game.docked`, `game.jumped`, `note.danger`…: the ids the Sounds editor lists). |
-| `onlyWhilePlaying` | Only while the game's running (`true` unless you say otherwise). |
-| `activities` | Only while doing one of these: `docked`, `supercruise`, `exploring`, `combat`… (the ones the Sounds editor offers). |
-| `volume` | 0 to 200 (%), 100 = as recorded. |
-
-**Limits:** 6 MB a file, 24 MB in all. Use OGG for music.
-
-**Only sounds and music you made or are allowed to share.** Nothing recorded from the game (it belongs to Frontier) and
-no commercial music. Free libraries are fine when their licence allows sharing: say which, and credit them in the
-description.

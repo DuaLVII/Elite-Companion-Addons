@@ -78,10 +78,11 @@ They go through the same steps: fork, add your folder, open a pull request, the 
 | Layout | `layouts/<Id>/` | `layout.json` | LAYOUT → Export |
 | Language | `languages/<code>/` | `language.json` | STUDIO → Language editor → SHARE |
 | Sound pack | `sounds/<Id>/` | `sounds.json` + the sounds | STUDIO → Sounds editor → SHARE |
+| Random sounds | `random/<Id>/` | `random.json` + the sounds | STUDIO → Sounds editor → AT RANDOM → Share yours |
 
 Each folder also needs an `about.json` (`title`, `author`, `version`, `description`, optional `tags`) and can have a
 `preview.png`. The README in each folder ([themes](themes/README.md), [layouts](layouts/README.md),
-[languages](languages/README.md), [sounds](sounds/README.md)) has the details. Layouts may only use addons that are in this gallery.
+[languages](languages/README.md), [sounds](sounds/README.md), [random](random/README.md)) has the details. Layouts may only use addons that are in this gallery.
 
 ## Updating your addon
 
