@@ -1,7 +1,7 @@
 {
   "name": "Mycelium Murmurs",
   "author": "CMDR Snickerdoodlez",
-  "description": "Dark random sounds to go with Fungoida and Spore Drift: three slow ambient tracks (breathing drones, distant bells, a glowing forest after dark), and the odd drip, creak and spore puff from the mycelium.",
+  "description": "Dark random sounds to go with Fungoida and Spore Drift: three slow ambient tracks, two short pieces that greet you at the end of a plotted route, and the odd drip, creak and spore puff from the mycelium.",
   "sets": [
     {
       "name": "Undergrowth",
@@ -44,6 +44,21 @@
       "onlyWhilePlaying": true,
       "trigger": "game.jumped",
       "chance": 35,
+      "triggerOnly": true
+    },
+    {
+      "name": "Journey's end",
+      "kind": "music",
+      "files": [
+        "journeys-end.ogg",
+        "homecoming.ogg"
+      ],
+      "minMinutes": 30,
+      "maxMinutes": 60,
+      "volume": 90,
+      "onlyWhilePlaying": true,
+      "trigger": "game.route_end",
+      "chance": 100,
       "triggerOnly": true
     }
   ]

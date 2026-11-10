@@ -20,5 +20,10 @@ A layout remembers which addons it uses. Here it may only use addons that are **
 a link), so whoever loads it can get them: the checks refuse a layout that needs an addon only you have. The app
 installs any it needs when the layout is loaded.
 
+**Spreadsheet pages come too.** A page that's a spreadsheet travels in `layout.json` with every cell, formula, colour
+and column width (a trading log, a colonisation planner…), and the game's functions in it (`SHIP("fuel")`,
+`COLONY("remaining")`…) read the game of whoever loads it. The checks only make sure a sheet is one the app made
+(1,000 rows × 100 columns at most, proper cell names).
+
 `about.json` is the same as a theme's: `title`, `author`, `version`, `description`, optional `tags`. Add
 `"category"` if it suits a play style (`Exploration`, `Mining`, `Combat`, `Trading`…).

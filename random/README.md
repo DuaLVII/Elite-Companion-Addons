@@ -40,7 +40,7 @@ every set can be switched on or off.
 | `kind` | `voice`: never over another voice line, and music goes quieter while it plays · `music`: one track at a time, fading in and out · `effect`: whenever it's due. Each follows its own volume in the app (SETTINGS → Sounds). |
 | `files` | One is picked at random each time (never the same twice running). |
 | `minMinutes`, `maxMinutes` | Plays every so often, at a random time in between (1 to 600). |
-| `trigger`, `chance` | Also (or, with `"triggerOnly": true`, only) after that sound plays, this often in 100 (`game.docked`, `game.jumped`, `note.danger`…: the ids the Sounds editor lists). |
+| `trigger`, `chance` | Also (or, with `"triggerOnly": true`, only) after that sound plays, this often in 100 (`game.docked`, `game.jumped`, `game.route_end` (the last jump of a plotted route), `note.danger`…: the ids the Sounds editor lists). |
 | `onlyWhilePlaying` | Only while the game's running (`true` unless you say otherwise). |
 | `activities` | Only while doing one of these: `docked`, `supercruise`, `exploring`, `combat`… (the ones the Sounds editor offers). |
 | `volume` | 0 to 200 (%), 100 = as recorded. |

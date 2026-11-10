@@ -283,6 +283,16 @@ def check_layout(path, rel, problems):
             problems.append(f"{rel}: uses the addon \"{aid}\", which isn't in the gallery (add it to addons/ first)")
         elif frm not in ("gallery", "link"):
             problems.append(f"{rel}: uses \"{aid}\", an addon only its maker has: layouts here can only use addons from the gallery or a link")
+    # spreadsheet pages (a page's "Sheet"): within the app's limits
+    for t in f.get("Tabs") or []:
+        for pg in [t] + list((t or {}).get("Pages") or []):
+            sh = (pg or {}).get("Sheet")
+            if sh is None: continue
+            cells = sh.get("Cells") if isinstance(sh, dict) else None
+            if not isinstance(cells, dict) or not 1 <= int(sh.get("Rows", 0) or 0) <= 1000 or not 1 <= int(sh.get("Cols", 0) or 0) <= 100:
+                problems.append(f"{rel}: a spreadsheet page on \"{t.get('Name', '?')}\" isn't one the app made (1,000 rows × 100 columns at most)"); continue
+            if any(not re.match(r"^[A-Z]{1,3}[0-9]{1,4}$", k) or not isinstance(v, dict) or len(str(v.get("Input", ""))) > 4000 for k, v in cells.items()):
+                problems.append(f"{rel}: a spreadsheet page on \"{t.get('Name', '?')}\" has cells the app wouldn't write")
     if any(isinstance(v, dict) and v for v in (f.get("AddonData") or {}).values()):
         pass   # (addons' saved settings travel with the layout: fine, they're plain text)
 
