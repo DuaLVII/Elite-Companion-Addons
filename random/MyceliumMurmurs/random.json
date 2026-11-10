@@ -1,0 +1,49 @@
+{
+  "name": "Mycelium Murmurs",
+  "author": "CMDR Snickerdoodlez",
+  "description": "Dark random sounds to go with Fungoida and Spore Drift: two slow ambient tracks of breathing drones and distant bells, and the odd drip, creak and spore puff from the mycelium.",
+  "sets": [
+    {
+      "name": "Undergrowth",
+      "kind": "music",
+      "files": [
+        "undergrowth.ogg",
+        "deep-hyphae.ogg"
+      ],
+      "minMinutes": 12,
+      "maxMinutes": 30,
+      "volume": 100,
+      "onlyWhilePlaying": true
+    },
+    {
+      "name": "Drips and creaks",
+      "kind": "effect",
+      "files": [
+        "drip1.ogg",
+        "drip2.ogg",
+        "creak1.ogg",
+        "creak2.ogg",
+        "puff.ogg",
+        "groan.ogg"
+      ],
+      "minMinutes": 3,
+      "maxMinutes": 9,
+      "volume": 90,
+      "onlyWhilePlaying": true
+    },
+    {
+      "name": "Spores on arrival",
+      "kind": "effect",
+      "files": [
+        "spore-burst.ogg"
+      ],
+      "minMinutes": 30,
+      "maxMinutes": 60,
+      "volume": 80,
+      "onlyWhilePlaying": true,
+      "trigger": "game.jumped",
+      "chance": 35,
+      "triggerOnly": true
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "name": "Spore Drift",
+  "author": "CMDR Snickerdoodlez",
+  "description": "Dark and organic, made for the Fungoida theme: wet bubbles, woody knocks, spore puffs, low drones and glassy bells in D minor, with a creak or two from the mycelium.",
+  "sounds": {
+    "ui.hover": {
+      "files": [
+        "hover.wav"
+      ],
+      "volume": 0.6
+    },
+    "ui.click": {
+      "files": [
+        "click.wav"
+      ]
+    },
+    "ui.toggle_on": {
+      "files": [
+        "toggle-on.wav"
+      ]
+    },
+    "ui.toggle_off": {
+      "files": [
+        "toggle-off.wav"
+      ]
+    },
+    "ui.panel_open": {
+      "files": [
+        "panel-open.wav"
+      ]
+    },
+    "ui.panel_close": {
+      "files": [
+        "panel-close.wav"
+      ]
+    },
+    "ui.tab": {
+      "files": [
+        "tab.wav"
+      ]
+    },
+    "ui.page": {
+      "files": [
+        "page.wav"
+      ]
+    },
+    "module.hover": {
+      "files": [
+        "module-hover.wav"
+      ],
+      "volume": 0.5
+    },
+    "module.add": {
+      "files": [
+        "module-add.wav"
+      ]
+    },
+    "module.remove": {
+      "files": [
+        "module-remove.wav"
+      ]
+    },
+    "app.boot": {
+      "files": [
+        "boot.wav"
+      ]
+    },
+    "app.ready": {
+      "files": [
+        "ready.wav"
+      ]
+    },
+    "login.key": {
+      "files": [
+        "key1.wav",
+        "key2.wav",
+        "key3.wav"
+      ],
+      "volume": 0.7
+    },
+    "login.engage": {
+      "files": [
+        "engage.wav"
+      ]
+    },
+    "login.granted": {
+      "files": [
+        "granted.wav"
+      ]
+    },
+    "note.info": {
+      "files": [
+        "note-info.wav"
+      ]
+    },
+    "note.warning": {
+      "files": [
+        "note-warning.wav"
+      ]
+    },
+    "note.danger": {
+      "files": [
+        "note-danger.wav"
+      ]
+    },
+    "game.jump_start": {
+      "files": [
+        "jump-charge.wav"
+      ]
+    },
+    "game.jumped": {
+      "files": [
+        "jump-arrive.wav"
+      ]
+    },
+    "game.supercruise": {
+      "files": [
+        "supercruise.wav"
+      ]
+    },
+    "game.drop": {
+      "files": [
+        "drop.wav"
+      ]
+    },
+    "game.docked": {
+      "files": [
+        "docked.wav"
+      ]
+    },
+    "game.undocked": {
+      "files": [
+        "undocked.wav"
+      ]
+    },
+    "game.touchdown": {
+      "files": [
+        "touchdown.wav"
+      ]
+    },
+    "game.liftoff": {
+      "files": [
+        "liftoff.wav"
+      ]
+    },
+    "game.mission_done": {
+      "files": [
+        "mission-done.wav"
+      ]
+    },
+    "game.promotion": {
+      "files": [
+        "promotion.wav"
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Fungoida",
+  "author": "CMDR Snickerdoodlez",
+  "version": "1.1",
+  "description": "Bioluminescent spores on dark loam. Leaf-shaped modules, mycelium between them, drifting spores, moss on a few corners, hyphae bars, its own fonts and icons. Blooms when you scan organics, wilts when the hull is hit, grows across the loading screen, and comes with a dark sound pack, Spore Drift. Extras need app 0.9.7+.",
+  "tags": [
+    "dark",
+    "green",
+    "organic",
+    "exobiology",
+    "animated",
+    "fonts",
+    "sound set"
+  ],
+  "changes": [
+    "Moss grows inside the module's corner (it hung off the edge before) with a tiny mushroom or two",
+    "Threads of mycelium run along the gaps between modules instead of tiny marks",
+    "A softer loam texture on the modules",
+    "Nothing of the theme shows over SETTINGS, the gallery or the editors any more (needs the app update)",
+    "First release"
+  ]
+}

@@ -6,24 +6,37 @@ import xml.etree.ElementTree as ET
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 ADDONS = os.path.join(ROOT, "addons")
 
-# Themes, layouts and languages: one folder each, every entry a folder with about.json (title, author, version,
-# description…), its file, and an optional preview.png.
-#   themes/<Id>/theme.json            → the app's Themes\<Id>.json
+# Themes, layouts, languages, sound packs and random sounds: one folder each, every entry a folder with about.json
+# (title, author, version, description…), its file, and an optional preview.png.
+#   themes/<Id>/theme.json            → the app's Themes\<Id>.json (and assets/ → Themes\<Id>\: fonts, textures, pictures)
 #   layouts/<Id>/layout.json          → the app's Layouts\<Id>.ecl.json
 #   languages/<code>/language.json    → the app's Languages\<code>.json (the folder name is the language code)
+#   sounds/<Id>/sounds.json           → the app's Sounds\<Id>\ (with its sounds)
+#   random/<Id>/random.json           → the app's Sounds\Random\<Id>\ (random sounds: voice lines, music, effects)
 KINDS = {
     "themes":    {"file": "theme.json",    "max": 64 * 1024,   "id": re.compile(r"^[A-Za-z][A-Za-z0-9_-]{1,40}$")},
     "layouts":   {"file": "layout.json",   "max": 512 * 1024,  "id": re.compile(r"^[A-Za-z][A-Za-z0-9_-]{1,40}$")},
     "languages": {"file": "language.json", "max": 1024 * 1024, "id": re.compile(r"^[a-z]{2,3}(-[A-Za-z]{2,4})?$")},
     "sounds":    {"file": "sounds.json",   "max": 64 * 1024,   "id": re.compile(r"^[A-Za-z][A-Za-z0-9_-]{1,40}$")},
+    "random":    {"file": "random.json",   "max": 64 * 1024,   "id": re.compile(r"^[A-Za-z][A-Za-z0-9_-]{1,40}$")},
 }
 AUDIO_EXT = {".wav", ".ogg", ".mp3"}
 MAX_SOUND_FILE = 1024 * 1024          # any one sound
 MAX_SOUND_PACK = 8 * 1024 * 1024      # a whole pack
 SOUND_ID_RE = re.compile(r"^[a-z]+(\.[a-z0-9_]+)+$")
+MAX_RANDOM_FILE = 6 * 1024 * 1024     # random sounds: any one file (music is longer)
+MAX_RANDOM_PACK = 24 * 1024 * 1024    # random sounds: in all
+RANDOM_KINDS = {"voice", "music", "effect"}
+# a theme's own files, in assets/ (fonts, textures, pictures, and the fonts' licences)
+THEME_ASSET_EXT = {".ttf", ".otf", ".png", ".jpg", ".txt"}
+MAX_THEME_ASSET = 2 * 1024 * 1024
+MAX_THEME_ASSETS = 8 * 1024 * 1024
 ITEM_REQUIRED = ["title", "author", "version", "description"]
 COLOUR_RE = re.compile(r"^#([0-9A-Fa-f]{3,4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$")
 GRADIENT_RE = re.compile(r"^(linear|radial)\([^()]*\)$", re.I)
+# texture(kind, #colour, strength%[, size]): grain · fibres · cells · loam, or a picture in the theme's assets/
+TEXTURE_RE = re.compile(r"^texture\(\s*([^,()]+?)\s*,\s*(#[0-9A-Fa-f]{3,8})\s*(,[^()]*)?\)$", re.I)
+TEXTURES = {"grain", "fibres", "fibers", "cells", "loam"}
 
 ALLOWED_EXT = {".json", ".xml", ".js", ".png", ".jpg", ".md", ".txt"}
 MAX_FILE = 512 * 1024          # any one file
@@ -221,17 +234,42 @@ def check_about(folder, rel, problems):
     return m
 
 
-def check_theme(path, rel, problems):
+def check_theme(path, rel, problems, folder):
     t = load_json(path)
     if not isinstance(t, dict) or not isinstance(t.get("colors", {}), dict):
         problems.append(f"{rel}: should be {{ \"name\": …, \"colors\": {{ \"Hud\": \"#FF9830\", … }} }}"); return
+    assets = os.path.join(folder, "assets")
+    def has_asset(name):
+        p = os.path.normpath(os.path.join(assets, name))
+        return p.startswith(os.path.normpath(assets) + os.sep) and os.path.isfile(p)
     for k, v in t.get("colors", {}).items():
-        if not isinstance(v, str) or not (COLOUR_RE.match(v.strip()) or GRADIENT_RE.match(v.strip())):
-            problems.append(f"{rel}: colour \"{k}\": \"{v}\" isn't a colour (#RRGGBB, #AARRGGBB, linear(…) or radial(…))")
+        v2 = v.strip() if isinstance(v, str) else ""
+        tex = TEXTURE_RE.match(v2)
+        if tex:
+            kind = tex.group(1)
+            if kind.lower() not in TEXTURES and not (kind.lower().endswith((".png", ".jpg")) and has_asset(kind)):
+                problems.append(f"{rel}: colour \"{k}\": texture \"{kind}\" isn't grain, fibres, cells or loam, or a picture in assets/")
+            continue
+        if not (COLOUR_RE.match(v2) or GRADIENT_RE.match(v2)):
+            problems.append(f"{rel}: colour \"{k}\": \"{v}\" isn't a colour (#RRGGBB, #AARRGGBB, linear(…), radial(…) or texture(…))")
     if "font" in t and not isinstance(t["font"], str):
         problems.append(f"{rel}: \"font\" should be a font's name")
     if "style" in t and not isinstance(t["style"], dict):
         problems.append(f"{rel}: \"style\" should be an object")
+    # the theme's own files it names (fonts, a corner picture) must be in assets/
+    fonts = t.get("fonts") or {}
+    if not isinstance(fonts, dict):
+        problems.append(f"{rel}: \"fonts\" should be {{ \"text\": …, \"heading\": …, \"numbers\": … }}")
+    else:
+        for role, spec in fonts.items():
+            if isinstance(spec, str) and spec.lower().endswith((".ttf", ".otf")) and not has_asset(spec):
+                problems.append(f"{rel}: font \"{role}\": {spec} isn't in assets/")
+    decor = t.get("decor") or {}
+    if isinstance(decor, dict) and isinstance(decor.get("corners"), str) and decor["corners"].lower().endswith((".png", ".jpg")) and not has_asset(decor["corners"]):
+        problems.append(f"{rel}: decor corners: {decor['corners']} isn't in assets/")
+    icons = t.get("icons") or {}
+    if not isinstance(icons, dict) or any(not isinstance(v, str) or len(v) > 2000 for v in icons.values()):
+        problems.append(f"{rel}: \"icons\" should be {{ \"SearchBtn\": \"M2 8 …\" }} (path data, each under 2000 characters)")
 
 
 def check_layout(path, rel, problems):
@@ -283,6 +321,40 @@ def check_sounds(path, rel, problems, folder):
             problems.append(f"{rel}: \"{sid}\": volume should be 0 to 2")
 
 
+def check_random(path, rel, problems, folder):
+    d = load_json(path)
+    sets = d.get("sets") if isinstance(d, dict) else None
+    if not isinstance(sets, list) or not sets:
+        problems.append(f"{rel}: should be {{ \"name\": …, \"sets\": [ {{ \"name\": …, \"kind\": \"voice\", \"files\": [\"line1.ogg\"] }}, … ] }}"); return
+    for n, st in enumerate(sets, 1):
+        where = f"{rel}: set {n}"
+        if not isinstance(st, dict):
+            problems.append(f"{where}: should be an object"); continue
+        if not isinstance(st.get("name"), str) or not st["name"].strip():
+            problems.append(f"{where}: needs a \"name\"")
+        else:
+            where = f"{rel}: \"{st['name']}\""
+        if str(st.get("kind", "voice")).lower() not in RANDOM_KINDS:
+            problems.append(f"{where}: \"kind\" is voice, music or effect")
+        files = st.get("files")
+        if not isinstance(files, list) or not files or any(not isinstance(f, str) for f in files):
+            problems.append(f"{where}: needs \"files\": [\"…\"]"); continue
+        for f in files:
+            if "/" in f or "\\" in f or ".." in f:
+                problems.append(f"{where}: {f}: files sit beside random.json (no folders)")
+            elif not os.path.isfile(os.path.join(folder, f)):
+                problems.append(f"{where}: {f} isn't in the folder")
+            elif os.path.splitext(f)[1].lower() not in AUDIO_EXT:
+                problems.append(f"{where}: {f}: only .wav, .ogg and .mp3")
+        for key, lo, hi in (("minMinutes", 1, 600), ("maxMinutes", 1, 600), ("volume", 0, 200), ("chance", 0, 100)):
+            if key in st and not (isinstance(st[key], (int, float)) and lo <= st[key] <= hi):
+                problems.append(f"{where}: \"{key}\" should be {lo} to {hi}")
+        if st.get("trigger") and not (isinstance(st["trigger"], str) and SOUND_ID_RE.match(st["trigger"])):
+            problems.append(f"{where}: \"trigger\" should be a sound id (like game.docked)")
+        if "activities" in st and (not isinstance(st["activities"], list) or any(not isinstance(a, str) for a in st["activities"])):
+            problems.append(f"{where}: \"activities\" should be a list (docked, supercruise…)")
+
+
 def check_item(kind, folder, problems):
     spec = KINDS[kind]
     name = os.path.basename(folder)
@@ -291,10 +363,23 @@ def check_item(kind, folder, problems):
         problems.append(f"{rel}: " + ("the folder name is the language code, like it or pt-BR" if kind == "languages"
                                       else "the folder name is its id: letters, digits, - and _ only, starting with a letter"))
     allowed = {"about.json", spec["file"], "preview.png", "preview.jpg", "README.md"}
-    total = 0
+    total = assets_total = 0
+    assets_root = os.path.join(folder, "assets")
     for dirpath, dirs, names in os.walk(folder):
         if dirpath != folder:
-            problems.append(f"{rel}: no sub-folders"); continue
+            # a theme's own files: assets/ (and folders in it), fonts, textures, pictures and licences only
+            if kind == "themes" and (dirpath == assets_root or dirpath.startswith(assets_root + os.sep)):
+                for n in names:
+                    p = os.path.join(dirpath, n)
+                    size = os.path.getsize(p)
+                    assets_total += size
+                    r = os.path.relpath(p, folder).replace(os.sep, "/")
+                    if os.path.splitext(n)[1].lower() not in THEME_ASSET_EXT:
+                        problems.append(f"{rel}/{r}: assets/ takes fonts (.ttf, .otf), pictures (.png, .jpg) and licences (.txt) only")
+                    elif size > MAX_THEME_ASSET:
+                        problems.append(f"{rel}/{r}: {size // 1024} KB is too big (max {MAX_THEME_ASSET // 1024} KB a file)")
+                continue
+            problems.append(f"{rel}: no sub-folders" + (" (other than assets/)" if kind == "themes" else "")); continue
         for n in names:
             p = os.path.join(dirpath, n)
             size = os.path.getsize(p)
@@ -303,22 +388,31 @@ def check_item(kind, folder, problems):
                 if size > MAX_SOUND_FILE:
                     problems.append(f"{rel}/{n}: {size // 1024} KB is too big for one sound (max {MAX_SOUND_FILE // 1024} KB: shorter, or OGG)")
                 continue
+            if kind == "random" and os.path.splitext(n)[1].lower() in AUDIO_EXT:
+                if size > MAX_RANDOM_FILE:
+                    problems.append(f"{rel}/{n}: {size // 1024} KB is too big (max {MAX_RANDOM_FILE // 1024 // 1024} MB a file: shorter, or OGG)")
+                continue
             if n not in allowed:
-                problems.append(f"{rel}/{n}: only {', '.join(sorted(allowed))}" + (" and .wav / .ogg / .mp3 sounds" if kind == "sounds" else "") + " belong here")
+                problems.append(f"{rel}/{n}: only {', '.join(sorted(allowed))}" + (" and .wav / .ogg / .mp3 sounds" if kind in ("sounds", "random") else "") + " belong here")
             if n == spec["file"] and size > spec["max"]:
                 problems.append(f"{rel}/{n}: {size // 1024} KB is too big (max {spec['max'] // 1024} KB)")
             if n.startswith("preview.") and size > MAX_PREVIEW:
                 problems.append(f"{rel}/{n}: the preview is {size // 1024} KB (max {MAX_PREVIEW // 1024} KB)")
     if kind == "sounds" and total > MAX_SOUND_PACK:
         problems.append(f"{rel}: {total // 1024} KB in all is too big (max {MAX_SOUND_PACK // 1024 // 1024} MB a pack)")
+    if kind == "random" and total > MAX_RANDOM_PACK:
+        problems.append(f"{rel}: {total // 1024} KB in all is too big (max {MAX_RANDOM_PACK // 1024 // 1024} MB)")
+    if assets_total > MAX_THEME_ASSETS:
+        problems.append(f"{rel}/assets: {assets_total // 1024} KB in all is too big (max {MAX_THEME_ASSETS // 1024 // 1024} MB)")
     check_about(folder, rel, problems)
     path = os.path.join(folder, spec["file"])
     if not os.path.isfile(path):
         problems.append(f"{rel}: {spec['file']} is missing"); return
     try:
-        if kind == "themes": check_theme(path, f"{rel}/{spec['file']}", problems)
+        if kind == "themes": check_theme(path, f"{rel}/{spec['file']}", problems, folder)
         elif kind == "layouts": check_layout(path, f"{rel}/{spec['file']}", problems)
         elif kind == "sounds": check_sounds(path, f"{rel}/{spec['file']}", problems, folder)
+        elif kind == "random": check_random(path, f"{rel}/{spec['file']}", problems, folder)
         else: check_language(path, f"{rel}/{spec['file']}", problems, name)
     except Exception as e:
         problems.append(f"{rel}/{spec['file']}: can't be read ({e})")
@@ -346,6 +440,10 @@ def check_kind(kind, problems):
     return n
 
 
+NAMES = {"themes": ("theme", "themes"), "layouts": ("layout", "layouts"), "languages": ("language", "languages"),
+         "sounds": ("sound pack", "sound packs"), "random": ("set of random sounds", "sets of random sounds")}
+
+
 def main():
     problems = []
     if not os.path.isdir(ADDONS):
@@ -368,7 +466,7 @@ def main():
         for p in problems: print("  • " + p)
         return 1
     print(f"✓ {len([n for n in seen if not n.startswith('_')])} addon(s), "
-          + ", ".join(f"{n} {kind[:-1] if n == 1 else kind}" for kind, n in counts.items()) + " checked, all fine")
+          + ", ".join(f"{n} {NAMES[kind][0] if n == 1 else NAMES[kind][1]}" for kind, n in counts.items()) + " checked, all fine")
     return 0
 
 

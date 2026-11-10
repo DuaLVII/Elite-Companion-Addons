@@ -35,7 +35,7 @@ def file_list(folder):
 
 
 def items(kind):
-    """themes/, layouts/ and languages/: every entry's about.json, when it last changed, and its files."""
+    """themes/, layouts/, languages/, sounds/ and random/: every entry's about.json, when it last changed, and its files."""
     root = os.path.join(ROOT, kind)
     out = []
     if not os.path.isdir(root):
@@ -64,7 +64,7 @@ def items(kind):
             "size": sum(f["size"] for f in files),
             "files": files,
         }
-        if kind == "sounds":      # a sound to hear in the gallery before installing (preview.ogg / .wav / .mp3)
+        if kind in ("sounds", "random"):   # a sound to hear in the gallery before installing (preview.ogg / .wav / .mp3)
             entry["listen"] = next((f["path"] for f in files if f["path"].rsplit(".", 1)[0] == "preview" and f["path"].rsplit(".", 1)[-1] in ("ogg", "wav", "mp3")), "")
         if kind == "languages":   # how much of the app it covers, for the gallery to show
             try:
@@ -126,11 +126,13 @@ def main():
         "layouts": items("layouts"),
         "languages": items("languages"),
         "sounds": items("sounds"),
+        # random sounds on their own (voice lines, music, effects): …/<commit>/random/<id>/<path>
+        "random": items("random"),
     }
     with open(os.path.join(ROOT, "index.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump(index, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"index.json: {len(addons)} addon(s), {len(index['themes'])} theme(s), {len(index['layouts'])} layout(s), {len(index['languages'])} language(s), {len(index['sounds'])} sound pack(s)")
+    print(f"index.json: {len(addons)} addon(s), {len(index['themes'])} theme(s), {len(index['layouts'])} layout(s), {len(index['languages'])} language(s), {len(index['sounds'])} sound pack(s), {len(index['random'])} random sound set(s)")
 
 if __name__ == "__main__":
     main()
