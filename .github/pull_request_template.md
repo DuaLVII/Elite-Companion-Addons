@@ -14,3 +14,7 @@
 - [ ] If it goes online, `addon.json` lists the sites in `"web"` (only `edsm` and `spansh` are allowed)
 - [ ] It's my own work, or I have permission to share it, and I'm happy for it to be shared under this repo's licence
 - [ ] (Optional) a `preview.png` screenshot, about 600 × 340
+
+## Screenshot
+
+<!-- Drag a screenshot of the module here -->

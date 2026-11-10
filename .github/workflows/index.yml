@@ -8,7 +8,9 @@ on:
       - "layouts/**"
       - "languages/**"
       - "sounds/**"
+      - "random/**"
       - "scripts/**"
+      - ".github/workflows/index.yml"
   workflow_dispatch:
 permissions:
   contents: write
