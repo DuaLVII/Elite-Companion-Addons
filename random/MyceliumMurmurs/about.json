@@ -1,8 +1,8 @@
 {
   "title": "Mycelium Murmurs",
   "author": "CMDR Snickerdoodlez",
-  "version": "1.0",
-  "description": "Dark random sounds for the Fungoida set: two slow ambient tracks (breathing drones, distant bells) that play now and then, the odd drip, creak and spore puff, and a burst of spores sometimes when you arrive in a system. Plays alongside any sound pack.",
+  "version": "1.1",
+  "description": "Dark random sounds for the Fungoida set: three slow ambient tracks (breathing drones, distant bells, a bioluminescent forest after dark) that play now and then, the odd drip, creak and spore puff, and sometimes a burst of spores when you arrive in a system. Plays alongside any sound pack.",
   "tags": [
     "dark",
     "ambient",
@@ -11,6 +11,7 @@
     "fungoida"
   ],
   "changes": [
+    "A third track, Glowcap Hollow: a glowing forest after dark, warmer than the other two",
     "First release"
   ]
 }
