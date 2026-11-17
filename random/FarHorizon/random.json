@@ -1,0 +1,65 @@
+{
+  "name": "Far Horizon",
+  "author": "CMDR Snickerdoodlez",
+  "description": "Bright, open random sounds: three slow tracks in D mixolydian (felt piano, glass bells and warm strings over a C-to-D lift), glass chimes now and then, a shimmer after some jumps, and a short arrival piece at the last system of a route.",
+  "sets": [
+    {
+      "name": "Far Horizon",
+      "kind": "music",
+      "files": [
+        "first-light.ogg",
+        "long-haul.ogg",
+        "beacon.ogg"
+      ],
+      "minMinutes": 12,
+      "maxMinutes": 30,
+      "volume": 85,
+      "onlyWhilePlaying": true
+    },
+    {
+      "name": "Starlight chimes",
+      "kind": "effect",
+      "files": [
+        "chime1.ogg",
+        "chime2.ogg",
+        "chime3.ogg",
+        "chime4.ogg",
+        "chime5.ogg",
+        "chime6.ogg"
+      ],
+      "minMinutes": 3,
+      "maxMinutes": 9,
+      "volume": 75,
+      "onlyWhilePlaying": true
+    },
+    {
+      "name": "A new star",
+      "kind": "effect",
+      "files": [
+        "new-star.ogg"
+      ],
+      "minMinutes": 30,
+      "maxMinutes": 60,
+      "volume": 70,
+      "onlyWhilePlaying": true,
+      "trigger": "game.jumped",
+      "chance": 20,
+      "triggerOnly": true
+    },
+    {
+      "name": "Landfall",
+      "kind": "music",
+      "files": [
+        "landfall.ogg",
+        "safe-harbour.ogg"
+      ],
+      "minMinutes": 30,
+      "maxMinutes": 60,
+      "volume": 90,
+      "onlyWhilePlaying": true,
+      "trigger": "game.route_end",
+      "chance": 100,
+      "triggerOnly": true
+    }
+  ]
+}
